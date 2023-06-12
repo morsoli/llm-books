@@ -6,7 +6,7 @@
 理论学习部分由[Langchain](https://python.langchain.com/en/latest/index.html)、[LlamaIndex](https://github.com/jerryjliu/llama_index/blob/main/docs/index.rst)等开源工具文档、一些最佳实践的技术博客、论文阅读三部分组成
 
 * 代码实践
-在每个工具的理论学习结束后，辅以实践性代码帮助理解。最后会将各个模块整合起来实现[个人信息处理系统](../04-message/readme.md)
+在每个工具的理论学习结束后，辅以实践性代码帮助理解。最后会将各个模块整合起来实现[个人信息处理系统](./04-message/readme.md)
 
 ### 如何阅读？
 很感谢你打开这份教程，本教程不是权威指南，在这个领域我也只是学生，建议你在阅读这份教程的时候：
