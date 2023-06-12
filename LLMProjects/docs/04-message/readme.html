@@ -1,0 +1,821 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>个人信息处理系统 · 利用 LLM 构建应用实践指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莫尔索">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-1.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-llm/01-1.html">
+            
+                <a href="../01-llm/01-1.html">
+            
+                    
+                    大语言模型概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-llm/01-1.html">
+            
+                <a href="../01-llm/01-1.html">
+            
+                    
+                    大语言模型发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-llm/01-2.html">
+            
+                <a href="../01-llm/01-2.html">
+            
+                    
+                    你好, ChatGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01-llm/01-3.html">
+            
+                <a href="../01-llm/01-3.html">
+            
+                    
+                    OpenAI API解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01-llm/01-4.html">
+            
+                <a href="../01-llm/01-4.html">
+            
+                    
+                    实现一个套壳机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-langchain/02-1.html">
+            
+                <a href="../02-langchain/02-1.html">
+            
+                    
+                    LangChain入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-langchain/02-1.html">
+            
+                <a href="../02-langchain/02-1.html">
+            
+                    
+                    LangChain介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-langchain/02-2.html">
+            
+                <a href="../02-langchain/02-2.html">
+            
+                    
+                    源码组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-langchain/02-3.html">
+            
+                <a href="../02-langchain/02-3.html">
+            
+                    
+                    实现领域内搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-langchain/02-4.html">
+            
+                <a href="../02-langchain/02-4.html">
+            
+                    
+                    实现一个自定义问答机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-llamaIndex/03-2.html">
+            
+                <a href="../03-llamaIndex/03-2.html">
+            
+                    
+                    源码组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03-llamaIndex/03-3.html">
+            
+                <a href="../03-llamaIndex/03-3.html">
+            
+                    
+                    非结构化数据作为数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    HuggingGPT 实现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    HuggingFace 介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    HuggingFace 模型分类
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    多模态任务设计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    自己实现一个 AutoGPT
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    实战个人信息处理系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    需求分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    模块设计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    上线效果
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    个人信息处理系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="04-1.html">
+            
+                <a href="04-1.html">
+            
+                    
+                    系统化思维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="04-2.html">
+            
+                <a href="04-2.html">
+            
+                    
+                    决策过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="04-3.html">
+            
+                <a href="04-3.html">
+            
+                    
+                    解决问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="04-4.html">
+            
+                <a href="04-4.html">
+            
+                    
+                    沟通
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ref/ref.html">
+            
+                <a href="../ref/ref.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ref/a16z.html">
+            
+                <a href="../ref/a16z.html">
+            
+                    
+                    A16Z推荐的AI学习清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >个人信息处理系统</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="chatgpt&#x9A71;&#x52A8;&#x7684;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;">ChatGPT&#x9A71;&#x52A8;&#x7684;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;</h2>
+<blockquote>
+<p>&#x501F;&#x52A9;ChatGPT&#x6700;&#x64C5;&#x957F;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x8BED;&#x4E49;&#x7406;&#x89E3;&#x80FD;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6700;&#x8017;&#x65F6;&#x7684;&#x5206;&#x6790;&#x9636;&#x6BB5;&#xFF08;&#x4EC0;&#x4E48;&#x662F;&#x6709;&#x6548;&#x7684;&#x4FE1;&#x606F;&#xFF1F;&#xFF09;&#x548C;&#x7EC4;&#x7EC7;&#x9636;&#x6BB5;&#xFF08;&#x5982;&#x4F55;&#x9AD8;&#x6548;&#x7EC4;&#x7EC7;&#x7B5B;&#x9009;&#x540E;&#x7684;&#x4FE1;&#x606F;&#xFF09;&#x89E3;&#x653E;&#x51FA;&#x6765;</p>
+</blockquote>
+<p><img src="https://mermaid.ink/img/pako:eNqrVkrOT0lVslJKL0osyFDwCYrJc9JwzywueTZl28vZbU8n9TybuuX5hLYn-xc-a1z_bNcETaACBV1dOwVnjaDg4KdLWoCSQFXOGYkl7gEhTzvans0DqXEGq3HRgIo_393yfHc7UJ17ZklGadLTtTOeNq0AKnMBK3PTCEnNATog98XaZU8ndj3raXy-e-2zKTtf7J8NVOMGVKPwZM-Mpz3T4K4Aa3NCkYM45cXylqcdMyEOVNJRyk0tyk3MTAH6rzomT0EhRqkkIzU3NUbJCshMSU1LLM0piVGKyasFKk0sLckPrsxLVrJKS8wpTtVRKi1ISSxJdclMBLkMLpqaklmSX-QLCTRw2OkoFSTmReXnw9TUAgDzpJLH?type=png" alt=""></p>
+<pre><code class="lang-mermaid">graph LR
+B(Gist&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;&#x4FE1;&#x606F;&#x6E90;)
+B --&gt; C(RSS&#x5904;&#x7406;&#x548C;ChatGPT&#x5206;&#x6790;)
+C --&gt; D(ChatGPT&#x7EC4;&#x7EC7;&#x548C;Github&#x5B58;&#x50A8;)
+D --&gt; F(Telgram&#x8B66;&#x544A;&#x6301;&#x7EED;&#x6539;&#x8FDB;)
+F -- &#x4F18;&#x5316;&#x4FE1;&#x606F;&#x6E90; --&gt; B
+F -- &#x4F18;&#x5316;&#x5904;&#x7406;&#x89C4;&#x5219; --&gt; C
+</code></pre>
+<ol>
+<li>&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;&#xFF1A;&#x5C06;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x606F;&#x6536;&#x96C6;&#x5230;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x548C;&#x6574;&#x7406;&#x3002;</li>
+<li>&#x5904;&#x7406;&#x548C;&#x5206;&#x6790;&#xFF1A;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x5904;&#x7406;&#xFF0C;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x884C;&#x52A8;&#x548C;&#x4F18;&#x5148;&#x7EA7;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;GTD&#x65B9;&#x6CD5;&#x3001;&#x4FE1;&#x606F;&#x52A0;&#x5DE5;&#x6A21;&#x578B;&#x7B49;&#x3002;</li>
+<li>&#x7EC4;&#x7EC7;&#x548C;&#x5B58;&#x50A8;&#xFF1A;&#x5C06;&#x5DF2;&#x7ECF;&#x5904;&#x7406;&#x548C;&#x5206;&#x6790;&#x8FC7;&#x7684;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x7EC4;&#x7EC7;&#x548C;&#x5B58;&#x50A8;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x67E5;&#x627E;&#x548C;&#x4F7F;&#x7528;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5206;&#x7C7B;&#x3001;&#x6807;&#x7B7E;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x6301;&#x7EED;&#x6539;&#x8FDB;&#xFF1A;&#x5B9A;&#x671F;&#x56DE;&#x987E;&#x548C;&#x53CD;&#x601D;&#x81EA;&#x5DF1;&#x7684;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x56DE;&#x987E;&#x548C;&#x53CD;&#x601D;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x4E0D;&#x65AD;&#x6539;&#x8FDB;&#x81EA;&#x5DF1;&#x7684;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x548C;&#x6548;&#x679C;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6253;&#x9020;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4E0D;&#x65AD;&#x5730;&#x5B66;&#x4E60;&#x548C;&#x5B9E;&#x8DF5;&#xFF0C;&#x7ED3;&#x5408;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x548C;&#x9700;&#x8981;&#xFF0C;&#x4E0D;&#x65AD;&#x4F18;&#x5316;&#x548C;&#x6539;&#x8FDB;&#x7684;&#x3002;</li>
+</ol>
+<h3 id="&#x4FE1;&#x606F;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;">&#x4FE1;&#x606F;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;</h3>
+<ol>
+<li>&#x4EBA;&#x6BCF;&#x5929;&#x7684;&#x8BA4;&#x77E5;&#x8D44;&#x6E90;&#x548C;&#x610F;&#x5FD7;&#x529B;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x6D88;&#x8017;&#x54C1;&#x3002;</li>
+<li>&#x88AB;&#x52A8;&#x7B49;&#x7740;&#x65F6;&#x95F4;&#x7EBF;&#x4E0A;&#x628A;&#x793E;&#x4F1A;&#x65B0;&#x95FB;&#x5582;&#x5230;&#x5634;&#x91CC;&#xFF0C;&#x6211;&#x5BF9;&#x4E8E;&#x4E16;&#x754C;&#x5728;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x662F;&#x6BEB;&#x65E0;&#x611F;&#x77E5;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#xFF0C;&#x6CA1;&#x6709;&#x5EFA;&#x7ACB;&#x8D77;&#x6765;&#x81EA;&#x5DF1;&#x7684;&#x4E3B;&#x52A8;&#x4FE1;&#x606F;&#x6E90;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x4E0D;&#x5B9A;&#x671F;&#x5730;&#x5BA1;&#x89C6;&#x6838;&#x5FC3;&#x4FE1;&#x606F;&#x6E90;&#xFF0C;&#x4FDD;&#x6301;&#x8D28;&#x91CF;&#xFF0C;&#x9632;&#x6B62;&#x4FE1;&#x606F;&#x8327;&#x623F;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x6570;&#x636E;&#xFF1A;&#x770B;&#x7EDF;&#x8BA1;&#x7F51;&#x7AD9;&#x3001;&#x8BFB;&#x6743;&#x5A01;&#x5206;&#x6790;&#x62A5;&#x544A;&#x3001;&#x81EA;&#x5DF1;&#x722C;&#x6570;&#x636E;&#x6216;&#x4E70;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x4FE1;&#x606F;&#xFF1A;&#x8BFB;&#x4F18;&#x8D28;&#x65B0;&#x95FB;&#x6E90;&#x3001;RSS&#x8BA2;&#x9605;&#x535A;&#x5BA2;&#x3001;&#x5185;&#x5BB9;&#x5E73;&#x53F0;&#x4E0A;follow&#x4E00;&#x4E9B;&#x4EBA;&#x4E0E;&#x8BDD;&#x9898;&#x3001;&#x5230;&#x884C;&#x4E1A;&#x5708;&#x5B50;&#x91CC;&#x4EA4;&#x6D41;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x77E5;&#x8BC6;&#xFF1A;&#x8BFB;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x7684;&#x5143;&#x7ECF;&#x5178;&#x3001;&#x5B66;&#x4F53;&#x7CFB;&#x5316;&#x7684;&#x8BFE;&#x7A0B;&#x3001;&#x7528;&#x7B14;&#x8BB0;&#x5DE5;&#x5177;&#x6574;&#x7406;&#x4E00;&#x4EFD;&#x67D0;&#x7EC6;&#x5206;&#x4E3B;&#x9898;&#x7684;&#x767E;&#x79D1;&#x3001;&#x5236;&#x4F5C;&#x67D0;&#x7EC6;&#x5206;&#x4E3B;&#x9898;&#x7684;&#x77E5;&#x8BC6;&#x5730;&#x56FE;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x7ECF;&#x9A8C;&#xFF1A;&#x5927;&#x91CF;&#x5B9E;&#x8DF5;&#x3001;&#x901A;&#x8FC7;&#x505A;&#x9879;&#x76EE;&#x6765;&#x5B66;&#x4E60;&#x3001;&#x8BB0;&#x65E5;&#x8BB0;&#x4E0E;&#x5468;&#x590D;&#x76D8;&#x3001;&#x5411;&#x4E13;&#x5BB6;&#x54A8;&#x8BE2;&#x3001;&#x52A0;&#x5165;&#x793E;&#x7FA4;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x8D44;&#x6E90;&#xFF1A;&#x5E26;&#x7740;&#x4E1A;&#x52A1;&#x4EA4;&#x670B;&#x53CB;&#x3001;&#x6301;&#x7EED;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x3001;&#x8BA4;&#x8BC6;&#x5173;&#x952E;&#x4EBA;&#x7269;&#xFF08;&#x4ED6;&#x662F;&#x4E00;&#x4E2A;&#x4EBA;&#x9645;&#x7F51;&#x7EDC;&#x7684;&#x5173;&#x952E;&#x8282;&#x70B9;&#xFF09;&#x3001;&#x53C2;&#x52A0;&#x996D;&#x5C40;&#x4E0E;&#x7EC4;&#x7EC7;&#x996D;&#x5C40;&#x3002;</li>
+<li>&#x8981;&#x83B7;&#x5F97;&#x667A;&#x6167;&#xFF1A;&#x5B66;&#x54F2;&#x5B66;/&#x903B;&#x8F91;/&#x6279;&#x5224;&#x6027;&#x601D;&#x7EF4;&#x3001;&#x5B66;&#x4E60;&#x4E0E;&#x8FD0;&#x7528;&#x601D;&#x7EF4;&#x6A21;&#x578B;&#x3001;&#x8BFB;&#x5386;&#x53F2;&#x5E76;&#x5199;&#x8BFB;&#x53F2;&#x672D;&#x8BB0;&#x3001;&#x5728;&#x4E0E;&#x4ED6;&#x4EBA;&#x7684;&#x4E92;&#x52A8;&#x4E2D;&#x7406;&#x89E3;&#x4EBA;&#x6027;&#x3001;&#x51A5;&#x60F3;&#x5185;&#x89C2;&#x3002;</li>
+</ol>
+<p><img src="https://mermaid.ink/img/pako:eNqdVd1u2lgQfhXLe0MkIq2B9oKVVkpCoa1aadXkau1eOMEUtMSkYNRWVSVIGvJHAmna0CWkLDS0lA2EKG1KSFNexnNsv0XHHNtJml7s9lx5vpn5Zs7MnPFTdiYRllg_-yApzkWZO_cEOZWepgLsbRsLTXVQI9kDQWbwjHG8LD1KxSVFkZL3LczDa3tf1f4e5Bahc2KjXh46b0jpmGx3jdKpjfp4bW1f-3cN1svQqSMqyWFBFuQxjhkdZe5NTpLVLShsu8lBATabZKNpZLJqL0P2a6j_nRl3TUlxTG6WmU4obiNT1gdLRn3TyG7pgx29loflnHZ4OoJ8nqt8ex-u8qGl94qlmfWPLH3_LUfzPk4N9fdvIXdklDpG_TWtQYgnr7pkvWOV5CavVRv6Qc4Sb_HaacFo5S3xNk8yu3pm4bxSDjM5renHR9A4g8YSDBYscg_Hk4269rFOKi0kNuo5qFbv20oPD4VNbaOLTVH7a9rKhx_xHi8b2bfQPFRPipafF0kvtjHkxZ6__ARnhw7g5Y3qEXo4gI8nL9qXenw-VzSHSl_9UrbMfRwPvXmo9GG1STJZm8Xn4bGraq-sH6_B6uCca5xzkRWEmtApk0qV7HzEBPX3z2H575FhFyZcE1FRCf0xZU4Koy-1TOJ_lrT2V5yOlPIkLjHjHBOJxeP-XyKRGTxuJqUkE39JpvwrHlsefRQLK1G_Z-7xbxj3O3JKrLV3jMyKQzzx_3knkHf00rAMAwXsQDQOjjd5U6TXgPy2EzDwswG_myEa01FeGITLmosNNDWBy-3NLeLaILsN0rcGaOwaT0oN6PX0ThfOXtnL4DqvnrzTDtfJ7jwMStr-S1TbLR67Zj62O4kHk9JDxnQelIY5BDnUXb-go262SpADNFXOBe3XMI8l64ZiSjQ9jcUKcEPdDRe6pqSHdH1QLRTzpN2gDxMtb1ixXPRtap2aVsypvTbWiPo6pQ_-xBAFaR5BFxQ3ccdCYd14t4yMwSEcwqh0n7ZeqGdbDn4Tr7S4r34pQeGzA97iXGqvpfb7dKE6-G18H6sZUjlAKsj3R1g3OyslZ8VYGFf9U7P-AqtEpVlJYP34GZYiYjquCKwgP0NTMa0kJp_IM6w_IsZTkptNz4VFRQrERHP3OqgUjimJ5F36_xj-RtzsnCj_mUjYNs--ATvn3vY?type=png" alt=""></p>
+<pre><code class="lang-mermaid">graph LR
+subgraph &#x5916;&#x90E8;&#x4FE1;&#x606F;
+    A1[newsletter]
+    A2[&#x793E;&#x4EA4;&#x5185;&#x5BB9;]
+    A3[&#x5B9E;&#x65F6;&#x65B0;&#x95FB;]
+    A4[&#x72EC;&#x7ACB;&#x535A;&#x5BA2;]
+end
+
+A1 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B(Telgram bot,&#x901A;&#x8FC7;&#x9891;&#x9053;&#x8FDB;&#x884C;&#x5206;&#x7C7B;)
+A2 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5929;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
+A3 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x65F6;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
+A4 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
+
+subgraph &#x89E3;&#x51B3;&#x95EE;&#x9898;
+    G[&#x6570;&#x636E;]
+    H[&#x77E5;&#x8BC6;]
+    I[&#x7ECF;&#x9A8C;]
+    J[&#x601D;&#x8003;]
+end
+
+subgraph &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3;
+    G21[&#x63A2;&#x7D22;&#x672A;&#x77E5;&#x9886;&#x57DF;]
+    G22[&#x53D1;&#x73B0;&#x65B0;&#x4E8B;&#x7269;]
+end
+
+subgraph &#x6D88;&#x9063;&#x5A31;&#x4E50;
+    G31[&#x65B0;&#x95FB;]
+    G32[&#x7535;&#x5F71;]
+    G33[&#x97F3;&#x4E50;]
+    G34[&#x64AD;&#x5BA2;]
+end
+
+subgraph &#x53D1;&#x73B0;&#x673A;&#x4F1A;
+    G41[&#x5E02;&#x573A;&#x52A8;&#x6001;]
+    G42[&#x884C;&#x4E1A;&#x8D8B;&#x52BF;]
+end
+
+B1(&#x624B;&#x52A8;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x89C4;&#x5219;) --&gt; C(ChatGPT bot &#x81EA;&#x52A8;&#x6807;&#x7B7E;)
+style B1 fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+B --&gt; C(ChatGPT &#x81EA;&#x52A8;&#x7B5B;&#x9009;)
+style C fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+C --- &#x89E3;&#x51B3;&#x95EE;&#x9898; --&gt; D(ChatGPT&#x81EA;&#x52A8;&#x5206;&#x6790;&#x6807;&#x7B7E;&#x5316;)
+style D fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+C --- &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3; --&gt; D
+C --- &#x6D88;&#x9063;&#x5A31;&#x4E50; --&gt; D
+C --- &#x53D1;&#x73B0;&#x673A;&#x4F1A; --&gt;D
+
+subgraph &#x5185;&#x90E8;&#x6765;&#x6E90;
+    A5[&#x65E5;&#x5E38;&#x8BB0;&#x5F55;]
+    A6[&#x4E66;&#x7C4D;&#x6742;&#x5FD7;&#x7B14;&#x8BB0;]
+end
+A5 -- LogSeq &#x65E5;&#x5FD7; --&gt; F1
+A6 -- LogSeq &#x7B14;&#x8BB0;--&gt; F1
+
+D --&gt; D1(&#x5B58;&#x50A8;&#x5230;Github)
+D1 --&gt; E(Logseq&#x901A;&#x8FC7;Github&#x540C;&#x6B65;&#x6570;&#x636E;)
+E --&gt; F1(&#x77E5;&#x8BC6;&#x7BA1;&#x7406;&#x4E2D;&#x5FC3;Logseq)
+style F1 fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+F1 --&gt; F(&#x5411;&#x5916;&#x53CD;&#x9988;)
+F --&gt; G1(&#x793E;&#x4EA4;&#x5A92;&#x4F53;)
+F --&gt; H1(&#x516C;&#x4F17;&#x53F7;)
+F --&gt; I1(&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;)
+F --&gt; J1(&#x6280;&#x672F;&#x793E;&#x533A;)
+</code></pre>
+<h3 id="&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x7406;&#x8BBA;&#x6765;&#x6E90;">&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x7406;&#x8BBA;&#x6765;&#x6E90;</h3>
+<h4 id="gtd&#xFF08;get-things-done&#xFF09;&#x7406;&#x8BBA;">GTD&#xFF08;Get Things Done&#xFF09;&#x7406;&#x8BBA;</h4>
+<blockquote>
+<p>&#x8BE5;&#x7406;&#x8BBA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x7B80;&#x5355;&#x7684;&#x3001;&#x53EF;&#x64CD;&#x4F5C;&#x7684;&#x4E2A;&#x4EBA;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x6709;&#x6548;&#x5730;&#x7EC4;&#x7EC7;&#x548C;&#x5904;&#x7406;&#x5404;&#x79CD;&#x4EFB;&#x52A1;&#x548C;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x5C06;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x548C;&#x4FE1;&#x606F;&#x6536;&#x96C6;&#x5230;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x907F;&#x514D;&#x9057;&#x6F0F;&#x548C;&#x6DF7;&#x4E71;&#x3002;</li>
+<li>&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x5904;&#x7406;&#xFF0C;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x6B65;&#x884C;&#x52A8;&#x548C;&#x4F18;&#x5148;&#x7EA7;&#x3002;</li>
+<li>&#x5C06;&#x4EFB;&#x52A1;&#x548C;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x7EC4;&#x7EC7;&#x548C;&#x5B58;&#x50A8;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x67E5;&#x627E;&#x548C;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x5B9A;&#x671F;&#x56DE;&#x987E;&#x548C;&#x53CD;&#x601D;&#x81EA;&#x5DF1;&#x7684;&#x4EFB;&#x52A1;&#x548C;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x627E;&#x51FA;&#x95EE;&#x9898;&#x548C;&#x6539;&#x8FDB;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x4E0D;&#x65AD;&#x4F18;&#x5316;&#x548C;&#x6539;&#x8FDB;&#x4E2A;&#x4EBA;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#xFF0C;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x548C;&#x6548;&#x679C;&#x3002;</li>
+</ul>
+</blockquote>
+<h4 id="&#x4FE1;&#x606F;&#x52A0;&#x5DE5;&#x6A21;&#x578B;">&#x4FE1;&#x606F;&#x52A0;&#x5DE5;&#x6A21;&#x578B;</h4>
+<blockquote>
+<p>&#x8BE5;&#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7406;&#x8BBA;&#x6846;&#x67B6;&#xFF0C;&#x7528;&#x4E8E;&#x7406;&#x89E3;&#x4EBA;&#x7C7B;&#x5982;&#x4F55;&#x5904;&#x7406;&#x548C;&#x8BB0;&#x5FC6;&#x4FE1;&#x606F;&#x3002;&#x8BE5;&#x6A21;&#x578B;&#x5305;&#x62EC;&#x611F;&#x77E5;&#x3001;&#x7F16;&#x7801;&#x3001;&#x5B58;&#x50A8;&#x3001;&#x68C0;&#x7D22;&#x548C;&#x9057;&#x5FD8;&#x7B49;&#x8FC7;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x66F4;&#x597D;&#x5730;&#x5904;&#x7406;&#x548C;&#x7BA1;&#x7406;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x611F;&#x77E5;&#xFF1A;&#x6CE8;&#x610F;&#x529B;&#x548C;&#x611F;&#x77E5;&#x662F;&#x4FE1;&#x606F;&#x52A0;&#x5DE5;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x548C;&#x7B5B;&#x9009;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x7F16;&#x7801;&#xFF1A;&#x5C06;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x548C;&#x5904;&#x7406;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x7684;&#x5F62;&#x5F0F;&#x3002;</li>
+<li>&#x5B58;&#x50A8;&#xFF1A;&#x5C06;&#x7F16;&#x7801;&#x540E;&#x7684;&#x4FE1;&#x606F;&#x5B58;&#x50A8;&#x5728;&#x8BB0;&#x5FC6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5305;&#x62EC;&#x77ED;&#x671F;&#x8BB0;&#x5FC6;&#x548C;&#x957F;&#x671F;&#x8BB0;&#x5FC6;&#x3002;</li>
+<li>&#x68C0;&#x7D22;&#xFF1A;&#x4ECE;&#x5B58;&#x50A8;&#x7684;&#x4FE1;&#x606F;&#x4E2D;&#x68C0;&#x7D22;&#x51FA;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x5229;&#x7528;&#x8BB0;&#x5FC6;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x548C;&#x8054;&#x60F3;&#x3002;</li>
+<li>&#x9057;&#x5FD8;&#xFF1A;&#x6839;&#x636E;&#x9700;&#x8981;&#x6E05;&#x7406;&#x548C;&#x9057;&#x5FD8;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x4FDD;&#x6301;&#x4FE1;&#x606F;&#x7CFB;&#x7EDF;&#x7684;&#x6E05;&#x6670;&#x548C;&#x9AD8;&#x6548;&#x3002;</li>
+</ul>
+</blockquote>
+<h4 id="&#x5927;&#x8111;&#x8BB0;&#x5FC6;&#x6A21;&#x578B;">&#x5927;&#x8111;&#x8BB0;&#x5FC6;&#x6A21;&#x578B;</h4>
+<blockquote>
+<p>&#x8BE5;&#x6A21;&#x578B;&#x57FA;&#x4E8E;&#x5927;&#x8111;&#x5982;&#x4F55;&#x8BB0;&#x5FC6;&#x4FE1;&#x606F;&#x7684;&#x7406;&#x8BBA;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5B9E;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x8BB0;&#x5FC6;&#x5BAB;&#x6BBF;&#x6CD5;&#x3001;&#x5206;&#x7EC4;&#x548C;&#x8054;&#x60F3;&#x7B49;&#x6280;&#x5DE7;&#x6765;&#x63D0;&#x9AD8;&#x8BB0;&#x5FC6;&#x548C;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x80FD;&#x529B;&#x3002;</p>
+<ul>
+<li>&#x8BB0;&#x5FC6;&#x5BAB;&#x6BBF;&#x6CD5;&#xFF1A;&#x901A;&#x8FC7;&#x5C06;&#x9700;&#x8981;&#x8BB0;&#x5FC6;&#x7684;&#x4FE1;&#x606F;&#x4E0E;&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x76F8;&#x7ED3;&#x5408;&#xFF0C;&#x5229;&#x7528;&#x7A7A;&#x95F4;&#x8BB0;&#x5FC6;&#x6765;&#x589E;&#x5F3A;&#x4FE1;&#x606F;&#x8BB0;&#x5FC6;&#x3002;</li>
+<li>&#x5206;&#x7EC4;&#xFF1A;&#x5C06;&#x4FE1;&#x606F;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5F8B;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x548C;&#x5206;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x4FE1;&#x606F;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x7684;&#x6548;&#x7387;&#x3002;</li>
+<li>&#x8054;&#x60F3;&#xFF1A;&#x901A;&#x8FC7;&#x4E0E;&#x5DF2;&#x7ECF;&#x8BB0;&#x5FC6;&#x7684;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x8054;&#x60F3;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x8BB0;&#x5FC6;&#x548C;&#x4F7F;&#x7528;&#x65B0;&#x7684;&#x4FE1;&#x606F;&#x3002;</li>
+</ul>
+</blockquote>
+<h4 id="&#x65F6;&#x95F4;&#x7BA1;&#x7406;&#x7406;&#x8BBA;">&#x65F6;&#x95F4;&#x7BA1;&#x7406;&#x7406;&#x8BBA;</h4>
+<blockquote>
+<p>&#x8BE5;&#x7406;&#x8BBA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x548C;&#x6280;&#x5DE7;&#xFF0C;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x66F4;&#x597D;&#x5730;&#x7BA1;&#x7406;&#x65F6;&#x95F4;&#xFF0C;&#x907F;&#x514D;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;&#xFF0C;&#x63D0;&#x9AD8;&#x5DE5;&#x4F5C;&#x6548;&#x7387;&#x3002;</p>
+<ul>
+<li>&#x65F6;&#x95F4;&#x56DE;&#x987E;&#xFF1A;&#x5BF9;&#x8FC7;&#x53BB;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x56DE;&#x987E;&#x548C;&#x5206;&#x6790;&#xFF0C;&#x627E;&#x51FA;&#x65F6;&#x95F4;&#x6D6A;&#x8D39;&#x7684;&#x539F;&#x56E0;&#x548C;&#x6539;&#x8FDB;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x4EFB;&#x52A1;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;&#x786E;&#x5B9A;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x5C06;&#x65F6;&#x95F4;&#x548C;&#x7CBE;&#x529B;&#x96C6;&#x4E2D;&#x5728;&#x6700;&#x91CD;&#x8981;&#x548C;&#x7D27;&#x6025;&#x7684;&#x4EFB;&#x52A1;&#x4E0A;&#x3002;</li>
+<li>&#x65F6;&#x95F4;&#x5757;&#xFF1A;&#x5C06;&#x65F6;&#x95F4;&#x5206;&#x5272;&#x6210;&#x5757;&#xFF0C;&#x96C6;&#x4E2D;&#x7CBE;&#x529B;&#x5B8C;&#x6210;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#xFF0C;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x548C;&#x4E13;&#x6CE8;&#x5EA6;&#x3002;</li>
+<li>&#x65F6;&#x95F4;&#x89C4;&#x5212;&#xFF1A;&#x5408;&#x7406;&#x89C4;&#x5212;&#x65F6;&#x95F4;&#xFF0C;&#x907F;&#x514D;&#x65F6;&#x95F4;&#x6D6A;&#x8D39;&#x548C;&#x62D6;&#x5EF6;&#x3002;</li>
+</ul>
+</blockquote>
+<h3 id="&#x4E00;&#x4E9B;&#x5B9E;&#x8DF5;&#x6846;&#x67B6;&#x3010;&#x8865;&#x5145;&#x3011;">&#x4E00;&#x4E9B;&#x5B9E;&#x8DF5;&#x6846;&#x67B6;&#x3010;&#x8865;&#x5145;&#x3011;</h3>
+<h4 id="&#x6DF7;&#x4E71;&#x7684;&#x4FE1;&#x606F;&#x6D41;&#x4E0E;&#x7B56;&#x5C55;&#x5F0F;&#x9605;&#x8BFB;"><a href="https://xiaoxinhao.zeabur.app/article/read-information" target="_blank">&#x6DF7;&#x4E71;&#x7684;&#x4FE1;&#x606F;&#x6D41;&#x4E0E;&#x7B56;&#x5C55;&#x5F0F;&#x9605;&#x8BFB;</a></h4>
+<blockquote>
+<p>&#x6536;&#x83B7;&#xFF1A;&#x68B3;&#x7406;&#x4F60;&#x7684;&#x5168;&#x90E8;&#x4FE1;&#x606F;&#x8F93;&#x5165;&#x6E20;&#x9053;&#xFF0C;&#x6309;&#x7167; <strong>&#x611F;&#x5174;&#x8DA3;&#x7684;</strong>&#x3001;<strong>&#x60F3;&#x63A2;&#x7D22;&#x7684;</strong>&#x3001;<strong>&#x60F3;&#x63D0;&#x5347;&#x7684;</strong> &#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7EC4;&#x7EC7;&#xFF0C;&#x4EE5;&#x6B64;&#x6784;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x4FE1;&#x606F;&#x6C60;&#xFF0C;&#x968F;&#x7740;&#x81EA;&#x5DF1;&#x7684;&#x8BA4;&#x77E5;&#x80FD;&#x529B;&#x63D0;&#x9AD8;&#x548C;&#x5173;&#x6CE8;&#x70B9;&#x53D8;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x4FE1;&#x606F;&#x6C60;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#xFF0C;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x7684;&#x201D;&#x4FE1;&#x606F;&#x8327;&#x623F;&#x201C;&#x3002;</p>
+<p>&#x7F3A;&#x9677;&#xFF1A;&#x63D0;&#x5230;&#x4FE1;&#x606F;&#x7684;&#x9ED1;&#x6697;&#x68EE;&#x6797;&#x6982;&#x5FF5;&#x4EE5;&#x53CA;&#x5E94;&#x5BF9;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x53EA;&#x662F;&#x4E00;&#x4E9B;&#x6B63;&#x786E;&#x7684;&#x5E9F;&#x8BDD;&#xFF0C;&#x8BF4;&#x7684;&#x90FD;&#x5BF9;&#x4F46;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x5B9E;&#x9645;&#x53EF;&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x6280;&#x5DE7;&#x6765;&#x5E94;&#x5BF9;&#x4FE1;&#x606F;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x548C;&#x590D;&#x6742;&#x6027;&#x3002;</p>
+</blockquote>
+<h4 id="&#x4FE1;&#x606F;&#x6D41;&#x8F6C;&#x5B66;"><a href="https://gofurther.feishu.cn/docx/OqQ2dgVUzoZeB3xuXM0cZjnbnqc" target="_blank">&#x4FE1;&#x606F;&#x6D41;&#x8F6C;&#x5B66;</a></h4>
+<blockquote>
+<p>&#x6536;&#x83B7;&#xFF1A;&#x56F4;&#x7ED5;&#x4FE1;&#x606F;&#x6D41;&#x8F6C;&#x4E09;&#x73AF;&#x8282;<code>&#x8F93;&#x5165;&#x3001;&#x5904;&#x7406;&#x548C;&#x8F93;&#x51FA;</code>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x53EF;&#x64CD;&#x4F5C;&#x5B9E;&#x8DF5;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#x3002;&#x7AD9;&#x5728;&#x7F16;&#x7A0B;&#x7684;&#x89D2;&#x5EA6;&#x6700;&#x6613;&#x7406;&#x89E3;&#xFF0C;&#x65B9;&#x6CD5;&#x8BBA;&#x5C31;&#x662F;<code>&#x6570;&#x636E;&#x7ED3;&#x6784;+&#x7B97;&#x6CD5;</code>&#x4E2D;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;<a href="https://gofurther.feishu.cn/docs/doccnbZAjYhNeH6q0MZVasdrXLb#y93J7e" target="_blank">&#x77E5;&#x8BC6;&#x8D34;&#x8EAB;&#x5EA6;</a>&#x548C;<a href="https://gofurther.feishu.cn/docs/doccnbZAjYhNeH6q0MZVasdrXLb#Qz3RJ4" target="_blank">&#x9886;&#x57DF;&#x638C;&#x63E1;&#x5EA6;</a>&#x7684;&#x6307;&#x6807;&#x6765;&#x91CF;&#x5316;&#x4FE1;&#x606F;&#x7406;&#x89E3;&#x7A0B;&#x5EA6;&#x3002;</p>
+</blockquote>
+<h3 id="&#x6539;&#x5584;&#x601D;&#x7EF4;&#x7684;&#x5DE5;&#x5177;">&#x6539;&#x5584;&#x601D;&#x7EF4;&#x7684;&#x5DE5;&#x5177;</h3>
+<blockquote>
+<p>&#x4E00;&#x7CFB;&#x5217;&#x601D;&#x7EF4;&#x5DE5;&#x5177;&#x548C;&#x6846;&#x67B6;&#xFF0C;&#x5E2E;&#x52A9;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x505A;&#x51FA;&#x51B3;&#x7B56;&#x548C;&#x7406;&#x89E3;&#x7CFB;&#x7EDF;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x56DB;&#x4E2A;&#x65B9;&#x9762;&#x8FDB;&#x884C;&#x4E0D;&#x4E25;&#x683C;&#x5206;&#x7C7B;&#xFF0C;&#x9002;&#x7528;&#x65B9;&#x5411;&#x6709;&#x4EA4;&#x53C9;&#xFF0C;&#x90E8;&#x5206;&#x5DE5;&#x5177;&#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x5B66;&#x4E60;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x4F53;&#x7CFB;&#x7684;&#x4E86;&#x89E3;&#x8FC7;&#x3002;
+<a href="https://dropbox.design/article/mental-models-for-designers" target="_blank">&#x8BBE;&#x8BA1;&#x5E08;&#x7684;&#x5FC3;&#x667A;&#x6A21;&#x578B;</a></p>
+</blockquote>
+<h4 id="&#x7CFB;&#x7EDF;&#x5316;&#x601D;&#x7EF4;"><a href="04-1.html">&#x7CFB;&#x7EDF;&#x5316;&#x601D;&#x7EF4;</a></h4>
+<h4 id="&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;"><a href="04-2.html">&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;</a></h4>
+<h4 id="&#x89E3;&#x51B3;&#x95EE;&#x9898;"><a href="04-3.html">&#x89E3;&#x51B3;&#x95EE;&#x9898;</a></h4>
+<h4 id="&#x6C9F;&#x901A;"><a href="04-4.html">&#x6C9F;&#x901A;</a></h4>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="04-1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 系统化思维">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"个人信息处理系统","level":"1.7","depth":1,"next":{"title":"系统化思维","level":"1.7.1","depth":2,"path":"04-message/04-1.md","ref":"./04-message/04-1.md","articles":[]},"previous":{"title":"上线效果","level":"1.6.3","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"04-message/readme.md","mtime":"2023-06-12T06:40:03.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-12T07:12:09.829Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

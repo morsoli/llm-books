@@ -1,0 +1,671 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>OpenAI API解读 · 利用 LLM 构建应用实践指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莫尔索">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01-4.html" />
+    
+    
+    <link rel="prev" href="01-2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-1.html">
+            
+                <a href="01-1.html">
+            
+                    
+                    大语言模型概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-1.html">
+            
+                <a href="01-1.html">
+            
+                    
+                    大语言模型发展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="01-2.html">
+            
+                <a href="01-2.html">
+            
+                    
+                    你好, ChatGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="01-3.html">
+            
+                <a href="01-3.html">
+            
+                    
+                    OpenAI API解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="01-4.html">
+            
+                <a href="01-4.html">
+            
+                    
+                    实现一个套壳机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-langchain/02-1.html">
+            
+                <a href="../02-langchain/02-1.html">
+            
+                    
+                    LangChain入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02-langchain/02-1.html">
+            
+                <a href="../02-langchain/02-1.html">
+            
+                    
+                    LangChain介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02-langchain/02-2.html">
+            
+                <a href="../02-langchain/02-2.html">
+            
+                    
+                    源码组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02-langchain/02-3.html">
+            
+                <a href="../02-langchain/02-3.html">
+            
+                    
+                    实现领域内搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02-langchain/02-4.html">
+            
+                <a href="../02-langchain/02-4.html">
+            
+                    
+                    实现一个自定义问答机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-llamaIndex/03-2.html">
+            
+                <a href="../03-llamaIndex/03-2.html">
+            
+                    
+                    源码组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03-llamaIndex/03-3.html">
+            
+                <a href="../03-llamaIndex/03-3.html">
+            
+                    
+                    非结构化数据作为数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    HuggingGPT 实现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    HuggingFace 介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    HuggingFace 模型分类
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    多模态任务设计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    自己实现一个 AutoGPT
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    实战个人信息处理系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    需求分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    模块设计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    上线效果
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../04-message/readme.html">
+            
+                <a href="../04-message/readme.html">
+            
+                    
+                    个人信息处理系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../04-message/04-1.html">
+            
+                <a href="../04-message/04-1.html">
+            
+                    
+                    系统化思维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../04-message/04-2.html">
+            
+                <a href="../04-message/04-2.html">
+            
+                    
+                    决策过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../04-message/04-3.html">
+            
+                <a href="../04-message/04-3.html">
+            
+                    
+                    解决问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../04-message/04-4.html">
+            
+                <a href="../04-message/04-4.html">
+            
+                    
+                    沟通
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ref/ref.html">
+            
+                <a href="../ref/ref.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../ref/a16z.html">
+            
+                <a href="../ref/a16z.html">
+            
+                    
+                    A16Z推荐的AI学习清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >OpenAI API解读</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x662F;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6765;&#x5904;&#x7406;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x3002;Transformer&#x662F;&#x4E00;&#x79CD;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x67B6;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x6CE8;&#x610F;&#x673A;&#x5236;&#x5B66;&#x4E60;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x5B83;&#x4EEC;&#x4E8E;2017&#x5E74;&#x7531;Google Brain&#x7684;&#x4E00;&#x4E2A;&#x56E2;&#x961F;&#x5F15;&#x5165;&#xFF0C;&#x5E76;&#x5DF2;&#x6210;&#x4E3A;LLM&#x7814;&#x7A76;&#x7684;&#x70ED;&#x95E8;&#x3002;&#x57FA;&#x4E8E;&#x53D8;&#x6362;&#x5668;&#x7684;LLM&#x7684;&#x4E00;&#x4E9B;&#x793A;&#x4F8B;&#x662F;BERT&#x3001;GPT-3&#x3001;T5&#x548C;Megatron-LM&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-2.html" class="navigation navigation-prev " aria-label="Previous page: 你好, ChatGPT">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01-4.html" class="navigation navigation-next " aria-label="Next page: 实现一个套壳机器人">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OpenAI API解读","level":"1.2.3","depth":2,"next":{"title":"实现一个套壳机器人","level":"1.2.4","depth":2,"path":"01-llm/01-4.md","ref":"./01-llm/01-4.md","articles":[]},"previous":{"title":"你好, ChatGPT","level":"1.2.2","depth":2,"path":"01-llm/01-2.md","ref":"./01-llm/01-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-3.md","mtime":"2023-06-02T08:51:57.847Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-12T07:12:09.829Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

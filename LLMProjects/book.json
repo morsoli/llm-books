@@ -1,0 +1,12 @@
+{
+    "title": "利用 LLM 构建应用实践指南",
+    "author": "莫尔索",
+    "theme-default": {
+        "showLevel": true
+    },
+    "links" : {
+        "sidebar" : {
+            "Home" : ""
+        }
+    }
+}
