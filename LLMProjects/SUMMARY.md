@@ -3,7 +3,7 @@
 * [大语言模型概述](./01-llm/01-1.md)
     * [大语言模型概况](./01-llm/01-1.md)
     * [你好, ChatGPT](./01-llm/01-2.md)
-    * [OpenAI API解读](./01-llm/01-3.md)
+    * [OpenAI 文档解读](./01-llm/01-3.md)
     * [实现一个套壳机器人](./01-llm/01-4.md)
 * [LangChain入门](./02-langchain/02-1.md)
     * [LangChain介绍](./02-langchain/02-1.md)
