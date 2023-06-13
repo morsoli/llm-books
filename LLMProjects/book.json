@@ -8,5 +8,19 @@
         "sidebar" : {
             "Home" : ""
         }
+    },
+    
+    "plugins": [
+        "prism",
+        "prism-themes",
+        "-highlight"
+    ],
+    "pluginsConfig": {
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-solarizedlight.css"
+            ]
+        }
     }
+    
 }

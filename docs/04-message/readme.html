@@ -17,7 +17,7 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
                 
             
                 
@@ -591,13 +591,13 @@
 <p>&#x501F;&#x52A9;ChatGPT&#x6700;&#x64C5;&#x957F;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x8BED;&#x4E49;&#x7406;&#x89E3;&#x80FD;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6700;&#x8017;&#x65F6;&#x7684;&#x5206;&#x6790;&#x9636;&#x6BB5;&#xFF08;&#x4EC0;&#x4E48;&#x662F;&#x6709;&#x6548;&#x7684;&#x4FE1;&#x606F;&#xFF1F;&#xFF09;&#x548C;&#x7EC4;&#x7EC7;&#x9636;&#x6BB5;&#xFF08;&#x5982;&#x4F55;&#x9AD8;&#x6548;&#x7EC4;&#x7EC7;&#x7B5B;&#x9009;&#x540E;&#x7684;&#x4FE1;&#x606F;&#xFF09;&#x89E3;&#x653E;&#x51FA;&#x6765;</p>
 </blockquote>
 <p><img src="https://mermaid.ink/img/pako:eNqrVkrOT0lVslJKL0osyFDwCYrJc9JwzywueTZl28vZbU8n9TybuuX5hLYn-xc-a1z_bNcETaACBV1dOwVnjaDg4KdLWoCSQFXOGYkl7gEhTzvans0DqXEGq3HRgIo_393yfHc7UJ17ZklGadLTtTOeNq0AKnMBK3PTCEnNATog98XaZU8ndj3raXy-e-2zKTtf7J8NVOMGVKPwZM-Mpz3T4K4Aa3NCkYM45cXylqcdMyEOVNJRyk0tyk3MTAH6rzomT0EhRqkkIzU3NUbJCshMSU1LLM0piVGKyasFKk0sLckPrsxLVrJKS8wpTtVRKi1ISSxJdclMBLkMLpqaklmSX-QLCTRw2OkoFSTmReXnw9TUAgDzpJLH?type=png" alt=""></p>
-<pre><code class="lang-mermaid">graph LR
-B(Gist&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;&#x4FE1;&#x606F;&#x6E90;)
-B --&gt; C(RSS&#x5904;&#x7406;&#x548C;ChatGPT&#x5206;&#x6790;)
-C --&gt; D(ChatGPT&#x7EC4;&#x7EC7;&#x548C;Github&#x5B58;&#x50A8;)
-D --&gt; F(Telgram&#x8B66;&#x544A;&#x6301;&#x7EED;&#x6539;&#x8FDB;)
-F -- &#x4F18;&#x5316;&#x4FE1;&#x606F;&#x6E90; --&gt; B
-F -- &#x4F18;&#x5316;&#x5904;&#x7406;&#x89C4;&#x5219; --&gt; C
+<pre class="language-"><code class="lang-mermaid"><span class="token keyword">graph</span> LR
+B<span class="token text string">(Gist&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;&#x4FE1;&#x606F;&#x6E90;)</span>
+B <span class="token arrow operator">--&gt;</span> C<span class="token text string">(RSS&#x5904;&#x7406;&#x548C;ChatGPT&#x5206;&#x6790;)</span>
+C <span class="token arrow operator">--&gt;</span> D<span class="token text string">(ChatGPT&#x7EC4;&#x7EC7;&#x548C;Github&#x5B58;&#x50A8;)</span>
+D <span class="token arrow operator">--&gt;</span> F<span class="token text string">(Telgram&#x8B66;&#x544A;&#x6301;&#x7EED;&#x6539;&#x8FDB;)</span>
+F <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">&#x4F18;&#x5316;&#x4FE1;&#x606F;&#x6E90;</span> <span class="token arrow operator">--&gt;</span></span> B
+F <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">&#x4F18;&#x5316;&#x5904;&#x7406;&#x89C4;&#x5219;</span> <span class="token arrow operator">--&gt;</span></span> C
 </code></pre>
 <ol>
 <li>&#x6536;&#x96C6;&#x548C;&#x6574;&#x7406;&#xFF1A;&#x5C06;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x606F;&#x6536;&#x96C6;&#x5230;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x548C;&#x6574;&#x7406;&#x3002;</li>
@@ -618,69 +618,69 @@ F -- &#x4F18;&#x5316;&#x5904;&#x7406;&#x89C4;&#x5219; --&gt; C
 <li>&#x8981;&#x83B7;&#x5F97;&#x667A;&#x6167;&#xFF1A;&#x5B66;&#x54F2;&#x5B66;/&#x903B;&#x8F91;/&#x6279;&#x5224;&#x6027;&#x601D;&#x7EF4;&#x3001;&#x5B66;&#x4E60;&#x4E0E;&#x8FD0;&#x7528;&#x601D;&#x7EF4;&#x6A21;&#x578B;&#x3001;&#x8BFB;&#x5386;&#x53F2;&#x5E76;&#x5199;&#x8BFB;&#x53F2;&#x672D;&#x8BB0;&#x3001;&#x5728;&#x4E0E;&#x4ED6;&#x4EBA;&#x7684;&#x4E92;&#x52A8;&#x4E2D;&#x7406;&#x89E3;&#x4EBA;&#x6027;&#x3001;&#x51A5;&#x60F3;&#x5185;&#x89C2;&#x3002;</li>
 </ol>
 <p><img src="https://mermaid.ink/img/pako:eNqdVd1u2lgQfhXLe0MkIq2B9oKVVkpCoa1aadXkau1eOMEUtMSkYNRWVSVIGvJHAmna0CWkLDS0lA2EKG1KSFNexnNsv0XHHNtJml7s9lx5vpn5Zs7MnPFTdiYRllg_-yApzkWZO_cEOZWepgLsbRsLTXVQI9kDQWbwjHG8LD1KxSVFkZL3LczDa3tf1f4e5Bahc2KjXh46b0jpmGx3jdKpjfp4bW1f-3cN1svQqSMqyWFBFuQxjhkdZe5NTpLVLShsu8lBATabZKNpZLJqL0P2a6j_nRl3TUlxTG6WmU4obiNT1gdLRn3TyG7pgx29loflnHZ4OoJ8nqt8ex-u8qGl94qlmfWPLH3_LUfzPk4N9fdvIXdklDpG_TWtQYgnr7pkvWOV5CavVRv6Qc4Sb_HaacFo5S3xNk8yu3pm4bxSDjM5renHR9A4g8YSDBYscg_Hk4269rFOKi0kNuo5qFbv20oPD4VNbaOLTVH7a9rKhx_xHi8b2bfQPFRPipafF0kvtjHkxZ6__ARnhw7g5Y3qEXo4gI8nL9qXenw-VzSHSl_9UrbMfRwPvXmo9GG1STJZm8Xn4bGraq-sH6_B6uCca5xzkRWEmtApk0qV7HzEBPX3z2H575FhFyZcE1FRCf0xZU4Koy-1TOJ_lrT2V5yOlPIkLjHjHBOJxeP-XyKRGTxuJqUkE39JpvwrHlsefRQLK1G_Z-7xbxj3O3JKrLV3jMyKQzzx_3knkHf00rAMAwXsQDQOjjd5U6TXgPy2EzDwswG_myEa01FeGITLmosNNDWBy-3NLeLaILsN0rcGaOwaT0oN6PX0ThfOXtnL4DqvnrzTDtfJ7jwMStr-S1TbLR67Zj62O4kHk9JDxnQelIY5BDnUXb-go262SpADNFXOBe3XMI8l64ZiSjQ9jcUKcEPdDRe6pqSHdH1QLRTzpN2gDxMtb1ixXPRtap2aVsypvTbWiPo6pQ_-xBAFaR5BFxQ3ccdCYd14t4yMwSEcwqh0n7ZeqGdbDn4Tr7S4r34pQeGzA97iXGqvpfb7dKE6-G18H6sZUjlAKsj3R1g3OyslZ8VYGFf9U7P-AqtEpVlJYP34GZYiYjquCKwgP0NTMa0kJp_IM6w_IsZTkptNz4VFRQrERHP3OqgUjimJ5F36_xj-RtzsnCj_mUjYNs--ATvn3vY?type=png" alt=""></p>
-<pre><code class="lang-mermaid">graph LR
-subgraph &#x5916;&#x90E8;&#x4FE1;&#x606F;
-    A1[newsletter]
-    A2[&#x793E;&#x4EA4;&#x5185;&#x5BB9;]
-    A3[&#x5B9E;&#x65F6;&#x65B0;&#x95FB;]
-    A4[&#x72EC;&#x7ACB;&#x535A;&#x5BA2;]
-end
+<pre class="language-"><code class="lang-mermaid"><span class="token keyword">graph</span> LR
+<span class="token keyword">subgraph</span> &#x5916;&#x90E8;&#x4FE1;&#x606F;
+    A1<span class="token text string">[newsletter]</span>
+    A2<span class="token text string">[&#x793E;&#x4EA4;&#x5185;&#x5BB9;]</span>
+    A3<span class="token text string">[&#x5B9E;&#x65F6;&#x65B0;&#x95FB;]</span>
+    A4<span class="token text string">[&#x72EC;&#x7ACB;&#x535A;&#x5BA2;]</span>
+<span class="token keyword">end</span>
 
-A1 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B(Telgram bot,&#x901A;&#x8FC7;&#x9891;&#x9053;&#x8FDB;&#x884C;&#x5206;&#x7C7B;)
-A2 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5929;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
-A3 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x65F6;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
-A4 -- RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21; --&gt; B
+A1 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21;</span> <span class="token arrow operator">--&gt;</span></span> B<span class="token text string">(Telgram bot,&#x901A;&#x8FC7;&#x9891;&#x9053;&#x8FDB;&#x884C;&#x5206;&#x7C7B;)</span>
+A2 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">RSS&#x6293;&#x53D6;,&#x6BCF;&#x5929;&#x63A8;&#x9001;&#x4E00;&#x6B21;</span> <span class="token arrow operator">--&gt;</span></span> B
+A3 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">RSS&#x6293;&#x53D6;,&#x6BCF;&#x65F6;&#x63A8;&#x9001;&#x4E00;&#x6B21;</span> <span class="token arrow operator">--&gt;</span></span> B
+A4 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">RSS&#x6293;&#x53D6;,&#x6BCF;&#x5468;&#x63A8;&#x9001;&#x4E00;&#x6B21;</span> <span class="token arrow operator">--&gt;</span></span> B
 
-subgraph &#x89E3;&#x51B3;&#x95EE;&#x9898;
-    G[&#x6570;&#x636E;]
-    H[&#x77E5;&#x8BC6;]
-    I[&#x7ECF;&#x9A8C;]
-    J[&#x601D;&#x8003;]
-end
+<span class="token keyword">subgraph</span> &#x89E3;&#x51B3;&#x95EE;&#x9898;
+    G<span class="token text string">[&#x6570;&#x636E;]</span>
+    H<span class="token text string">[&#x77E5;&#x8BC6;]</span>
+    I<span class="token text string">[&#x7ECF;&#x9A8C;]</span>
+    J<span class="token text string">[&#x601D;&#x8003;]</span>
+<span class="token keyword">end</span>
 
-subgraph &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3;
-    G21[&#x63A2;&#x7D22;&#x672A;&#x77E5;&#x9886;&#x57DF;]
-    G22[&#x53D1;&#x73B0;&#x65B0;&#x4E8B;&#x7269;]
-end
+<span class="token keyword">subgraph</span> &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3;
+    G21<span class="token text string">[&#x63A2;&#x7D22;&#x672A;&#x77E5;&#x9886;&#x57DF;]</span>
+    G22<span class="token text string">[&#x53D1;&#x73B0;&#x65B0;&#x4E8B;&#x7269;]</span>
+<span class="token keyword">end</span>
 
-subgraph &#x6D88;&#x9063;&#x5A31;&#x4E50;
-    G31[&#x65B0;&#x95FB;]
-    G32[&#x7535;&#x5F71;]
-    G33[&#x97F3;&#x4E50;]
-    G34[&#x64AD;&#x5BA2;]
-end
+<span class="token keyword">subgraph</span> &#x6D88;&#x9063;&#x5A31;&#x4E50;
+    G31<span class="token text string">[&#x65B0;&#x95FB;]</span>
+    G32<span class="token text string">[&#x7535;&#x5F71;]</span>
+    G33<span class="token text string">[&#x97F3;&#x4E50;]</span>
+    G34<span class="token text string">[&#x64AD;&#x5BA2;]</span>
+<span class="token keyword">end</span>
 
-subgraph &#x53D1;&#x73B0;&#x673A;&#x4F1A;
-    G41[&#x5E02;&#x573A;&#x52A8;&#x6001;]
-    G42[&#x884C;&#x4E1A;&#x8D8B;&#x52BF;]
-end
+<span class="token keyword">subgraph</span> &#x53D1;&#x73B0;&#x673A;&#x4F1A;
+    G41<span class="token text string">[&#x5E02;&#x573A;&#x52A8;&#x6001;]</span>
+    G42<span class="token text string">[&#x884C;&#x4E1A;&#x8D8B;&#x52BF;]</span>
+<span class="token keyword">end</span>
 
-B1(&#x624B;&#x52A8;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x89C4;&#x5219;) --&gt; C(ChatGPT bot &#x81EA;&#x52A8;&#x6807;&#x7B7E;)
-style B1 fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
-B --&gt; C(ChatGPT &#x81EA;&#x52A8;&#x7B5B;&#x9009;)
-style C fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
-C --- &#x89E3;&#x51B3;&#x95EE;&#x9898; --&gt; D(ChatGPT&#x81EA;&#x52A8;&#x5206;&#x6790;&#x6807;&#x7B7E;&#x5316;)
-style D fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
-C --- &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3; --&gt; D
-C --- &#x6D88;&#x9063;&#x5A31;&#x4E50; --&gt; D
-C --- &#x53D1;&#x73B0;&#x673A;&#x4F1A; --&gt;D
+B1<span class="token text string">(&#x624B;&#x52A8;&#x5B9A;&#x671F;&#x66F4;&#x65B0;&#x89C4;&#x5219;)</span> <span class="token arrow operator">--&gt;</span> C<span class="token text string">(ChatGPT bot &#x81EA;&#x52A8;&#x6807;&#x7B7E;)</span>
+<span class="token keyword">style</span> B1 <span class="token style"><span class="token property">fill</span><span class="token operator">:</span>#ffcccc<span class="token punctuation">,</span> <span class="token property">stroke</span><span class="token operator">:</span>#ff0000<span class="token punctuation">,</span> <span class="token property">stroke-width</span><span class="token operator">:</span>2px</span><span class="token punctuation">;</span>
+B <span class="token arrow operator">--&gt;</span> C<span class="token text string">(ChatGPT &#x81EA;&#x52A8;&#x7B5B;&#x9009;)</span>
+<span class="token keyword">style</span> C <span class="token style"><span class="token property">fill</span><span class="token operator">:</span>#ffcccc<span class="token punctuation">,</span> <span class="token property">stroke</span><span class="token operator">:</span>#ff0000<span class="token punctuation">,</span> <span class="token property">stroke-width</span><span class="token operator">:</span>2px</span><span class="token punctuation">;</span>
+C <span class="token arrow operator">---</span> &#x89E3;&#x51B3;&#x95EE;&#x9898; <span class="token arrow operator">--&gt;</span> D<span class="token text string">(ChatGPT&#x81EA;&#x52A8;&#x5206;&#x6790;&#x6807;&#x7B7E;&#x5316;)</span>
+<span class="token keyword">style</span> D <span class="token style"><span class="token property">fill</span><span class="token operator">:</span>#ffcccc<span class="token punctuation">,</span> <span class="token property">stroke</span><span class="token operator">:</span>#ff0000<span class="token punctuation">,</span> <span class="token property">stroke-width</span><span class="token operator">:</span>2px</span><span class="token punctuation">;</span>
+C <span class="token arrow operator">---</span> &#x6EE1;&#x8DB3;&#x597D;&#x5947;&#x5FC3; <span class="token arrow operator">--&gt;</span> D
+C <span class="token arrow operator">---</span> &#x6D88;&#x9063;&#x5A31;&#x4E50; <span class="token arrow operator">--&gt;</span> D
+C <span class="token arrow operator">---</span> &#x53D1;&#x73B0;&#x673A;&#x4F1A; <span class="token arrow operator">--&gt;</span>D
 
-subgraph &#x5185;&#x90E8;&#x6765;&#x6E90;
-    A5[&#x65E5;&#x5E38;&#x8BB0;&#x5F55;]
-    A6[&#x4E66;&#x7C4D;&#x6742;&#x5FD7;&#x7B14;&#x8BB0;]
-end
-A5 -- LogSeq &#x65E5;&#x5FD7; --&gt; F1
-A6 -- LogSeq &#x7B14;&#x8BB0;--&gt; F1
+<span class="token keyword">subgraph</span> &#x5185;&#x90E8;&#x6765;&#x6E90;
+    A5<span class="token text string">[&#x65E5;&#x5E38;&#x8BB0;&#x5F55;]</span>
+    A6<span class="token text string">[&#x4E66;&#x7C4D;&#x6742;&#x5FD7;&#x7B14;&#x8BB0;]</span>
+<span class="token keyword">end</span>
+A5 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">LogSeq &#x65E5;&#x5FD7;</span> <span class="token arrow operator">--&gt;</span></span> F1
+A6 <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">LogSeq &#x7B14;&#x8BB0;</span><span class="token arrow operator">--&gt;</span></span> F1
 
-D --&gt; D1(&#x5B58;&#x50A8;&#x5230;Github)
-D1 --&gt; E(Logseq&#x901A;&#x8FC7;Github&#x540C;&#x6B65;&#x6570;&#x636E;)
-E --&gt; F1(&#x77E5;&#x8BC6;&#x7BA1;&#x7406;&#x4E2D;&#x5FC3;Logseq)
-style F1 fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
-F1 --&gt; F(&#x5411;&#x5916;&#x53CD;&#x9988;)
-F --&gt; G1(&#x793E;&#x4EA4;&#x5A92;&#x4F53;)
-F --&gt; H1(&#x516C;&#x4F17;&#x53F7;)
-F --&gt; I1(&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;)
-F --&gt; J1(&#x6280;&#x672F;&#x793E;&#x533A;)
+D <span class="token arrow operator">--&gt;</span> D1<span class="token text string">(&#x5B58;&#x50A8;&#x5230;Github)</span>
+D1 <span class="token arrow operator">--&gt;</span> E<span class="token text string">(Logseq&#x901A;&#x8FC7;Github&#x540C;&#x6B65;&#x6570;&#x636E;)</span>
+E <span class="token arrow operator">--&gt;</span> F1<span class="token text string">(&#x77E5;&#x8BC6;&#x7BA1;&#x7406;&#x4E2D;&#x5FC3;Logseq)</span>
+<span class="token keyword">style</span> F1 <span class="token style"><span class="token property">fill</span><span class="token operator">:</span>#ffcccc<span class="token punctuation">,</span> <span class="token property">stroke</span><span class="token operator">:</span>#ff0000<span class="token punctuation">,</span> <span class="token property">stroke-width</span><span class="token operator">:</span>2px</span><span class="token punctuation">;</span>
+F1 <span class="token arrow operator">--&gt;</span> F<span class="token text string">(&#x5411;&#x5916;&#x53CD;&#x9988;)</span>
+F <span class="token arrow operator">--&gt;</span> G1<span class="token text string">(&#x793E;&#x4EA4;&#x5A92;&#x4F53;)</span>
+F <span class="token arrow operator">--&gt;</span> H1<span class="token text string">(&#x516C;&#x4F17;&#x53F7;)</span>
+F <span class="token arrow operator">--&gt;</span> I1<span class="token text string">(&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;)</span>
+F <span class="token arrow operator">--&gt;</span> J1<span class="token text string">(&#x6280;&#x672F;&#x793E;&#x533A;)</span>
 </code></pre>
 <h3 id="&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x7406;&#x8BBA;&#x6765;&#x6E90;">&#x4E2A;&#x4EBA;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x7406;&#x8BBA;&#x6765;&#x6E90;</h3>
 <h4 id="gtd&#xFF08;get-things-done&#xFF09;&#x7406;&#x8BBA;">GTD&#xFF08;Get Things Done&#xFF09;&#x7406;&#x8BBA;</h4>
@@ -782,7 +782,7 @@ F --&gt; J1(&#x6280;&#x672F;&#x793E;&#x533A;)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"个人信息处理系统","level":"1.7","depth":1,"next":{"title":"系统化思维","level":"1.7.1","depth":2,"path":"04-message/04-1.md","ref":"./04-message/04-1.md","articles":[]},"previous":{"title":"上线效果","level":"1.6.3","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"04-message/readme.md","mtime":"2023-06-12T06:40:03.011Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-13T01:49:51.741Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"个人信息处理系统","level":"1.7","depth":1,"next":{"title":"系统化思维","level":"1.7.1","depth":2,"path":"04-message/04-1.md","ref":"./04-message/04-1.md","articles":[]},"previous":{"title":"上线效果","level":"1.6.3","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"04-message/readme.md","mtime":"2023-06-13T02:16:21.417Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-13T02:36:30.604Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
