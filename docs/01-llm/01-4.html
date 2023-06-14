@@ -607,9 +607,73 @@
                                 
                                 <h2 id="&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5957;&#x58F3;&#x673A;&#x5668;&#x4EBA;">&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5957;&#x58F3;&#x673A;&#x5668;&#x4EBA;</h2>
 <h3 id="&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x73AF;&#x5883;&#x51C6;&#x5907;</h3>
-<p>&#x56E0;&#x4E3A;&#x8BF7;&#x6C42;&#x5730;&#x5740;<code>https://api.openai.com/v1/chat/completions</code> &#x76EE;&#x524D;&#x5728;&#x56FD;&#x5185;&#x5927;&#x90E8;&#x5206;&#x5730;&#x533A;&#x5DF2;&#x7ECF;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;<a href="https://github.com/noobnooc/noobnooc/discussions/9" target="_blank">&#x89E3;&#x51B3;&#x529E;&#x6CD5;</a>&#xFF08;&#x4F7F;&#x7528; Cloudflare &#x7684; Workers &#x6765;&#x4EE3;&#x7406; OpenAI &#x7684; API &#x5730;&#x5740;&#xFF0C;&#x914D;&#x5408;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x5373;&#x53EF;&#x5728;&#x5883;&#x5185;&#x5B9E;&#x73B0;&#x8BBF;&#x95EE;&#xFF09;</p>
-<h4 id="&#x68C0;&#x67E5;openai-&#x63A5;&#x53E3;&#x72B6;&#x6001;">&#x68C0;&#x67E5;OpenAI &#x63A5;&#x53E3;&#x72B6;&#x6001;</h4>
+<h4 id="api-&#x4EE3;&#x7406;">API &#x4EE3;&#x7406;</h4>
+<p>&#x56E0;&#x4E3A; OpenAI &#x539F;&#x59CB;&#x8BF7;&#x6C42;&#x5730;&#x5740;<code>https://api.openai.com/v1/chat/completions</code> &#x76EE;&#x524D;&#x5728;&#x56FD;&#x5185;&#x5927;&#x90E8;&#x5206;&#x5730;&#x533A;&#x5DF2;&#x7ECF;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;<a href="https://github.com/noobnooc/noobnooc/discussions/9" target="_blank">&#x89E3;&#x51B3;&#x529E;&#x6CD5;</a>&#xFF08;&#x4F7F;&#x7528; Cloudflare &#x7684; Workers &#x6765;&#x4EE3;&#x7406; OpenAI &#x7684; API &#x5730;&#x5740;&#xFF0C;&#x914D;&#x5408;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D;&#x5373;&#x53EF;&#x5728;&#x5883;&#x5185;&#x5B9E;&#x73B0;&#x8BBF;&#x95EE;&#xFF09;</p>
+<h4 id="api-&#x72B6;&#x6001;&#x68C0;&#x67E5;">API &#x72B6;&#x6001;&#x68C0;&#x67E5;</h4>
 <p>OpenAI&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;<a href="https://status.openai.com/" target="_blank">API &#x72B6;&#x6001;&#x9875;&#x9762;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x63A5;&#x53E3;&#x5B9E;&#x65F6;&#x5EF6;&#x8FDF;&#xFF0C;&#x4EE5;&#x53CA;&#x51FA;&#x73B0;&#x5927;&#x9762;&#x79EF;&#x5B95;&#x673A;&#x65F6;&#x4F1A;&#x663E;&#x793A;&#x516C;&#x544A;&#x3002;</p>
+<h4 id="api&#x8D39;&#x7528;&#x8BF4;&#x660E;">API&#x8D39;&#x7528;&#x8BF4;&#x660E;</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6A21;&#x578B;&#x540D;&#x79F0;</th>
+<th style="text-align:center">context max tokens</th>
+<th style="text-align:center">&#x8F93;&#x5165;&#x4EF7;&#x683C;</th>
+<th style="text-align:center">&#x8F93;&#x51FA;&#x4EF7;&#x683C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">gpt-3.5-turbo</td>
+<td style="text-align:center">4096</td>
+<td style="text-align:center">$0.0015 / 1K tokens</td>
+<td style="text-align:center">$0.002 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-3.5-turbo-16k</td>
+<td style="text-align:center">16,384</td>
+<td style="text-align:center">$0.003 / 1K tokens</td>
+<td style="text-align:center">$0.004 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-3.5-turbo-0613&#xFF08;&#x652F;&#x6301;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF09;</td>
+<td style="text-align:center">4096</td>
+<td style="text-align:center">$0.0015 / 1K tokens</td>
+<td style="text-align:center">$0.002 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-3.5-turbo-16k-0613</td>
+<td style="text-align:center">16,384</td>
+<td style="text-align:center">$0.003 / 1K tokens</td>
+<td style="text-align:center">$0.004 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-4</td>
+<td style="text-align:center">8,192</td>
+<td style="text-align:center">$0.03 / 1K tokens</td>
+<td style="text-align:center">$0.06 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-4-32k</td>
+<td style="text-align:center">32,768</td>
+<td style="text-align:center">$0.06 / 1K tokens</td>
+<td style="text-align:center">$0.12 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-4-0613&#xFF08;&#x652F;&#x6301;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF09;</td>
+<td style="text-align:center">8,192</td>
+<td style="text-align:center">$0.03 / 1K tokens</td>
+<td style="text-align:center">$0.06 / 1K tokens</td>
+</tr>
+<tr>
+<td style="text-align:center">gpt-4-32k-0613</td>
+<td style="text-align:center">32,768</td>
+<td style="text-align:center">$0.06 / 1K tokens</td>
+<td style="text-align:center">$0.12 / 1K tokens</td>
+</tr>
+</tbody>
+</table>
+<h4 id="token-&#x8BA1;&#x6570;&#x53CA;&#x8D39;&#x7528;">Token &#x8BA1;&#x6570;&#x53CA;&#x8D39;&#x7528;</h4>
+<p>&#x4F7F;&#x7528;<a href="https://tokens.aiayw.com/" target="_blank">&#x8BE5;&#x7F51;&#x7AD9;</a>&#x53EF;&#x4EE5;&#x7EDF;&#x8BA1; token &#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x9884;&#x4F30;&#x4EF7;&#x683C;&#x3002;</p>
 
                                 
                                 </section>
@@ -653,7 +717,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实现一个套壳机器人","level":"1.2.4","depth":2,"next":{"title":"LangChain入门","level":"1.3","depth":1,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},{"title":"源码组件","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"实现领域内搜索","level":"1.3.4","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"实现一个自定义问答机器人","level":"1.3.5","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]}]},"previous":{"title":"OpenAI 文档解读","level":"1.2.3","depth":2,"path":"01-llm/01-3.md","ref":"./01-llm/01-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-4.md","mtime":"2023-06-14T03:01:08.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-14T13:48:00.434Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实现一个套壳机器人","level":"1.2.4","depth":2,"next":{"title":"LangChain入门","level":"1.3","depth":1,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},{"title":"源码组件","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"实现领域内搜索","level":"1.3.4","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"实现一个自定义问答机器人","level":"1.3.5","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]}]},"previous":{"title":"OpenAI 文档解读","level":"1.2.3","depth":2,"path":"01-llm/01-3.md","ref":"./01-llm/01-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-4.md","mtime":"2023-06-14T15:15:08.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-14T15:24:41.669Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
