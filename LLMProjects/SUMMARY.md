@@ -8,6 +8,7 @@
 * [LangChain入门](./02-langchain/02-1.md)
     * [LangChain介绍](./02-langchain/02-1.md)
 	* [源码组件](./02-langchain/02-2.md)
+    * [Embedding嵌入](./02-langchain/02-3.md)
     * [实现领域内搜索](./02-langchain/02-3.md)
     * [实现一个自定义问答机器人](./02-langchain/02-4.md)
 * [LlamaIndex概述](./03-llamaIndex/03-1.md)
