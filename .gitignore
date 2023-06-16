@@ -1,2 +1,4 @@
 LLMProjects/_book
 LLMProjects/node_modules
+env
+.DS_Store
