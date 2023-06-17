@@ -1,18 +1,18 @@
 # Summary
 * [前言](README.md)
-* [大语言模型概述](./01-llm/01-1.md)
+* 大语言模型概述
     * [大语言模型概况](./01-llm/01-1.md)
     * [你好, ChatGPT](./01-llm/01-2.md)
     * [OpenAI 文档解读](./01-llm/01-3.md)
     * [动手实现聊天机器人](./01-llm/01-4.md)
     * [LLM 安全专题](./01-llm/01-5.md)
-* [LangChain入门](./02-langchain/02-1.md)
+* LangChain入门
     * [LangChain介绍](./02-langchain/02-1.md)
-	* [源码组件](./02-langchain/02-2.md)
+	* [LangChain模块解读](./02-langchain/02-2.md)
     * [Embedding嵌入](./02-langchain/02-3.md)
     * [动手实现领域知识机器人](./02-langchain/02-4.md)
     * [Agent 专题](./02-langchain/02-5.md)
-* [LlamaIndex概述](./03-llamaIndex/03-1.md)
+* LlamaIndex概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
     * [源码组件](./03-llamaIndex/03-2.md)
     * [非结构化数据作为数据源](./03-llamaIndex/03-3.md)

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LangChain入门 · 利用 LLM 构建应用实践指南</title>
+        <title>LangChain介绍 · 利用 LLM 构建应用实践指南</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02-1.html" />
+    <link rel="next" href="02-2.html" />
     
-    
-    <link rel="prev" href="../01-llm/01-5.html" />
     
 
     </head>
@@ -115,14 +113,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../01-llm/01-1.html">
+        <li class="chapter " data-level="1.2" >
             
-                <a href="../01-llm/01-1.html">
+                <span>
             
                     
                     大语言模型概述
             
-                </a>
+                </span>
             
 
             
@@ -199,14 +197,14 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="02-1.html">
+        <li class="chapter " data-level="1.3" >
             
-                <a href="02-1.html">
+                <span>
             
                     
                     LangChain入门
             
-                </a>
+                </span>
             
 
             
@@ -231,7 +229,7 @@
                 <a href="02-2.html">
             
                     
-                    源码组件
+                    LangChain模块解读
             
                 </a>
             
@@ -283,14 +281,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../03-llamaIndex/03-1.html">
+        <li class="chapter " data-level="1.4" >
             
-                <a href="../03-llamaIndex/03-1.html">
+                <span>
             
                     
                     LlamaIndex概述
             
-                </a>
+                </span>
             
 
             
@@ -616,7 +614,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LangChain入门</a>
+        <a href=".." >LangChain介绍</a>
     </h1>
 </div>
 
@@ -632,6 +630,99 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="langchain&#x4ECB;&#x7ECD;">LangChain&#x4ECB;&#x7ECD;</h2>
+<p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x770B;&#x5B98;&#x65B9;&#x7684;&#x5B9A;&#x4E49;</p>
+<blockquote>
+<p>LangChain&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6846;&#x67B6;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4EE5;&#x4E0B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x611F;&#x77E5;&#xFF1A;&#x5C06;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x8FDE;&#x63A5;&#x5230;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x6E90;</li>
+<li>&#x81EA;&#x4E3B;&#x6027;&#xFF1A;&#x5141;&#x8BB8;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E0E;&#x5176;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</li>
+</ul>
+<p>LangChain&#x7684;&#x4E3B;&#x8981;&#x4EF7;&#x503C;&#x5728;&#x4E8E;&#xFF1A;</p>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x5316;&#xFF1A;&#x4E3A;&#x4F7F;&#x7528;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x62BD;&#x8C61;&#x5C42;&#xFF0C;&#x4EE5;&#x53CA;&#x6BCF;&#x4E2A;&#x62BD;&#x8C61;&#x5C42;&#x7684;&#x4E00;&#x7EC4;&#x5B9E;&#x73B0;&#x3002;&#x7EC4;&#x4EF6;&#x662F;&#x6A21;&#x5757;&#x5316;&#x4E14;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x65E0;&#x8BBA;&#x60A8;&#x662F;&#x5426;&#x4F7F;&#x7528;LangChain&#x6846;&#x67B6;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x73B0;&#x6210;&#x7684;&#x94FE;&#xFF1A;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x7EC4;&#x4EF6;&#x96C6;&#x5408;&#xFF0C;&#x7528;&#x4E8E;&#x5B8C;&#x6210;&#x7279;&#x5B9A;&#x7684;&#x9AD8;&#x7EA7;&#x4EFB;&#x52A1;</li>
+</ul>
+<p>&#x73B0;&#x6210;&#x7684;&#x94FE;&#x4F7F;&#x5F97;&#x5165;&#x95E8;&#x53D8;&#x5F97;&#x5BB9;&#x6613;&#x3002;&#x5BF9;&#x4E8E;&#x66F4;&#x590D;&#x6742;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x548C;&#x5FAE;&#x5999;&#x7684;&#x7528;&#x4F8B;&#xFF0C;&#x7EC4;&#x4EF6;&#x5316;&#x4F7F;&#x5F97;&#x5B9A;&#x5236;&#x73B0;&#x6709;&#x94FE;&#x6216;&#x6784;&#x5EFA;&#x65B0;&#x94FE;&#x53D8;&#x5F97;&#x66F4;&#x5BB9;&#x6613;&#x3002;</p>
+</blockquote>
+<p>&#x8BF4;&#x767D;&#x4E86;&#x4E86;&#xFF0C;LangChain &#x5C31;&#x662F;&#x4E00;&#x4E2A; LLM &#x7F16;&#x7A0B;&#x6846;&#x67B6;&#xFF0C;&#x4F60;&#x60F3;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; LLM &#x5E94;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x4EC0;&#x4E48;&#x7EC4;&#x4EF6;&#x5B83;&#x90FD;&#x6709;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5C31;&#x884C;&#xFF1B;&#x751A;&#x81F3;&#x9488;&#x5BF9;&#x5E38;&#x89C4;&#x7684;&#x5E94;&#x7528;&#x6D41;&#x7A0B;&#xFF0C;&#x5B83;&#x5229;&#x7528;&#x94FE;(LangChain&#x4E2D;Chain&#x7684;&#x7531;&#x6765;)&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x5DF2;&#x7ECF;&#x5185;&#x7F6E;&#x6807;&#x51C6;&#x5316;&#x65B9;&#x6848;&#x4E86;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4ECE;&#x65B0;&#x5174;&#x7684;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;LLM&#xFF09;&#x6280;&#x672F;&#x6808;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#x770B;&#x4E3A;&#x4F55;&#x5B83;&#x7684;&#x7406;&#x5FF5;&#x8FD9;&#x4E48;&#x53D7;&#x6B22;&#x8FCE;&#x3002;</p>
+<h3 id="&#x65B0;&#x5174;-llm-&#x6280;&#x672F;&#x6808;">&#x65B0;&#x5174; LLM &#x6280;&#x672F;&#x6808;</h3>
+<p>&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x6280;&#x672F;&#x6808;&#x7531;&#x56DB;&#x4E2A;&#x4E3B;&#x8981;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#xFF08;data preprocessing pipeline&#xFF09;</li>
+<li>&#x5D4C;&#x5165;&#x7AEF;&#x70B9;&#xFF08;embeddings endpoint &#xFF09;+&#x5411;&#x91CF;&#x5B58;&#x50A8;&#xFF08;vector store&#xFF09;</li>
+<li>LLM &#x7EC8;&#x7AEF;&#xFF08;LLM endpoints&#xFF09;</li>
+<li>LLM &#x7F16;&#x7A0B;&#x6846;&#x67B6;&#xFF08;LLM programming framework&#xFF09;</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/06/17/F8ePcXbhRJwSkNi.png" alt=""></p>
+<h4 id="&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#x6D41;&#x7A0B;">&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#x6D41;&#x7A0B;</h4>
+<p>&#x8BE5;&#x6B65;&#x9AA4;&#x5305;&#x62EC;&#x4E0E;&#x6570;&#x636E;&#x6E90;&#x8FDE;&#x63A5;&#x7684;&#x8FDE;&#x63A5;&#x5668;&#xFF08;&#x4F8B;&#x5982;S3&#x5B58;&#x50A8;&#x6876;&#x6216;CRM&#xFF09;&#x3001;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x5C42;&#x4EE5;&#x53CA;&#x4E0B;&#x6E38;&#x8FDE;&#x63A5;&#x5668;&#xFF08;&#x4F8B;&#x5982;&#x5411;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#xFF09;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x8F93;&#x5165;&#x5230;LLM&#x4E2D;&#x7684;&#x6700;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x4FE1;&#x606F;&#x4E5F;&#x662F;&#x6700;&#x96BE;&#x5904;&#x7406;&#x7684;&#xFF08;&#x5982;PDF&#x3001;PPTX&#x3001;HTML&#x7B49;&#xFF09;&#xFF0C;&#x4F46;&#x540C;&#x65F6;&#xFF0C;&#x6613;&#x4E8E;&#x8BBF;&#x95EE;&#x6587;&#x672C;&#x7684;&#x6587;&#x6863;&#xFF08;&#x4F8B;&#x5982;.DOCX&#xFF09;&#x4E2D;&#x4E5F;&#x5305;&#x542B;&#x7528;&#x6237;&#x4E0D;&#x5E0C;&#x671B;&#x53D1;&#x9001;&#x5230;&#x63A8;&#x7406;&#x7EC8;&#x7AEF;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x4F8B;&#x5982;&#x5E7F;&#x544A;&#x3001;&#x6CD5;&#x5F8B;&#x6761;&#x6B3E;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x6D89;&#x53CA;&#x7684;&#x6570;&#x636E;&#x6E90;&#x7E41;&#x6742;&#xFF08;&#x6570;&#x5343;&#x4E2A;PDF&#x3001;PPTX&#x3001;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x3001;&#x6293;&#x53D6;&#x7684;HTML&#x7B49;&#xFF09;&#xFF0C;&#x8FD9;&#x6B65;&#x4E5F;&#x5B58;&#x5728;&#x5927;&#x91CF;&#x7684; dirty work&#xFF0C;&#x4F7F;&#x7528;OCR&#x6A21;&#x578B;&#x3001;Python&#x811A;&#x672C;&#x548C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7B49;&#x65B9;&#x5F0F;&#x6765;&#x81EA;&#x52A8;&#x63D0;&#x53D6;&#x3001;&#x6E05;&#x7406;&#x548C;&#x8F6C;&#x6362;&#x5173;&#x952E;&#x6587;&#x6863;&#x5143;&#x7D20;&#xFF08;&#x4F8B;&#x5982;&#x6807;&#x9898;&#x3001;&#x6B63;&#x6587;&#x3001;&#x9875;&#x7709;/&#x9875;&#x811A;&#x3001;&#x5217;&#x8868;&#x7B49;&#xFF09;&#xFF0C;&#x6700;&#x7EC8;&#x5411;&#x5916;&#x90E8;&#x4EE5;API&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;JSON&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x4FBF;&#x5D4C;&#x5165;&#x7EC8;&#x7AEF;&#x548C;&#x5B58;&#x50A8;&#x5728;&#x5411;&#x91CF;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
+<h4 id="&#x5D4C;&#x5165;&#x7AEF;&#x70B9;&#x548C;&#x5411;&#x91CF;&#x5B58;&#x50A8;">&#x5D4C;&#x5165;&#x7AEF;&#x70B9;&#x548C;&#x5411;&#x91CF;&#x5B58;&#x50A8;</h4>
+<p>&#x4F7F;&#x7528;&#x5D4C;&#x5165;&#x7AEF;&#x70B9;&#xFF08;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x548C;&#x8FD4;&#x56DE;&#x8BF8;&#x5982;&#x8BCD;&#x5411;&#x91CF;&#x3001;&#x6587;&#x6863;&#x5411;&#x91CF;&#x7B49;&#x5D4C;&#x5165;&#x5411;&#x91CF;&#x7684; API &#x7AEF;&#x70B9;&#xFF09;&#x548C;&#x5411;&#x91CF;&#x5B58;&#x50A8;&#xFF08;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x5411;&#x91CF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6216;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF09;&#x4EE3;&#x8868;&#x4E86;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x548C;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x7684;&#x91CD;&#x5927;&#x6F14;&#x53D8;&#x3002;&#x4EE5;&#x524D;&#xFF0C;&#x5D4C;&#x5165;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8BF8;&#x5982;&#x6587;&#x6863;&#x805A;&#x7C7B;&#x4E4B;&#x7C7B;&#x7684;&#x7279;&#x5B9A;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;&#x65B0;&#x7684;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5C06;&#x6587;&#x6863;&#x53CA;&#x5176;&#x5D4C;&#x5165;&#x5B58;&#x50A8;&#x5728;&#x5411;&#x91CF;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;LLM&#x7AEF;&#x70B9;&#x5B9E;&#x73B0;&#x5173;&#x952E;&#x7684;&#x4EA4;&#x4E92;&#x6A21;&#x5F0F;&#x3002;&#x76F4;&#x63A5;&#x5B58;&#x50A8;&#x539F;&#x59CB;&#x5D4C;&#x5165;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4EE5;&#x5176;&#x81EA;&#x7136;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x66F4;&#x5FEB;&#x7684;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x548C;&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x5904;&#x7406;&#x5927;&#x578B;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x8BAD;&#x7EC3;&#x548C;&#x63A8;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x91CF;&#x3002;</p>
+<h4 id="llm&#x7EC8;&#x7AEF;">LLM&#x7EC8;&#x7AEF;</h4>
+<p>LLM&#x7EC8;&#x7AEF;&#x662F;&#x63A5;&#x6536;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5E76;&#x751F;&#x6210;LLM&#x8F93;&#x51FA;&#x7684;&#x7EC8;&#x7AEF;&#x3002;LLM&#x7EC8;&#x7AEF;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x6A21;&#x578B;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5305;&#x62EC;&#x5185;&#x5B58;&#x548C;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x53EF;&#x6269;&#x5C55;&#x548C;&#x5BB9;&#x9519;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x5411;&#x4E0B;&#x6E38;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;LLM&#x8F93;&#x51FA;&#x3002;</p>
+<h4 id="llm&#x7F16;&#x7A0B;&#x6846;&#x67B6;">LLM&#x7F16;&#x7A0B;&#x6846;&#x67B6;</h4>
+<p>LLM&#x7F16;&#x7A0B;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x5DE5;&#x5177;&#x548C;&#x62BD;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x4F7F;&#x7528;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x5728;&#x73B0;&#x4EE3;&#x6280;&#x672F;&#x6808;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;LLM&#x63D0;&#x4F9B;&#x5546;&#x3001;&#x5D4C;&#x5165;&#x6A21;&#x578B;&#x3001;&#x5411;&#x91CF;&#x5B58;&#x50A8;&#x3001;&#x6587;&#x6863;&#x52A0;&#x8F7D;&#x5668;&#x3001;&#x5176;&#x4ED6;&#x5916;&#x90E8;&#x5DE5;&#x5177;&#xFF08;&#x8C37;&#x6B4C;&#x641C;&#x7D22;&#x7B49;&#xFF09;&#xFF0C;&#x8FD9;&#x4E9B;&#x6846;&#x67B6;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x529F;&#x80FD;&#x662F;&#x534F;&#x8C03;&#x5404;&#x79CD;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h3 id="&#x5173;&#x952E;&#x7EC4;&#x4EF6;&#x89E3;&#x91CA;">&#x5173;&#x952E;&#x7EC4;&#x4EF6;&#x89E3;&#x91CA;</h3>
+<h4 id="prompts">Prompts</h4>
+<p>Prompts&#x7528;&#x6765;&#x7BA1;&#x7406; LLM &#x8F93;&#x5165;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5728;&#x4ECE; LLM &#x83B7;&#x5F97;&#x6240;&#x9700;&#x7684;&#x8F93;&#x51FA;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5BF9;&#x63D0;&#x793A;&#x8FDB;&#x884C;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x8C03;&#x6574;&#xFF0C;&#x6700;&#x7EC8;&#x7684;Promps&#x53EF;&#x4EE5;&#x662F;&#x5355;&#x4E2A;&#x53E5;&#x5B50;&#x6216;&#x591A;&#x4E2A;&#x53E5;&#x5B50;&#x7684;&#x7EC4;&#x5408;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x53D8;&#x91CF;&#x548C;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x3002;</p>
+<h4 id="chains">Chains</h4>
+<p>&#x662F;&#x4E00;&#x79CD;&#x5C06;LLM&#x548C;&#x5176;&#x4ED6;&#x591A;&#x4E2A;&#x7EC4;&#x4EF6;&#x8FDE;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<h4 id="agents">Agents</h4>
+<p>&#x662F;&#x4E00;&#x79CD;&#x4F7F;&#x7528;LLM&#x505A;&#x51FA;&#x51B3;&#x7B56;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7279;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#x5E76;&#x751F;&#x6210;&#x6587;&#x672C;&#x8F93;&#x51FA;&#x3002;Agents&#x901A;&#x5E38;&#x7531;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;Action&#x3001;Observation&#x548C;Decision&#x3002;Action&#x662F;&#x4EE3;&#x7406;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;Observation&#x662F;&#x4EE3;&#x7406;&#x63A5;&#x6536;&#x5230;&#x7684;&#x4FE1;&#x606F;&#xFF0C;Decision&#x662F;&#x4EE3;&#x7406;&#x57FA;&#x4E8E;Action&#x548C;Observation&#x505A;&#x51FA;&#x7684;&#x51B3;&#x7B56;&#x3002;</p>
+<h4 id="memory">Memory</h4>
+<p>&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x7531;&#x4E8E;LLM &#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x957F;&#x671F;&#x8BB0;&#x5FC6;&#xFF0C;&#x5B83;&#x6709;&#x52A9;&#x4E8E;&#x5728;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x4E4B;&#x95F4;&#x4FDD;&#x6301;&#x72B6;&#x6001;&#x3002;</p>
+<h3 id="&#x5178;&#x578B;&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5178;&#x578B;&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
+<ul>
+<li><a href="https://python.langchain.com/docs/use_cases/question_answering.html" target="_blank">&#x7279;&#x5B9A;&#x6587;&#x6863;&#x7684;&#x95EE;&#x7B54;</a>&#xFF1A;&#x4ECE;Notion&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x63D0;&#x53D6;&#x4FE1;&#x606F;&#x5E76;&#x56DE;&#x7B54;&#x7528;&#x6237;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li><a href="https://python.langchain.com/docs/use_cases/chatbots/" target="_blank">&#x804A;&#x5929;&#x673A;&#x5668;&#x4EBA;</a>&#xFF1A;&#x4F7F;&#x7528;Chat-LangChain&#x6A21;&#x5757;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E;&#x7528;&#x6237;&#x4EA4;&#x6D41;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x3002;</li>
+<li><a href="https://python.langchain.com/docs/use_cases/agents/" target="_blank">&#x4EE3;&#x7406;</a>&#xFF1A;&#x4F7F;&#x7528;GPT&#x548C;WolframAlpha&#x7ED3;&#x5408;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x6267;&#x884C;&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#x548C;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#x7684;&#x4EE3;&#x7406;&#x3002;</li>
+<li><a href="https://python.langchain.com/docs/use_cases/summarization" target="_blank">&#x6587;&#x672C;&#x6458;&#x8981;</a>&#xFF1A;&#x4F7F;&#x7528;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#x6765;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x6587;&#x6863;&#x7684;&#x6458;&#x8981;&#x3002;</li>
+</ul>
+<h3 id="langchain-&#x7ADE;&#x54C1;">Langchain &#x7ADE;&#x54C1;</h3>
+<p>&#xFF08;&#x4E2A;&#x4EBA;&#x8BA4;&#x4E3A;&#xFF09;&#x5728;&#x5546;&#x4E1A;&#x5316;&#x4E0A;&#xFF0C;&#x57FA;&#x4E8E;&#x5927;&#x6A21;&#x578B;&#x4E1A;&#x52A1;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x5C42;&#x6B21;&#xFF1A;</p>
+<ul>
+<li>&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x5C42;&#xFF1A;&#x901A;&#x7528;&#x7684;&#x5927;&#x6A21;&#x578B;&#x5E95;&#x5EA7;</li>
+<li>&#x5782;&#x76F4;&#x9886;&#x57DF;&#x5C42;&#xFF1A;&#x57FA;&#x4E8E;&#x5927;&#x6A21;&#x578B;&#x5E95;&#x5EA7;+&#x9886;&#x57DF;&#x573A;&#x666F;&#x6570;&#x636E;&#x5FAE;&#x8C03;&#x5F62;&#x6210;&#x66F4;&#x5F3A;&#x5782;&#x76F4;&#x80FD;&#x529B;</li>
+<li>&#x5E94;&#x7528;&#x5C42;&#xFF1A;&#x57FA;&#x4E8E;&#x524D;&#x4E24;&#x8005;&#xFF0C;&#x7626;&#x524D;&#x7AEF;&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x591A;&#x6837;&#x5316;&#x5E94;&#x7528;&#x4F53;&#x9A8C;</li>
+</ul>
+<p>&#x7C7B;&#x4F3C; LangChain &#x8FD9;&#x79CD;&#x5DE5;&#x5177;&#x6846;&#x67B6;&#x5C31;&#x4F53;&#x73B0;&#x51FA;&#x5176;&#x52A0;&#x901F;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#xFF0C;&#x843D;&#x5730;&#x9A8C;&#x8BC1;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x51FA;&#x73B0;&#x4E86;&#x5F88;&#x591A;&#x7ADE;&#x4E89;&#x8005;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x540D;&#x79F0;</strong></th>
+<th><strong>&#x8BED;&#x8A00;</strong></th>
+<th><strong>&#x7279;&#x70B9;&#x70B9;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/hwchase17/langchain" target="_blank">LangChain</a></strong></td>
+<td><strong>Python</strong>/<strong>JS</strong></td>
+<td>&#x4F18;&#x70B9;&#xFF1A;&#x63D0;&#x4F9B;&#x4E86;&#x6807;&#x51C6;&#x7684;&#x5185;&#x5B58;&#x63A5;&#x53E3;&#x548C;&#x5185;&#x5B58;&#x5B9E;&#x73B0;&#xFF0C;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x5927;&#x6A21;&#x578B;&#x7684;&#x5C01;&#x88C5;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x8BC4;&#x4F30;&#x751F;&#x6210;&#x6A21;&#x578B;&#x7684;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#x3002;</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/dust-tt/dust" target="_blank">Dust.tt</a></strong></td>
+<td><strong>Rust</strong>/<strong>TS</strong></td>
+<td>&#x4F18;&#x70B9;&#xFF1A;&#x63D0;&#x4F9B;&#x4E86;&#x7B80;&#x5355;&#x6613;&#x7528;&#x7684;API&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x5FEB;&#x901F;&#x6784;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;LLM&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x6587;&#x6863;&#x4E0D;&#x591F;&#x5B8C;&#x5584;&#x3002;</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/microsoft/semantic-kernelhttps://learn.microsoft.com/en-us/semantic-kernel/" target="_blank">Semantic-kernel</a></strong></td>
+<td><strong>TypeScript</strong></td>
+<td>&#x4F18;&#x70B9;&#xFF1A;&#x8F7B;&#x91CF;&#x7EA7;SDK&#xFF0C;&#x53EF;&#x5C06;AI&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;LLMs&#xFF09;&#x4E0E;&#x4F20;&#x7EDF;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x96C6;&#x6210;&#x5728;&#x4E00;&#x8D77;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A;&#x6587;&#x6863;&#x4E0D;&#x591F;&#x5B8C;&#x5584;&#x3002;</td>
+</tr>
+<tr>
+<td><strong><a href="https://www.fixie.ai/" target="_blank">Fixie.ai</a></strong></td>
+<td><strong>Python</strong></td>
+<td>&#x4F18;&#x70B9;&#xFF1A;&#x5F00;&#x653E;&#x3001;&#x514D;&#x8D39;&#x3001;&#x7B80;&#x5355;&#x591A;&#x6A21;&#x578B;&#xFF08;images, audio, video...&#xFF09;<br>&#x7F3A;&#x70B9;&#xFF1A;PaaS&#x5E73;&#x53F0;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x5E73;&#x53F0;&#x90E8;&#x7F72;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<ol>
+<li><a href="https://python.langchain.com/docs/get_started/introduction.html" target="_blank">LangChain&#x5B98;&#x65B9;&#x6587;&#x6863;</a></li>
+<li><a href="https://medium.com/@unstructured-io/llms-and-the-emerging-ml-tech-stack-bdb189c8be5c" target="_blank">LLMs&#x548C;&#x65B0;&#x5174;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6280;&#x672F;&#x6808;</a></li>
+</ol>
 
                                 
                                 </section>
@@ -659,12 +750,8 @@
 
             
                 
-                <a href="../01-llm/01-5.html" class="navigation navigation-prev " aria-label="Previous page: LLM 安全专题">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="02-1.html" class="navigation navigation-next " aria-label="Next page: LangChain介绍">
+                <a href="02-2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: LangChain模块解读">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -675,7 +762,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LangChain入门","level":"1.3","depth":1,"next":{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},"previous":{"title":"LLM 安全专题","level":"1.2.5","depth":2,"path":"01-llm/01-5.md","ref":"./01-llm/01-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-1.md","mtime":"2023-06-14T12:01:18.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-17T02:47:14.509Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LangChain介绍","level":"1.3.1","depth":2,"next":{"title":"LangChain模块解读","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},"previous":{"title":"LangChain入门","level":"1.3","depth":1,"ref":"","articles":[{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},{"title":"LangChain模块解读","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"动手实现领域知识机器人","level":"1.3.4","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]},{"title":"Agent 专题","level":"1.3.5","depth":2,"path":"02-langchain/02-5.md","ref":"./02-langchain/02-5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-1.md","mtime":"2023-06-17T06:58:56.838Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-17T07:03:40.162Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
