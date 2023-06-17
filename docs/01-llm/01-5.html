@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Prompt 专题 · 利用 LLM 构建应用实践指南</title>
+        <title>LLM 安全专题 · 利用 LLM 构建应用实践指南</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -186,7 +186,7 @@
                 <a href="01-5.html">
             
                     
-                    Prompt 专题
+                    LLM 安全专题
             
                 </a>
             
@@ -573,7 +573,7 @@
                 <a href="../ref/prompt.html">
             
                     
-                    超棒的ChatGPT提示
+                    Prompt专题
             
                 </a>
             
@@ -616,7 +616,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Prompt 专题</a>
+        <a href=".." >LLM 安全专题</a>
     </h1>
 </div>
 
@@ -631,41 +631,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="prompt&#x4E13;&#x9898;">Prompt&#x4E13;&#x9898;</h2>
+                                <h2 id="llm-&#x5B89;&#x5168;&#x4E13;&#x9898;">LLM &#x5B89;&#x5168;&#x4E13;&#x9898;</h2>
 <p><strong>Prompt</strong> &#x662F;&#x6307;&#x5728;&#x8BAD;&#x7EC3;&#x6216;&#x4E0E;&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;&#x5982;GPT&#x7CFB;&#x5217;&#xFF09;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x7ED9;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x6587;&#x672C;&#x3002;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7279;&#x5B9A;&#x7684;prompt&#xFF0C;&#x53EF;&#x4EE5;&#x5F15;&#x5BFC;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x4E3B;&#x9898;&#x6216;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x672C;&#x3002;&#x5728;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#xFF08;NLP&#xFF09;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;prompt&#x5145;&#x5F53;&#x4E86;&#x95EE;&#x9898;&#x6216;&#x8F93;&#x5165;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x800C;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x5BF9;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x56DE;&#x7B54;&#x6216;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
-<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E9B;&#x4E0E;Prompt&#x76F8;&#x5173;&#x7684;&#x5B50;&#x95EE;&#x9898;&#x6216;&#x6982;&#x5FF5;&#xFF1A;</p>
-<ol>
-<li><p><strong>Prompt Engineering&#xFF08;&#x63D0;&#x793A;&#x5DE5;&#x7A0B;&#xFF09;</strong>&#xFF1A;&#x6307;&#x8BBE;&#x8BA1;&#x548C;&#x4F18;&#x5316;&#x6A21;&#x578B;&#x8F93;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x66F4;&#x597D;&#x7684;&#x6A21;&#x578B;&#x6027;&#x80FD;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x9009;&#x62E9;&#x9002;&#x5F53;&#x7684;&#x6587;&#x672C;&#x3001;&#x683C;&#x5F0F;&#x3001;&#x7F16;&#x7801;&#x7B49;&#xFF0C;&#x4EE5;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x5730;&#x5229;&#x7528;&#x6A21;&#x578B;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
-</li>
-<li><p><strong>Prompt&#x6CE8;&#x5165;&#xFF08;Prompt Injection&#xFF09;</strong>&#xFF1A;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5C06;&#x7279;&#x5B9A;&#x7684;&#x63D0;&#x793A;&#x5D4C;&#x5165;&#x5230;&#x6A21;&#x578B;&#x7684;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x4EE5;&#x5F15;&#x5BFC;&#x6A21;&#x578B;&#x5B66;&#x4E60;&#x7279;&#x5B9A;&#x7684;&#x77E5;&#x8BC6;&#x6216;&#x884C;&#x4E3A;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x901A;&#x8FC7;&#x5728;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E2D;&#x52A0;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x5173;&#x952E;&#x5B57;&#x3001;&#x77ED;&#x8BED;&#x6216;&#x53E5;&#x5B50;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
-</li>
-<li><p><strong>Prompt&#x7B5B;&#x9009;&#xFF08;Prompt Filtering&#xFF09;</strong>&#xFF1A;&#x4ECE;&#x4E00;&#x7EC4;&#x5019;&#x9009;&#x63D0;&#x793A;&#x4E2D;&#x9009;&#x62E9;&#x6700;&#x4F73;&#x63D0;&#x793A;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#xFF0C;&#x5982;&#x4EBA;&#x5DE5;&#x7B5B;&#x9009;&#x3001;&#x57FA;&#x4E8E;&#x5143;&#x5B66;&#x4E60;&#x7684;&#x65B9;&#x6CD5;&#x6216;&#x4F7F;&#x7528;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#x3002;</p>
-</li>
-<li><p><strong>Prompt&#x53EF;&#x89E3;&#x91CA;&#x6027;&#xFF08;Prompt Interpretability&#xFF09;</strong>&#xFF1A;&#x7814;&#x7A76;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x66F4;&#x5177;&#x53EF;&#x89E3;&#x91CA;&#x6027;&#x7684;&#x63D0;&#x793A;&#xFF0C;&#x4EE5;&#x4FBF;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x548C;&#x8C03;&#x8BD5;&#x6A21;&#x578B;&#x7684;&#x54CD;&#x5E94;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x7814;&#x7A76;&#x63D0;&#x793A;&#x7684;&#x900F;&#x660E;&#x5EA6;&#x3001;&#x53EF;&#x9884;&#x6D4B;&#x6027;&#x548C;&#x4E00;&#x81F4;&#x6027;&#x7B49;&#x65B9;&#x9762;&#x3002;</p>
-</li>
-<li><p><strong>Prompt&#x504F;&#x89C1;&#xFF08;Prompt Bias&#xFF09;</strong>&#xFF1A;&#x7814;&#x7A76;&#x63D0;&#x793A;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x6A21;&#x578B;&#x8F93;&#x51FA;&#x4E2D;&#x7684;&#x504F;&#x89C1;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#x5206;&#x6790;&#x8F93;&#x5165;&#x6587;&#x672C;&#x5BF9;&#x6A21;&#x578B;&#x4EA7;&#x751F;&#x7684;&#x4E0D;&#x826F;&#x5F71;&#x54CD;&#xFF0C;&#x5982;&#x6B67;&#x89C6;&#x6027;&#x8BED;&#x8A00;&#x3001;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x6216;&#x8FC7;&#x4E8E;&#x4E3B;&#x89C2;&#x7684;&#x89C2;&#x70B9;&#xFF0C;&#x4EE5;&#x53CA;&#x7814;&#x7A76;&#x5982;&#x4F55;&#x51CF;&#x5C11;&#x8FD9;&#x79CD;&#x504F;&#x89C1;&#x3002;</p>
-</li>
-<li><p><strong>Prompt&#x6CDB;&#x5316;&#xFF08;Prompt Generalization&#xFF09;</strong>&#xFF1A;&#x7814;&#x7A76;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x80FD;&#x591F;&#x9002;&#x5E94;&#x591A;&#x79CD;&#x4EFB;&#x52A1;&#x548C;&#x9886;&#x57DF;&#x7684;&#x901A;&#x7528;&#x63D0;&#x793A;&#x3002;&#x8FD9;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x89E3;&#x6A21;&#x578B;&#x5728;&#x4E0D;&#x540C;&#x4E0A;&#x4E0B;&#x6587;&#x548C;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#x8868;&#x73B0;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x63D0;&#x793A;&#x8BBE;&#x8BA1;&#x6765;&#x63D0;&#x9AD8;&#x6A21;&#x578B;&#x7684;&#x9002;&#x5E94;&#x6027;&#x3002;</p>
-</li>
-</ol>
-<p>&#x5173;&#x4E8E;&#x600E;&#x6837;&#x8BBE;&#x8BA1;&#x597D;&#x7684; Prompt&#xFF0C;&#x67E5;&#x770B;Prompt&#x5B66;&#x4E60;&#x8D44;&#x6599;&#x7AE0;&#x8282;&#x5185;&#x5BB9;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x6211;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x8FC7;&#x591A;&#x9610;&#x8FF0;&#xFF0C;&#x4E2A;&#x4EBA;&#x6BD4;&#x8F83;&#x611F;&#x5174;&#x8DA3;&#x9488;&#x5BF9; Prompt&#x7684;&#x653B;&#x51FB;&#xFF0C;&#x968F;&#x7740;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#xFF0C;&#x5B89;&#x5168;&#x5FC5;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;&#x9886;&#x57DF;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x600E;&#x6837;&#x8BBE;&#x8BA1;&#x597D;&#x7684; Prompt&#xFF0C;&#x67E5;&#x770B;<a href="../ref/prompt.html">Prompt&#x4E13;&#x9898;</a>&#x7AE0;&#x8282;&#x5185;&#x5BB9;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x6211;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x8FC7;&#x591A;&#x9610;&#x8FF0;&#xFF0C;&#x4E2A;&#x4EBA;&#x6BD4;&#x8F83;&#x611F;&#x5174;&#x8DA3;&#x9488;&#x5BF9; Prompt&#x7684;&#x653B;&#x51FB;&#xFF0C;&#x968F;&#x7740;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#xFF0C;&#x5B89;&#x5168;&#x5FC5;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;&#x9886;&#x57DF;&#x3002;</p>
 <h3 id="prompt-hacking">Prompt hacking</h3>
-<ul>
-<li><a href="https://arxiv.org/pdf/2305.13860.pdf" target="_blank">ChatGPT&#x63D0;&#x793A;&#x8D8A;&#x72F1;&#x5B9E;&#x9A8C;&#x8BBA;&#x6587;</a></li>
-<li><a href="https://k5ms77k0o1.feishu.cn/docx/W5m0dFbC5oAMbjxKRescQUQVnnh" target="_blank">&#x8D8A;&#x72F1;&#x63D0;&#x793A;&#x8BCD;&#x6C47;&#x603B;</a></li>
-</ul>
 <p>Prompt hacking &#x662F;&#x4E00;&#x4E2A;&#x672F;&#x8BED;&#xFF0C;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x4E00;&#x79CD;&#x5229;&#x7528;LLM&#x7684;&#x6F0F;&#x6D1E;&#x8FDB;&#x884C;&#x653B;&#x51FB;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x901A;&#x8FC7;&#x64CD;&#x7EB5;&#x5176;&#x8F93;&#x5165;&#x6216;&#x63D0;&#x793A;&#x3002;&#x4E0E;&#x901A;&#x5E38;&#x5229;&#x7528;&#x8F6F;&#x4EF6;&#x6F0F;&#x6D1E;&#x7684;&#x4F20;&#x7EDF;&#x9ED1;&#x5BA2;&#x653B;&#x51FB;&#x4E0D;&#x540C;&#xFF0C;Prompt hacking &#x653B;&#x51FB;&#x4F9D;&#x8D56;&#x4E8E;&#x7CBE;&#x5FC3;&#x5236;&#x4F5C;&#x7684;&#x63D0;&#x793A;&#x6765;&#x6B3A;&#x9A97;LLM&#x6267;&#x884C;&#x610F;&#x5916;&#x64CD;&#x4F5C;&#x3002;&#x4E3A;&#x4E86;&#x9632;&#x6B62;Prompt hacking&#x884C;&#x4E3A;&#xFF0C;&#x5FC5;&#x987B;&#x91C7;&#x53D6;&#x9632;&#x5FA1;&#x63AA;&#x65BD;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x57FA;&#x4E8E;Prompt&#x7684;&#x9632;&#x5FA1;&#x3001;&#x5B9A;&#x671F;&#x76D1;&#x63A7;LLM&#x7684;&#x884C;&#x4E3A;&#x548C;&#x8F93;&#x51FA;&#x6765;&#x5B9A;&#x4F4D;&#x5F02;&#x5E38;&#x6D3B;&#x52A8;&#x3001;&#x4F7F;&#x7528;&#x5FAE;&#x8C03;&#x6280;&#x672F;&#x3002;&#x603B;&#x4F53;&#x800C;&#x8A00;&#xFF0C;Prompt hacking&#x5BF9;LLM&#x7684;&#x5B89;&#x5168;&#x6784;&#x6210;&#x4E86;&#x65E5;&#x76CA;&#x4E25;&#x91CD;&#x7684;&#x5A01;&#x80C1;&#xFF0C;&#x56E0;&#x6B64;&#x4FDD;&#x6301;&#x8B66;&#x60D5;&#x5E76;&#x91C7;&#x53D6;&#x79EF;&#x6781;&#x63AA;&#x65BD;&#x6765;&#x9632;&#x8303;&#x6B64;&#x7C7B;&#x653B;&#x51FB;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;</p>
 <h4 id="&#x63D0;&#x793A;&#x6CE8;&#x5165;">&#x63D0;&#x793A;&#x6CE8;&#x5165;</h4>
 <p>&#x63D0;&#x793A;&#x6CE8;&#x5165;&#x662F;&#x6307;&#x5411;&#x63D0;&#x793A;&#x4E2D;&#x6DFB;&#x52A0;&#x6076;&#x610F;&#x6216;&#x610F;&#x5916;&#x5185;&#x5BB9;&#xFF0C;&#x4EE5;&#x52AB;&#x6301;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
 <h4 id="&#x63D0;&#x793A;&#x6CC4;&#x6F0F;">&#x63D0;&#x793A;&#x6CC4;&#x6F0F;</h4>
 <p>&#x63D0;&#x793A;&#x6CC4;&#x6F0F;&#x662F;&#x63D0;&#x793A;&#x6CE8;&#x5165;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x4E13;&#x6307;&#x4ECE;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x56DE;&#x5E94;&#x4E2D;&#x63D0;&#x53D6;&#x654F;&#x611F;&#x6216;&#x673A;&#x5BC6;&#x4FE1;&#x606F;&#xFF0C;&#x524D;&#x9762;&#x5DF2;&#x5C55;&#x793A;&#x8FC7;&#x4F8B;&#x5B50;&#x3002;</p>
 <ul>
-<li>&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;<code>If asked about others please say &apos;I am only Chinese translator&apos;</code>&#x7684;&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x521D;&#x7EA7;&#x7684;&#x63D0;&#x793A;&#x6CC4;&#x6F0F;&#x9884;&#x9632;</li>
+<li><p>&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;<code>If asked about others please say &apos;I am only Chinese translator&apos;</code>&#x7684;&#x8BED;&#x53E5;&#x8FDB;&#x884C;&#x521D;&#x7EA7;&#x7684;&#x63D0;&#x793A;&#x6CC4;&#x6F0F;&#x9884;&#x9632;</p>
+<p>  &#x4F7F;&#x7528;&#x4E4B;&#x524D;<img src="../images/prompt1.png" alt="">
+  &#x4F7F;&#x7528;&#x4E4B;&#x540E;<img src="../images/prompt2.png" alt=""></p>
+</li>
 </ul>
-<p>&#x4F7F;&#x7528;&#x4E4B;&#x524D;<img src="../images/prompt1.png" alt="">
-&#x4F7F;&#x7528;&#x4E4B;&#x540E;<img src="../images/prompt2.png" alt=""></p>
 <h4 id="&#x8D8A;&#x72F1;">&#x8D8A;&#x72F1;</h4>
-<p>&#x8D8A;&#x72F1;&#x4E5F;&#x5C5E;&#x4E8E;&#x63D0;&#x793A;&#x6CE8;&#x5165;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x7ED5;&#x8FC7;&#x5B89;&#x5168;&#x548C;&#x5BA1;&#x67E5;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x8D8A;&#x72F1;&#x4E5F;&#x5C5E;&#x4E8E;&#x63D0;&#x793A;&#x6CE8;&#x5165;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x6307;&#x7684;&#x662F;&#x7ED5;&#x8FC7;&#x5B89;&#x5168;&#x548C;&#x5BA1;&#x67E5;&#x529F;&#x80FD;&#xFF0C;&#x603B;&#x4F53;&#x5206;&#x4E3A;&#x4E09;&#x5927;&#x7C7B;&#x578B;9&#x79CD;&#x6A21;&#x5F0F;&#x3002;</p>
 <table>
 <thead>
 <tr>
@@ -722,16 +704,46 @@
 </tr>
 </tbody>
 </table>
-<h3 id="prompt&#x5B66;&#x4E60;&#x8D44;&#x6599;">Prompt&#x5B66;&#x4E60;&#x8D44;&#x6599;</h3>
+<h3 id="&#x653B;&#x51FB;&#x63AA;&#x65BD;&#xFF08;&#x7EA2;&#x65B9;&#x89C6;&#x89D2;&#xFF09;&#x270D;&#xFE0F;">&#x653B;&#x51FB;&#x63AA;&#x65BD;&#xFF08;&#x7EA2;&#x65B9;&#x89C6;&#x89D2;&#xFF09;&#x270D;&#xFE0F;</h3>
+<p>&#x4E0B;&#x9762;&#x5C06;&#x4E0A;&#x8FF0;&#x7684;&#x8D8A;&#x72F1;&#x6848;&#x4F8B;&#x8FDB;&#x884C;&#x7684;&#x5F52;&#x7EB3;&#x5206;&#x6790;</p>
+<h4 id="&#x6DF7;&#x6DC6;&#x4EE4;&#x724C;&#x7ED5;&#x8FC7;">&#x6DF7;&#x6DC6;/&#x4EE4;&#x724C;&#x7ED5;&#x8FC7;</h4>
+<h4 id="&#x6709;&#x6548;&#x8F7D;&#x8377;&#x5206;&#x5272;">&#x6709;&#x6548;&#x8F7D;&#x8377;&#x5206;&#x5272;</h4>
+<h4 id="&#x5BC6;&#x7801;&#x672C;&#x653B;&#x51FB;">&#x5BC6;&#x7801;&#x672C;&#x653B;&#x51FB;</h4>
+<h4 id="&#x8BBE;&#x7F6E;&#x865A;&#x62DF;&#x573A;&#x666F;">&#x8BBE;&#x7F6E;&#x865A;&#x62DF;&#x573A;&#x666F;</h4>
+<h4 id="&#x95F4;&#x63A5;&#x6CE8;&#x5165;">&#x95F4;&#x63A5;&#x6CE8;&#x5165;</h4>
+<h4 id="&#x9012;&#x5F52;&#x6CE8;&#x5165;">&#x9012;&#x5F52;&#x6CE8;&#x5165;</h4>
+<h4 id="&#x4EE3;&#x7801;&#x6CE8;&#x5165;">&#x4EE3;&#x7801;&#x6CE8;&#x5165;</h4>
+<h3 id="&#x9632;&#x5FA1;&#x63AA;&#x65BD;&#xFF08;&#x84DD;&#x65B9;&#x89C6;&#x89D2;&#xFF09;&#x270D;&#xFE0F;">&#x9632;&#x5FA1;&#x63AA;&#x65BD;&#xFF08;&#x84DD;&#x65B9;&#x89C6;&#x89D2;&#xFF09;&#x270D;&#xFE0F;</h3>
+<h4 id="&#x8FC7;&#x6EE4;">&#x8FC7;&#x6EE4;</h4>
+<p>&#x8FC7;&#x6EE4;&#x662F;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x7528;&#x4E8E;&#x9632;&#x6B62; Prompt hacking&#xFF0C;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x68C0;&#x67E5;&#x521D;&#x59CB;&#x63D0;&#x793A;&#x6216;&#x8F93;&#x51FA;&#x4E2D;&#x5E94;&#x7981;&#x6B62;&#x7684;&#x5355;&#x8BCD;&#x548C;&#x77ED;&#x8BED;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9ED1;&#x540D;&#x5355;&#x6216;&#x767D;&#x540D;&#x5355;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x76EE;&#x7684;&#x3002;</p>
+<h4 id="&#x9632;&#x5FA1;&#x6307;&#x5B9A;">&#x9632;&#x5FA1;&#x6307;&#x5B9A;</h4>
+<h4 id="&#x540E;&#x7F6E;&#x63D0;&#x793A;">&#x540E;&#x7F6E;&#x63D0;&#x793A;</h4>
+<h4 id="&#x968F;&#x673A;&#x5E8F;&#x5217;&#x5C01;&#x88C5;">&#x968F;&#x673A;&#x5E8F;&#x5217;&#x5C01;&#x88C5;</h4>
+<h4 id="&#x4E09;&#x660E;&#x6CBB;&#x9632;&#x5FA1;">&#x4E09;&#x660E;&#x6CBB;&#x9632;&#x5FA1;</h4>
+<h4 id="xml&#x6807;&#x8BB0;">XML&#x6807;&#x8BB0;</h4>
+<h4 id="&#x5229;&#x7528;-llm-&#x68C0;&#x6D4B;&#x5BF9;&#x6297;&#x6027;&#x63D0;&#x793A;">&#x5229;&#x7528; LLM &#x68C0;&#x6D4B;&#x5BF9;&#x6297;&#x6027;&#x63D0;&#x793A;</h4>
+<p>&#x7528;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684; LLM &#x6765;&#x65AD;&#x4E00;&#x4E2A;&#x63D0;&#x793A;&#x662F;&#x5426;&#x5177;&#x6709;&#x5BF9;&#x6297;&#x6027;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x1F447;&#xFF1A;</p>
+<h4 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h4>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1Bo4y1A7FU" target="_blank">Prompt&#x63D0;&#x793A;&#x8BCD;&#x8BFE;&#x7A0B;</a>&#xFF1A;&#x65AF;&#x5766;&#x798F;&#x5434;&#x6069;&#x8FBE;&#x6559;&#x6388;&#x548C; OpenAI &#x5B98;&#x65B9;&#x8054;&#x5408;&#x51FA;&#x54C1;&#x7684;ChatGPT Prompt&#x63D0;&#x793A;&#x8BCD;&#x8BFE;&#x7A0B;&#xFF0C;&#x8D28;&#x91CF;&#x5F88;&#x9AD8;&#x7684;&#x6559;&#x5B66;&#x89C6;&#x9891;&#x3002;</li>
-<li><a href="../ref/prompt.html">&#x4E2D;&#x6587;&#x63D0;&#x793A;&#x8BCD;&#x6307;&#x5357;</a>&#xFF1A;&#x4E2A;&#x4EBA;&#x7FFB;&#x8BD1;&#x6574;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5E94;&#x4ED8; 90% &#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x3002;</li>
-<li><a href="https://www.zhihu.com/question/570765297/answer/2977526744" target="_blank">&#x4E24;&#x4E2A;&#x63D0;&#x793A;&#x8BCD;&#x6846;&#x67B6;</a>&#xFF1A;&#x53EF;&#x4EE5;&#x5957;&#x6846;&#x67B6;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x4EFB;&#x4F55;&#x60F3;&#x8981;&#x80FD;&#x529B;&#x7684; Prompt&#x3002;</li>
-<li><a href="https://promptperfect.jinaai.cn/" target="_blank">PromptPerfect</a>&#xFF1A;&#x8F93;&#x5165;&#x539F;&#x59CB;&#x63D0;&#x793A;&#x8BCD;&#xFF0C;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x5B9A;&#x5411;&#x4F18;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x5411;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x4F7F;&#x7528;prompt&#x7684;&#x6A21;&#x578B;&#x5982;Difussion&#xFF0C;ChatGPT&#x7B49;</li>
-<li><a href="https://newzone.top/chatgpt/" target="_blank">ChatGPT ShortCut</a>&#xFF1A;&#x63D0;&#x4F9B;&#x5404;&#x5F0F;&#x573A;&#x666F;&#x4E0B;&#x7684;Prompt&#x8303;&#x4F8B;&#xFF0C;&#x8303;&#x4F8B;&#x5F88;&#x5168;&#xFF01;</li>
-<li><a href="https://learnprompting.org/" target="_blank">learning Prompt</a>&#xFF1A;prompt engineering&#x8D85;&#x5168;&#x6559;&#x7A0B;&#xFF0C;&#x548C;&#x843D;&#x5730;&#x5E94;&#x7528;&#x6536;&#x85CF;&#xFF0C;&#x5305;&#x62EC;&#x5F88;&#x591A;LLM&#x8C03;&#x7528;Agent&#x7684;&#x9AD8;&#x7EA7;&#x573A;&#x666F;</li>
-<li><a href="https://www.promptingguide.ai/zh" target="_blank">&#x63D0;&#x793A;&#x5DE5;&#x7A0B;&#x6307;&#x5357;</a> </li>
+<li><p>&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;</p>
+<p>  &#x4F7F;&#x7528;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x5982;GPT-4&#xFF08;GPT-4&gt;ChatGPT&gt;gpt-3.5-tubor API&#xFF09;&#xFF0C;&#x5BF9;&#x4E8E;&#x63D0;&#x793A;&#x6CE8;&#x5165;&#x66F4;&#x5177;&#x6709;&#x9C81;&#x68D2;&#x6027;</p>
+</li>
+<li><p>&#x5FAE;&#x8C03;</p>
+<p>  &#x5FAE;&#x8C03;&#x6A21;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x6709;&#x6548;&#x7684;&#x9632;&#x5FA1;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x63A8;&#x7406;&#x65F6;&#x9664;&#x4E86;&#x7528;&#x6237;&#x8F93;&#x5165;&#x4E4B;&#x5916;&#xFF0C;&#x4E0D;&#x7528;&#x9644;&#x52A0;&#x5176;&#x4ED6;&#x63D0;&#x793A;&#xFF0C;&#x4F46;&#x5FAE;&#x8C03;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;&#x5BF9;&#x6297;&#x6027;&#x63D0;&#x793A;&#x6570;&#x636E;&#x6837;&#x672C;&#xFF0C;&#x8FD9;&#x79CD;&#x9632;&#x5FA1;&#x65B9;&#x6CD5;&#x4E0D;&#x5BB9;&#x6613;&#x843D;&#x5730;&#xFF0C;&#x4F46;&#x80AF;&#x5B9A;&#x6548;&#x679C;&#x6700;&#x597D;</p>
+</li>
+<li><p>&#x8F6F;&#x63D0;&#x793A;</p>
+<p>  &#x8F6F;&#x63D0;&#x793A;&#x5373;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x5B9A;&#x4E49;&#x7684;&#x79BB;&#x6563;&#x63D0;&#x793A;&#xFF08;&#x9664;&#x4E86;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF09;</p>
+</li>
+<li><p>&#x957F;&#x5EA6;&#x9650;&#x5236;</p>
+<p>  &#x5BF9;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x957F;&#x5EA6;&#x9650;&#x5236;&#x6216;&#x9650;&#x5236;&#x804A;&#x5929;&#x673A;&#x5668;&#x4EBA;&#x5BF9;&#x8BDD;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x5FC5;&#x5E94;&#x5C31;&#x662F;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x9632;&#x6B62;&#x4E00;&#x4E9B;&#x653B;&#x51FB;&#x3002;</p>
+</li>
 </ul>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li><a href="https://arxiv.org/pdf/2305.13860.pdf" target="_blank">ChatGPT&#x63D0;&#x793A;&#x8D8A;&#x72F1;&#x5B9E;&#x9A8C;&#x8BBA;&#x6587;</a></li>
+<li><a href="https://www.jailbreakchat.com/" target="_blank">&#x8D8A;&#x72F1;&#x63D0;&#x793A;&#x8BCD;&#x6C47;&#x603B;A</a></li>
+<li><a href="https://gist.github.com/coolaj86/6f4f7b30129b0251f61fa7baaa881516" target="_blank">&#x8D8A;&#x72F1;&#x63D0;&#x793A;&#x8BCD;&#x6C47;&#x603B;B</a></li>
+</ol>
 
                                 
                                 </section>
@@ -775,7 +787,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Prompt 专题","level":"1.2.5","depth":2,"next":{"title":"LangChain入门","level":"1.3","depth":1,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},{"title":"源码组件","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"动手实现领域知识机器人","level":"1.3.4","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]},{"title":"Agent 专题","level":"1.3.5","depth":2,"path":"02-langchain/02-5.md","ref":"./02-langchain/02-5.md","articles":[]}]},"previous":{"title":"动手实现聊天机器人","level":"1.2.4","depth":2,"path":"01-llm/01-4.md","ref":"./01-llm/01-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-5.md","mtime":"2023-06-16T15:31:03.675Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-16T15:32:23.963Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LLM 安全专题","level":"1.2.5","depth":2,"next":{"title":"LangChain入门","level":"1.3","depth":1,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},{"title":"源码组件","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},{"title":"动手实现领域知识机器人","level":"1.3.4","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]},{"title":"Agent 专题","level":"1.3.5","depth":2,"path":"02-langchain/02-5.md","ref":"./02-langchain/02-5.md","articles":[]}]},"previous":{"title":"动手实现聊天机器人","level":"1.2.4","depth":2,"path":"01-llm/01-4.md","ref":"./01-llm/01-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-5.md","mtime":"2023-06-17T02:45:08.255Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-17T02:47:14.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

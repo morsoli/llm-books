@@ -1,6 +1,17 @@
-## ChatGPT 中文调教指南
-> 本文翻译自仓库 [awesome-chatgpt-prompts
-Public](https://github.com/f/awesome-chatgpt-prompts)
+## Prompt专题
+
+**Prompt** 是指在训练或与大型语言模型（如GPT系列）进行交互时，提供给模型的输入文本。通过给定特定的prompt，可以引导模型生成特定主题或类型的文本。在自然语言处理（NLP）任务中，prompt充当了问题或输入的角色，而模型的输出是对这个问题的回答或完成的任务。
+
+### 推荐的Prompt学习资料
+- [Prompt提示词课程](https://www.bilibili.com/video/BV1Bo4y1A7FU)：斯坦福吴恩达教授和 OpenAI 官方联合出品的ChatGPT Prompt提示词课程，质量很高的教学视频。
+- [两个提示词框架](https://www.zhihu.com/question/570765297/answer/2977526744)：可以套框架实现自己任何想要能力的 Prompt。
+- [PromptPerfect](https://promptperfect.jinaai.cn/)：输入原始提示词，模型进行定向优化，可以定向支持不同使用prompt的模型如Difussion，ChatGPT等
+- [ChatGPT ShortCut](https://newzone.top/chatgpt/)：提供各种场景下的Prompt范例，范例很全！
+- [learning Prompt](https://learnprompting.org/)：prompt engineering超全教程，和落地应用收藏，包括很多LLM调用Agent的高级场景
+
+## 中文提示词指南
+- 个人翻译整理自仓库 [awesome-chatgpt-prompts
+Public](https://github.com/f/awesome-chatgpt-prompts)，可以应付 90% 的使用场景。
 
 ### 充当Linux终端
 
