@@ -10,8 +10,7 @@
     * [LangChain介绍](./02-langchain/02-1.md)
 	* [LangChain模块解读](./02-langchain/02-2.md)
     * [Embedding嵌入](./02-langchain/02-3.md)
-    * [动手实现领域知识机器人](./02-langchain/02-4.md)
-    * [Agent 专题](./02-langchain/02-5.md)
+    * [动手实现垂直领域机器人](./02-langchain/02-4.md)
 * LlamaIndex概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
     * [源码组件](./03-llamaIndex/03-2.md)

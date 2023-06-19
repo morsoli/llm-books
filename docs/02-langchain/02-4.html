@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>动手实现领域知识机器人 · 利用 LLM 构建应用实践指南</title>
+        <title>动手实现垂直领域机器人 · 利用 LLM 构建应用实践指南</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -60,8 +60,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="02-5.html" />
     
     
     <link rel="prev" href="02-3.html" />
@@ -257,20 +255,7 @@
                 <a href="02-4.html">
             
                     
-                    动手实现领域知识机器人
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="02-5.html">
-            
-                <a href="02-5.html">
-            
-                    
-                    Agent 专题
+                    动手实现垂直领域机器人
             
                 </a>
             
@@ -616,7 +601,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >动手实现领域知识机器人</a>
+        <a href=".." >动手实现垂直领域机器人</a>
     </h1>
 </div>
 
@@ -632,18 +617,20 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;">&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;</h2>
-<p>&#x5F53;&#x524D;&#x81EA;&#x6709;&#x6570;&#x636E;&#x63A5;&#x5165;&#x5927;&#x6A21;&#x578B;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5FAE;&#x8C03;&#x6A21;&#x578B;&#x548C;&#x5728;Prompt&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;</p>
+<p>&#x5F53;&#x524D;&#x81EA;&#x6709;&#x6570;&#x636E;&#x63A5;&#x5165;&#x5927;&#x6A21;&#x578B;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5FAE;&#x8C03;&#x6A21;&#x578B;&#x548C;&#x5728; Prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;</p>
 <ul>
-<li>&#x5728;Prompt&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF1A;<a href="https://github.com/lvwzhen/law-cn-ai" target="_blank">AI&#x6CD5;&#x5F8B;&#x52A9;&#x624B;</a></li>
-<li>&#x5FAE;&#x8C03;&#xFF08;Fine-tuning&#xFF09;&#x6CE8;&#x5165;&#x4E13;&#x4E1A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#xFF1A;<a href="https://github.com/LiuHC0428/LAW-GPT" target="_blank">&#x4E2D;&#x6587;&#x6CD5;&#x5F8B;&#x901A;&#x7528;&#x6A21;&#x578B;</a>&#x7531;ChatGLM-6B LoRA 16-bit&#x6307;&#x4EE4;&#x5FAE;&#x8C03;&#x5F97;&#x5230;</li>
+<li>prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/lvwzhen/law-cn-ai" target="_blank">AI&#x6CD5;&#x5F8B;&#x52A9;&#x624B;</a><ul>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x6548;&#x679C;&#x8F83;&#x5DEE;&#xFF0C;&#x96BE;&#x4EE5;&#x5728;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5782;&#x76F4;&#x573A;&#x666F;&#x4F7F;&#x7528;</li>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5373;&#x5F00;&#x5373;&#x7528;&#xFF0C;&#x5E94;&#x7528;&#x843D;&#x5730;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;</li>
 </ul>
-<p>&#x6A21;&#x5F0F;&#x4E00;&#xFF1A;&#x901A;&#x8FC7;LLM &#x7F16;&#x7A0B;&#x6846;&#x67B6;&#xFF0C;&#x5C06;&#x81EA;&#x6709;&#x6570;&#x636E;&#x4E0E;&#x9884;&#x8BAD;&#x7EC3;&#x7684; LLM &#x76F8;&#x7ED3;&#x5408;&#xFF1B;
-&#x4ECE;&#x597D;&#x7684;&#x65B9;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x5373;&#x5F00;&#x5373;&#x7528;&#xFF0C;&#x5E94;&#x7528;&#x843D;&#x5730;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;&#xFF0C;&#x843D;&#x5730;&#x65F6;&#x95F4;&#x5C0F;&#x65F6;&#x7EA7;&#xFF1B;
-&#x574F;&#x7684;&#x65B9;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x6548;&#x679C;&#x8F83;&#x5DEE;&#xFF0C;&#x96BE;&#x4EE5;&#x5728;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5782;&#x76F4;&#x573A;&#x666F;&#x4F7F;&#x7528;</p>
-<p>&#x6A21;&#x5F0F;&#x4E8C;&#xFF1A;&#x5728;&#x81EA;&#x6709;&#x6570;&#x636E;&#x4E0A;&#x5BF9; LLM &#x8FDB;&#x884C;&#x5FAE;&#x8C03;&#xFF1B;
-&#x4ECE;&#x597D;&#x7684;&#x65B9;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x51CF;&#x5C11;&#x4E86;&#x5BF9;&#x8FD9;&#x79CD;&#x7F16;&#x6392;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5373;&#x53EF;&#xFF1B;
-&#x574F;&#x7684;&#x65B9;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x7684;&#x6210;&#x672C;&#x548C;&#x65F6;&#x95F4;&#x82B1;&#x8D39;&#x90FD;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x9700;&#x8981;&#x5B9A;&#x671F;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x4EE5;&#x4FDD;&#x6301;&#x66F4;&#x65B0;&#xFF1B;</p>
-<p>&#x4E0B;&#x9762;&#x662F;&#x9886;&#x57DF;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x5B9E;&#x73B0;&#x6D41;&#x7A0B;&#x56FE;</p>
+</li>
+<li>&#x5FAE;&#x8C03;&#xFF08;Fine-tuning&#xFF09;&#x6CE8;&#x5165;&#x4E13;&#x4E1A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/LiuHC0428/LAW-GPT" target="_blank">&#x4E2D;&#x6587;&#x6CD5;&#x5F8B;&#x901A;&#x7528;&#x6A21;&#x578B;</a>&#x7531;ChatGLM-6B LoRA 16-bit&#x6307;&#x4EE4;&#x5FAE;&#x8C03;&#x5F97;&#x5230;<ul>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x51CF;&#x5C11;&#x4E86;LLM&#x7F16;&#x6392;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5373;&#x53EF;</li>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x6210;&#x672C;&#x548C;&#x65F6;&#x95F4;&#x82B1;&#x8D39;&#x90FD;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x9700;&#x8981;&#x5B9A;&#x671F;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x4EE5;&#x4FDD;&#x6301;&#x66F4;&#x65B0;&#xFF08;&#x6CD5;&#x5F8B;&#x6587;&#x672C;&#x8FD8;&#x597D;&#x4E00;&#x4E9B;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;&#xFF08;Prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#x901A;&#x7528;&#x6D41;&#x7A0B;&#x56FE;</p>
 <p><img src="https://mermaid.ink/img/pako:eNqlVE1v00AQ_Sur5WJLm4iktyBVStpwIb0AJ2IOrneduLXXJnaaRFGkSrQ0Ra0aVAgSJIVWreiBEsSHBP0Qf6ZeJ_-CtTcJrZIDhT15Zp7fezuj2TrUbExgChZKqlMEufsKdcuLIgjOdtnemr_VZq8-s-1PCgX8pBN5zV1BpKoRE7lPTFS1zMfDUjJfs0y05NqUZwjFV7gG3b2pdJlE3sE6stTSMrYrFGFbqyKv6sXj8SFrJplfcgrIoYUruZm85cygiroicpGWQidFQCwWA_7z9_2LC_-wPXh6PNL-W1xaYu0N1vkoYlmhkyD-7yxI87t6NZNMIQG6YZqpW7qu8YOA65XsZRLGt_kZxbGKgb1iKulU73DRyI4Q9pvP_M0vkUZm6MXvvpZHctdANxbKREJZa5FgbNCC63_f8tePwuQsyNb91ovBxo64hH-62xhpTuBvrKvQOUnq904uf26GI3h31O8dyPJ1M2Mvs2AuIQmMcCRPGPkPHwkx-og4ePvj8vycrX5grU7w7SDqQxaMJzsV8w-aWU4MHtoOuCdWrCMaPi9xbn_9a_Bm7c-ceYXttILDU3a8z7q_OI51VoOzpkj2e9uh-1xuIezTXUkSxeDkJdtvyrxPEEGLlCzVwHzF6-HyKNArEosoMMU_MdHVsukpUKENDlXLnv2gRjWY0lXTJQiWHax6ZN5Q-RJb4yzBhmeXFsS7ET0fCDoqfWTbI0zjN6Pg644?type=png" alt=""></p>
 <pre class="language-"><code class="lang-mermaid"><span class="token keyword">graph</span> LR
 <span class="token keyword">subgraph</span> &#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;
@@ -674,10 +661,15 @@ C1 <span class="token arrow operator">---</span> &#x5411;&#x91CF;&#x76F8;&#x4F3C
 
 E <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">Top K &#x7ED3;&#x679C;</span> <span class="token arrow operator">---&gt;</span></span> D<span class="token text string">(&#x76F8;&#x5173;&#x7684;&#x6587;&#x672C;&#x5757;)</span><span class="token arrow operator">---</span>&#x63D0;&#x793A;&#x6A21;&#x677F;<span class="token arrow operator">--&gt;</span>&#x6700;&#x7EC8;&#x63D0;&#x793A;&#x8BCD;<span class="token arrow operator">---</span> LLM <span class="token arrow operator">--&gt;</span>F<span class="token text string">((&#x6700;&#x7EC8;&#x7B54;&#x6848;))</span>
 </code></pre>
+<h3 id="&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;">&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;</h3>
+<p>&#x5728;<a href="https://www.iachina.cn/art/2017/6/29/art_71_45682.html" target="_blank">&#x4EBA;&#x8EAB;&#x4FDD;&#x9669;&#x4EA7;&#x54C1;&#x4FE1;&#x606F;&#x5E93;</a> &#x67E5;&#x8BE2;&#x5DF2;&#x5907;&#x6848;&#x7684;&#x4FDD;&#x9669;&#x5408;&#x540C;&#x539F;&#x4EF6;&#xFF0C;&#x4E3A;PDF&#x683C;&#x5F0F;</p>
+<p><img src="https://s2.loli.net/2023/06/17/hBQSHzKGkoIX6CU.webp" alt=""></p>
+<h4 id="&#x5408;&#x540C;&#x6587;&#x6863;&#x5206;&#x5272;">&#x5408;&#x540C;&#x6587;&#x6863;&#x5206;&#x5272;</h4>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6848;&#x81EA;&#x7136;&#x662F;&#xFF0C;&#x628A;&#x4FDD;&#x9669;&#x6761;&#x6B3E;&#x6309;&#x9875;&#x7801;&#x4E00;&#x9875;&#x4E00;&#x9875;&#x5206;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x9875;&#x5185;&#x5BB9;&#x4E5F;&#x8D85;&#x4E86;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x534A;&#x9875;&#x534A;&#x9875;&#x5206;&#x5757;&#x3002; &#x4F46;&#x8FD9;&#x5FFD;&#x7565;&#x4E86;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x77E5;&#x8BC6;&#x5185;&#x5BB9;&#x5E76;&#x975E;&#x662F;&#x6309;&#x9875;&#x7801;&#x5206;&#x5272;&#x7684; &#x3002;&#x4E00;&#x4E2A;&#x77E5;&#x8BC6;&#x53EF;&#x80FD;&#x7B2C;&#x4E09;&#x9875;&#x6B63;&#x597D;&#x8D77;&#x4E86;&#x4E2A;&#x6807;&#x9898;&#xFF0C;&#x7B2C;&#x56DB;&#x9875;&#x624D;&#x662F;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
 <h3 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h3>
 <h4 id="&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;">&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;</h4>
 <ul>
-<li><a href="https://huggingface.co/THUDM/chatglm-6b" target="_blank">THUDM/chatglm-6b</a></li>
+<li><a href="https://github.com/THUDM/ChatGLM-6B" target="_blank">ChatGLM-6B &#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x3001;&#x652F;&#x6301;&#x4E2D;&#x82F1;&#x53CC;&#x8BED;&#x7684;&#x5BF9;&#x8BDD;&#x8BED;&#x8A00;&#x6A21;&#x578B;</a></li>
 <li>&#x901A;&#x8FC7; <a href="https://github.com/lm-sys/FastChat" target="_blank">FastChat</a> API &#x8C03;&#x7528; LLM &#x6A21;&#x578B;</li>
 </ul>
 <h4 id="&#x652F;&#x6301;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7684;&#x6A21;&#x578B;">&#x652F;&#x6301;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7684;&#x6A21;&#x578B;</h4>
@@ -686,6 +678,7 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
 <li><a href="https://huggingface.co/shibing624/text2vec-base-chinese" target="_blank">shibing624/text2vec-base-chinese</a></li>
 <li><a href="https://huggingface.co/GanymedeNil/text2vec-large-chinese" target="_blank">GanymedeNil/text2vec-large-chinese</a></li>
 <li><a href="https://huggingface.co/moka-ai/m3e-base" target="_blank">moka-ai/m3e-base</a></li>
+<li><a href="https://github.com/UKPLab/sentence-transformers" target="_blank">&#x7528;&#x4E8E;&#x53E5;&#x5B50;&#x3001;&#x6587;&#x672C;&#x548C;&#x56FE;&#x50CF;&#x5D4C;&#x5165;&#x7684;Python&#x5E93;</a></li>
 </ul>
 <h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
 <ol>
@@ -719,14 +712,10 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
 
             
                 
-                <a href="02-3.html" class="navigation navigation-prev " aria-label="Previous page: Embedding嵌入">
+                <a href="02-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Embedding嵌入">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="02-5.html" class="navigation navigation-next " aria-label="Next page: Agent 专题">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -735,7 +724,7 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"动手实现领域知识机器人","level":"1.3.4","depth":2,"next":{"title":"Agent 专题","level":"1.3.5","depth":2,"path":"02-langchain/02-5.md","ref":"./02-langchain/02-5.md","articles":[]},"previous":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-4.md","mtime":"2023-06-17T04:18:17.280Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-17T07:03:40.162Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"动手实现垂直领域机器人","level":"1.3.4","depth":2,"next":{"title":"LlamaIndex概述","level":"1.4","depth":1,"ref":"","articles":[{"title":"LlamaIndex介绍","level":"1.4.1","depth":2,"path":"03-llamaIndex/03-1.md","ref":"./03-llamaIndex/03-1.md","articles":[]},{"title":"源码组件","level":"1.4.2","depth":2,"path":"03-llamaIndex/03-2.md","ref":"./03-llamaIndex/03-2.md","articles":[]},{"title":"非结构化数据作为数据源","level":"1.4.3","depth":2,"path":"03-llamaIndex/03-3.md","ref":"./03-llamaIndex/03-3.md","articles":[]}]},"previous":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-4.md","mtime":"2023-06-19T03:54:18.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-19T15:11:58.921Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -257,20 +257,7 @@
                 <a href="02-4.html">
             
                     
-                    动手实现领域知识机器人
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="02-5.html">
-            
-                <a href="02-5.html">
-            
-                    
-                    Agent 专题
+                    动手实现垂直领域机器人
             
                 </a>
             
@@ -632,19 +619,82 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="langchain&#x6A21;&#x5757;&#x89E3;&#x8BFB;">LangChain&#x6A21;&#x5757;&#x89E3;&#x8BFB;</h2>
-<blockquote>
-<p>LangChain&#x63D0;&#x4F9B;&#x7684;&#x4E3B;&#x8981;&#x6A21;&#x5757;&#xFF1A;</p>
+<p>LangChain &#x5206;&#x4E3A; 6 &#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x5BF9;&#xFF08;&#x5927;&#x8BED;&#x8A00;&#xFF09;&#x6A21;&#x578B;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x7684;&#x7BA1;&#x7406;&#x3001;&#x5916;&#x90E8;&#x6570;&#x636E;&#x63A5;&#x5165;&#x3001;&#x94FE;&#x7684;&#x6982;&#x5FF5;&#x3001;&#xFF08;&#x4E0A;&#x4E0B;&#x6587;&#x8BB0;&#x5FC6;&#xFF09;&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#x3001;&#x667A;&#x80FD;&#x4EE3;&#x7406;&#x4EE5;&#x53CA;&#x56DE;&#x8C03;&#x7CFB;&#x7EDF;&#xFF0C;&#x901A;&#x8FC7;&#x6587;&#x6863;&#x7684;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6E05;&#x6670;&#x4E86;&#x89E3;&#x5230; LangChain&#x7684;&#x4FA7;&#x91CD;&#x70B9;&#xFF0C;&#x5728;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x5F00;&#x53D1;&#x751F;&#x6001;&#x4E2D;&#x5BF9;&#x81EA;&#x5DF1;&#x7684;&#x5B9A;&#x4F4D;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x5C06;&#x5BF9;&#x5404;&#x4E2A;&#x6A21;&#x578B;&#x9010;&#x4E2A;&#x8FDB;&#x884C;&#x89E3;&#x8BFB;&#x3002;</p>
+<h3 id="model-io"><a href="https://python.langchain.com/docs/modules/model_io/" target="_blank">Model I/O</a></h3>
+<p>&#x8FD9;&#x90E8;&#x5206;&#x5305;&#x62EC;&#x5BF9;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x8F93;&#x5165;&#x73AF;&#x8282;&#x7684;&#x63D0;&#x793A;&#x8BCD;&#x7BA1;&#x7406;&#xFF08;&#x5305;&#x542B;&#x6A21;&#x677F;&#x5316;&#x63D0;&#x793A;&#x8BCD;&#x548C;&#x63D0;&#x793A;&#x8BCD;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x7B49;&#xFF09;&#xFF0C;&#x5904;&#x7406;&#x73AF;&#x8282;&#x7684;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;&#x5305;&#x62EC;&#x6240;&#x6709;LLMs&#x7684;&#x901A;&#x7528;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x53CA;&#x5E38;&#x7528;&#x7684;LLMs&#x5DE5;&#x5177;&#xFF1B;Chat&#x6A21;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x4E0E;LLMs&#x4E0D;&#x540C;&#x7684;API&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF09;&#xFF0C;&#x8F93;&#x51FA;&#x73AF;&#x8282;&#x5305;&#x62EC;&#x4ECE;&#x6A21;&#x578B;&#x8F93;&#x51FA;&#x4E2D;&#x63D0;&#x53D6;&#x4FE1;&#x606F;&#x3002;</p>
+<p><img src="https://python.langchain.com/assets/images/model_io-1f23a36233d7731e93576d6885da2750.jpg" alt=""></p>
+<h4 id="&#x63D0;&#x793A;&#x8BCD;&#x7BA1;&#x7406;">&#x63D0;&#x793A;&#x8BCD;&#x7BA1;&#x7406;</h4>
 <ul>
-<li>Prompts: &#x8FD9;&#x5305;&#x62EC;&#x63D0;&#x793A;&#x7BA1;&#x7406;&#x3001;&#x63D0;&#x793A;&#x4F18;&#x5316;&#x548C;&#x63D0;&#x793A;&#x5E8F;&#x5217;&#x5316;&#x3002;</li>
-<li>LLMs: &#x8FD9;&#x5305;&#x62EC;&#x6240;&#x6709;LLMs&#x7684;&#x901A;&#x7528;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x53CA;&#x5E38;&#x7528;&#x7684;LLMs&#x5DE5;&#x5177;&#x3002;</li>
-<li>Document Loaders: &#x8FD9;&#x5305;&#x62EC;&#x52A0;&#x8F7D;&#x6587;&#x6863;&#x7684;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x53CA;&#x4E0E;&#x5404;&#x79CD;&#x6587;&#x672C;&#x6570;&#x636E;&#x6E90;&#x7684;&#x96C6;&#x6210;&#x3002;</li>
-<li>Utils: &#x8BED;&#x8A00;&#x6A21;&#x578B;&#x5728;&#x4E0E;&#x5176;&#x4ED6;&#x77E5;&#x8BC6;&#x6216;&#x8BA1;&#x7B97;&#x6E90;&#x4EA4;&#x4E92;&#x65F6;&#x5F80;&#x5F80;&#x66F4;&#x5F3A;&#x5927;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x5305;&#x62EC;Python REPLs&#x3001;&#x5D4C;&#x5165;&#x3001;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7B49;&#x3002;LangChain&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5927;&#x6279;&#x5E38;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;</li>
-<li>Indexes: &#x8BED;&#x8A00;&#x6A21;&#x578B;&#x5728;&#x4E0E;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x7ED3;&#x5408;&#x65F6;&#x5F80;&#x5F80;&#x66F4;&#x5F3A;&#x5927; - &#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x6DB5;&#x76D6;&#x4E86;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x3002;</li>
-<li>Agents: Agents&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;LLM&#x5728;&#x9009;&#x62E9;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x3001;&#x6267;&#x884C;&#x8BE5;&#x52A8;&#x4F5C;&#x3001;&#x770B;&#x5230;&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x76F4;&#x5230;&#x5B8C;&#x6210;&#x3002;LangChain&#x63D0;&#x4F9B;&#x4E86;&#x4EE3;&#x7406;&#x7684;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4F9B;&#x9009;&#x62E9;&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x4EE5;&#x53CA;&#x7AEF;&#x5230;&#x7AEF;&#x4EE3;&#x7406;&#x7684;&#x793A;&#x4F8B;&#x3002;</li>
-<li>Chat: Chat&#x6A21;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x4E0E;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E0D;&#x540C;&#x7684;API - &#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x5904;&#x7406;&#x539F;&#x59CB;&#x6587;&#x672C;&#xFF0C;&#x800C;&#x662F;&#x5904;&#x7406;&#x6D88;&#x606F;&#x3002;LangChain&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#x6765;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#xFF0C;&#x5E76;&#x505A;&#x6240;&#x6709;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x4E8B;&#x60C5;&#x3002;</li>
+<li><p><strong>&#x63D0;&#x793A;&#x6A21;&#x677F;</strong>
+&#x52A8;&#x6001;&#x63D0;&#x793A;&#x8BCD;=&#x63D0;&#x793A;&#x6A21;&#x677F;+&#x53D8;&#x91CF;&#xFF0C;&#x901A;&#x8FC7;&#x5F15;&#x5165;&#x7ED9;&#x63D0;&#x793A;&#x8BCD;&#x5F15;&#x5165;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x4FDD;&#x8BC1;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x53C8;&#x80FD;&#x4FDD;&#x8BC1;Prompt&#x5185;&#x5BB9;&#x7ED3;&#x6784;&#x8FBE;&#x5230;&#x6700;&#x4F73;</p>
+<pre class="language-"><code class="lang-python">  <span class="token keyword">from</span> langchain <span class="token keyword">import</span> PromptTemplate
+  no_input_prompt <span class="token operator">=</span> PromptTemplate<span class="token punctuation">(</span>input_variables<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> template<span class="token operator">=</span><span class="token string">&quot;Tell me a joke.&quot;</span><span class="token punctuation">)</span>
+  no_input_prompt<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  one_input_prompt <span class="token operator">=</span> PromptTemplate<span class="token punctuation">(</span>input_variables<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;adjective&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> template<span class="token operator">=</span><span class="token string">&quot;Tell me a {adjective} joke.&quot;</span><span class="token punctuation">)</span>
+  <span class="token comment"># &quot;Tell me a funny chickens.&quot;</span>
+  one_input_prompt<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>adjective<span class="token operator">=</span><span class="token string">&quot;funny&quot;</span><span class="token punctuation">)</span>
+
+  multiple_input_prompt <span class="token operator">=</span> PromptTemplate<span class="token punctuation">(</span>
+      input_variables<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;adjective&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+      template<span class="token operator">=</span><span class="token string">&quot;Tell me a {adjective} joke about {content}.&quot;</span>
+  <span class="token punctuation">)</span>
+  <span class="token comment"># &quot;Tell me a funny joke about chickens.&quot;</span>
+  multiple_input_prompt<span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>adjective<span class="token operator">=</span><span class="token string">&quot;funny&quot;</span><span class="token punctuation">,</span> content<span class="token operator">=</span><span class="token string">&quot;chickens&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p><strong>&#x804A;&#x5929;&#x63D0;&#x793A;&#x6A21;&#x677F;</strong>
+&#x804A;&#x5929;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x6D88;&#x606F;&#x53EF;&#x4EE5;&#x4E0E;AI&#x3001;&#x4EBA;&#x7C7B;&#x6216;&#x7CFB;&#x7EDF;&#x89D2;&#x8272;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x6A21;&#x578B;&#x5E94;&#x8BE5;&#x66F4;&#x52A0;&#x5BC6;&#x5207;&#x5730;&#x9075;&#x5FAA;&#x7CFB;&#x7EDF;&#x804A;&#x5929;&#x6D88;&#x606F;&#x7684;&#x6307;&#x793A;&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x5BF9; OpenAI gpt-3.5-tubor API&#x4E2D;role&#x5B57;&#x6BB5;&#xFF08;role &#x7684;&#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x89D2;&#x8272;&#xFF0C;&#x5176;&#x4E2D; system &#x7528;&#x4E8E;&#x7CFB;&#x7EDF;&#x9884;&#x8BBE;&#xFF0C;&#x6BD4;&#x5982;&#x201D;&#x4F60;&#x662F;&#x4E00;&#x4E2A;&#x7FFB;&#x8BD1;&#x5BB6;&#x201C;&#xFF0C;&#x201C;&#x4F60;&#x662F;&#x4E00;&#x4E2A;&#x5199;&#x4F5C;&#x52A9;&#x624B;&#x201D;&#xFF0C;user &#x8868;&#x793A;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#xFF0C; assistant &#x8868;&#x793A;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#xFF09;&#x7684;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#xFF0C;&#x4EE5;&#x4FBF;&#x5E94;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x3002;SystemMessage&#x5BF9;&#x5E94;&#x7CFB;&#x7EDF;&#x9884;&#x8BBE;&#xFF0C;HumanMessage&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;AIMessage&#x8868;&#x793A;&#x6A21;&#x578B;&#x8F93;&#x51FA;&#xFF0C;&#x4F7F;&#x7528; ChatMessagePromptTemplate &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x610F;&#x89D2;&#x8272;&#x63A5;&#x6536;&#x804A;&#x5929;&#x6D88;&#x606F;&#x3002;</p>
+<pre class="language-"><code class="lang-python">  <span class="token keyword">from</span> langchain<span class="token punctuation">.</span>prompts <span class="token keyword">import</span> <span class="token punctuation">(</span>
+      ChatPromptTemplate<span class="token punctuation">,</span>
+      PromptTemplate<span class="token punctuation">,</span>
+      SystemMessagePromptTemplate<span class="token punctuation">,</span>
+      AIMessagePromptTemplate<span class="token punctuation">,</span>
+      HumanMessagePromptTemplate<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+  <span class="token keyword">from</span> langchain<span class="token punctuation">.</span>schema <span class="token keyword">import</span> <span class="token punctuation">(</span>
+      AIMessage<span class="token punctuation">,</span>
+      HumanMessage<span class="token punctuation">,</span>
+      SystemMessage
+  <span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">generate_template</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+      template<span class="token operator">=</span><span class="token string">&quot;You are a helpful assistant that translates {input_language} to {output_language}.&quot;</span>
+      system_message_prompt <span class="token operator">=</span> SystemMessagePromptTemplate<span class="token punctuation">.</span>from_template<span class="token punctuation">(</span>template<span class="token punctuation">)</span>
+      human_template<span class="token operator">=</span><span class="token string">&quot;{text}&quot;</span>
+      human_message_prompt <span class="token operator">=</span> HumanMessagePromptTemplate<span class="token punctuation">.</span>from_template<span class="token punctuation">(</span>human_template<span class="token punctuation">)</span>
+
+      chat_prompt <span class="token operator">=</span> ChatPromptTemplate<span class="token punctuation">.</span>from_messages<span class="token punctuation">(</span><span class="token punctuation">[</span>system_message_prompt<span class="token punctuation">,</span> human_message_prompt<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token comment"># [SystemMessage(content=&apos;You are a helpful assistant that translates English to Chinese.&apos;, additional_kwargs={}), HumanMessage(content=&apos;I like Large Language Model&apos;, additional_kwargs={}, example=False)]</span>
+      final_message <span class="token operator">=</span> chat_prompt<span class="token punctuation">.</span>format_prompt<span class="token punctuation">(</span>input_language<span class="token operator">=</span><span class="token string">&quot;English&quot;</span><span class="token punctuation">,</span> output_language<span class="token operator">=</span><span class="token string">&quot;Chinese&quot;</span><span class="token punctuation">,</span> text<span class="token operator">=</span><span class="token string">&quot;I like Large Language Model&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_messages<span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span>final_message<span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">&quot;__main__&quot;</span><span class="token punctuation">:</span>
+      generate_template<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p><strong>&#x5176;&#x4ED6;</strong></p>
+<ul>
+<li>&#x57FA;&#x4E8E; StringPromptTemplate &#x81EA;&#x5B9A;&#x4E49;&#x63D0;&#x793A;&#x6A21;&#x677F;StringPromptTemplate</li>
+<li>&#x5C06;Prompt&#x8F93;&#x5165;&#x4E0E;&#x7279;&#x5F81;&#x5B58;&#x50A8;&#x5173;&#x8054;&#x8D77;&#x6765;(FeaturePromptTemplate)</li>
+<li>&#x5C11;&#x6837;&#x672C;&#x63D0;&#x793A;&#x6A21;&#x677F;&#xFF08;FewShotPromptTemplate&#xFF09;</li>
 </ul>
-</blockquote>
-<p><img src="https://s2.loli.net/2023/06/17/hBQSHzKGkoIX6CU.webp" alt=""></p>
+</li>
+</ul>
+<h3 id="data-connection"><a href="https://python.langchain.com/docs/modules/data_connection/" target="_blank">Data Connection</a></h3>
+<p>&#x6253;&#x901A;&#x5916;&#x90E8;&#x6570;&#x636E;&#x7684;&#x7BA1;&#x9053;&#xFF0C;&#x5305;&#x542B;&#x6587;&#x6863;&#x52A0;&#x8F7D;&#xFF0C;&#x6587;&#x6863;&#x8F6C;&#x6362;&#xFF0C;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x6A21;&#x578B;&#x7BA1;&#x7406;&#xFF0C;&#x5BF9;&#x5D4C;&#x5165;&#x540E;&#x77E2;&#x91CF;&#x7684;&#x7BA1;&#x7406;&#x3002;</p>
+<h3 id="chains"><a href="https://python.langchain.com/docs/modules/chains/" target="_blank">Chains</a></h3>
+<h3 id="memory"><a href="https://python.langchain.com/docs/modules/memory/" target="_blank">Memory</a></h3>
+<h3 id="agents"><a href="https://python.langchain.com/docs/modules/agents/" target="_blank">Agents</a></h3>
+<p>Agents&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;LLM&#x5728;&#x9009;&#x62E9;&#x8981;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x3001;&#x6267;&#x884C;&#x8BE5;&#x52A8;&#x4F5C;&#x3001;&#x770B;&#x5230;&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x76F4;&#x5230;&#x5B8C;&#x6210;&#x3002;LangChain&#x63D0;&#x4F9B;&#x4E86;&#x4EE3;&#x7406;&#x7684;&#x6807;&#x51C6;&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4F9B;&#x9009;&#x62E9;&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x4EE5;&#x53CA;&#x7AEF;&#x5230;&#x7AEF;&#x4EE3;&#x7406;&#x7684;&#x793A;&#x4F8B;&#x3002;
+&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x5728;&#x4E0E;&#x5176;&#x4ED6;&#x77E5;&#x8BC6;&#x6216;&#x8BA1;&#x7B97;&#x6E90;&#x4EA4;&#x4E92;&#x65F6;&#x5F80;&#x5F80;&#x66F4;&#x5F3A;&#x5927;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x5305;&#x62EC;Python REPLs&#x3001;&#x5D4C;&#x5165;&#x3001;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7B49;&#x3002;LangChain&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5927;&#x6279;&#x5E38;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
+<p><a href="https://liduos.com/learn-llm-agent.html" target="_blank">AutoGPT&#x3001;BabyAGI&#x3001;CAMEL&#x4E0E;Generative Agents&#x7684;&#x533A;&#x522B;&#x4E0E;&#x8054;&#x7CFB;</a></p>
+<h3 id="callbacks"><a href="https://python.langchain.com/docs/modules/callbacks/" target="_blank">Callbacks</a></h3>
+<h3 id="&#x8D44;&#x6E90;&#x63A8;&#x8350;">&#x8D44;&#x6E90;&#x63A8;&#x8350;</h3>
+<ol>
+<li><a href="https://github.com/microsoft/guidance" target="_blank">Guidance</a>&#xFF1A;&#x5FAE;&#x8F6F;&#x5F00;&#x6E90; prompt &#x7F16;&#x7A0B;&#x6846;&#x67B6;</li>
+<li><a href="https://github.com/yzfly/LangGPT" target="_blank">LangGPT</a>&#xFF1A;&#x4E00;&#x79CD;&#x9762;&#x5411;&#x5927;&#x6A21;&#x578B;&#x7684; prompt &#x7F16;&#x7A0B;&#x8BED;&#x8A00;</li>
+</ol>
 
                                 
                                 </section>
@@ -688,7 +738,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LangChain模块解读","level":"1.3.2","depth":2,"next":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"previous":{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-2.md","mtime":"2023-06-17T05:40:43.105Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-17T07:03:40.162Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LangChain模块解读","level":"1.3.2","depth":2,"next":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"previous":{"title":"LangChain介绍","level":"1.3.1","depth":2,"path":"02-langchain/02-1.md","ref":"./02-langchain/02-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-2.md","mtime":"2023-06-19T14:52:33.319Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-19T15:11:58.921Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
