@@ -32,3 +32,5 @@
 * [参考资料](./ref/ref.md)
     * [A16Z推荐的AI学习清单](./ref/a16z.md)
     * [Prompt专题](./ref/prompt.md)
+    * [值得关注的公司](./ref/company.md)
+    * [一些资料汇总](./ref/ref.md)
