@@ -8,27 +8,18 @@
     * [LLM 安全专题](./01-llm/01-5.md)
 * LangChain入门
     * [LangChain介绍](./02-langchain/02-1.md)
-	* [LangChain模块解读](./02-langchain/02-2.md)
+	* [LangChain模块学习](./02-langchain/02-2.md)
     * [Embedding嵌入](./02-langchain/02-3.md)
     * [动手实现垂直领域机器人](./02-langchain/02-4.md)
-* LlamaIndex概述
+* LlamaIndex 概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
-    * [源码组件](./03-llamaIndex/03-2.md)
-    * [非结构化数据作为数据源](./03-llamaIndex/03-3.md)
+    * [非结构化数据源](./03-llamaIndex/03-2.md)
+    * [动手实现问答机器人](./03-llamaIndex/03-3.md)
 * HuggingGPT 实现
     * [HuggingFace 介绍](./04-huggingface/04-1.md)
     * [HuggingFace 模型分类](./04-huggingface/04-2.md)
     * [多模态任务设计](./04-huggingface/04-3.md)
     * [动手实现 HuggingGPT](./04-huggingface/04-4.md)
-* 实战个人信息处理系统
-    * 需求分析
-    * 模块设计
-    * 上线效果
-* [个人信息处理系统](./message/readme.md)
-    * [系统化思维](./message/04-1.md)
-    * [决策过程](./message/04-2.md)
-    * [解决问题](./message/04-3.md)
-    * [沟通](./message/04-4.md)
 * [参考资料](./ref/ref.md)
     * [A16Z推荐的AI学习清单](./ref/a16z.md)
     * [Prompt专题](./ref/prompt.md)
