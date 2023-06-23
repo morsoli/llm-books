@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>动手实现垂直领域机器人 · 利用 LLM 构建应用实践指南</title>
+        <title>动手实现垂直领域机器人 · LLM 应用构建实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -17,15 +17,39 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -39,18 +63,9 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -65,6 +80,17 @@
     <link rel="prev" href="02-3.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"morsoli/llm-books","types":["star"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -73,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -84,16 +110,7 @@
 <ul class="summary">
     
     
-    
-        
-        <li>
-            <a href="" target="_blank" class="custom-link">Home</a>
-        </li>
-    
-    
 
-    
-    <li class="divider"></li>
     
 
     
@@ -474,8 +491,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://liduos.com/" target="blank" class="gitbook-link">
+            本书由莫尔索发布
         </a>
     </li>
 </ul>
@@ -508,7 +525,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -529,34 +546,34 @@
 </ul>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;&#xFF08;Prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#x901A;&#x7528;&#x6D41;&#x7A0B;&#x56FE;</p>
 <p><img src="https://mermaid.ink/img/pako:eNqlVE1v00AQ_Sur5WJLm4iktyBVStpwIb0AJ2IOrneduLXXJnaaRFGkSrQ0Ra0aVAgSJIVWreiBEsSHBP0Qf6ZeJ_-CtTcJrZIDhT15Zp7fezuj2TrUbExgChZKqlMEufsKdcuLIgjOdtnemr_VZq8-s-1PCgX8pBN5zV1BpKoRE7lPTFS1zMfDUjJfs0y05NqUZwjFV7gG3b2pdJlE3sE6stTSMrYrFGFbqyKv6sXj8SFrJplfcgrIoYUruZm85cygiroicpGWQidFQCwWA_7z9_2LC_-wPXh6PNL-W1xaYu0N1vkoYlmhkyD-7yxI87t6NZNMIQG6YZqpW7qu8YOA65XsZRLGt_kZxbGKgb1iKulU73DRyI4Q9pvP_M0vkUZm6MXvvpZHctdANxbKREJZa5FgbNCC63_f8tePwuQsyNb91ovBxo64hH-62xhpTuBvrKvQOUnq904uf26GI3h31O8dyPJ1M2Mvs2AuIQmMcCRPGPkPHwkx-og4ePvj8vycrX5grU7w7SDqQxaMJzsV8w-aWU4MHtoOuCdWrCMaPi9xbn_9a_Bm7c-ceYXttILDU3a8z7q_OI51VoOzpkj2e9uh-1xuIezTXUkSxeDkJdtvyrxPEEGLlCzVwHzF6-HyKNArEosoMMU_MdHVsukpUKENDlXLnv2gRjWY0lXTJQiWHax6ZN5Q-RJb4yzBhmeXFsS7ET0fCDoqfWTbI0zjN6Pg644?type=png" alt=""></p>
-<pre class="language-"><code class="lang-mermaid"><span class="token keyword">graph</span> LR
-<span class="token keyword">subgraph</span> &#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;
-    A1<span class="token text string">[csv,excel,sql,xml]</span>
-    A2<span class="token text string">[yml,json]</span>
-<span class="token keyword">end</span>
-<span class="token keyword">subgraph</span> &#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;
-    B1<span class="token text string">[pdf,markdown,docx,txt...]</span>
-    B2<span class="token text string">[jpg,png...]</span>
-    B3<span class="token text string">[mp3,wav...]</span>
-<span class="token keyword">end</span>
+<pre><code class="lang-mermaid">graph LR
+subgraph &#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;
+    A1[csv,excel,sql,xml]
+    A2[yml,json]
+end
+subgraph &#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;
+    B1[pdf,markdown,docx,txt...]
+    B2[jpg,png...]
+    B3[mp3,wav...]
+end
 
-&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E; <span class="token arrow operator">---</span> &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E;
-&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E; <span class="token arrow operator">---</span> &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E;
-A<span class="token text string">(&#x6587;&#x672C;&#x6570;&#x636E;)</span>
-&#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E; <span class="token arrow operator">--&gt;</span> A
-<span class="token keyword">style</span> &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E; fill<span class="token operator">:</span>#ffcccc, stroke<span class="token operator">:</span>#ff0000, stroke-width<span class="token operator">:</span>2px<span class="token punctuation">;</span>
-A <span class="token arrow operator">---</span> &#x6587;&#x672C;&#x5206;&#x5272; <span class="token arrow operator">--&gt;</span> B<span class="token text string">(&#x6587;&#x672C;&#x5757;)</span>
-<span class="token keyword">style</span> &#x6587;&#x672C;&#x5206;&#x5272; fill<span class="token operator">:</span>#ffcccc, stroke<span class="token operator">:</span>#ff0000, stroke-width<span class="token operator">:</span>2px<span class="token punctuation">;</span>
-B <span class="token arrow operator">---</span> Embeddings&#x5D4C;&#x5165; <span class="token arrow operator">---&gt;</span> E<span class="token text string">{&#x5411;&#x91CF;&#x6570;&#x636E;&#x5E93;}</span>
-<span class="token keyword">style</span> Embeddings&#x5D4C;&#x5165; fill<span class="token operator">:</span>#ffcccc, stroke<span class="token operator">:</span>#ff0000, stroke-width<span class="token operator">:</span>2px<span class="token punctuation">;</span>
+&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E; --- &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E;
+&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E; --- &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E;
+A(&#x6587;&#x672C;&#x6570;&#x636E;)
+&#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E; --&gt; A
+style &#x52A0;&#x8F7D;&#x5916;&#x90E8;&#x6570;&#x636E; fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+A --- &#x6587;&#x672C;&#x5206;&#x5272; --&gt; B(&#x6587;&#x672C;&#x5757;)
+style &#x6587;&#x672C;&#x5206;&#x5272; fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
+B --- Embeddings&#x5D4C;&#x5165; ---&gt; E{&#x5411;&#x91CF;&#x6570;&#x636E;&#x5E93;}
+style Embeddings&#x5D4C;&#x5165; fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
 
-C<span class="token text string">((&#x8BED;&#x4E49;&#x5316;&#x67E5;&#x8BE2;))</span> <span class="token arrow operator">---</span> Embedding&#x5D4C;&#x5165; <span class="token arrow operator">--&gt;</span> C1<span class="token text string">(&#x67E5;&#x8BE2;&#x5411;&#x91CF;)</span>
-<span class="token keyword">style</span> Embedding&#x5D4C;&#x5165; fill<span class="token operator">:</span>#ffcccc, stroke<span class="token operator">:</span>#ff0000, stroke-width<span class="token operator">:</span>2px<span class="token punctuation">;</span>
+C((&#x8BED;&#x4E49;&#x5316;&#x67E5;&#x8BE2;)) --- Embedding&#x5D4C;&#x5165; --&gt; C1(&#x67E5;&#x8BE2;&#x5411;&#x91CF;)
+style Embedding&#x5D4C;&#x5165; fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
 
-C1 <span class="token arrow operator">---</span> &#x5411;&#x91CF;&#x76F8;&#x4F3C;&#x6027;&#x641C;&#x7D22; <span class="token arrow operator">---&gt;</span>E 
-<span class="token keyword">style</span> &#x5411;&#x91CF;&#x76F8;&#x4F3C;&#x6027;&#x641C;&#x7D22; fill<span class="token operator">:</span>#ffcccc, stroke<span class="token operator">:</span>#ff0000, stroke-width<span class="token operator">:</span>2px<span class="token punctuation">;</span>
+C1 --- &#x5411;&#x91CF;&#x76F8;&#x4F3C;&#x6027;&#x641C;&#x7D22; ---&gt;E 
+style &#x5411;&#x91CF;&#x76F8;&#x4F3C;&#x6027;&#x641C;&#x7D22; fill:#ffcccc, stroke:#ff0000, stroke-width:2px;
 
-E <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">Top K &#x7ED3;&#x679C;</span> <span class="token arrow operator">---&gt;</span></span> D<span class="token text string">(&#x76F8;&#x5173;&#x7684;&#x6587;&#x672C;&#x5757;)</span><span class="token arrow operator">---</span>&#x63D0;&#x793A;&#x6A21;&#x677F;<span class="token arrow operator">--&gt;</span>&#x6700;&#x7EC8;&#x63D0;&#x793A;&#x8BCD;<span class="token arrow operator">---</span> LLM <span class="token arrow operator">--&gt;</span>F<span class="token text string">((&#x6700;&#x7EC8;&#x7B54;&#x6848;))</span>
+E -- Top K &#x7ED3;&#x679C; ---&gt; D(&#x76F8;&#x5173;&#x7684;&#x6587;&#x672C;&#x5757;)---&#x63D0;&#x793A;&#x6A21;&#x677F;--&gt;&#x6700;&#x7EC8;&#x63D0;&#x793A;&#x8BCD;--- LLM --&gt;F((&#x6700;&#x7EC8;&#x7B54;&#x6848;))
 </code></pre>
 <h3 id="&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;">&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;</h3>
 <p>&#x5728;<a href="https://www.iachina.cn/art/2017/6/29/art_71_45682.html" target="_blank">&#x4EBA;&#x8EAB;&#x4FDD;&#x9669;&#x4EA7;&#x54C1;&#x4FE1;&#x606F;&#x5E93;</a> &#x67E5;&#x8BE2;&#x5DF2;&#x5907;&#x6848;&#x7684;&#x4FDD;&#x9669;&#x5408;&#x540C;&#x539F;&#x4EF6;&#xFF0C;&#x4E3A;PDF&#x683C;&#x5F0F;</p>
@@ -583,6 +600,7 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
 <li><a href="https://www.pinecone.io/learn/langchain-intro/" target="_blank">LangChain AI &#x624B;&#x518C;</a></li>
 </ol>
 
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -621,7 +639,7 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"动手实现垂直领域机器人","level":"1.3.4","depth":2,"next":{"title":"LlamaIndex 概述","level":"1.4","depth":1,"ref":"","articles":[{"title":"LlamaIndex介绍","level":"1.4.1","depth":2,"path":"03-llamaIndex/03-1.md","ref":"./03-llamaIndex/03-1.md","articles":[]},{"title":"非结构化数据源","level":"1.4.2","depth":2,"path":"03-llamaIndex/03-2.md","ref":"./03-llamaIndex/03-2.md","articles":[]},{"title":"动手实现问答机器人","level":"1.4.3","depth":2,"path":"03-llamaIndex/03-3.md","ref":"./03-llamaIndex/03-3.md","articles":[]}]},"previous":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"02-langchain/02-4.md","mtime":"2023-06-19T03:54:18.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-23T12:50:03.180Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"动手实现垂直领域机器人","level":"1.3.4","depth":2,"next":{"title":"LlamaIndex 概述","level":"1.4","depth":1,"ref":"","articles":[{"title":"LlamaIndex介绍","level":"1.4.1","depth":2,"path":"03-llamaIndex/03-1.md","ref":"./03-llamaIndex/03-1.md","articles":[]},{"title":"非结构化数据源","level":"1.4.2","depth":2,"path":"03-llamaIndex/03-2.md","ref":"./03-llamaIndex/03-2.md","articles":[]},{"title":"动手实现问答机器人","level":"1.4.3","depth":2,"path":"03-llamaIndex/03-3.md","ref":"./03-llamaIndex/03-3.md","articles":[]}]},"previous":{"title":"Embedding嵌入","level":"1.3.3","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","pageview-count","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg","alipayText":"LLM应用开发交流群","button":"进群交流","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-4.md","mtime":"2023-06-19T03:54:18.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-23T14:56:09.454Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -631,23 +649,47 @@ E <span class="token inter-arrow-label"><span class="token arrow-head arrow oper
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         

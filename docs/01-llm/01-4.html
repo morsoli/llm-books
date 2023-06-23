@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>动手实现聊天机器人 · 利用 LLM 构建应用实践指南</title>
+        <title>动手实现聊天机器人 · LLM 应用构建实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -17,15 +17,39 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -39,18 +63,9 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -67,6 +82,17 @@
     <link rel="prev" href="01-3.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"morsoli/llm-books","types":["star"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -75,7 +101,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -86,16 +112,7 @@
 <ul class="summary">
     
     
-    
-        
-        <li>
-            <a href="" target="_blank" class="custom-link">Home</a>
-        </li>
-    
-    
 
-    
-    <li class="divider"></li>
     
 
     
@@ -476,8 +493,8 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+        <a href="https://liduos.com/" target="blank" class="gitbook-link">
+            本书由莫尔索发布
         </a>
     </li>
 </ul>
@@ -510,7 +527,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -585,15 +602,15 @@
 <h4 id="token-&#x8BA1;&#x6570;">Token &#x8BA1;&#x6570;</h4>
 <ul>
 <li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="https://github.com/openai/tiktoken" target="_blank">tiktoken</a> &#x8BA1;&#x7B97;&#x539F;&#x59CB;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x5E94;&#x7684; token &#x6570;&#xFF1B;&#x8FD9;&#x7BC7;&#x5173;&#x4E8E;<a href="https://www.zhihu.com/question/594159910/answer/2972923596" target="_blank">ChatGPT&#x5982;&#x4F55;&#x8BA1;&#x7B97;token&#x6570;</a>&#x7684;&#x79D1;&#x666E;&#x6587;&#x7AE0;&#x503C;&#x5F97;&#x4E00;&#x8BFB;</p>
-<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> tiktoken
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tiktoken
 
-<span class="token keyword">def</span> <span class="token function">num_tokens_from_string</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> encoding_name<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">&quot;&quot;&quot;Returns the number of tokens in a text string.&quot;&quot;&quot;</span>
-    encoding <span class="token operator">=</span> tiktoken<span class="token punctuation">.</span>get_encoding<span class="token punctuation">(</span>encoding_name<span class="token punctuation">)</span>
-    num_tokens <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>encoding<span class="token punctuation">.</span>encode<span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> num_tokens
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">num_tokens_from_string</span><span class="hljs-params">(string: str, encoding_name: str)</span> -&gt; int:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Returns the number of tokens in a text string.&quot;&quot;&quot;</span>
+    encoding = tiktoken.get_encoding(encoding_name)
+    num_tokens = len(encoding.encode(string))
+    <span class="hljs-keyword">return</span> num_tokens
 
-num_tokens_from_string<span class="token punctuation">(</span><span class="token string">&quot;tiktoken is great!&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;cl100k_base&quot;</span><span class="token punctuation">)</span>
+num_tokens_from_string(<span class="hljs-string">&quot;tiktoken is great!&quot;</span>, <span class="hljs-string">&quot;cl100k_base&quot;</span>)
 </code></pre>
 </li>
 </ul>
@@ -604,71 +621,71 @@ num_tokens_from_string<span class="token punctuation">(</span><span class="token
 <p>Gradio&#x652F;&#x6301;&#x521B;&#x5EFA;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4EA4;&#x4E92;&#x5F0F;UI&#xFF0C;&#x4F8B;&#x5982;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846;&#x3001;&#x6ED1;&#x5757;&#x3001;&#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x7B49;&#xFF0C;&#x4EE5;&#x53CA;&#x652F;&#x6301;&#x591A;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#x56FE;&#x50CF;&#x3001;&#x97F3;&#x9891;&#x3001;&#x89C6;&#x9891;&#x548C;&#x8868;&#x683C;&#x6570;&#x636E;&#x3002;Gradio&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5185;&#x7F6E;&#x7684;&#x9884;&#x5904;&#x7406;&#x548C;&#x540E;&#x5904;&#x7406;&#x529F;&#x80FD;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x6B63;&#x786E;&#x3002;</p>
 <h4 id="&#x57FA;&#x672C;&#x7684;&#x95EE;&#x7B54;&#x5B9E;&#x73B0;">&#x57FA;&#x672C;&#x7684;&#x95EE;&#x7B54;&#x5B9E;&#x73B0;</h4>
 <p>&#x4F7F;&#x7528;API&#x5C06;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x53D1;&#x9001;&#x5230;OpenAI&#x6A21;&#x578B;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7684;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x7ED9;&#x7528;&#x6237;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x95EE;&#x7B54;&#x3002;</p>
-<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> gradio <span class="token keyword">as</span> gr
-<span class="token keyword">import</span> os
-<span class="token keyword">import</span> openai
-openai<span class="token punctuation">.</span>api_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">&quot;OPENAI_API_KEY&quot;</span><span class="token punctuation">)</span>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> gradio <span class="hljs-keyword">as</span> gr
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> openai
+openai.api_key = os.getenv(<span class="hljs-string">&quot;OPENAI_API_KEY&quot;</span>)
 
-<span class="token keyword">def</span> <span class="token function">get_completion</span><span class="token punctuation">(</span>input_text<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    completion <span class="token operator">=</span> openai<span class="token punctuation">.</span>ChatCompletion<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
-        model<span class="token operator">=</span><span class="token string">&quot;gpt-3.5-turbo-0613&quot;</span><span class="token punctuation">,</span>
-        messages<span class="token operator">=</span><span class="token punctuation">[</span>
-            <span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>input_text<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">}</span>
-        <span class="token punctuation">]</span>
-    <span class="token punctuation">)</span>
-    <span class="token keyword">return</span> completion<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">[</span><span class="token string">&quot;content&quot;</span><span class="token punctuation">]</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_completion</span><span class="hljs-params">(input_text)</span>:</span>
+    completion = openai.ChatCompletion.create(
+        model=<span class="hljs-string">&quot;gpt-3.5-turbo-0613&quot;</span>,
+        messages=[
+            {<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: f<span class="hljs-string">&quot;{input_text}&quot;</span>}
+        ]
+    )
+    <span class="hljs-keyword">return</span> completion.choices[<span class="hljs-number">0</span>].message[<span class="hljs-string">&quot;content&quot;</span>]
 
-<span class="token keyword">def</span> <span class="token function">chatbot</span><span class="token punctuation">(</span>input_text<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    response <span class="token operator">=</span> get_completion<span class="token punctuation">(</span>input_text<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> response
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">chatbot</span><span class="hljs-params">(input_text)</span>:</span>
+    response = get_completion(input_text)
+    <span class="hljs-keyword">return</span> response
 
-iface <span class="token operator">=</span> gr<span class="token punctuation">.</span>Interface<span class="token punctuation">(</span>fn<span class="token operator">=</span>chatbot<span class="token punctuation">,</span> inputs<span class="token operator">=</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> outputs<span class="token operator">=</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">&quot;Chatbot&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
-iface<span class="token punctuation">.</span>launch<span class="token punctuation">(</span>share<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+iface = gr.Interface(fn=chatbot, inputs=<span class="hljs-string">&quot;text&quot;</span>, outputs=<span class="hljs-string">&quot;text&quot;</span>, title=<span class="hljs-string">&quot;Chatbot&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>)
+iface.launch(share=<span class="hljs-keyword">True</span>)
 </code></pre>
 <h4 id="&#x591A;&#x8F6E;&#x5BF9;&#x8BDD;&#x5B9E;&#x73B0;">&#x591A;&#x8F6E;&#x5BF9;&#x8BDD;&#x5B9E;&#x73B0;</h4>
 <p>&#x5728;&#x95EE;&#x7B54;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x8F6E;&#x6B21;&#x4E2D;&#x4FDD;&#x7559;&#x7528;&#x6237;&#x4E4B;&#x524D;&#x7684;&#x8F93;&#x5165;&#x548C;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7684;&#x54CD;&#x5E94;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C06;&#x5176;&#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x4E00;&#x8F6E;&#x5BF9;&#x8BDD;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x66F4;&#x52A0;&#x81EA;&#x7136;&#x7684;&#x5BF9;&#x8BDD;&#x6D41;&#x7A0B;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x66F4;&#x597D;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;</p>
-<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> os
-<span class="token keyword">import</span> openai
-<span class="token keyword">import</span> gradio
-openai<span class="token punctuation">.</span>api_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">&quot;OPENAI_API_KEY&quot;</span><span class="token punctuation">)</span>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> openai
+<span class="hljs-keyword">import</span> gradio
+openai.api_key = os.getenv(<span class="hljs-string">&quot;OPENAI_API_KEY&quot;</span>)
 
-history_messages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">def</span> <span class="token function">api_calling</span><span class="token punctuation">(</span>input_text<span class="token punctuation">,</span> history_conversation<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> history_conversation<span class="token punctuation">:</span>
-        history_messages<span class="token punctuation">.</span>extend<span class="token punctuation">(</span><span class="token punctuation">[</span>
-            <span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>history_conversation<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;assistant&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>history_conversation<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">}</span>
-        <span class="token punctuation">]</span>
-        <span class="token punctuation">)</span>
-    message <span class="token operator">=</span> history_messages<span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>input_text<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">}</span><span class="token punctuation">]</span>
-    completion <span class="token operator">=</span> openai<span class="token punctuation">.</span>ChatCompletion<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
-        model<span class="token operator">=</span><span class="token string">&quot;gpt-3.5-turbo-0613&quot;</span><span class="token punctuation">,</span>          
-        messages<span class="token operator">=</span>message<span class="token punctuation">,</span>
-        max_tokens<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">,</span>
-        n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
-        stop<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span>
-        temperature<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>
-    <span class="token punctuation">)</span>
-    <span class="token keyword">return</span> completion<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">[</span><span class="token string">&quot;content&quot;</span><span class="token punctuation">]</span>
+history_messages = []
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">api_calling</span><span class="hljs-params">(input_text, history_conversation)</span>:</span>
+    <span class="hljs-keyword">if</span> history_conversation:
+        history_messages.extend([
+            {<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: f<span class="hljs-string">&quot;{history_conversation[-1][0]}&quot;</span>},
+            {<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;assistant&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: f<span class="hljs-string">&quot;{history_conversation[-1][1]}&quot;</span>}
+        ]
+        )
+    message = history_messages+[{<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: f<span class="hljs-string">&quot;{input_text}&quot;</span>}]
+    completion = openai.ChatCompletion.create(
+        model=<span class="hljs-string">&quot;gpt-3.5-turbo-0613&quot;</span>,          
+        messages=message,
+        max_tokens=<span class="hljs-number">1024</span>,
+        n=<span class="hljs-number">1</span>,
+        stop=<span class="hljs-keyword">None</span>,
+        temperature=<span class="hljs-number">0.5</span>,
+    )
+    <span class="hljs-keyword">return</span> completion.choices[<span class="hljs-number">0</span>].message[<span class="hljs-string">&quot;content&quot;</span>]
 
-<span class="token keyword">def</span> <span class="token function">message_and_history</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> history<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    history <span class="token operator">=</span> history <span class="token keyword">or</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    output <span class="token operator">=</span> api_calling<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> history<span class="token punctuation">)</span>
-    history<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> output<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> history<span class="token punctuation">,</span> history
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">message_and_history</span><span class="hljs-params">(input, history)</span>:</span>
+    history = history <span class="hljs-keyword">or</span> []
+    output = api_calling(input, history)
+    history.append((input, output))
+    <span class="hljs-keyword">return</span> history, history
 
-block <span class="token operator">=</span> gradio<span class="token punctuation">.</span>Blocks<span class="token punctuation">(</span>theme<span class="token operator">=</span>gradio<span class="token punctuation">.</span>themes<span class="token punctuation">.</span>Monochrome<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> block<span class="token punctuation">:</span>
-    gradio<span class="token punctuation">.</span>Markdown<span class="token punctuation">(</span><span class="token triple-quoted-string string">&quot;&quot;&quot;&lt;h1&gt;&lt;center&gt;&#x1F916;&#xFE0F;&#x5BF9;&#x8BDD;&#x673A;&#x5668;&#x4EBA;&lt;/center&gt;&lt;/h1&gt;
-    &quot;&quot;&quot;</span><span class="token punctuation">)</span>
-    chatbot <span class="token operator">=</span> gradio<span class="token punctuation">.</span>Chatbot<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    message <span class="token operator">=</span> gradio<span class="token punctuation">.</span>Textbox<span class="token punctuation">(</span>placeholder<span class="token operator">=</span><span class="token string">&quot;&#x8F93;&#x5165;&#x4F60;&#x7684;&#x95EE;&#x9898;&quot;</span><span class="token punctuation">)</span>
-    state <span class="token operator">=</span> gradio<span class="token punctuation">.</span>State<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    submit <span class="token operator">=</span> gradio<span class="token punctuation">.</span>Button<span class="token punctuation">(</span><span class="token string">&quot;&#x53D1;&#x9001;&quot;</span><span class="token punctuation">)</span>
-    submit<span class="token punctuation">.</span>click<span class="token punctuation">(</span>message_and_history<span class="token punctuation">,</span>
-          inputs<span class="token operator">=</span><span class="token punctuation">[</span>message<span class="token punctuation">,</span> state<span class="token punctuation">]</span><span class="token punctuation">,</span>
-          outputs<span class="token operator">=</span><span class="token punctuation">[</span>chatbot<span class="token punctuation">,</span> state<span class="token punctuation">]</span><span class="token punctuation">)</span>
-block<span class="token punctuation">.</span>launch<span class="token punctuation">(</span>share<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+block = gradio.Blocks(theme=gradio.themes.Monochrome())
+<span class="hljs-keyword">with</span> block:
+    gradio.Markdown(<span class="hljs-string">&quot;&quot;&quot;&lt;h1&gt;&lt;center&gt;&#x1F916;&#xFE0F;&#x5BF9;&#x8BDD;&#x673A;&#x5668;&#x4EBA;&lt;/center&gt;&lt;/h1&gt;
+    &quot;&quot;&quot;</span>)
+    chatbot = gradio.Chatbot()
+    message = gradio.Textbox(placeholder=<span class="hljs-string">&quot;&#x8F93;&#x5165;&#x4F60;&#x7684;&#x95EE;&#x9898;&quot;</span>)
+    state = gradio.State()
+    submit = gradio.Button(<span class="hljs-string">&quot;&#x53D1;&#x9001;&quot;</span>)
+    submit.click(message_and_history,
+          inputs=[message, state],
+          outputs=[chatbot, state])
+block.launch(share=<span class="hljs-keyword">True</span>, debug=<span class="hljs-keyword">True</span>)
 </code></pre>
 <h4 id="&#x6307;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x673A;&#x5668;&#x4EBA;">&#x6307;&#x5B9A;&#x529F;&#x80FD;&#x7684;&#x673A;&#x5668;&#x4EBA;</h4>
 <p>&#x901A;&#x8FC7; &#x9884;&#x8BBE;<a href="../ref/prompt.html">Prompt</a> &#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x5F53;&#x524D;&#x770B;&#x5230;&#x7684; 99% &#x7684;&#x591A;&#x529F;&#x80FD;&#x96C6;&#x6210;&#x5E73;&#x53F0;&#x90FD;&#x662F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
@@ -678,35 +695,36 @@ block<span class="token punctuation">.</span>launch<span class="token punctuatio
 </ul>
 <p>&#x4F7F;&#x7528;&#x4E4B;&#x524D;<img src="../images/prompt1.png" alt="">
 &#x4F7F;&#x7528;&#x4E4B;&#x540E;<img src="../images/prompt2.png" alt=""></p>
-<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> gradio <span class="token keyword">as</span> gr
-<span class="token keyword">import</span> os
-<span class="token keyword">import</span> openai
-openai<span class="token punctuation">.</span>api_key <span class="token operator">=</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">&quot;OPENAI_API_KEY&quot;</span><span class="token punctuation">)</span>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> gradio <span class="hljs-keyword">as</span> gr
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> openai
+openai.api_key = os.getenv(<span class="hljs-string">&quot;OPENAI_API_KEY&quot;</span>)
 
-PROMPT_ROLE <span class="token operator">=</span> <span class="token triple-quoted-string string">&quot;&quot;&quot;
+PROMPT_ROLE = <span class="hljs-string">&quot;&quot;&quot;
 I want you to act as an Chinese translator, spelling corrector and improver. \n
 I will speak to you in any language and you will detect the language,\n 
 translate it and answer in the corrected and improved version of my text, in Chinese.\n 
 Keep the meaning same, but make them more literary. I want you to only reply the correction,\n
 the improvements and nothing else, do not write explanations. If asked about others please say &apos;I am only Chinese translator&apos;
 &quot;&quot;&quot;</span>
-<span class="token keyword">def</span> <span class="token function">get_completion</span><span class="token punctuation">(</span>input_text<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    message <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;system&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> PROMPT_ROLE<span class="token punctuation">}</span><span class="token punctuation">]</span>
-    message<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">&quot;role&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;content&quot;</span><span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>input_text<span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    completion <span class="token operator">=</span> openai<span class="token punctuation">.</span>ChatCompletion<span class="token punctuation">.</span>create<span class="token punctuation">(</span>
-        model<span class="token operator">=</span><span class="token string">&quot;gpt-3.5-turbo-0613&quot;</span><span class="token punctuation">,</span>
-        messages<span class="token operator">=</span>message<span class="token punctuation">,</span>
-    <span class="token punctuation">)</span>
-    <span class="token keyword">return</span> completion<span class="token punctuation">.</span>choices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>message<span class="token punctuation">[</span><span class="token string">&quot;content&quot;</span><span class="token punctuation">]</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_completion</span><span class="hljs-params">(input_text)</span>:</span>
+    message = [{<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;system&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: PROMPT_ROLE}]
+    message.append({<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: f<span class="hljs-string">&quot;{input_text}&quot;</span>})
+    completion = openai.ChatCompletion.create(
+        model=<span class="hljs-string">&quot;gpt-3.5-turbo-0613&quot;</span>,
+        messages=message,
+    )
+    <span class="hljs-keyword">return</span> completion.choices[<span class="hljs-number">0</span>].message[<span class="hljs-string">&quot;content&quot;</span>]
 
-<span class="token keyword">def</span> <span class="token function">chatbot</span><span class="token punctuation">(</span>input_text<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    response <span class="token operator">=</span> get_completion<span class="token punctuation">(</span>input_text<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> response
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">chatbot</span><span class="hljs-params">(input_text)</span>:</span>
+    response = get_completion(input_text)
+    <span class="hljs-keyword">return</span> response
 
-iface <span class="token operator">=</span> gr<span class="token punctuation">.</span>Interface<span class="token punctuation">(</span>fn<span class="token operator">=</span>chatbot<span class="token punctuation">,</span> inputs<span class="token operator">=</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> outputs<span class="token operator">=</span><span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> title<span class="token operator">=</span><span class="token string">&quot;&#x1F916;&#xFE0F;&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&quot;</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span>
-iface<span class="token punctuation">.</span>launch<span class="token punctuation">(</span>share<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+iface = gr.Interface(fn=chatbot, inputs=<span class="hljs-string">&quot;text&quot;</span>, outputs=<span class="hljs-string">&quot;text&quot;</span>, title=<span class="hljs-string">&quot;&#x1F916;&#xFE0F;&#x4E2D;&#x6587;&#x7FFB;&#x8BD1;&quot;</span>, encoding=<span class="hljs-string">&quot;utf-8&quot;</span>)
+iface.launch(share=<span class="hljs-keyword">True</span>, debug=<span class="hljs-keyword">True</span>)
 </code></pre>
 
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
                             
@@ -749,7 +767,7 @@ iface<span class="token punctuation">.</span>launch<span class="token punctuatio
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"动手实现聊天机器人","level":"1.2.4","depth":2,"next":{"title":"LLM 安全专题","level":"1.2.5","depth":2,"path":"01-llm/01-5.md","ref":"./01-llm/01-5.md","articles":[]},"previous":{"title":"OpenAI 文档解读","level":"1.2.3","depth":2,"path":"01-llm/01-3.md","ref":"./01-llm/01-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","prism-themes","katex","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"利用 LLM 构建应用实践指南","links":{"sidebar":{"Home":""}},"gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"01-llm/01-4.md","mtime":"2023-06-17T02:43:57.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-23T12:50:03.180Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"动手实现聊天机器人","level":"1.2.4","depth":2,"next":{"title":"LLM 安全专题","level":"1.2.5","depth":2,"path":"01-llm/01-5.md","ref":"./01-llm/01-5.md","articles":[]},"previous":{"title":"OpenAI 文档解读","level":"1.2.3","depth":2,"path":"01-llm/01-3.md","ref":"./01-llm/01-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","pageview-count","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg","alipayText":"LLM应用开发交流群","button":"进群交流","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"01-llm/01-4.md","mtime":"2023-06-17T02:43:57.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-23T14:56:09.454Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -759,23 +777,47 @@ iface<span class="token punctuation">.</span>launch<span class="token punctuatio
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
