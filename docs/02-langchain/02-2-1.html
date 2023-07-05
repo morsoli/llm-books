@@ -1,0 +1,949 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LangChain之Chains模块 · LLM 应用构建实践笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莫尔索">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-3.html" />
+    
+    
+    <link rel="prev" href="02-2.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"morsoli/llm-books","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    大语言模型概述
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01-llm/01-1.html">
+            
+                <a href="../01-llm/01-1.html">
+            
+                    
+                    大语言模型概况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01-llm/01-2.html">
+            
+                <a href="../01-llm/01-2.html">
+            
+                    
+                    你好, ChatGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01-llm/01-3.html">
+            
+                <a href="../01-llm/01-3.html">
+            
+                    
+                    OpenAI 文档解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01-llm/01-4.html">
+            
+                <a href="../01-llm/01-4.html">
+            
+                    
+                    动手实现聊天机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../01-llm/01-5.html">
+            
+                <a href="../01-llm/01-5.html">
+            
+                    
+                    LLM 安全专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    LangChain入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="02-1.html">
+            
+                <a href="02-1.html">
+            
+                    
+                    LangChain介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-2.html">
+            
+                <a href="02-2.html">
+            
+                    
+                    LangChain模块学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="02-2-1.html">
+            
+                <a href="02-2-1.html">
+            
+                    
+                    LangChain之Chains模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="02-3.html">
+            
+                <a href="02-3.html">
+            
+                    
+                    Embedding嵌入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="02-4.html">
+            
+                <a href="02-4.html">
+            
+                    
+                    动手实现垂直领域机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    LlamaIndex 概述
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../03-llamaIndex/03-2.html">
+            
+                <a href="../03-llamaIndex/03-2.html">
+            
+                    
+                    非结构化数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../03-llamaIndex/03-3.html">
+            
+                <a href="../03-llamaIndex/03-3.html">
+            
+                    
+                    动手实现问答机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    HuggingGPT 实现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../04-huggingface/04-1.html">
+            
+                <a href="../04-huggingface/04-1.html">
+            
+                    
+                    HuggingFace 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../04-huggingface/04-2.html">
+            
+                <a href="../04-huggingface/04-2.html">
+            
+                    
+                    HuggingFace 模型分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../04-huggingface/04-3.html">
+            
+                <a href="../04-huggingface/04-3.html">
+            
+                    
+                    多模态任务设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../04-huggingface/04-4.html">
+            
+                <a href="../04-huggingface/04-4.html">
+            
+                    
+                    动手实现 HuggingGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ref/ref.html">
+            
+                <a href="../ref/ref.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../ref/a16z.html">
+            
+                <a href="../ref/a16z.html">
+            
+                    
+                    A16Z推荐的AI学习清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../ref/prompt.html">
+            
+                <a href="../ref/prompt.html">
+            
+                    
+                    Prompt专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../ref/company.html">
+            
+                <a href="../ref/company.html">
+            
+                    
+                    值得关注的公司
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../ref/ref.html">
+            
+                <a href="../ref/ref.html">
+            
+                    
+                    一些资料汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LangChain之Chains模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="langchain&#x6A21;&#x5757;&#x4E4B;-chains">LangChain&#x6A21;&#x5757;&#x4E4B; <a href="https://python.langchain.com/docs/modules/chains/" target="_blank">Chains</a></h2>
+<p>&#x94FE;&#x5B9A;&#x4E49;&#x4E3A;&#x5BF9;&#x7EC4;&#x4EF6;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#x5176;&#x4ED6;&#x94FE;&#xFF0C;&#x8FD9;&#x79CD;&#x5728;&#x94FE;&#x4E2D;&#x5C06;&#x7EC4;&#x4EF6;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x60F3;&#x6CD5;&#x5F88;&#x7B80;&#x5355;&#x4F46;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x6781;&#x5927;&#x5730;&#x7B80;&#x5316;&#x4E86;&#x590D;&#x6742;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5B9E;&#x73B0;&#x5E76;&#x4F7F;&#x5176;&#x66F4;&#x52A0;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x8FD9;&#x53CD;&#x8FC7;&#x6765;&#x53C8;&#x4F7F;&#x8C03;&#x8BD5;&#x3001;&#x7EF4;&#x62A4;&#x548C;&#x6539;&#x8FDB;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;
+Chain&#x57FA;&#x7C7B;&#x662F;&#x6240;&#x6709;chain&#x5BF9;&#x8C61;&#x7684;&#x57FA;&#x672C;&#x5165;&#x53E3;&#xFF0C;&#x4E0E;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x4EA4;&#x4E92;&#xFF0C;&#x5904;&#x7406;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x51C6;&#x5907;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x63D0;&#x4F9B;&#x5185;&#x5B58;&#x80FD;&#x529B;&#xFF0C;chain&#x7684;&#x56DE;&#x8C03;&#x80FD;&#x529B;&#xFF0C;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7684; Chain &#x7C7B;&#x90FD;&#x7EE7;&#x627F;&#x81EA;&#x8FD9;&#x4E2A;&#x57FA;&#x7C7B;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7279;&#x5B9A;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Chain</span><span class="hljs-params">(BaseModel, ABC)</span>:</span>
+    memory: BaseMemory
+    callbacks: Callbacks
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(
+        self,
+        inputs: Any,
+        return_only_outputs: bool = False,
+        callbacks: Callbacks = None,
+    )</span> -&gt; Dict[str, Any]:</span>
+        ...
+</code></pre>
+<p><strong>&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x94FE;</strong></p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> annotations
+
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> Any, Dict, List, Optional
+
+<span class="hljs-keyword">from</span> pydantic <span class="hljs-keyword">import</span> Extra
+
+<span class="hljs-keyword">from</span> langchain.base_language <span class="hljs-keyword">import</span> BaseLanguageModel
+<span class="hljs-keyword">from</span> langchain.callbacks.manager <span class="hljs-keyword">import</span> (
+    AsyncCallbackManagerForChainRun,
+    CallbackManagerForChainRun,
+)
+<span class="hljs-keyword">from</span> langchain.chains.base <span class="hljs-keyword">import</span> Chain
+<span class="hljs-keyword">from</span> langchain.prompts.base <span class="hljs-keyword">import</span> BasePromptTemplate
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomChain</span><span class="hljs-params">(Chain)</span>:</span>
+    prompt: BasePromptTemplate
+    llm: BaseLanguageModel
+    output_key: str = <span class="hljs-string">&quot;text&quot;</span>
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Config</span>:</span>
+        extra = Extra.forbid
+        arbitrary_types_allowed = <span class="hljs-keyword">True</span>
+
+<span class="hljs-meta">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input_keys</span><span class="hljs-params">(self)</span> -&gt; List[str]:</span>
+        <span class="hljs-string">&quot;&quot;&quot;pompt&#x4E2D;&#x7684;&#x52A8;&#x6001;&#x53D8;&#x91CF;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> self.prompt.input_variables
+
+<span class="hljs-meta">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">output_keys</span><span class="hljs-params">(self)</span> -&gt; List[str]:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x7684;&#x52A8;&#x6001;&#x53D8;&#x91CF;.
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">return</span> [self.output_key]
+    <span class="hljs-comment"># &#x540C;&#x6B65;&#x8C03;&#x7528;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_call</span><span class="hljs-params">(
+        self,
+        inputs: Dict[str, Any],
+        run_manager: Optional[CallbackManagerForChainRun] = None,
+    )</span> -&gt; Dict[str, str]:</span>
+        <span class="hljs-comment"># &#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x903B;&#x8F91;&#x5B9E;&#x73B0;</span>
+        prompt_value = self.prompt.format_prompt(**inputs)
+        <span class="hljs-comment"># &#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x6216;&#x53E6;&#x4E00;&#x4E2A;&#x94FE;&#x65F6;&#xFF0C;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x3002;&#x8FD9;&#x6837;&#x5185;&#x90E8;&#x8FD0;&#x884C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#xFF08;&#x8FDB;&#x884C;&#x903B;&#x8F91;&#x5904;&#x7406;&#xFF09;&#x3002;</span>
+        response = self.llm.generate_prompt(
+            [prompt_value], callbacks=run_manager.get_child() <span class="hljs-keyword">if</span> run_manager <span class="hljs-keyword">else</span> <span class="hljs-keyword">None</span>
+        )
+        <span class="hljs-comment"># &#x56DE;&#x8C03;&#x51FA;&#x53D1;&#x65F6;&#x7684;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;</span>
+        <span class="hljs-keyword">if</span> run_manager:
+            run_manager.on_text(<span class="hljs-string">&quot;Log something about this run&quot;</span>)
+
+        <span class="hljs-keyword">return</span> {self.output_key: response.generations[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>].text}
+    <span class="hljs-comment"># &#x5F02;&#x6B65;&#x8C03;&#x7528;</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_acall</span><span class="hljs-params">(
+        self,
+        inputs: Dict[str, Any],
+        run_manager: Optional[AsyncCallbackManagerForChainRun] = None,
+    )</span> -&gt; Dict[str, str]:</span>
+        prompt_value = self.prompt.format_prompt(**inputs)
+        response = <span class="hljs-keyword">await</span> self.llm.agenerate_prompt(
+            [prompt_value], callbacks=run_manager.get_child() <span class="hljs-keyword">if</span> run_manager <span class="hljs-keyword">else</span> <span class="hljs-keyword">None</span>
+        )
+        <span class="hljs-keyword">if</span> run_manager:
+            <span class="hljs-keyword">await</span> run_manager.on_text(<span class="hljs-string">&quot;Log something about this run&quot;</span>)
+
+        <span class="hljs-keyword">return</span> {self.output_key: response.generations[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>].text}
+
+<span class="hljs-meta">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_chain_type</span><span class="hljs-params">(self)</span> -&gt; str:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;my_custom_chain&quot;</span>
+</code></pre>
+<p>&#x7EE7;&#x627F;Chain&#x7684;&#x5B50;&#x7C7B;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;</p>
+<p><strong>&#x901A;&#x7528;&#x5DE5;&#x5177; chain</strong>: &#x63A7;&#x5236;chain&#x7684;&#x8C03;&#x7528;&#x987A;&#x5E8F;&#xFF0C; &#x662F;&#x5426;&#x8C03;&#x7528;&#xFF0C;&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5408;&#x5E76;&#x6784;&#x9020;&#x5176;&#x4ED6;&#x7684;chain&#x3002;
+<strong>&#x4E13;&#x95E8;&#x7528;&#x9014; chain</strong>: &#x548C;&#x901A;&#x7528;chain&#x6BD4;&#x8F83;&#x6765;&#x8BF4;&#xFF0C;&#x4ED6;&#x4EEC;&#x627F;&#x62C5;&#x4E86;&#x5177;&#x4F53;&#x7684;&#x67D0;&#x9879;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x901A;&#x7528;&#x7684;chain&#x7EC4;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;&#x6709;&#x4E9B; Chain &#x7C7B;&#x53EF;&#x80FD;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6587;&#x672C;&#x6570;&#x636E;&#xFF0C;&#x6709;&#x4E9B;&#x53EF;&#x80FD;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x56FE;&#x50CF;&#x6570;&#x636E;&#xFF0C;&#x6709;&#x4E9B;&#x53EF;&#x80FD;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7B49;&#x3002;</p>
+<h4 id="&#x4ECE;-langchainhub-&#x52A0;&#x8F7D;&#x94FE;">&#x4ECE; LangChainHub &#x52A0;&#x8F7D;&#x94FE;</h4>
+<p><a href="https://github.com/hwchase17/langchain-hub" target="_blank">LangChainHub</a> &#x6258;&#x7BA1;&#x4E86;&#x4E00;&#x4E9B;&#x9AD8;&#x8D28;&#x91CF;Prompt&#x3001;Agent&#x548C;Chain&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;langchain&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_mathchain</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">from</span> langchain.chains <span class="hljs-keyword">import</span> load_chain
+    chain = load_chain(<span class="hljs-string">&quot;lc://chains/llm-math/chain.json&quot;</span>)
+    <span class="hljs-string">&quot;&quot;&quot;
+    &gt; Entering new  chain...
+    2+2&#x7B49;&#x4E8E;&#x51E0;Answer: 4
+    &gt; Finished chain.
+    Answer: 4
+    &quot;&quot;&quot;</span>
+    print(chain.run(<span class="hljs-string">&quot;2+2&#x7B49;&#x4E8E;&#x51E0;&quot;</span>))
+</code></pre>
+<h4 id="&#x8FD0;&#x884C;-llm-&#x94FE;&#x7684;&#x4E94;&#x79CD;&#x65B9;&#x5F0F;">&#x8FD0;&#x884C; LLM &#x94FE;&#x7684;&#x4E94;&#x79CD;&#x65B9;&#x5F0F;</h4>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> langchain <span class="hljs-keyword">import</span> PromptTemplate, OpenAI, LLMChain
+
+prompt_template = <span class="hljs-string">&quot;&#x7ED9;&#x505A; {product} &#x7684;&#x516C;&#x53F8;&#x8D77;&#x4E00;&#x4E2A;&#x540D;&#x5B57;?&quot;</span>
+
+llm = OpenAI(temperature=<span class="hljs-number">0</span>)
+llm_chain = LLMChain(
+    llm=llm,
+    prompt=PromptTemplate.from_template(prompt_template)
+)
+print(llm_chain(<span class="hljs-string">&quot;&#x513F;&#x7AE5;&#x73A9;&#x5177;&quot;</span>))
+print(llm_chain.run(<span class="hljs-string">&quot;&#x513F;&#x7AE5;&#x73A9;&#x5177;&quot;</span>))
+llm_chain.apply([{<span class="hljs-string">&quot;product&quot;</span>:<span class="hljs-string">&quot;&#x513F;&#x7AE5;&#x73A9;&#x5177;&quot;</span>}])
+llm_chain.generate([{<span class="hljs-string">&quot;product&quot;</span>:<span class="hljs-string">&quot;&#x513F;&#x7AE5;&#x73A9;&#x5177;&quot;</span>}])
+llm_chain.predict(product=<span class="hljs-string">&quot;&#x513F;&#x7AE5;&#x73A9;&#x5177;&quot;</span>)
+</code></pre>
+<h3 id="&#x901A;&#x7528;&#x5DE5;&#x5177;chain">&#x901A;&#x7528;&#x5DE5;&#x5177;chain</h3>
+<ol>
+<li>MultiPromptChain&#xFF1A;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x4E0E;&#x7ED9;&#x5B9A;&#x95EE;&#x9898;&#x6700;&#x76F8;&#x5173;&#x7684;&#x63D0;&#x793A;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x8BE5;&#x63D0;&#x793A;&#x56DE;&#x7B54;&#x95EE;&#x9898;&#x3002;</li>
+<li>EmbeddingRouterChain&#xFF1A;&#x4F7F;&#x7528;&#x5D4C;&#x5165;&#x548C;&#x76F8;&#x4F3C;&#x6027;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x3002;</li>
+<li>LLMRouterChain&#xFF1A;&#x4F7F;&#x7528; LLM &#x6765;&#x786E;&#x5B9A;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x94FE;&#x3002;</li>
+<li>SimpleSequentialChain/SequentialChain&#xFF1A;&#x5C06;&#x591A;&#x4E2A;&#x94FE;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x7EC4;&#x6210;&#x5904;&#x7406;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;SimpleMemory&#x652F;&#x6301;&#x5728;&#x591A;&#x4E2A;&#x94FE;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x4E0A;&#x4E0B;&#x6587;</li>
+<li>TransformChain&#xFF1A;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x505A;&#x52A8;&#x6001;&#x8F6C;&#x6362;&#x7684;&#x94FE;
+ ```python
+ def transform_func(inputs: dict) -&gt; dict:<pre><code> text = inputs[&quot;text&quot;]
+ shortened_text = &quot;\n\n&quot;.join(text.split(&quot;\n\n&quot;)[:3])
+ return {&quot;output_text&quot;: shortened_text}
+</code></pre></li>
+</ol>
+<pre><code>transform_chain = TransformChain(
+    input_variables=[&quot;text&quot;], output_variables=[&quot;output_text&quot;], transform=transform_func
+)
+template = &quot;&quot;&quot;Summarize this text:
+
+{output_text}
+
+Summary:&quot;&quot;&quot;
+prompt = PromptTemplate(input_variables=[&quot;output_text&quot;], template=template)
+llm_chain = LLMChain(llm=OpenAI(), prompt=prompt)
+sequential_chain = SimpleSequentialChain(chains=[transform_chain, llm_chain])
+```
+</code></pre><h3 id="&#x5408;&#x5E76;&#x6587;&#x6863;&#x7684;&#x94FE;&#xFF08;&#x4E13;&#x95E8;&#x7528;&#x9014;chain&#xFF09;">&#x5408;&#x5E76;&#x6587;&#x6863;&#x7684;&#x94FE;&#xFF08;&#x4E13;&#x95E8;&#x7528;&#x9014;chain&#xFF09;</h3>
+<p>BaseCombineDocumentsChain &#x6709;&#x56DB;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x5F0F;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_qa_chain</span><span class="hljs-params">(
+    llm: BaseLanguageModel,
+    chain_type: str = <span class="hljs-string">&quot;stuff&quot;</span>,
+    verbose: Optional[bool] = None,
+    callback_manager: Optional[BaseCallbackManager] = None,
+    **kwargs: Any,
+)</span> -&gt; BaseCombineDocumentsChain:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Load question answering chain.
+
+    Args:
+        llm: Language Model to use in the chain.
+        chain_type: Type of document combining chain to use. Should be one of &quot;stuff&quot;,
+            &quot;map_reduce&quot;, &quot;map_rerank&quot;, and &quot;refine&quot;.
+        verbose: Whether chains should be run in verbose mode or not. Note that this
+            applies to all chains that make up the final chain.
+        callback_manager: Callback manager to use for the chain.
+
+    Returns:
+        A chain to use for question answering.
+    &quot;&quot;&quot;</span>
+    loader_mapping: Mapping[str, LoadingCallable] = {
+        <span class="hljs-string">&quot;stuff&quot;</span>: _load_stuff_chain,
+        <span class="hljs-string">&quot;map_reduce&quot;</span>: _load_map_reduce_chain,
+        <span class="hljs-string">&quot;refine&quot;</span>: _load_refine_chain,
+        <span class="hljs-string">&quot;map_rerank&quot;</span>: _load_map_rerank_chain,
+    }
+</code></pre>
+<h4 id="stuffdocumentschain">StuffDocumentsChain</h4>
+<p>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x5217;&#x8868;&#xFF0C;&#x5E26;&#x5165;&#x63D0;&#x793A;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x4F20;&#x9012;&#x7ED9;LLM&#xFF08;&#x9002;&#x5408;&#x5C0F;&#x6587;&#x6863;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_load_stuff_chain</span><span class="hljs-params">(
+    llm: BaseLanguageModel,
+    prompt: Optional[BasePromptTemplate] = None,
+    document_variable_name: str = <span class="hljs-string">&quot;context&quot;</span>,
+    verbose: Optional[bool] = None,
+    callback_manager: Optional[BaseCallbackManager] = None,
+    callbacks: Callbacks = None,
+    **kwargs: Any,
+)</span> -&gt; StuffDocumentsChain:</span>
+</code></pre>
+<p><img src="https://python.langchain.com/assets/images/stuff-818da4c66ee17911bc8861c089316579.jpg" alt=""></p>
+<h4 id="refinedocumentschain">RefineDocumentsChain</h4>
+<p>&#x5728;Studff&#x65B9;&#x5F0F;&#x4E0A;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#xFF0C;&#x5FAA;&#x73AF;&#x8F93;&#x5165;&#x6587;&#x6863;&#x5E76;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#x5176;&#x7B54;&#x6848;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x6700;&#x597D;&#x7684;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x3002;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x662F;&#x5C06;&#x6240;&#x6709;&#x975E;&#x6587;&#x6863;&#x8F93;&#x5165;&#x3001;&#x5F53;&#x524D;&#x6587;&#x6863;&#x548C;&#x6700;&#x65B0;&#x7684;&#x4E2D;&#x95F4;&#x7B54;&#x6848;&#x7EC4;&#x5408;&#x4F20;&#x9012;&#x7ED9;LLM&#x3002;&#xFF08;&#x9002;&#x5408;LLM&#x4E0A;&#x4E0B;&#x6587;&#x5927;&#x5C0F;&#x4E0D;&#x80FD;&#x5BB9;&#x7EB3;&#x7684;&#x5C0F;&#x6587;&#x6863;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_load_refine_chain</span><span class="hljs-params">(
+    llm: BaseLanguageModel,
+    question_prompt: Optional[BasePromptTemplate] = None,
+    refine_prompt: Optional[BasePromptTemplate] = None,
+    document_variable_name: str = <span class="hljs-string">&quot;context_str&quot;</span>,
+    initial_response_name: str = <span class="hljs-string">&quot;existing_answer&quot;</span>,
+    refine_llm: Optional[BaseLanguageModel] = None,
+    verbose: Optional[bool] = None,
+    callback_manager: Optional[BaseCallbackManager] = None,
+    callbacks: Callbacks = None,
+    **kwargs: Any,
+)</span> -&gt; RefineDocumentsChain:</span>
+</code></pre>
+<p><img src="https://python.langchain.com/assets/images/refine-a70f30dd7ada6fe5e3fcc40dd70de037.jpg" alt=""></p>
+<h4 id="mapreducedocumentschain">MapReduceDocumentsChain</h4>
+<p>&#x5C06;LLM&#x94FE;&#x5E94;&#x7528;&#x4E8E;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x6863;&#xFF08;Map&#x6B65;&#x9AA4;&#xFF09;&#xFF0C;&#x5C06;&#x94FE;&#x7684;&#x8F93;&#x51FA;&#x89C6;&#x4E3A;&#x65B0;&#x6587;&#x6863;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x65B0;&#x6587;&#x6863;&#x4F20;&#x9012;&#x7ED9;&#x5355;&#x72EC;&#x7684;&#x5408;&#x5E76;&#x6587;&#x6863;&#x94FE;&#x4EE5;&#x83B7;&#x5F97;&#x5355;&#x4E00;&#x8F93;&#x51FA;&#xFF08;Reduce&#x6B65;&#x9AA4;&#xFF09;&#x3002;&#x5728;&#x6267;&#x884C;Map&#x6B65;&#x9AA4;&#x524D;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x6216;&#x5408;&#x5E76;&#x6620;&#x5C04;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x5B83;&#x4EEC;&#x9002;&#x5408;&#x5408;&#x5E76;&#x6587;&#x6863;&#x94FE;&#xFF1B;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E2A;&#x6B65;&#x9AA4;&#x9012;&#x5F52;&#x6267;&#x884C;&#x76F4;&#x5230;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x3002;&#xFF08;&#x9002;&#x5408;&#x5927;&#x89C4;&#x6A21;&#x6587;&#x6863;&#x7684;&#x60C5;&#x51B5;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_load_map_reduce_chain</span><span class="hljs-params">(
+    llm: BaseLanguageModel,
+    question_prompt: Optional[BasePromptTemplate] = None,
+    combine_prompt: Optional[BasePromptTemplate] = None,
+    combine_document_variable_name: str = <span class="hljs-string">&quot;summaries&quot;</span>,
+    map_reduce_document_variable_name: str = <span class="hljs-string">&quot;context&quot;</span>,
+    collapse_prompt: Optional[BasePromptTemplate] = None,
+    reduce_llm: Optional[BaseLanguageModel] = None,
+    collapse_llm: Optional[BaseLanguageModel] = None,
+    verbose: Optional[bool] = None,
+    callback_manager: Optional[BaseCallbackManager] = None,
+    callbacks: Callbacks = None,
+    **kwargs: Any,
+)</span> -&gt; MapReduceDocumentsChain:</span>
+</code></pre>
+<p><img src="https://python.langchain.com/assets/images/map_reduce-c65525a871b62f5cacef431625c4d133.jpg" alt=""></p>
+<h4 id="maprerankdocumentschain">MapRerankDocumentsChain</h4>
+<p>&#x6BCF;&#x4E2A;&#x6587;&#x6863;&#x4E0A;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x63D0;&#x793A;&#xFF0C;&#x518D;&#x7ED9;&#x5BF9;&#x5E94;&#x8F93;&#x51FA;&#x7ED9;&#x4E00;&#x4E2A;&#x5206;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x5F97;&#x5206;&#x6700;&#x9AD8;&#x7684;&#x56DE;&#x7B54;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_load_map_rerank_chain</span><span class="hljs-params">(
+    llm: BaseLanguageModel,
+    prompt: BasePromptTemplate = map_rerank_prompt.PROMPT,
+    verbose: bool = False,
+    document_variable_name: str = <span class="hljs-string">&quot;context&quot;</span>,
+    rank_key: str = <span class="hljs-string">&quot;score&quot;</span>,
+    answer_key: str = <span class="hljs-string">&quot;answer&quot;</span>,
+    callback_manager: Optional[BaseCallbackManager] = None,
+    callbacks: Callbacks = None,
+    **kwargs: Any,
+)</span> -&gt; MapRerankDocumentsChain:</span>
+</code></pre>
+<p><img src="https://python.langchain.com/assets/images/map_rerank-0302b59b690c680ad6099b7bfe6d9fe5.jpg" alt=""></p>
+<h3 id="&#x83B7;&#x53D6;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x7684;&#x94FE;&#xFF08;&#x4E13;&#x95E8;&#x7528;&#x9014;chain&#xFF09;">&#x83B7;&#x53D6;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x7684;&#x94FE;&#xFF08;&#x4E13;&#x95E8;&#x7528;&#x9014;chain&#xFF09;</h3>
+<p>APIChain&#x4F7F;&#x5F97;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;LLMs&#x4E0E;API&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x4EE5;&#x68C0;&#x7D22;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E0E;&#x6240;&#x63D0;&#x4F9B;&#x7684;API&#x6587;&#x6863;&#x76F8;&#x5173;&#x7684;&#x95EE;&#x9898;&#x6765;&#x6784;&#x5EFA;&#x94FE;&#x3002;
+&#x4E0B;&#x9762;&#x662F;&#x4E0E;&#x64AD;&#x5BA2;&#x67E5;&#x8BE2;&#x76F8;&#x5173;&#x7684;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> langchain.llms <span class="hljs-keyword">import</span> OpenAI
+<span class="hljs-keyword">from</span> langchain.chains.api <span class="hljs-keyword">import</span> podcast_docs
+<span class="hljs-keyword">from</span> langchain.chains <span class="hljs-keyword">import</span> APIChain
+
+listen_api_key = <span class="hljs-string">&apos;xxx&apos;</span>
+llm = OpenAI(temperature=<span class="hljs-number">0</span>)
+headers = {<span class="hljs-string">&quot;X-ListenAPI-Key&quot;</span>: listen_api_key}
+chain = APIChain.from_llm_and_api_docs(llm, podcast_docs.PODCAST_DOCS, headers=headers, verbose=<span class="hljs-keyword">True</span>)
+chain.run(<span class="hljs-string">&quot;&#x641C;&#x7D22;&#x5173;&#x4E8E;ChatGPT&#x7684;&#x8282;&#x76EE;, &#x8981;&#x6C42;&#x8D85;&#x8FC7;30&#x5206;&#x949F;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x4E00;&#x6761;&quot;</span>)
+</code></pre>
+<p><strong>&#x5408;&#x5E76;&#x6587;&#x6863;&#x7684;&#x94FE;&#x7684;&#x9AD8;&#x9891;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x4E3E;&#x4F8B;</strong></p>
+<h3 id="&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#xFF08;&#x6700;&#x5E7F;&#x6CDB;&#xFF09;">&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#xFF08;&#x6700;&#x5E7F;&#x6CDB;&#xFF09;</h3>
+<p>ConversationalRetrievalChain &#x5BF9;&#x8BDD;&#x5F0F;&#x68C0;&#x7D22;&#x94FE;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF1A;&#x5C06;&#x804A;&#x5929;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF08;&#x663E;&#x5F0F;&#x4F20;&#x5165;&#x6216;&#x4ECE;&#x63D0;&#x4F9B;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#x68C0;&#x7D22;&#xFF09;&#x548C;&#x95EE;&#x9898;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x68C0;&#x7D22;&#x5668;&#x67E5;&#x627E;&#x76F8;&#x5173;&#x6587;&#x6863;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x6587;&#x6863;&#x548C;&#x95EE;&#x9898;&#x4F20;&#x9012;&#x7ED9;&#x95EE;&#x7B54;&#x94FE;&#x4EE5;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_converstion</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">from</span> langchain.chains <span class="hljs-keyword">import</span> ConversationalRetrievalChain
+    <span class="hljs-keyword">from</span> langchain.memory <span class="hljs-keyword">import</span> ConversationBufferMemory
+    loader = TextLoader(<span class="hljs-string">&quot;./test.txt&quot;</span>)
+    documents = loader.load()
+    text_splitter = CharacterTextSplitter(chunk_size=<span class="hljs-number">1000</span>, chunk_overlap=<span class="hljs-number">0</span>)
+    documents = text_splitter.split_documents(documents)
+
+    embeddings = OpenAIEmbeddings()
+    vectorstore = Chroma.from_documents(documents, embeddings)
+    memory = ConversationBufferMemory(memory_key=<span class="hljs-string">&quot;chat_history&quot;</span>, return_messages=<span class="hljs-keyword">True</span>)
+    qa = ConversationalRetrievalChain.from_llm(OpenAI(temperature=<span class="hljs-number">0</span>), vectorstore.as_retriever(), memory=memory)
+    query = <span class="hljs-string">&quot;&#x8FD9;&#x672C;&#x4E66;&#x5305;&#x542B;&#x54EA;&#x4E9B;&#x5185;&#x5BB9;&#xFF1F;&quot;</span>
+    result = qa({<span class="hljs-string">&quot;question&quot;</span>: query})
+    print(result)
+    chat_history = [(query, result[<span class="hljs-string">&quot;answer&quot;</span>])]
+    query = <span class="hljs-string">&quot;&#x8FD8;&#x6709;&#x8981;&#x8865;&#x5145;&#x7684;&#x5417;&quot;</span>
+    result = qa({<span class="hljs-string">&quot;question&quot;</span>: query, <span class="hljs-string">&quot;chat_history&quot;</span>: chat_history})
+    print(result[<span class="hljs-string">&quot;answer&quot;</span>])
+</code></pre>
+<h3 id="&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x95EE;&#x7B54;&#x573A;&#x666F;">&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x95EE;&#x7B54;&#x573A;&#x666F;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_db_chain</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">from</span> langchain <span class="hljs-keyword">import</span> OpenAI, SQLDatabase, SQLDatabaseChain
+    db = SQLDatabase.from_uri(<span class="hljs-string">&quot;sqlite:///../user.db&quot;</span>)
+    llm = OpenAI(temperature=<span class="hljs-number">0</span>, verbose=<span class="hljs-keyword">True</span>)
+    db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=<span class="hljs-keyword">True</span>, use_query_checker=<span class="hljs-keyword">True</span>)
+    db_chain.run(<span class="hljs-string">&quot;&#x6709;&#x591A;&#x5C11;&#x7528;&#x6237;?&quot;</span>)
+</code></pre>
+<h3 id="&#x603B;&#x7ED3;&#x573A;&#x666F;">&#x603B;&#x7ED3;&#x573A;&#x666F;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_summary</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">from</span> langchain.chains.summarize <span class="hljs-keyword">import</span> load_summarize_chain
+
+    text_splitter = CharacterTextSplitter()
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&quot;./&#x6D4B;&#x8BD5;.txt&quot;</span>) <span class="hljs-keyword">as</span> f:
+        state_of_the_union = f.read()
+    texts = text_splitter.split_text(state_of_the_union)
+    docs = [Document(page_content=t) <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> texts[:<span class="hljs-number">3</span>]]
+    chain = load_summarize_chain(OpenAI(temperature=<span class="hljs-number">0</span>), chain_type=<span class="hljs-string">&quot;map_reduce&quot;</span>)
+    chain.run(docs)
+</code></pre>
+<h3 id="&#x95EE;&#x7B54;&#x573A;&#x666F;">&#x95EE;&#x7B54;&#x573A;&#x666F;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_qa</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">from</span> langchain.chains.question_answering <span class="hljs-keyword">import</span> load_qa_chain
+    loader = TextLoader(<span class="hljs-string">&quot;./&#x6D4B;&#x8BD5;.txt&quot;</span>)
+    documents = loader.load()
+    text_splitter = CharacterTextSplitter(chunk_size=<span class="hljs-number">1000</span>, chunk_overlap=<span class="hljs-number">0</span>)
+    texts = text_splitter.split_documents(documents)
+    embeddings = OpenAIEmbeddings()
+    docsearch = Chroma.from_documents(texts, embeddings)
+    qa_chain = load_qa_chain(OpenAI(temperature=<span class="hljs-number">0</span>), chain_type=<span class="hljs-string">&quot;map_reduce&quot;</span>)
+    qa = RetrievalQA(combine_documents_chain=qa_chain, retriever=docsearch.as_retriever())
+    qa.run()
+</code></pre>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-2.html" class="navigation navigation-prev " aria-label="Previous page: LangChain模块学习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-3.html" class="navigation navigation-next " aria-label="Next page: Embedding嵌入">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LangChain之Chains模块","level":"1.3.3","depth":2,"next":{"title":"Embedding嵌入","level":"1.3.4","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"previous":{"title":"LangChain模块学习","level":"1.3.2","depth":2,"path":"02-langchain/02-2.md","ref":"./02-langchain/02-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg","alipayText":"LLM应用开发交流群","button":"进群交流","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-2-1.md","mtime":"2023-07-05T03:30:27.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-05T03:35:15.480Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
