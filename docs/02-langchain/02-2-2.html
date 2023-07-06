@@ -72,7 +72,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="02-3.html" />
+    <link rel="next" href="02-2-3.html" />
     
     
     <link rel="prev" href="02-2-1.html" />
@@ -239,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="02-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="02-2-0.html">
             
-                <a href="02-2.html">
+                <a href="02-2-0.html">
             
                     
                     LangChain模块学习
@@ -278,7 +278,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="02-3.html">
+        <li class="chapter " data-level="1.3.5" data-path="02-2-3.html">
+            
+                <a href="02-2-3.html">
+            
+                    
+                    LangChain之Callback模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="02-3.html">
             
                 <a href="02-3.html">
             
@@ -291,12 +304,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="02-4.html">
+        <li class="chapter " data-level="1.3.7" data-path="02-4.html">
             
                 <a href="02-4.html">
             
                     
-                    动手实现垂直领域机器人
+                    动手实现知识问答机器人
             
                 </a>
             
@@ -341,7 +354,7 @@
                 <a href="../03-llamaIndex/03-2.html">
             
                     
-                    非结构化数据源
+                    非结构化数据源接入
             
                 </a>
             
@@ -354,7 +367,7 @@
                 <a href="../03-llamaIndex/03-3.html">
             
                     
-                    动手实现问答机器人
+                    动手实现知识问答系统
             
                 </a>
             
@@ -555,49 +568,248 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="langchain&#x6A21;&#x5757;&#x4E4B;agents">LangChain&#x6A21;&#x5757;&#x4E4B;<a href="https://python.langchain.com/docs/modules/agents/" target="_blank">Agents</a></h2>
-<p>&#x67D0;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5BF9;LLM&#x548C;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x7684;&#x7075;&#x6D3B;&#x8C03;&#x7528;&#x94FE;&#x3002;Agents&#x4E3A;&#x6B64;&#x7C7B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x3002;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x4E00;&#x5957;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x786E;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
-<p>&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4EE3;&#x7406;&#xFF1A;</p>
-<ul>
-<li>&#x52A8;&#x4F5C;&#x4EE3;&#x7406;&#xFF1A;&#x5728;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#xFF0C;&#x5229;&#x7528;&#x6240;&#x6709;&#x5148;&#x524D;&#x52A8;&#x4F5C;&#x7684;&#x8F93;&#x51FA;&#x6765;&#x51B3;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C; &#xFF08;&#x9002;&#x5408;&#x5355;&#x4E00;&#x5C0F;&#x4EFB;&#x52A1;&#xFF09;</li>
-<li>&#x8BA1;&#x5212;-&#x6267;&#x884C;&#x4EE3;&#x7406;&#xFF1A;&#x9884;&#x5148;&#x51B3;&#x5B9A;&#x5168;&#x90E8;&#x884C;&#x52A8;&#x987A;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E0D;&#x66F4;&#x65B0;&#x8BA1;&#x5212;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5168;&#x90E8;&#x6267;&#x884C;&#xFF08;&#x9002;&#x5408;&#x590D;&#x6742;&#x6216;&#x957F;&#x671F;&#x8FD0;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#xFF09;</li>
-</ul>
-<p>Agents&#x6A21;&#x5757;&#x8FD8;&#x5305;&#x542B;&#x914D;&#x5408;&#x4EE3;&#x7406;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x5177;&#xFF08;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E3A;&#x4EE3;&#x7406;&#x63D0;&#x4F9B;&#x54EA;&#x4E9B;&#x5DE5;&#x5177;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D6;&#x51B3;&#x4E8E;&#x5E0C;&#x671B;&#x4EE3;&#x7406;&#x505A;&#x4EC0;&#x4E48;&#xFF09;&#x548C;&#x5DE5;&#x5177;&#x5305;&#xFF08;&#x4E00;&#x5957;&#x5DE5;&#x5177;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x4E0E;&#x7279;&#x5B9A;&#x7528;&#x4F8B;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x4EE3;&#x7406;&#x4E0E;SQL&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x6765;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x6765;&#x68C0;&#x67E5;&#x8868;&#xFF09;</p>
-<h3 id="agent&#x7C7B;&#x578B;">Agent&#x7C7B;&#x578B;</h3>
-<h4 id="conversationalreactdescription&#xFF1A;&#x9488;&#x5BF9;&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;">CONVERSATIONAL_REACT_DESCRIPTION&#xFF1A;&#x9488;&#x5BF9;&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;</h4>
-<p>agent_chain.run(input=&quot;tell me the last letter in my name, and also tell me who won the world cup in 1978?&quot;)</p>
-<pre><code class="lang-shell">    &gt; Entering new AgentExecutor chain...
-
-    Thought: Do I need to use a tool? Yes
-    Action: Current Search
-    Action Input: Who won the World Cup in 1978
-    Observation: Argentina national football team
-    Thought: Do I need to use a tool? No
-    AI: The last letter in your name is &quot;b&quot; and the winner of the 1978 World Cup was the Argentina national football team.
-
-    &gt; Finished chain.
-
-
-    &apos;The last letter in your name is &quot;b&quot; and the winner of the 1978 World Cup was the Argentina national football team.&apos;
+<p>&#x67D0;&#x4E9B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5BF9;LLM&#x548C;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x7684;&#x7075;&#x6D3B;&#x8C03;&#x7528;&#x94FE;&#x3002;Agents&#x4E3A;&#x6B64;&#x7C7B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x3002;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5355;&#x4E00;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x786E;&#x5B9A;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4EE3;&#x7406;&#xFF1A;Plan-and-Execute Agents &#x7528;&#x4E8E;&#x5236;&#x5B9A;&#x52A8;&#x4F5C;&#x8BA1;&#x5212;&#xFF1B;Action Agents &#x51B3;&#x5B9A;&#x5B9E;&#x65BD;&#x4F55;&#x79CD;&#x52A8;&#x4F5C;&#x3002;</p>
+<p>Agents&#x6A21;&#x5757;&#x8FD8;&#x5305;&#x542B;&#x914D;&#x5408;&#x4EE3;&#x7406;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x5177;&#xFF08;&#x4EE3;&#x7406;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E3A;&#x4EE3;&#x7406;&#x63D0;&#x4F9B;&#x54EA;&#x4E9B;&#x5DE5;&#x5177;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D6;&#x51B3;&#x4E8E;&#x5E0C;&#x671B;&#x4EE3;&#x7406;&#x505A;&#x4EC0;&#x4E48;&#xFF09;&#x548C;&#x5DE5;&#x5177;&#x5305;&#xFF08;&#x4E00;&#x5957;&#x5DE5;&#x5177;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4E9B;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x4E0E;&#x7279;&#x5B9A;&#x7528;&#x4F8B;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x4EE3;&#x7406;&#x4E0E;SQL&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x6765;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x6765;&#x68C0;&#x67E5;&#x8868;&#xFF09;&#x3002;</p>
+<p><strong>&#x4E0B;&#x9762;&#x5BF9;&#x4E0D;&#x540C;&#x7684;Agent&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x8BF4;&#x660E;</strong></p>
+<h3 id="conversationalreactdescription&#xFF1A;&#x9488;&#x5BF9;&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;">CONVERSATIONAL_REACT_DESCRIPTION&#xFF1A;&#x9488;&#x5BF9;&#x5BF9;&#x8BDD;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_conversation_agent</span><span class="hljs-params">()</span>:</span>
+    search = GoogleSearchAPIWrapper()
+    tools = [
+        Tool(
+            name = <span class="hljs-string">&quot;Current Search&quot;</span>,
+            func=search.run,
+            description=<span class="hljs-string">&quot;useful for when you need to answer questions about current events or the current state of the world&quot;</span>
+        ),
+    ]
+    memory = ConversationBufferMemory(memory_key=<span class="hljs-string">&quot;chat_history&quot;</span>)
+    llm=OpenAI(temperature=<span class="hljs-number">0</span>)
+    agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=<span class="hljs-keyword">True</span>, memory=memory)
+    print(agent_chain.run(input=<span class="hljs-string">&quot;&#x7528;&#x4E2D;&#x6587;&#x56DE;&#x7B54;&#x4E2D;&#x56FD;&#x4EBA;&#x53E3;&#x6570;&#x91CF;&quot;</span>))
 </code></pre>
-<h4 id="chatconversationalreactdescription&#xFF1A;&#x9488;&#x5BF9;&#x804A;&#x5929;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;">CHAT_CONVERSATIONAL_REACT_DESCRIPTION&#xFF1A;&#x9488;&#x5BF9;&#x804A;&#x5929;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;</h4>
-<p>agent_chain.run(&quot;what are some good dinners to make this week, if i like thai food?&quot;)</p>
-<pre><code class="lang-shell">    &gt; Entering new AgentExecutor chain...
-    {
-        &quot;action&quot;: &quot;Current Search&quot;,
-        &quot;action_input&quot;: &quot;Thai food dinner recipes&quot;
-    }
-    Observation: 64 easy Thai recipes for any night of the week &#xB7; Thai curry noodle soup &#xB7; Thai yellow cauliflower, snake bean and tofu curry &#xB7; Thai-spiced chicken hand pies &#xB7; Thai ...
-    Thought:{
-        &quot;action&quot;: &quot;Final Answer&quot;,
-        &quot;action_input&quot;: &quot;Here are some Thai food dinner recipes you can try this week: Thai curry noodle soup, Thai yellow cauliflower, snake bean and tofu curry, Thai-spiced chicken hand pies, and many more. You can find the full list of recipes at the source I found earlier.&quot;
-    }
+<p>Agent&#x6267;&#x884C;&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-shell">&gt; Entering new  chain...
 
-    &gt; Finished chain.
+Thought: Do I need to use a tool? Yes
+Action: Current Search
+Action Input: &#x4E2D;&#x56FD;&#x4EBA;&#x53E3;&#x6570;&#x91CF;
+Observation: &#x4E2D;&#x534E;&#x4EBA;&#x6C11;&#x5171;&#x548C;&#x56FD;&#x6210;&#x7ACB;&#x65F6;&#xFF0C;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x4EBA;&#x53E3;&#x7EA6;5.4&#x4EBF;&#xFF0C;&#x5360;&#x4E16;&#x754C;&#x4EBA;&#x53E3;&#x7684;22%&#x3002;&#x548C;&#x8BB8;&#x591A;&#x53D1;&#x5C55;&#x4E2D;&#x56FD;&#x5BB6;&#x4E00;&#x6837;&#xFF0C;&#x4ECE;1950&#x5E74;&#x8D77;&#xFF0C;&#x7531;&#x4E8E;&#x793E;&#x4F1A;&#x8F83;&#x4E3A;&#x7A33;&#x5B9A;&#xFF0C;&#x6B7B;&#x4EA1;&#x7387;&#x4E0B;&#x964D;&#xFF0C;&#x9884;&#x671F;&#x5BFF;&#x547D;&#x9010;&#x6E10;&#x5EF6;&#x957F;&#xFF0C;&#x4EBA;&#x53E3;&#x56E0;&#x6B64;&#x8FC5;&#x901F;&#x589E;&#x957F; ... May 11, 2021 ... &#x5341;&#x5E74;&#x4E00;&#x6B21;&#x7684;&#x666E;&#x67E5;&#x663E;&#x793A;&#xFF0C;&#x4EE5;2020&#x5E74;11&#x6708;1&#x65E5;&#x4E3A;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#x70B9;&#xFF0C;&#x4E2D;&#x56FD;&#x603B;&#x4EBA;&#x53E3;&#x4E3A;14&#x4EBF;1178&#x4E07;&#x4EBA;&#x3002;&#x6B64;&#x524D;&#x82F1;&#x56FD;&#x300A;&#x91D1;&#x878D;&#x65F6;&#x62A5;&#x300B;&#x63F4;&#x5F15;&#x77E5;&#x60C5;&#x4EBA;&#x58EB;&#x79F0;&#x4E2D;&#x56FD;&#x603B;&#x4EBA;&#x53E3;&#x5DF2;&#x4F4E;&#x4E8E;14&#x4EBF;&#x4EBA;&#xFF0C;&#x51FA;&#x73B0;&#x4E86;&#x201C;&#x81EA; ... &#x4E2D;&#x56FD;&#x662F;&#x4E00;&#x4E2A;&#x4EE5;&#x6C49;&#x65CF;&#x4E3A;&#x4E3B;&#x591A;&#x6C11;&#x65CF;&#x56FD;&#x5BB6;&#xFF0C;&#x6C49;&#x65CF;&#x76EE;&#x524D;&#x5360;&#x603B;&#x4EBA;&#x53E3;&#x7684;91%&#xFF0C;&#x5176;&#x4F59;&#x4E3A;&#x5C11;&#x6570;&#x6C11;&#x65CF;&#xFF0C;&#x53CA;&#x6781;&#x5C11;&#x6570;&#x7684;&#x5F52;&#x5316;&#x5916;&#x56FD;&#x79FB;&#x6C11;&#x3002;&#x636E;&#x4E2D;&#x534E;&#x4EBA;&#x6C11;&#x5171;&#x548C;&#x56FD;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;&#x4E8E;2020&#x5E74;1&#x6708;17&#x65E5;&#x53D1;&#x5E03;&#x6570;&#x636E;&#xFF0C;2019&#x5E74;&#x4E2D;&#x56FD; ... Jan 18, 2020 ... &#x4E2D;&#x56FD;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;17&#x65E5;&#x516C;&#x5E03;&#x7684;&#x6570;&#x636E;&#x663E;&#x793A;&#xFF0C;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x603B;&#x4EBA;&#x53E3;&#x5728;2019&#x5E74;&#x7A81;&#x7834;14&#x4EBF;&#x5927;&#x5173;&#xFF0C;&#x6B63;&#x5F0F; ... &#x51FA;&#x751F;&#x4EBA;&#x53E3;&#x6570;&#x91CF;&#x53D7;&#x5230;&#x80B2;&#x9F84;&#x5987;&#x5973;&#x603B;&#x91CF;&#x3001;&#x80B2;&#x9F84;&#x5987;&#x5973;&#x5E74;&#x9F84;&#x7ED3;&#x6784;&#x548C;&#x751F;&#x80B2;&#x7387;&#x53D8;&#x5316;&#x7684; ... May 17, 2021 ... &#x4E2D;&#x56FD;&#x56FD;&#x52A1;&#x9662;&#x4EBA;&#x53E3;&#x666E;&#x67E5;&#x5C0F;&#x7EC4;&#x548C;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;&#x4E0D;&#x4E45;&#x524D;&#x516C;&#x5E03;&#x4E86;&#x7B2C;&#x4E03;&#x6B21;&#x5168;&#x56FD;&#x4EBA;&#x53E3;&#x666E;&#x67E5;&#x6570;&#x636E;&#x7ED3;&#x679C;&#xFF0C;&#x79F0;&#x4E2D;&#x56FD;&#x201C;&#x4EBA;&#x53E3;&#x603B;&#x91CF;&#x8FBE;&#x5230;14&#x4EBF;1178&#x4E07;&#x201D;&#xFF0C;&#x4E0E;2010&#x5E74;&#x7684;&#x7B2C;&#x516D;&#x6B21;&#x4EBA;&#x53E3;&#x666E;&#x67E5;&#x6570;&#x636E;&#x76F8;&#x6BD4;&#xFF0C; ... &#x4EBA;&#x53E3;&#x666E;&#x67E5;&#x662F;&#x5168;&#x9762;&#x67E5;&#x6E05;&#x56FD;&#x5BB6;&#x4EBA;&#x53E3;&#x6570;&#x91CF;&#x3001;&#x7ED3;&#x6784;&#x3001;&#x5206;&#x5E03;&#x7684;&#x91CD;&#x8981;. &#x9014;&#x5F84;&#xFF0C;&#x4E2D;&#x56FD;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x8FDB;&#x884C;&#x4E86;&#x4E03;&#x6B21;&#x4EBA;&#x53E3;&#x666E;&#x67E5;&#xFF0C;&#x5206;&#x522B;&#x4E8E;. 1953&#x3001;1964&#x3001;1982&#x3001;1990&#x3001;2000&#x3001;2010&#x3001;2020&#x5E74;&#x8FDB;. &#x884C;&#x3002;&#x5728;&#x73B0;&#x884C;&#x7EDF;&#x8BA1;&#x5236;&#x5EA6; ... Oct 26, 2022 ... &#x5168;&#x56FD;65&#x5468;&#x5C81;&#x53CA;&#x4EE5;&#x4E0A;&#x8001;&#x5E74;&#x4EBA;&#x53E3;&#x629A;&#x517B;&#x6BD4;20.8%&#x3002; &#x56FE;1 2012&#x5E74;&#x2014;2021&#x5E74;&#x5168;&#x56FD;60&#x5468;&#x5C81;&#x53CA;&#x4EE5;&#x4E0A;&#x8001;&#x5E74;&#x4EBA;&#x53E3;&#x6570;&#x91CF;&#x53CA;&#x5360;&#x5168;&#x56FD;&#x603B;&#x4EBA;&#x53E3;&#x6BD4;&#x91CD;. &#x56FE; ... Jan 18, 2019 ... &#x591A;&#x5E74;&#x6765;&#xFF0C;&#x4E3A;&#x51CF;&#x7F13;&#x4E16;&#x754C;&#x4E0A;&#x8FD9;&#x4E2A;&#x4EBA;&#x53E3;&#x6700;&#x591A;&#x56FD;&#x5BB6;&#x7684;&#x4EBA;&#x53E3;&#x589E;&#x957F;&#x901F;&#x5EA6;&#xFF0C;&#x4E2D;&#x56FD;&#x6267;&#x653F;&#x7684;&#x5171;&#x4EA7;&#x515A;&#x5B9E;&#x65BD;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x653F;&#x7B56;&#xFF0C;&#x5305;&#x62EC;&#x628A;&#x4E00;&#x5BF9;&#x592B;&#x5987;&#x5141;&#x8BB8;&#x751F;&#x80B2;&#x7684;&#x5B69;&#x5B50;&#x6570;&#x91CF;&#x9650;&#x5236;&#x4E3A;&#x4E00;&#x4E2A;&#x3002; Apr 10, 2012 ... &#x6211;&#x56FD;&#x4EBA;&#x53E3;&#x53D1;&#x5C55;&#x4E00;&#x76F4;&#x5BF9;&#x4E16;&#x754C;&#x4EBA;&#x53E3;&#x683C;&#x5C40;&#x6709;&#x7740;&#x4E3E;&#x8DB3;&#x8F7B;&#x91CD;&#x7684;&#x5F71;&#x54CD;&#x3002; &#x4E00;&#x3001;&#x4EBA;&#x53E3;&#x548C;&#x8BA1;&#x5212;&#x751F;&#x80B2;&#x5DE5;&#x4F5C;&#x5386;&#x7A0B; ... &#x7B2C;&#x4E00;&#xFF0C;&#x4EBA;&#x53E3;&#x6570;&#x91CF;&#x6709;&#x6548;&#x63A7;&#x5236;&#xFF0C;&#x4E3A;&#x7ECF;&#x6D4E;&#x5FEB;&#x901F;&#x589E;&#x957F;&#x521B;&#x9020;&#x4E86;&#x91CD;&#x8981;&#x6761;&#x4EF6;&#x3002; Jan 31, 2023 ... 2022&#x5E74;&#x672B;&#xFF0C;&#x5168;&#x56FD;&#x4EBA;&#x53E3;&#x4E3A;141175&#x4E07;&#x4EBA;&#xFF0C;&#x6BD4;2021&#x5E74;&#x51CF;&#x5C11;85&#x4E07;&#x4EBA;&#xFF1B;&#x5168;&#x5E74;&#x51FA;&#x751F;&#x4EBA;&#x53E3;956&#x4E07;&#x4EBA;&#xFF0C;&#x6BD4;2021&#x5E74;&#x51CF;&#x5C11;106&#x4E07;&#x4EBA;&#xFF1B;&#x6B7B;&#x4EA1;&#x4EBA;&#x53E3;1041&#x4E07;&#x4EBA;&#xFF0C;&#x6BD4;2021&#x5E74;&#x589E;&#x52A0;27&#x4E07;&#x4EBA;&#x3002;
+Thought: Do I need to use a tool? No
+AI: &#x6839;&#x636E;&#x4E2D;&#x56FD;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x622A;&#x81F3;2020&#x5E74;11&#x6708;1&#x65E5;&#xFF0C;&#x4E2D;&#x56FD;&#x603B;&#x4EBA;&#x53E3;&#x4E3A;14&#x4EBF;1178&#x4E07;&#x4EBA;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4E2D;&#x56FD;&#x6C49;&#x65CF;&#x4EBA;&#x53E3;&#x5360;&#x603B;&#x4EBA;&#x53E3;&#x7684;91%&#xFF0C;&#x5176;&#x4F59;&#x4E3A;&#x5C11;&#x6570;&#x6C11;&#x65CF;&#xFF0C;&#x53CA;&#x6781;&#x5C11;&#x6570;&#x7684;&#x5F52;&#x5316;&#x5916;&#x56FD;&#x79FB;&#x6C11;&#x3002;
 
-
-    &apos;Here are some Thai food dinner recipes you can try this week: Thai curry noodle soup, Thai yellow cauliflower, snake bean and tofu curry, Thai-spiced chicken hand pies, and many more. You can find the full list of recipes at the source I found earlier.&apos;
+&gt; Finished chain.
+&#x6839;&#x636E;&#x4E2D;&#x56FD;&#x56FD;&#x5BB6;&#x7EDF;&#x8BA1;&#x5C40;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x622A;&#x81F3;2020&#x5E74;11&#x6708;1&#x65E5;&#xFF0C;&#x4E2D;&#x56FD;&#x603B;&#x4EBA;&#x53E3;&#x4E3A;14&#x4EBF;1178&#x4E07;&#x4EBA;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x4E2D;&#x56FD;&#x6C49;&#x65CF;&#x4EBA;&#x53E3;&#x5360;&#x603B;&#x4EBA;&#x53E3;&#x7684;91%&#xFF0C;&#x5176;&#x4F59;&#x4E3A;&#x5C11;&#x6570;&#x6C11;&#x65CF;&#xFF0C;&#x53CA;&#x6781;&#x5C11;&#x6570;&#x7684;&#x5F52;&#x5316;&#x5916;&#x56FD;&#x79FB;&#x6C11;&#x3002;
 </code></pre>
-<h4 id="openai-functions-agent">OpenAI Functions Agent</h4>
+<p><strong>CHAT_CONVERSATIONAL_REACT_DESCRIPTION&#xFF1A;&#x9488;&#x5BF9;&#x804A;&#x5929;&#x573A;&#x666F;&#x4F18;&#x5316;&#x7684;&#x4EE3;&#x7406;</strong></p>
+<h3 id="openai-functions-agent">OpenAI Functions Agent</h3>
+<p>&#x8FD9;&#x4E2A;&#x662F; LangChain&#x5BF9; <a href="https://platform.openai.com/docs/guides/gpt/function-calling" target="_blank">OpenAI Function Call</a> &#x7684;&#x5C01;&#x88C5;&#x3002;&#x5173;&#x4E8E; Function Calling&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x6211;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#xFF1A;<a href="https://liduos.com/openai-function-call-how-work.html" target="_blank">OpenAI Function Calling &#x7279;&#x6027;&#x6709;&#x4EC0;&#x4E48;&#x7528;</a></p>
+<pre><code class="lang-python">llm = ChatOpenAI(temperature=<span class="hljs-number">0</span>, model=<span class="hljs-string">&quot;gpt-3.5-turbo-0613&quot;</span>)
+search = GoogleSearchAPIWrapper()
+llm_math_chain = LLMMathChain.from_llm(llm=llm, verbose=<span class="hljs-keyword">True</span>)
+tools = [
+    Tool(
+        name = <span class="hljs-string">&quot;Search&quot;</span>,
+        func=search.run,
+        description=<span class="hljs-string">&quot;useful for when you need to answer questions about current events. You should ask targeted questions&quot;</span>
+    ),
+    Tool(
+        name=<span class="hljs-string">&quot;Calculator&quot;</span>,
+        func=llm_math_chain.run,
+        description=<span class="hljs-string">&quot;useful for when you need to answer questions about math&quot;</span>
+    )
+]
+agent = initialize_agent(tools, llm, agent=AgentType.OPENAI_FUNCTIONS, verbose=<span class="hljs-keyword">True</span>)
+print(agent.run(<span class="hljs-string">&quot;2&#x7684;33&#x6B21;&#x65B9;&#x662F;&#x591A;&#x5C11;&#xFF1F;&quot;</span>))e.OPENAI_FUNCTIONS, verbose=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x770B;&#x4E0B;&#x662F;debug&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-shell">[chain/start] [1:chain:AgentExecutor] Entering Chain run with input:
+{
+  &quot;input&quot;: &quot;2&#x7684;33&#x6B21;&#x65B9;&#x662F;&#x591A;&#x5C11;&#xFF1F;&quot;
+}
+[llm/start] [1:chain:AgentExecutor &gt; 2:llm:ChatOpenAI] Entering LLM run with input:
+{
+  &quot;prompts&quot;: [
+    &quot;System: You are a helpful AI assistant.\nHuman: 2&#x7684;33&#x6B21;&#x65B9;&#x662F;&#x591A;&#x5C11;&#xFF1F;&quot;
+  ]
+}
+[llm/end] [1:chain:AgentExecutor &gt; 2:llm:ChatOpenAI] [4.69s] Exiting LLM run with output:
+{
+  &quot;generations&quot;: [
+    [
+      {
+        &quot;text&quot;: &quot;&quot;,
+        &quot;generation_info&quot;: null,
+        &quot;message&quot;: {
+          &quot;content&quot;: &quot;&quot;,
+          &quot;additional_kwargs&quot;: {
+            &quot;function_call&quot;: {
+              &quot;name&quot;: &quot;Calculator&quot;,
+              &quot;arguments&quot;: &quot;{\n  \&quot;__arg1\&quot;: \&quot;2^33\&quot;\n}&quot;
+            }
+          },
+          &quot;example&quot;: false
+        }
+      }
+    ]
+  ],
+  &quot;llm_output&quot;: {
+    &quot;token_usage&quot;: {
+      &quot;prompt_tokens&quot;: 102,
+      &quot;completion_tokens&quot;: 19,
+      &quot;total_tokens&quot;: 121
+    },
+    &quot;model_name&quot;: &quot;gpt-3.5-turbo-0613&quot;
+  },
+  &quot;run&quot;: null
+}
+[tool/start] [1:chain:AgentExecutor &gt; 3:tool:Calculator] Entering Tool run with input:
+&quot;2^33&quot;
+[chain/start] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain] Entering Chain run with input:
+{
+  &quot;question&quot;: &quot;2^33&quot;
+}
+[chain/start] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain &gt; 5:chain:LLMChain] Entering Chain run with input:
+{
+  &quot;question&quot;: &quot;2^33&quot;,
+  &quot;stop&quot;: [
+    &quot;```output&quot;
+  ]
+}
+[llm/start] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain &gt; 5:chain:LLMChain &gt; 6:llm:ChatOpenAI] Entering LLM run with input:
+{
+  &quot;prompts&quot;: [
+    &quot;Human: Translate a math problem into a expression that can be executed using Python&apos;s numexpr library. Use the output of running this code to answer the question.\n\nQuestion: ${Question with math problem.}\n```text\n${single line mathematical expression that solves the problem}\n```\n...numexpr.evaluate(text)...\n```output\n${Output of running the code}\n```\nAnswer: ${Answer}\n\nBegin.\n\nQuestion: What is 37593 * 67?\n```text\n37593 * 67\n```\n...numexpr.evaluate(\&quot;37593 * 67\&quot;)...\n```output\n2518731\n```\nAnswer: 2518731\n\nQuestion: 37593^(1/5)\n```text\n37593**(1/5)\n```\n...numexpr.evaluate(\&quot;37593**(1/5)\&quot;)...\n```output\n8.222831614237718\n```\nAnswer: 8.222831614237718\n\nQuestion: 2^33&quot;
+  ]
+}
+[llm/end] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain &gt; 5:chain:LLMChain &gt; 6:llm:ChatOpenAI] [987.549ms] Exiting LLM run with output:
+{
+  &quot;generations&quot;: [
+    [
+      {
+        &quot;text&quot;: &quot;```text\n2**33\n```\n...numexpr.evaluate(\&quot;2**33\&quot;)...\n&quot;,
+        &quot;generation_info&quot;: null,
+        &quot;message&quot;: {
+          &quot;content&quot;: &quot;```text\n2**33\n```\n...numexpr.evaluate(\&quot;2**33\&quot;)...\n&quot;,
+          &quot;additional_kwargs&quot;: {},
+          &quot;example&quot;: false
+        }
+      }
+    ]
+  ],
+  &quot;llm_output&quot;: {
+    &quot;token_usage&quot;: {
+      &quot;prompt_tokens&quot;: 203,
+      &quot;completion_tokens&quot;: 19,
+      &quot;total_tokens&quot;: 222
+    },
+    &quot;model_name&quot;: &quot;gpt-3.5-turbo-0613&quot;
+  },
+  &quot;run&quot;: null
+}
+[chain/end] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain &gt; 5:chain:LLMChain] [988.7ms] Exiting Chain run with output:
+{
+  &quot;text&quot;: &quot;```text\n2**33\n```\n...numexpr.evaluate(\&quot;2**33\&quot;)...\n&quot;
+}
+[chain/end] [1:chain:AgentExecutor &gt; 3:tool:Calculator &gt; 4:chain:LLMMathChain] [991.249ms] Exiting Chain run with output:
+{
+  &quot;answer&quot;: &quot;Answer: 8589934592&quot;
+}
+[tool/end] [1:chain:AgentExecutor &gt; 3:tool:Calculator] [991.919ms] Exiting Tool run with output:
+&quot;Answer: 8589934592&quot;
+[llm/start] [1:chain:AgentExecutor &gt; 7:llm:ChatOpenAI] Entering LLM run with input:
+{
+  &quot;prompts&quot;: [
+    &quot;System: You are a helpful AI assistant.\nHuman: 2&#x7684;33&#x6B21;&#x65B9;&#x662F;&#x591A;&#x5C11;&#xFF1F;\nAI: {&apos;name&apos;: &apos;Calculator&apos;, &apos;arguments&apos;: &apos;{\\n  \&quot;__arg1\&quot;: \&quot;2^33\&quot;\\n}&apos;}\nFunction: Answer: 8589934592&quot;
+  ]
+}
+[llm/end] [1:chain:AgentExecutor &gt; 7:llm:ChatOpenAI] [1.22s] Exiting LLM run with output:
+{
+  &quot;generations&quot;: [
+    [
+      {
+        &quot;text&quot;: &quot;2&#x7684;33&#x6B21;&#x65B9;&#x662F;8589934592&#x3002;&quot;,
+        &quot;generation_info&quot;: null,
+        &quot;message&quot;: {
+          &quot;content&quot;: &quot;2&#x7684;33&#x6B21;&#x65B9;&#x662F;8589934592&#x3002;&quot;,
+          &quot;additional_kwargs&quot;: {},
+          &quot;example&quot;: false
+        }
+      }
+    ]
+  ],
+  &quot;llm_output&quot;: {
+    &quot;token_usage&quot;: {
+      &quot;prompt_tokens&quot;: 135,
+      &quot;completion_tokens&quot;: 12,
+      &quot;total_tokens&quot;: 147
+    },
+    &quot;model_name&quot;: &quot;gpt-3.5-turbo-0613&quot;
+  },
+  &quot;run&quot;: null
+}
+[chain/end] [1:chain:AgentExecutor] [6.91s] Exiting Chain run with output:
+{
+  &quot;output&quot;: &quot;2&#x7684;33&#x6B21;&#x65B9;&#x662F;8589934592&#x3002;&quot;
+}
+2&#x7684;33&#x6B21;&#x65B9;&#x662F;8589934592&#x3002;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x5C01;&#x88C5;&#x7684;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4F20;&#x5165;OpenAI&#x63A5;&#x53E3;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;message&quot;</span>: {
+    <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;additional_kwargs&quot;</span>: {
+    <span class="hljs-string">&quot;function_call&quot;</span>: {
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Calculator&quot;</span>,
+        <span class="hljs-string">&quot;arguments&quot;</span>: <span class="hljs-string">&quot;{\n  \&quot;__arg1\&quot;: \&quot;2^33\&quot;\n}&quot;</span>
+    }
+    }
+}
+</code></pre>
+<h3 id="&#x8BA1;&#x5212;&#x548C;&#x6267;&#x884C;&#x4EE3;&#x7406;">&#x8BA1;&#x5212;&#x548C;&#x6267;&#x884C;&#x4EE3;&#x7406;</h3>
+<p>&#x8BA1;&#x5212;&#x548C;&#x6267;&#x884C;&#x4EE3;&#x7406;&#x901A;&#x8FC7;&#x9996;&#x5148;&#x8BA1;&#x5212;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x5B50;&#x4EFB;&#x52A1;&#x6765;&#x5B9E;&#x73B0;&#x76EE;&#x6807;&#x3002;&#x8FD9;&#x4E2A;&#x60F3;&#x6CD5;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D7;&#x5230;BabyAGI&#x7684;&#x542F;&#x53D1;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> langchain.chat_models <span class="hljs-keyword">import</span> ChatOpenAI
+<span class="hljs-keyword">from</span> langchain.experimental.plan_and_execute <span class="hljs-keyword">import</span> PlanAndExecute, load_agent_executor, load_chat_planner
+search = GoogleSearchAPIWrapper()
+llm = OpenAI(temperature=<span class="hljs-number">0</span>)
+llm_math_chain = LLMMathChain.from_llm(llm=llm, verbose=<span class="hljs-keyword">True</span>)
+tools = [
+    Tool(
+        name = <span class="hljs-string">&quot;Search&quot;</span>,
+        func=search.run,
+        description=<span class="hljs-string">&quot;useful for when you need to answer questions about current events&quot;</span>
+    ),
+    Tool(
+        name=<span class="hljs-string">&quot;Calculator&quot;</span>,
+        func=llm_math_chain.run,
+        description=<span class="hljs-string">&quot;useful for when you need to answer questions about math&quot;</span>
+    ),
+]
+model = ChatOpenAI(temperature=<span class="hljs-number">0</span>)
+planner = load_chat_planner(model)
+executor = load_agent_executor(model, tools, verbose=<span class="hljs-keyword">True</span>)
+agent = PlanAndExecute(planner=planner, executor=executor, verbose=<span class="hljs-keyword">True</span>)
+print(agent.run(<span class="hljs-string">&quot;&#x7528;&#x4E2D;&#x6587;&#x56DE;&#x7B54;&#x7F8E;&#x56FD;&#x548C;&#x65E5;&#x672C;&#x7684;GDP&#x76F8;&#x5DEE;&#x591A;&#x5C11;&#xFF1F;&quot;</span>))
+<span class="hljs-comment"># 1.Search Tool&#x67E5;&#x8BE2;&#x7F8E;&#x56FD;GDP 2.Calculator Tool&#x67E5;&#x8BE2;&#x65E5;&#x672C;GDP 3.Calculator Tool&#x8BA1;&#x7B97;&#x5DEE;&#x503C;</span>
+</code></pre>
+<h3 id="zeroshotreactdescription">ZERO_SHOT_REACT_DESCRIPTION</h3>
+<p>&#x7ED9;LLM&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x540D;&#x79F0;&#x5217;&#x8868;&#xFF0C;&#x5305;&#x62EC;&#x5B83;&#x4EEC;&#x7684;&#x6548;&#x7528;&#x63CF;&#x8FF0;&#x4EE5;&#x53CA;&#x6709;&#x5173;&#x9884;&#x671F;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;&#x6307;&#x793A;LLM&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5177;&#x6765;&#x56DE;&#x7B54;&#x7528;&#x6237;&#x7ED9;&#x51FA;&#x7684;&#x63D0;&#x793A;&#x3002;&#x6307;&#x4EE4;&#x5EFA;&#x8BAE;&#x6A21;&#x578B;&#x9075;&#x5FAA;ReAct&#x683C;&#x5F0F;&#xFF1A;&#x601D;&#x8003;&#x3001;&#x884C;&#x52A8;&#x3001;&#x884C;&#x52A8;&#x8F93;&#x5165;&#x3001;&#x89C2;&#x5BDF;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-shell">&gt; Entering new  chain...
+
+Thought: I need to find out the population of China.
+Action: Search
+Action Input: Population of China
+Observation: The current population of China is 1,455,977,205 as of Wednesday, July 5, 2023, based on Worldometer elaboration of the latest United Nations data. &#xB7; China 2020 ... Apr 24, 2023 ... China&apos;s population reached its peak size of 1.426 billion in 2022 and has started to fall. Projections indicate that the size of the Chinese ... Apr 24, 2023 ... Indeed, according to current projections, China&apos;s population is likely to drop below 1 billion by 2080 and below 800 million by 2100. Those ... It is the world&apos;s second-most populous country, with a population exceeding 1.4 billion. China spans the equivalent of five time zones and borders fourteen ... Mar 6, 2020 ... ... Associated Factors during the Initial Stage of the 2019 Coronavirus Disease (COVID-19) Epidemic among the General Population in China. Jun 12, 2023 ... China&apos;s population shrank in 2022 for the first time in more than 60 years, with just 6.77 births per 1,000 people &#x2013; the lowest level since ... Feb 24, 2017 ... The National Clinical Research Center for Mental Disorders, China &amp; Center of Depression, Beijing Institute for Brain Disorders &amp; Mood Disorders ... Apr 19, 2023 ... Both China and India have more than 1.4 billion people, and combined they make up more than a third of the world&apos;s 8 billion people. &#x201C;Actually, ... Population, total - China from The World Bank: Data. ... Population and Vital Statistics Reprot ( various years ), ( 5 ) U.S. Census Bureau: International ... (A total prison population of 2,340,000 would raise the prison population rate to 165 per 100,000.) Pre-trial detainees / remand prisoners (percentage ...
+Thought: I now know the final answer.
+Final Answer: The current population of China is 1,455,977,205.
+
+&gt; Finished chain.
+The current population of China is 1,455,977,205.
+</code></pre>
+<h3 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h3>
+<ol>
+<li><strong>AgentType.SELF_ASK_WITH_SEARCH</strong>&#xFF1A;&#x81EA;&#x6211;&#x8FDB;&#x884C;&#x5BF9;&#x8BDD;&#x8FED;&#x4EE3;&#x7684;&#x4EE3;&#x7406;</li>
+<li><strong>REACT_DOCSTORE</strong>&#xFF1A;&#x57FA;&#x4E8E;&#x6587;&#x6863;&#x505A;ReAct&#x7684;&#x4EE3;&#x7406;</li>
+<li><strong>STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION</strong>&#xFF1A;&#x5728;&#x804A;&#x5929;&#x8FC7;&#x7A0B;&#x4E2D;&#x63A5;&#x5165;&#x5DE5;&#x5177;&#x6027;&#x4EE3;&#x7406;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;OpenAI Plugin</li>
+</ol>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -631,7 +843,7 @@
                 </a>
                 
                 
-                <a href="02-3.html" class="navigation navigation-next " aria-label="Next page: Embedding嵌入">
+                <a href="02-2-3.html" class="navigation navigation-next " aria-label="Next page: LangChain之Callback模块">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -642,7 +854,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LangChain之Agents模块","level":"1.3.4","depth":2,"next":{"title":"Embedding嵌入","level":"1.3.5","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"previous":{"title":"LangChain之Chains模块","level":"1.3.3","depth":2,"path":"02-langchain/02-2-1.md","ref":"./02-langchain/02-2-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg","alipayText":"LLM应用开发交流群","button":"进群交流","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-2-2.md","mtime":"2023-07-05T12:29:08.816Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-05T12:38:03.400Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LangChain之Agents模块","level":"1.3.4","depth":2,"next":{"title":"LangChain之Callback模块","level":"1.3.5","depth":2,"path":"02-langchain/02-2-3.md","ref":"./02-langchain/02-2-3.md","articles":[]},"previous":{"title":"LangChain之Chains模块","level":"1.3.3","depth":2,"path":"02-langchain/02-2-1.md","ref":"./02-langchain/02-2-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/07/06/2c6KrzduGVfEAB5.png","alipayText":"请备注来意👏","button":"联系我","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-2-2.md","mtime":"2023-07-06T08:38:27.032Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-06T11:26:31.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

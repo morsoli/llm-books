@@ -75,7 +75,7 @@
     <link rel="next" href="02-4.html" />
     
     
-    <link rel="prev" href="02-2-2.html" />
+    <link rel="prev" href="02-2-3.html" />
     
 
     <style>
@@ -239,9 +239,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="02-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="02-2-0.html">
             
-                <a href="02-2.html">
+                <a href="02-2-0.html">
             
                     
                     LangChain模块学习
@@ -278,7 +278,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="02-3.html">
+        <li class="chapter " data-level="1.3.5" data-path="02-2-3.html">
+            
+                <a href="02-2-3.html">
+            
+                    
+                    LangChain之Callback模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.6" data-path="02-3.html">
             
                 <a href="02-3.html">
             
@@ -291,12 +304,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="02-4.html">
+        <li class="chapter " data-level="1.3.7" data-path="02-4.html">
             
                 <a href="02-4.html">
             
                     
-                    动手实现垂直领域机器人
+                    动手实现知识问答机器人
             
                 </a>
             
@@ -341,7 +354,7 @@
                 <a href="../03-llamaIndex/03-2.html">
             
                     
-                    非结构化数据源
+                    非结构化数据源接入
             
                 </a>
             
@@ -354,7 +367,7 @@
                 <a href="../03-llamaIndex/03-3.html">
             
                     
-                    动手实现问答机器人
+                    动手实现知识问答系统
             
                 </a>
             
@@ -556,28 +569,28 @@
                                 
                                 <h2 id="embedding-&#x5D4C;&#x5165;">Embedding &#x5D4C;&#x5165;</h2>
 <p>&#x672C;&#x8282;&#x5BF9; Embedding&#xFF08;&#x5D4C;&#x5165;&#xFF09;&#x6982;&#x5FF5;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;&#xFF0C;&#x540C;&#x65F6;&#x4F1A;&#x63D0;&#x5230;&#x5411;&#x91CF;&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x540E;&#x9762;&#x7684;&#x9879;&#x76EE;&#x5B9E;&#x73B0;&#x3002;</p>
-<h3 id="&#x6587;&#x672C;&#x5D4C;&#x5165;&#x662F;&#x4EC0;&#x4E48;">&#x6587;&#x672C;&#x5D4C;&#x5165;&#x662F;&#x4EC0;&#x4E48;</h3>
+<h3 id="&#x8BCD;&#x5D4C;&#x5165;&#x662F;&#x4EC0;&#x4E48;">&#x8BCD;&#x5D4C;&#x5165;&#x662F;&#x4EC0;&#x4E48;</h3>
 <p>&#x5411;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x65B9;&#x5411;&#x548C;&#x957F;&#x5EA6;&#x7684;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6570;&#x5B66;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x6765;&#x8868;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8C;&#x7EF4;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E09;&#x7EF4;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x70B9;&#x3002;&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x5411;&#x91CF;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6570;&#x636E;&#x7684;&#x7279;&#x5F81;&#x3002;</p>
-<p>&#x800C;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x6587;&#x672C;&#x8FD9;&#x79CD;&#x79BB;&#x6563;&#x6570;&#x636E;&#x6620;&#x5C04;&#x5230;&#x8FDE;&#x7EED;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5D4C;&#x5165;&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x5C06;&#x9AD8;&#x7EF4;&#x7684;&#x79BB;&#x6563;&#x6570;&#x636E;&#x964D;&#x7EF4;&#x5230;&#x4F4E;&#x7EF4;&#x7684;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x5E76;&#x4FDD;&#x7559;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x7684;&#x8BED;&#x4E49;&#x5173;&#x7CFB;&#xFF0C;&#x4ECE;&#x800C;&#x65B9;&#x4FBF;&#x8FDB;&#x884C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>&#x800C;&#x8BCD;&#x5D4C;&#x5165;&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x6587;&#x672C;&#x8FD9;&#x79CD;&#x79BB;&#x6563;&#x6570;&#x636E;&#x6620;&#x5C04;&#x5230;&#x8FDE;&#x7EED;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5D4C;&#x5165;&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x5C06;&#x9AD8;&#x7EF4;&#x7684;&#x79BB;&#x6563;&#x6570;&#x636E;&#x964D;&#x7EF4;&#x5230;&#x4F4E;&#x7EF4;&#x7684;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x5E76;&#x4FDD;&#x7559;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x7684;&#x8BED;&#x4E49;&#x5173;&#x7CFB;&#xFF0C;&#x4ECE;&#x800C;&#x65B9;&#x4FBF;&#x8FDB;&#x884C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#xFF1A;  </p>
 <blockquote>
 <p>&quot;&#x673A;&#x5668;&#x5B66;&#x4E60;&quot;&#x8868;&#x793A;&#x4E3A; [1,2,3]<br> &quot;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&quot;&#x8868;&#x793A;&#x4E3A;[2,3,3]<br> &quot;&#x82F1;&#x96C4;&#x8054;&#x76DF;&quot;&#x8868;&#x793A;&#x4E3A;[9,1,3]</p>
-<p>&#x4F7F;&#x7528;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#xFF08;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x8861;&#x91CF;&#x5411;&#x91CF;&#x4E4B;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x6307;&#x6807;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF09;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6765;&#x5224;&#x65AD;&#x6587;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#xFF1A; </p>
+<p>&#x4F7F;&#x7528;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#xFF08;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x8861;&#x91CF;&#x5411;&#x91CF;&#x4E4B;&#x95F4;&#x76F8;&#x4F3C;&#x5EA6;&#x7684;&#x6307;&#x6807;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8BCD;&#x5D4C;&#x5165;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF09;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6765;&#x5224;&#x65AD;&#x6587;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#xFF1A; </p>
 <p>&#x201C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x201D;&#x4E0E;&#x201C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x201D;&#x7684;&#x8DDD;&#x79BB;&#xFF1A;<img src="https://private.codecogs.com/gif.latex?cos%28%5CTheta_1%20%29%3D%5Cfrac%7B1*2+2*3+3*3%7D%7B%5Csqrt%7B1%5E2+2%5E2+3%5E3%7D%5Csqrt%7B2%5E2+3%5E2+3%5E3%7D%7D%3D0.97" alt=""></p>
 <p>&quot;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x201D;&#x4E0E;&#x201C;&#x82F1;&#x96C4;&#x8054;&#x76DF;&#x201C;&#x7684;&#x8DDD;&#x79BB;&quot;&#xFF1A;<img src="https://private.codecogs.com/gif.latex?cos%28%5CTheta_2%20%29%3D%5Cfrac%7B1*9+2*1+3*3%7D%7B%5Csqrt%7B1%5E2+2%5E2+3%5E3%7D%5Csqrt%7B9%5E2+1%5E2+3%5E3%7D%7D%3D0.56" alt=""></p>
 <p>&#x201C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x201D;&#x4E0E;&#x201C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x201D;&#x4E24;&#x4E2A;&#x6587;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x4F59;&#x5F26;&#x76F8;&#x4F3C;&#x5EA6;&#x66F4;&#x9AD8;&#xFF0C;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x5728;&#x8BED;&#x4E49;&#x4E0A;&#x66F4;&#x76F8;&#x4F3C;&#x3002;</p>
 </blockquote>
-<h3 id="&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;">&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;</h3>
-<p>&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;&#x662F;&#x6307;&#x5C06;&#x6587;&#x672C;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x4E3A;&#x5411;&#x91CF;&#x8868;&#x793A;&#x7684;&#x5177;&#x4F53;&#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<h3 id="&#x8BCD;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;">&#x8BCD;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;</h3>
+<p>&#x8BCD;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;&#x662F;&#x6307;&#x5C06;&#x6587;&#x672C;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x4E3A;&#x5411;&#x91CF;&#x8868;&#x793A;&#x7684;&#x5177;&#x4F53;&#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x5E38;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x6B65;&#x9AA4;&#xFF1A;</p>
 <ul>
 <li>&#x5206;&#x8BCD;&#xFF1A;&#x5C06;&#x6587;&#x672C;&#x5212;&#x5206;&#x6210;&#x4E00;&#x4E2A;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x3002;</li>
 <li>&#x6784;&#x5EFA;&#x8BCD;&#x6C47;&#x8868;&#xFF1A;&#x5C06;&#x5206;&#x8BCD;&#x540E;&#x7684;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x5EFA;&#x7ACB;&#x8BCD;&#x6C47;&#x8868;&#xFF0C;&#x5E76;&#x4E3A;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x8D4B;&#x4E88;&#x4E00;&#x4E2A;&#x552F;&#x4E00;&#x7684;&#x7F16;&#x53F7;&#x3002;</li>
 <li>&#x8BA1;&#x7B97;&#x8BCD;&#x5D4C;&#x5165;&#xFF1A;&#x4F7F;&#x7528;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x6216;&#x81EA;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x6620;&#x5C04;&#x5230;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;</li>
-<li>&#x8BA1;&#x7B97;&#x6587;&#x672C;&#x5D4C;&#x5165;&#xFF1A;&#x5C06;&#x6587;&#x672C;&#x4E2D;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x53D6;&#x5E73;&#x5747;&#x6216;&#x52A0;&#x6743;&#x5E73;&#x5747;&#xFF0C;&#x5F97;&#x5230;&#x6574;&#x4E2A;&#x6587;&#x672C;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x3002;</li>
+<li>&#x8BA1;&#x7B97;&#x8BCD;&#x5D4C;&#x5165;&#xFF1A;&#x5C06;&#x6587;&#x672C;&#x4E2D;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x53D6;&#x5E73;&#x5747;&#x6216;&#x52A0;&#x6743;&#x5E73;&#x5747;&#xFF0C;&#x5F97;&#x5230;&#x6574;&#x4E2A;&#x6587;&#x672C;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#x3002;</li>
 </ul>
-<p>&#x5E38;&#x89C1;&#x7684;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;&#x5305;&#x62EC; Word2Vec&#x3001;GloVe&#x3001;FastText &#x7B49;&#x3002;&#x8FD9;&#x4E9B;&#x7B97;&#x6CD5;&#x901A;&#x8FC7;&#x9884;&#x8BAD;&#x7EC3;&#x6216;&#x81EA;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x6620;&#x5C04;&#x5230;&#x4F4E;&#x7EF4;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x4ECE;&#x800C;&#x80FD;&#x591F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x65B9;&#x4FBF;&#x5730;&#x5904;&#x7406;&#x6587;&#x672C;&#x6570;&#x636E;&#x3002;</p>
-<h3 id="&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7528;&#x9014;">&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7528;&#x9014;</h3>
-<p>&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7528;&#x4E8E;&#x6D4B;&#x91CF;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x76F8;&#x5173;&#x6027;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#xFF1A;</p>
+<p>&#x5E38;&#x89C1;&#x7684;&#x8BCD;&#x5D4C;&#x5165;&#x7B97;&#x6CD5;&#x5305;&#x62EC; Word2Vec&#x3001;GloVe&#x3001;FastText &#x7B49;&#x3002;&#x8FD9;&#x4E9B;&#x7B97;&#x6CD5;&#x901A;&#x8FC7;&#x9884;&#x8BAD;&#x7EC3;&#x6216;&#x81EA;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x5355;&#x8BCD;&#x6216;&#x77ED;&#x8BED;&#x6620;&#x5C04;&#x5230;&#x4F4E;&#x7EF4;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x4ECE;&#x800C;&#x80FD;&#x591F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x65B9;&#x4FBF;&#x5730;&#x5904;&#x7406;&#x6587;&#x672C;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x8BCD;&#x5D4C;&#x5165;&#x7528;&#x9014;">&#x8BCD;&#x5D4C;&#x5165;&#x7528;&#x9014;</h3>
+<p>&#x8BCD;&#x5D4C;&#x5165;&#x7528;&#x4E8E;&#x6D4B;&#x91CF;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x76F8;&#x5173;&#x6027;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#xFF1A;</p>
 <ul>
 <li>&#x641C;&#x7D22;&#xFF08;&#x7ED3;&#x679C;&#x6309;&#x4E0E;&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x76F8;&#x5173;&#x6027;&#x6392;&#x5E8F;&#xFF09;</li>
 <li>&#x805A;&#x7C7B;&#xFF08;&#x5176;&#x4E2D;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6309;&#x76F8;&#x4F3C;&#x6027;&#x5206;&#x7EC4;&#xFF09;</li>
@@ -586,16 +599,16 @@
 <li>&#x591A;&#x6837;&#x6027;&#x6D4B;&#x91CF;&#xFF08;&#x5206;&#x6790;&#x76F8;&#x4F3C;&#x6027;&#x5206;&#x5E03;&#xFF09;</li>
 <li>&#x5206;&#x7C7B;&#xFF08;&#x5176;&#x4E2D;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x6309;&#x5176;&#x6700;&#x76F8;&#x4F3C;&#x7684;&#x6807;&#x7B7E;&#x5206;&#x7C7B;&#xFF09;</li>
 </ul>
-<h3 id="&#x4F7F;&#x7528;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x6A21;&#x578B;">&#x4F7F;&#x7528;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x6A21;&#x578B;</h3>
+<h3 id="&#x4F7F;&#x7528;&#x8BCD;&#x5D4C;&#x5165;&#x6A21;&#x578B;">&#x4F7F;&#x7528;&#x8BCD;&#x5D4C;&#x5165;&#x6A21;&#x578B;</h3>
 <ul>
-<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; HuggingFace&#x4E0A;&#x80FD;&#x591F;&#x5904;&#x7406;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x7684;&#x5F00;&#x6E90;&#x6A21;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<a href="https://huggingface.co/uer/sbert-base-chinese-nli" target="_blank">uer/sbert-base-chinese-nli</a></p>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; HuggingFace&#x4E0A;&#x80FD;&#x591F;&#x5904;&#x7406;&#x8BCD;&#x5D4C;&#x5165;&#x7684;&#x5F00;&#x6E90;&#x6A21;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<a href="https://huggingface.co/uer/sbert-base-chinese-nli" target="_blank">uer/sbert-base-chinese-nli</a></p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> sentence_transformers <span class="hljs-keyword">import</span> SentenceTransformer
 model = SentenceTransformer(<span class="hljs-string">&apos;uer/sbert-base-chinese-nli&apos;</span>)
 sentences = [<span class="hljs-string">&quot;&#x673A;&#x5668;&#x5B66;&#x4E60;&quot;</span>,<span class="hljs-string">&quot;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&quot;</span>,<span class="hljs-string">&quot;&#x82F1;&#x96C4;&#x8054;&#x76DF;&quot;</span>,]
 sentence_embeddings = model.encode(sentences)
 </code></pre>
 </li>
-<li><p>&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x4ECB;&#x7ECD;&#x7684; <a href="../01-llm/01-3.html#embeddings">OpenAI &#x6587;&#x672C;&#x5D4C;&#x5165;API</a> &#x53EF;&#x4EE5;&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x4E3A;&#x5411;&#x91CF;&#xFF0C;OpenAI API&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x4E2A;&#x6587;&#x672C;&#x5D4C;&#x5165;&#x6A21;&#x578B;&#xFF0C;<a href="https://openai.com/blog/new-and-improved-embedding-mode" target="_blank">&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;</a>&#x5BF9;&#x5B83;&#x4EEC;&#x7684;&#x6027;&#x80FD;&#x8FDB;&#x884C;&#x4E86;&#x6BD4;&#x8F83;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x6027;&#x80FD;&#x6700;&#x597D;&#x7684;<code>text-embedding-ada-002</code>&#x8BF4;&#x660E;&#xFF1A;</p>
+<li><p>&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x4ECB;&#x7ECD;&#x7684; <a href="../01-llm/01-3.html#embeddings">OpenAI &#x8BCD;&#x5D4C;&#x5165;API</a> &#x53EF;&#x4EE5;&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x4E3A;&#x5411;&#x91CF;&#xFF0C;OpenAI API&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x4E2A;&#x8BCD;&#x5D4C;&#x5165;&#x6A21;&#x578B;&#xFF0C;<a href="https://openai.com/blog/new-and-improved-embedding-mode" target="_blank">&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;</a>&#x5BF9;&#x5B83;&#x4EEC;&#x7684;&#x6027;&#x80FD;&#x8FDB;&#x884C;&#x4E86;&#x6BD4;&#x8F83;&#xFF0C;&#x8FD9;&#x91CC;&#x662F;&#x6027;&#x80FD;&#x6700;&#x597D;&#x7684;<code>text-embedding-ada-002</code>&#x8BF4;&#x660E;&#xFF1A;</p>
 </li>
 </ul>
 <table>
@@ -618,9 +631,17 @@ sentence_embeddings = model.encode(sentences)
 </tr>
 </tbody>
 </table>
-<h3 id="&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;">&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;</h3>
+<h4 id="&#x652F;&#x6301;&#x8BCD;&#x5D4C;&#x5165;&#x7684;&#x6A21;&#x578B;">&#x652F;&#x6301;&#x8BCD;&#x5D4C;&#x5165;&#x7684;&#x6A21;&#x578B;</h4>
 <ul>
-<li>&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x641C;&#x7D22;&#x591A;&#x4E2A;&#x77E2;&#x91CF;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x53EF;&#x9009;&#x7684;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#xFF1A;<ul>
+<li><a href="https://huggingface.co/nghuyong/ernie-3.0-nano-zh" target="_blank">nghuyong/ernie-3.0-nano-zh</a></li>
+<li><a href="https://huggingface.co/shibing624/text2vec-base-chinese" target="_blank">shibing624/text2vec-base-chinese</a></li>
+<li><a href="https://huggingface.co/GanymedeNil/text2vec-large-chinese" target="_blank">GanymedeNil/text2vec-large-chinese</a></li>
+<li><a href="https://huggingface.co/moka-ai/m3e-base" target="_blank">moka-ai/m3e-base</a></li>
+<li><a href="https://github.com/UKPLab/sentence-transformers" target="_blank">&#x7528;&#x4E8E;&#x53E5;&#x5B50;&#x3001;&#x6587;&#x672C;&#x548C;&#x56FE;&#x50CF;&#x5D4C;&#x5165;&#x7684;Python&#x5E93;</a><h3 id="&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;">&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;</h3>
+<ul>
+<li>&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x641C;&#x7D22;&#x591A;&#x4E2A;&#x77E2;&#x91CF;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x53EF;&#x9009;&#x7684;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#xFF1A;</li>
+</ul>
+</li>
 <li><a href="https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/pinecone" target="_blank">Pinecone</a>&#xFF0C;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x6258;&#x7BA1;&#x7684;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;</li>
 <li><a href="https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/weaviate" target="_blank">Weaviate</a>&#xFF0C;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x77E2;&#x91CF;&#x641C;&#x7D22;&#x5F15;&#x64CE;</li>
 <li><a href="https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/redis" target="_blank">Redis</a>&#x4F5C;&#x4E3A;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;</li>
@@ -630,8 +651,6 @@ sentence_embeddings = model.encode(sentences)
 <li><a href="https://typesense.org/docs/0.24.0/api/vector-search.html" target="_blank">Typesense</a>&#xFF0C;&#x5FEB;&#x901F;&#x7684;&#x5F00;&#x6E90;&#x77E2;&#x91CF;&#x641C;&#x7D22;&#x5F15;&#x64CE;</li>
 <li><a href="https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/zilliz" target="_blank">Zilliz</a>&#xFF0C;&#x6570;&#x636E;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#xFF0C;&#x7531;Milvus&#x63D0;&#x4F9B;&#x6280;&#x672F;&#x652F;&#x6301;</li>
 <li><a href="https://github.com/facebookresearch/faiss" target="_blank">FAISS</a> &#x662F;Meta&#x5F00;&#x6E90;&#x7684;&#x7528;&#x4E8E;&#x9AD8;&#x6548;&#x641C;&#x7D22;&#x5927;&#x89C4;&#x6A21;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5E93;</li>
-</ul>
-</li>
 </ul>
 <h4 id="&#x6027;&#x80FD;&#x4F18;&#x5316;&#x270D;&#xFE0F;&#xFF1A;">&#x6027;&#x80FD;&#x4F18;&#x5316;&#x270D;&#xFE0F;&#xFF1A;</h4>
 <p>&#x548C;&#x4F20;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x6837;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5DE5;&#x7A0B;&#x624B;&#x6BB5;&#x4F18;&#x5316;&#x77E2;&#x91CF;&#x6570;&#x636E;&#x5E93;&#x641C;&#x7D22;&#x6027;&#x80FD;&#xFF0C;&#x6700;&#x76F4;&#x63A5;&#x7684;&#x5C31;&#x662F;&#x66F4;&#x65B0;&#x7D22;&#x5F15;&#x7B97;&#x6CD5; &#xFF0C;&#x5BF9;&#x7D22;&#x5F15;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x4F18;&#x5316;&#x3002;</p>
@@ -710,12 +729,12 @@ sentence_embeddings = model.encode(sentences)
 
             
                 
-                <a href="02-2-2.html" class="navigation navigation-prev " aria-label="Previous page: LangChain之Agents模块">
+                <a href="02-2-3.html" class="navigation navigation-prev " aria-label="Previous page: LangChain之Callback模块">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="02-4.html" class="navigation navigation-next " aria-label="Next page: 动手实现垂直领域机器人">
+                <a href="02-4.html" class="navigation navigation-next " aria-label="Next page: 动手实现知识问答机器人">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -726,7 +745,7 @@ sentence_embeddings = model.encode(sentences)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Embedding嵌入","level":"1.3.5","depth":2,"next":{"title":"动手实现垂直领域机器人","level":"1.3.6","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]},"previous":{"title":"LangChain之Agents模块","level":"1.3.4","depth":2,"path":"02-langchain/02-2-2.md","ref":"./02-langchain/02-2-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg","alipayText":"LLM应用开发交流群","button":"进群交流","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-3.md","mtime":"2023-07-05T03:21:06.899Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-05T12:38:03.400Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Embedding嵌入","level":"1.3.6","depth":2,"next":{"title":"动手实现知识问答机器人","level":"1.3.7","depth":2,"path":"02-langchain/02-4.md","ref":"./02-langchain/02-4.md","articles":[]},"previous":{"title":"LangChain之Callback模块","level":"1.3.5","depth":2,"path":"02-langchain/02-2-3.md","ref":"./02-langchain/02-2-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/07/06/2c6KrzduGVfEAB5.png","alipayText":"请备注来意👏","button":"联系我","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-3.md","mtime":"2023-07-06T11:03:49.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-06T11:26:31.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

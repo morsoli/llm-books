@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>动手实现知识问答机器人 · LLM 应用构建实践笔记</title>
+        <title>LangChain之Callback模块 · LLM 应用构建实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -72,8 +72,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="02-3.html" />
     
-    <link rel="prev" href="02-3.html" />
+    
+    <link rel="prev" href="02-2-2.html" />
     
 
     <style>
@@ -276,7 +278,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="02-2-3.html">
+        <li class="chapter active" data-level="1.3.5" data-path="02-2-3.html">
             
                 <a href="02-2-3.html">
             
@@ -302,7 +304,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.7" data-path="02-4.html">
+        <li class="chapter " data-level="1.3.7" data-path="02-4.html">
             
                 <a href="02-4.html">
             
@@ -550,7 +552,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >动手实现知识问答机器人</a>
+        <a href=".." >LangChain之Callback模块</a>
     </h1>
 </div>
 
@@ -565,31 +567,108 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;">&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;</h2>
-<p>&#x5F53;&#x524D;&#x81EA;&#x6709;&#x6570;&#x636E;&#x63A5;&#x5165;&#x5927;&#x6A21;&#x578B;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5FAE;&#x8C03;&#x6A21;&#x578B;&#x548C;&#x5728; Prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;</p>
+                                <h2 id="langchain&#x6A21;&#x5757;&#x4E4B;callbacks">LangChain&#x6A21;&#x5757;&#x4E4B;<a href="https://python.langchain.com/docs/modules/callbacks/" target="_blank">Callbacks</a></h2>
+<p>&#x56DE;&#x8C03;&#x6A21;&#x5757;&#x5141;&#x8BB8;&#x63A5;&#x5230;LLM&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5404;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x9274;&#x4E8E;LLM&#x7684;&#x5E7B;&#x89C9;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x3001;&#x76D1;&#x89C6;&#x3001;&#x6D41;&#x5F0F;&#x5904;&#x7406;&#x548C;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x73B0;&#x5728;&#x4E5F;&#x6709;&#x4E13;&#x7528;&#x7684;&#x5DE5;&#x5177;Helicone&#xFF0C;Arize AI&#x7B49;&#x4EA7;&#x54C1;&#x53EF;&#x7528;&#xFF0C;&#x5177;&#x4F53;&#x770B;<a href="../ref/company.html"></a></p>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;&#x5BF9;&#x8C61;">&#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;&#x5BF9;&#x8C61;</h3>
+<p>&#x6240;&#x6709;&#x7684;&#x56DE;&#x8C03;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x57FA;&#x7C7B;&#x6765;&#x58F0;&#x660E;&#x7684;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseCallbackHandler</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Base callback handler that can be used to handle callbacks from langchain.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_start</span><span class="hljs-params">(
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when LLM starts running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_chat_model_start</span><span class="hljs-params">(
+        self, serialized: Dict[str, Any], messages: List[List[BaseMessage]], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when Chat Model starts running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_new_token</span><span class="hljs-params">(self, token: str, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run on new LLM token. Only available when streaming is enabled.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_end</span><span class="hljs-params">(self, response: LLMResult, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when LLM ends running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_error</span><span class="hljs-params">(
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when LLM errors.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_chain_start</span><span class="hljs-params">(
+        self, serialized: Dict[str, Any], inputs: Dict[str, Any], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when chain starts running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_chain_end</span><span class="hljs-params">(self, outputs: Dict[str, Any], **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when chain ends running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_chain_error</span><span class="hljs-params">(
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when chain errors.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_tool_start</span><span class="hljs-params">(
+        self, serialized: Dict[str, Any], input_str: str, **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when tool starts running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_tool_end</span><span class="hljs-params">(self, output: str, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when tool ends running.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_tool_error</span><span class="hljs-params">(
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any
+    )</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when tool errors.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_text</span><span class="hljs-params">(self, text: str, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run on arbitrary text.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_agent_action</span><span class="hljs-params">(self, action: AgentAction, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run on agent action.&quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_agent_finish</span><span class="hljs-params">(self, finish: AgentFinish, **kwargs: Any)</span> -&gt; Any:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run on agent end.&quot;&quot;&quot;</span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;">&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h3>
 <ul>
-<li>prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/lvwzhen/law-cn-ai" target="_blank">AI&#x6CD5;&#x5F8B;&#x52A9;&#x624B;</a><ul>
-<li>&#x7F3A;&#x70B9;&#xFF1A;&#x6548;&#x679C;&#x8F83;&#x5DEE;&#xFF0C;&#x96BE;&#x4EE5;&#x5728;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5782;&#x76F4;&#x573A;&#x666F;&#x4F7F;&#x7528;</li>
-<li>&#x4F18;&#x70B9;&#xFF1A;&#x5373;&#x5F00;&#x5373;&#x7528;&#xFF0C;&#x5E94;&#x7528;&#x843D;&#x5730;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;</li>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#x65F6;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;&#xFF1A;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x4F8B;&#x5982;<code>LLMChain(callbacks=[handler], tags=[&apos;a-tag&apos;])</code>&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x7528;&#x4E8E;&#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x53EA;&#x9488;&#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5411;LLMChain&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x4E00;&#x4E2A;handler&#xFF0C;&#x5B83;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x9644;&#x5C5E;&#x4E8E;&#x8BE5;&#x94FE;&#x7684;Model&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x51FD;&#x6570;&#x65F6;&#x4F20;&#x5165;&#x56DE;&#x8C03;&#xFF1A;&#x5B9A;&#x4E49;&#x5728;&#x7528;&#x4E8E;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;call()/run()/apply()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982;<code>chain.call(inputs, callbacks=[handler])</code>&#xFF0C;&#x5B83;&#x5C06;&#x4EC5;&#x7528;&#x4E8E;&#x8BE5;&#x7279;&#x5B9A;&#x8BF7;&#x6C42;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x8BF7;&#x6C42;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x5BF9;LLMChain&#x7684;&#x8C03;&#x7528;&#x4F1A;&#x89E6;&#x53D1;&#x5BF9;Model&#x7684;&#x8C03;&#x7528;&#xFF0C;Model&#x4F1A;&#x4F7F;&#x7528;call()&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x9012;&#x7684;&#x76F8;&#x540C; handler&#xFF09;&#x3002;</li>
 </ul>
-</li>
-<li>&#x5FAE;&#x8C03;&#xFF08;Fine-tuning&#xFF09;&#x6CE8;&#x5165;&#x4E13;&#x4E1A;&#x9886;&#x57DF;&#x77E5;&#x8BC6;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/LiuHC0428/LAW-GPT" target="_blank">&#x4E2D;&#x6587;&#x6CD5;&#x5F8B;&#x901A;&#x7528;&#x6A21;&#x578B;</a>&#x7531;ChatGLM-6B LoRA 16-bit&#x6307;&#x4EE4;&#x5FAE;&#x8C03;&#x5F97;&#x5230;<ul>
-<li>&#x7F3A;&#x70B9;&#xFF1A;&#x51CF;&#x5C11;&#x4E86;LLM&#x7F16;&#x6392;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x5373;&#x53EF;</li>
-<li>&#x4F18;&#x70B9;&#xFF1A;&#x6210;&#x672C;&#x548C;&#x65F6;&#x95F4;&#x82B1;&#x8D39;&#x90FD;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x9700;&#x8981;&#x5B9A;&#x671F;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x4EE5;&#x4FDD;&#x6301;&#x66F4;&#x65B0;&#xFF08;&#x6CD5;&#x5F8B;&#x6587;&#x672C;&#x8FD8;&#x597D;&#x4E00;&#x4E9B;&#xFF09;</li>
-</ul>
-</li>
-</ul>
-<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x9886;&#x57DF;&#x95EE;&#x7B54;&#x673A;&#x5668;&#x4EBA;&#xFF08;Prompt &#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5E26;&#x5165;&#x77E5;&#x8BC6;&#xFF09;&#x7684;&#x5B9E;&#x73B0;&#x901A;&#x7528;&#x6D41;&#x7A0B;&#x56FE;</p>
-<p><img src="https://mermaid.ink/img/pako:eNqlVE1v00AQ_Sur5WJLm4iktyBVStpwIb0AJ2IOrneduLXXJnaaRFGkSrQ0Ra0aVAgSJIVWreiBEsSHBP0Qf6ZeJ_-CtTcJrZIDhT15Zp7fezuj2TrUbExgChZKqlMEufsKdcuLIgjOdtnemr_VZq8-s-1PCgX8pBN5zV1BpKoRE7lPTFS1zMfDUjJfs0y05NqUZwjFV7gG3b2pdJlE3sE6stTSMrYrFGFbqyKv6sXj8SFrJplfcgrIoYUruZm85cygiroicpGWQidFQCwWA_7z9_2LC_-wPXh6PNL-W1xaYu0N1vkoYlmhkyD-7yxI87t6NZNMIQG6YZqpW7qu8YOA65XsZRLGt_kZxbGKgb1iKulU73DRyI4Q9pvP_M0vkUZm6MXvvpZHctdANxbKREJZa5FgbNCC63_f8tePwuQsyNb91ovBxo64hH-62xhpTuBvrKvQOUnq904uf26GI3h31O8dyPJ1M2Mvs2AuIQmMcCRPGPkPHwkx-og4ePvj8vycrX5grU7w7SDqQxaMJzsV8w-aWU4MHtoOuCdWrCMaPi9xbn_9a_Bm7c-ceYXttILDU3a8z7q_OI51VoOzpkj2e9uh-1xuIezTXUkSxeDkJdtvyrxPEEGLlCzVwHzF6-HyKNArEosoMMU_MdHVsukpUKENDlXLnv2gRjWY0lXTJQiWHax6ZN5Q-RJb4yzBhmeXFsS7ET0fCDoqfWTbI0zjN6Pg644?type=png" alt=""></p>
-<h3 id="&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;">&#x4FDD;&#x9669;&#x5408;&#x540C;&#x89E3;&#x8BFB;&#x673A;&#x5668;&#x4EBA;</h3>
-<p>&#x5728;<a href="https://www.iachina.cn/art/2017/6/29/art_71_45682.html" target="_blank">&#x4EBA;&#x8EAB;&#x4FDD;&#x9669;&#x4EA7;&#x54C1;&#x4FE1;&#x606F;&#x5E93;</a> &#x67E5;&#x8BE2;&#x5DF2;&#x5907;&#x6848;&#x7684;&#x4FDD;&#x9669;&#x5408;&#x540C;&#x539F;&#x4EF6;&#xFF0C;&#x4E3A;PDF&#x683C;&#x5F0F;</p>
-<p><img src="https://s2.loli.net/2023/06/17/hBQSHzKGkoIX6CU.webp" alt=""></p>
-<h4 id="&#x5408;&#x540C;&#x6587;&#x6863;&#x5206;&#x5272;">&#x5408;&#x540C;&#x6587;&#x6863;&#x5206;&#x5272;</h4>
-<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6848;&#x81EA;&#x7136;&#x662F;&#xFF0C;&#x628A;&#x4FDD;&#x9669;&#x6761;&#x6B3E;&#x6309;&#x9875;&#x7801;&#x4E00;&#x9875;&#x4E00;&#x9875;&#x5206;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x9875;&#x5185;&#x5BB9;&#x4E5F;&#x8D85;&#x4E86;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x534A;&#x9875;&#x534A;&#x9875;&#x5206;&#x5757;&#x3002; &#x4F46;&#x8FD9;&#x5FFD;&#x7565;&#x4E86;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x77E5;&#x8BC6;&#x5185;&#x5BB9;&#x5E76;&#x975E;&#x662F;&#x6309;&#x9875;&#x7801;&#x5206;&#x5272;&#x7684; &#x3002;&#x4E00;&#x4E2A;&#x77E5;&#x8BC6;&#x53EF;&#x80FD;&#x7B2C;&#x4E09;&#x9875;&#x6B63;&#x597D;&#x8D77;&#x4E86;&#x4E2A;&#x6807;&#x9898;&#xFF0C;&#x7B2C;&#x56DB;&#x9875;&#x624D;&#x662F;&#x8BE6;&#x7EC6;&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
-<h3 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h3>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x662F;&#x91C7;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomSyncHandler</span><span class="hljs-params">(BaseCallbackHandler)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_new_token</span><span class="hljs-params">(self, token: str, **kwargs)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        print(f<span class="hljs-string">&quot;&#x540C;&#x6B65;&#x56DE;&#x8C03;&#x88AB;&#x8C03;&#x7528;: token: {token}&quot;</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCustomAsyncHandler</span><span class="hljs-params">(AsyncCallbackHandler)</span>:</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_start</span><span class="hljs-params">(
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any
+    )</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when chain starts running.&quot;&quot;&quot;</span>
+        print(<span class="hljs-string">&quot;LLM&#x8C03;&#x7528;&#x5F00;&#x59CB;....&quot;</span>)
+        <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">0.3</span>)
+        print(<span class="hljs-string">&quot;Hi! I just woke up. Your llm is starting&quot;</span>)
+
+    <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_llm_end</span><span class="hljs-params">(self, response: LLMResult, **kwargs: Any)</span> -&gt; <span class="hljs-keyword">None</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Run when chain ends running.&quot;&quot;&quot;</span>
+        print(<span class="hljs-string">&quot;LLM&#x8C03;&#x7528;&#x7ED3;&#x675F;....&quot;</span>)
+        <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">0.3</span>)
+        print(<span class="hljs-string">&quot;Hi! I just woke up. Your llm is ending&quot;</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    chat = ChatOpenAI(
+        max_tokens=<span class="hljs-number">25</span>,
+        streaming=<span class="hljs-keyword">True</span>,
+        callbacks=[MyCustomSyncHandler(), MyCustomAsyncHandler()],
+    )
+
+    asyncio.run(chat.agenerate([[HumanMessage(content=<span class="hljs-string">&quot;&#x8BB2;&#x4E2A;&#x7B11;&#x8BDD;&quot;</span>)]]))
+</code></pre>
+<h3 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
 <ol>
-<li><a href="https://medium.com/mlearning-ai/building-large-language-model-powered-ai-applications-96780d67c64a" target="_blank">&#x6784;&#x5EFA;&#x57FA;&#x4E8E;&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684; AI &#x5E94;&#x7528;</a></li>
-<li><a href="https://www.pinecone.io/learn/langchain-intro/" target="_blank">Pinecone AI &#x624B;&#x518C;</a></li>
+<li><a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank">&#x65AF;&#x5766;&#x798F;&#x95EE;&#x7B54;&#x6570;&#x636E;&#x96C6;</a></li>
 </ol>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
@@ -619,10 +698,14 @@
 
             
                 
-                <a href="02-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Embedding嵌入">
+                <a href="02-2-2.html" class="navigation navigation-prev " aria-label="Previous page: LangChain之Agents模块">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="02-3.html" class="navigation navigation-next " aria-label="Next page: Embedding嵌入">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -631,7 +714,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"动手实现知识问答机器人","level":"1.3.7","depth":2,"next":{"title":"LlamaIndex 概述","level":"1.4","depth":1,"ref":"","articles":[{"title":"LlamaIndex介绍","level":"1.4.1","depth":2,"path":"03-llamaIndex/03-1.md","ref":"./03-llamaIndex/03-1.md","articles":[]},{"title":"非结构化数据源接入","level":"1.4.2","depth":2,"path":"03-llamaIndex/03-2.md","ref":"./03-llamaIndex/03-2.md","articles":[]},{"title":"动手实现知识问答系统","level":"1.4.3","depth":2,"path":"03-llamaIndex/03-3.md","ref":"./03-llamaIndex/03-3.md","articles":[]}]},"previous":{"title":"Embedding嵌入","level":"1.3.6","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/07/06/2c6KrzduGVfEAB5.png","alipayText":"请备注来意👏","button":"联系我","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-4.md","mtime":"2023-07-06T11:06:14.959Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-06T11:26:31.990Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LangChain之Callback模块","level":"1.3.5","depth":2,"next":{"title":"Embedding嵌入","level":"1.3.6","depth":2,"path":"02-langchain/02-3.md","ref":"./02-langchain/02-3.md","articles":[]},"previous":{"title":"LangChain之Agents模块","level":"1.3.4","depth":2,"path":"02-langchain/02-2-2.md","ref":"./02-langchain/02-2-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://s2.loli.net/2023/07/06/2c6KrzduGVfEAB5.png","alipayText":"请备注来意👏","button":"联系我","title":"","wechat":"","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用构建实践笔记","language":"zh-hans","gitbook":"*","description":"基于大语言模型的应用构建笔记记录"},"file":{"path":"02-langchain/02-2-3.md","mtime":"2023-07-06T10:52:58.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-06T11:26:31.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -8,15 +8,16 @@
     * [LLM 安全专题](./01-llm/01-5.md)
 * LangChain入门
     * [LangChain介绍](./02-langchain/02-1.md)
-	* [LangChain模块学习](./02-langchain/02-2.md)
+	* [LangChain模块学习](./02-langchain/02-2-0.md)
     * [LangChain之Chains模块](./02-langchain/02-2-1.md)
     * [LangChain之Agents模块](./02-langchain/02-2-2.md)
+    * [LangChain之Callback模块](./02-langchain/02-2-3.md)
     * [Embedding嵌入](./02-langchain/02-3.md)
-    * [动手实现垂直领域机器人](./02-langchain/02-4.md)
+    * [动手实现知识问答机器人](./02-langchain/02-4.md)
 * LlamaIndex 概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
-    * [非结构化数据源](./03-llamaIndex/03-2.md)
-    * [动手实现问答机器人](./03-llamaIndex/03-3.md)
+    * [非结构化数据源接入](./03-llamaIndex/03-2.md)
+    * [动手实现知识问答系统](./03-llamaIndex/03-3.md)
 * HuggingGPT 实现
     * [HuggingFace 介绍](./04-huggingface/04-1.md)
     * [HuggingFace 模型分类](./04-huggingface/04-2.md)

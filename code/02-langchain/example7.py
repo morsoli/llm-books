@@ -20,7 +20,7 @@ def test_memory():
     Question: {input}
     {agent_scratchpad}"""
 
-    prompt = ZeroShotAgent.create_prompt(
+    prompt = ZeroShotAgent.create_prompt( 
         tools,
         prefix=prefix,
         suffix=suffix,

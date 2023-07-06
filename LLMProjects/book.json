@@ -26,10 +26,10 @@
     },
     "pluginsConfig": {
         "donate": {
-            "alipay": "https://s2.loli.net/2023/06/23/FN1YMUSCLK6BTJe.jpg",
+            "alipay": "https://s2.loli.net/2023/07/06/2c6KrzduGVfEAB5.png",
             "title": "",
-            "button": "进群交流",
-            "alipayText": "LLM应用开发交流群"
+            "button": "联系我",
+            "alipayText": "请备注来意👏"
         },
         "github-buttons": {
             "repo": "morsoli/llm-books",
