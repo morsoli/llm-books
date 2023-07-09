@@ -8,7 +8,7 @@
     * [LLM 安全专题](./01-llm/01-5.md)
 * LangChain入门
     * [LangChain介绍](./02-langchain/02-1.md)
-	* [LangChain模块学习](./02-langchain/02-2-0.md)
+	* [LangChain模块学习](./02-langchain/02-2.md)
     * [LangChain之Chains模块](./02-langchain/02-2-1.md)
     * [LangChain之Agents模块](./02-langchain/02-2-2.md)
     * [LangChain之Callback模块](./02-langchain/02-2-3.md)
