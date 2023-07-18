@@ -23,8 +23,8 @@
     * [HuggingFace 模型分类](./04-huggingface/04-2.md)
     * [多模态任务设计](./04-huggingface/04-3.md)
     * [动手实现 HuggingGPT](./04-huggingface/04-4.md)
-* [参考资料](./ref/ref.md)
+* 参考资料
     * [A16Z推荐的AI学习清单](./ref/a16z.md)
     * [Prompt专题](./ref/prompt.md)
     * [值得关注的公司](./ref/company.md)
-    * [一些资料汇总](./ref/ref.md)
+    * [一些课程资料汇总](./ref/ref.md)

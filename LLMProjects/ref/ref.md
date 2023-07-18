@@ -1,43 +1,41 @@
 ## 一些资料汇总
-> 原仓库[在这里](https://github.com/DSXiangLi/DecryptPromp)，摘取了其中我看过代码或者试用过的模型，对其他板块感兴趣的可以自行前往原仓库关注。
 
-### 模型和数据
+### LLM 开发课程
+1. 吴恩达《Building Systems with the ChatGPT API》
+    - 课程地址：https://learn.deeplearning.ai/chatgpt-building-system
+    - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1417948
+    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Building%20Systems%20with%20the%20ChatGPT%20API
 
-- [Berkley出品大模型排位赛榜有准中文榜单](https://lmsys.org/blog/2023-05-03-arena/): GPT4自然是稳居第一，GPT4>Claude>GPT3.5>Vicuna>others
-- [Z-Bench中文真格基金评测](https://github.com/zhenbench/z-bench): 国产中文模型的编程可用性还相对较低，大家水平差不太多，两版ChatGLM提升明显
-- [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard): 在Eleuther AI4个评估集上评估的LLM模型榜单
-- [Chain-of-thought评估](https://github.com/FranxYao/chain-of-thought-hub):GSM8k, MATH等复杂问题排行榜
+2. Google 的《Generative AI learning path》
+    - 课程地址：https://cloudskillsboost.google/journeys/118
+    Twitter🧵：https://twitter.com/dotey/status/1665812510832730120
+    - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1468916
 
-### 国外模型
+3. 吴恩达的《基于LangChain的LLM开发》
+    - 课程地址：https://learn.deeplearning.ai/langchain/lesson/1/introduction
+    - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1445896
+    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Building%20Systems%20with%20the%20ChatGPT%20API
 
-| 模型链接                                                     | 模型描述                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Google Bard](https://bard.google.com)                       | 谷歌bard虽迟但到，可以申请waitlist了                         |
-| [Claude](https://www.anthropic.com/product)                  | ChatGPT最大竞争对手Claude也开放申请了，slack中无限试用       |
-| [Falcon](https://huggingface.co/tiiuae/falcon-40b)           | Falcon由阿联酋技术研究所在超高质量1万亿Token上训练得到1B，7B，40B开源，免费商用！土豪们表示钱什么的格局小了 |
-| [LLaMA](https://github.com/facebookresearch/llama)           | Meta开源指令微调LLM，规模70 亿到 650 亿不等                  |
-| [MPT](https://huggingface.co/mosaicml/mpt-7b-chat)           | MosaicML开源的预训练+指令微调的新模型，可商用，支持84k tokens超长输入 |
-| [RedPajama](https://huggingface.co/togethercomputer/RedPajama-INCITE-Instruct-3B-v1) | RedPajama项目既开源预训练数据后开源3B，7B的预训练+指令微调模型 |
-| [ChatLLaMA](https://github.com/nebuly-ai/nebullvm/tree/main/apps/accelerate/chatllama) | 基于RLHF微调了LLaMA                                          |
-| [Alpaca](https://github.com/tatsu-lab/stanford_alpaca)       | 斯坦福开源的使用52k数据在7B的LLaMA上微调得到，               |
-| [Alpaca-lora](https://github.com/tloen/alpaca-lora)          | LORA微调的LLaMA                                              |
-| [Dromedary](https://github.com/IBM/Dromedary)                | IBM self-aligned model with the LLaMA base                   |
-| [Vicuna](https://github.com/lm-sys/FastChat)                 | Alpaca前成员等开源以LLama13B为基础使用ShareGPT指令微调的模型，提出了用GPT4来评测模型效果 |
-| [koala](https://bair.berkeley.edu/blog/2023/04/03/koala/)    | 使用alpaca，HC3等开源指令集+ ShareGPT等ChatGPT数据微调llama，在榜单上排名较高 |
-| [ColossalChat](https://github.com/hpcaitech/ColossalAI)      | HPC-AI Tech开源的Llama+RLHF微调                              |
-| [MiniGPT4](https://github.com/Vision-CAIR/MiniGPT-4)         | Vicuna+BLIP2 文本视觉融合                                    |
-| [StackLLama](https://huggingface.co/trl-lib/llama-7b-se-rl-peft) | LLama使用Stackexchange数据+SFT+RL                            |
-| [Cerebras](https://huggingface.co/cerebras/Cerebras-GPT-13B) | Cerebras开源了1亿到130亿的7个模型，从预训练数据到参数全开源  |
-| [PaLM-E](https://palm-e.github.io)                           | 谷歌多模态大模型，540B的PaLM语言模型和22B的ViT视觉模型相结合，得到562B的PaLM-E模型，在机器人应用场景有了新的突破 |
-| [Dolly-v2](https://huggingface.co/databricks/dolly-v2-7b)    | 可商用 7b指令微调开源模型在GPT-J-6B上微调                    |
-| [OpenChatKit](https://github.com/togethercomputer/OpenChatKit) | openai研究员打造GPT-NoX-20B微调+6B审核模型过滤               |
-| [MetaLM](https://github.com/microsoft/unilm)                 | 微软开源的大规模自监督预训练模型                             |
-| [Amazon Titan](https://aws.amazon.com/cn/bedrock/titan/)     | 亚马逊在aws上增加自家大模型                                  |
-| [OPT-IML](https://link.zhihu.com/?target=https%3A//github.com/facebookresearch/metaseq/tree/main/projects/OPT) | Meta复刻GPT3，up to 175B, 不过效果并不及GPT3                 |
-| [Bloom](https://huggingface.co/bigscience/bloom)             | BigScience出品，规模最大176B                                 |
-| [BloomZ](https://huggingface.co/bigscience/bloomz)           | BigScience出品, 基于Bloom微调                                |
-| [Galacia](https://github.com/paperswithcode/galai)           | 和Bloom相似，更针对科研领域训练的模型                        |
-| [T0](https://github.com/bigscience-workshop/t-zero)          | BigScience出品，3B~11B的在T5进行指令微调的模型               |
+4. Databricks 的《Large Language Models: Application through Production》
+    - 课程地址：https://edx.org/course/large-language-models-application-through-production
+    - 油管播放列表：https://www.youtube.com/playlist?list=PLTPXxbhUt-YWSR8wtILixhZLF9qB_1yZm
+    - 相关的Notebook和Slides： https://github.com/databricks-academy/large-language-models
+
+5. 吴恩达的《Langchain Chat with Your Data》
+    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/LangChain%20Chat%20with%20Your%20Data
+
+6. 吴恩达的《Prompt Engineering for Developers》
+    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Prompt%20Engineering%20for%20Developer
+
+7. DeepLearning的《Full Stack LLM Bootcamp》
+    - 课程地址：https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/prompt-engineering/
+    - 相关的Notebook和Slides：https://zhuanlan.zhihu.com/p/629589593
+
+8. Cohere的 《LLM University to learn about LLMs and NLP》
+    - 课程地址：https://docs.cohere.com/docs/llmu
+
+
+
 
 ### 国内模型
 

@@ -1,9 +1,14 @@
 {
-    "title": "LLM 应用构建实践笔记",
-    "description": "基于大语言模型的应用构建笔记记录",
+    "title": "LLM 应用开发实践笔记",
+    "description": "基于大语言模型的应用开发实践记录",
     "author": "莫尔索",
     "language": "zh-hans",
     "root": ".",
+    "links": {
+        "sidebar": {
+            "作者：莫尔索": "https://liduos.com/about"
+         }
+    },
     "plugins": [
         "katex",
         "donate",
@@ -19,7 +24,9 @@
         "-search",
         "splitter",
         "-sharing",
-        "sharing-plus"
+        "sharing-plus",
+        "statistics",
+        "hide-element"
     ],
     "styles": {
         "website": "styles/website.css"
@@ -48,6 +55,12 @@
         "sharing": {
             "twitter": true,
             "weibo": true
+        },
+        "statistics": {
+            "google_id": "G-LK50VKN0CF"
+          },
+        "hide-element": {
+            "elements": [".gitbook-link"]
         }
     }
 }
