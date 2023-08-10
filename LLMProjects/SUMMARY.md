@@ -16,13 +16,16 @@
     * [动手实现知识问答机器人](./02-langchain/02-4.md)
 * LlamaIndex 概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
-    * [非结构化数据源接入](./03-llamaIndex/03-2.md)
+    * [LlamaIndex索引](./03-llamaIndex/03-2.md)
     * [动手实现知识问答系统](./03-llamaIndex/03-3.md)
 * HuggingGPT 实现
     * [HuggingFace 介绍](./04-huggingface/04-1.md)
     * [HuggingFace 模型分类](./04-huggingface/04-2.md)
     * [多模态任务设计](./04-huggingface/04-3.md)
     * [动手实现 HuggingGPT](./04-huggingface/04-4.md)
+* 具有大型语言模型的生成式AI
+    * [课程介绍](./05-generative-ai-with-llms/05-1.md)
+
 * 参考资料
     * [A16Z推荐的AI学习清单](./ref/a16z.md)
     * [Prompt专题](./ref/prompt.md)

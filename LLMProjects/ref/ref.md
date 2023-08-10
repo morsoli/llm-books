@@ -35,7 +35,7 @@
     - 课程地址：https://docs.cohere.com/docs/llmu
 
 
-
+9. Open AI 推出了新的教程，使用GPT-4和Whisper创建自动生成会议既要的工具，这个工具会提供转录会议音频，提供讨论摘要，提取关键点和行动项目，并执行情绪分析功能。https://platform.openai.com/docs/tutorials/meeting-minutes
 
 ### 国内模型
 

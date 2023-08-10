@@ -20,7 +20,7 @@ def test_llmchain():
     print(chain("colorful socks"))
 
 def test_conversationchain():
-    chat = ChatOpenAI(temperature=0.9)
+    chat = ChatOpenAI(temperature=0.9, openai_api_base="https://api.fullstackllm.com/v1", openai_api_key="sk-763oj7cqOgMQKV0M813349708aA0457aBa1bDdBf2a685dD2")
     conversation = ConversationChain(
         llm=chat,
         memory=ConversationBufferMemory(),
@@ -50,7 +50,7 @@ def test_chain_call():
     llm_chain.predict(product="儿童玩具")
 
 if __name__ == "__main__":
-    # test_llmchain()
-    #test_conversationchain()
+    #test_llmchain()
+    test_conversationchain()
     #test_mathchain()
-    test_chain_call()
+    # test_chain_call()

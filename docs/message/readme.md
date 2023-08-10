@@ -1,34 +1,7 @@
-## ChatGPT驱动的信息处理系统
-
-> 借助ChatGPT最擅长的上下文语义理解能力，可以将个人信息处理系统的最耗时的分析阶段（什么是有效的信息？）和组织阶段（如何高效组织筛选后的信息）解放出来
-
-![](https://mermaid.ink/img/pako:eNqrVkrOT0lVslJKL0osyFDwCYrJc9JwzywueTZl28vZbU8n9TybuuX5hLYn-xc-a1z_bNcETaACBV1dOwVnjaDg4KdLWoCSQFXOGYkl7gEhTzvans0DqXEGq3HRgIo_393yfHc7UJ17ZklGadLTtTOeNq0AKnMBK3PTCEnNATog98XaZU8ndj3raXy-e-2zKTtf7J8NVOMGVKPwZM-Mpz3T4K4Aa3NCkYM45cXylqcdMyEOVNJRyk0tyk3MTAH6rzomT0EhRqkkIzU3NUbJCshMSU1LLM0piVGKyasFKk0sLckPrsxLVrJKS8wpTtVRKi1ISSxJdclMBLkMLpqaklmSX-QLCTRw2OkoFSTmReXnw9TUAgDzpJLH?type=png)
-```mermaid
-graph LR
-B(Gist收集和整理信息源)
-B --> C(RSS处理和ChatGPT分析)
-C --> D(ChatGPT组织和Github存储)
-D --> F(Telgram警告持续改进)
-F -- 优化信息源 --> B
-F -- 优化处理规则 --> C
-```
-
-1. 收集和整理：将所有的信息收集到一个地方，并进行分类和整理。
-2. 处理和分析：对每一个信息进行分析和处理，确定下一步行动和优先级。可以使用GTD方法、信息加工模型等。
-3. 组织和存储：将已经处理和分析过的信息进行组织和存储，方便后续查找和使用。可以使用分类、标签、搜索等方式。
-4. 持续改进：定期回顾和反思自己的信息处理系统，然后根据回顾和反思的结果，不断改进自己的信息处理系统，提高效率和效果。当然，打造个人信息处理系统需要不断地学习和实践，结合自己的实际情况和需要，不断优化和改进的。
-
 ### 信息处理流水线
-
 1. 人每天的认知资源和意志力是有限的，都是消耗品。
 2. 被动等着时间线上把社会新闻喂到嘴里，我对于世界在发生什么是毫无感知的，或者说，没有建立起来自己的主动信息源系统。
 3. 不定期地审视核心信息源，保持质量，防止信息茧房
-4. 要获得数据：看统计网站、读权威分析报告、自己爬数据或买数据。
-5. 要获得信息：读优质新闻源、RSS订阅博客、内容平台上follow一些人与话题、到行业圈子里交流。
-6. 要获得知识：读一个领域的元经典、学体系化的课程、用笔记工具整理一份某细分主题的百科、制作某细分主题的知识地图。
-7. 要获得经验：大量实践、通过做项目来学习、记日记与周复盘、向专家咨询、加入社群。
-8. 要获得资源：带着业务交朋友、持续输出内容、认识关键人物（他是一个人际网络的关键节点）、参加饭局与组织饭局。
-9. 要获得智慧：学哲学/逻辑/批判性思维、学习与运用思维模型、读历史并写读史札记、在与他人的互动中理解人性、冥想内观。
 
 ![](https://mermaid.ink/img/pako:eNqdVd1u2lgQfhXLe0MkIq2B9oKVVkpCoa1aadXkau1eOMEUtMSkYNRWVSVIGvJHAmna0CWkLDS0lA2EKG1KSFNexnNsv0XHHNtJml7s9lx5vpn5Zs7MnPFTdiYRllg_-yApzkWZO_cEOZWepgLsbRsLTXVQI9kDQWbwjHG8LD1KxSVFkZL3LczDa3tf1f4e5Bahc2KjXh46b0jpmGx3jdKpjfp4bW1f-3cN1svQqSMqyWFBFuQxjhkdZe5NTpLVLShsu8lBATabZKNpZLJqL0P2a6j_nRl3TUlxTG6WmU4obiNT1gdLRn3TyG7pgx29loflnHZ4OoJ8nqt8ex-u8qGl94qlmfWPLH3_LUfzPk4N9fdvIXdklDpG_TWtQYgnr7pkvWOV5CavVRv6Qc4Sb_HaacFo5S3xNk8yu3pm4bxSDjM5renHR9A4g8YSDBYscg_Hk4269rFOKi0kNuo5qFbv20oPD4VNbaOLTVH7a9rKhx_xHi8b2bfQPFRPipafF0kvtjHkxZ6__ARnhw7g5Y3qEXo4gI8nL9qXenw-VzSHSl_9UrbMfRwPvXmo9GG1STJZm8Xn4bGraq-sH6_B6uCca5xzkRWEmtApk0qV7HzEBPX3z2H575FhFyZcE1FRCf0xZU4Koy-1TOJ_lrT2V5yOlPIkLjHjHBOJxeP-XyKRGTxuJqUkE39JpvwrHlsefRQLK1G_Z-7xbxj3O3JKrLV3jMyKQzzx_3knkHf00rAMAwXsQDQOjjd5U6TXgPy2EzDwswG_myEa01FeGITLmosNNDWBy-3NLeLaILsN0rcGaOwaT0oN6PX0ThfOXtnL4DqvnrzTDtfJ7jwMStr-S1TbLR67Zj62O4kHk9JDxnQelIY5BDnUXb-go262SpADNFXOBe3XMI8l64ZiSjQ9jcUKcEPdDRe6pqSHdH1QLRTzpN2gDxMtb1ixXPRtap2aVsypvTbWiPo6pQ_-xBAFaR5BFxQ3ccdCYd14t4yMwSEcwqh0n7ZeqGdbDn4Tr7S4r34pQeGzA97iXGqvpfb7dKE6-G18H6sZUjlAKsj3R1g3OyslZ8VYGFf9U7P-AqtEpVlJYP34GZYiYjquCKwgP0NTMa0kJp_IM6w_IsZTkptNz4VFRQrERHP3OqgUjimJ5F36_xj-RtzsnCj_mUjYNs--ATvn3vY?type=png)
 ```mermaid
