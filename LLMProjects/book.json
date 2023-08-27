@@ -33,10 +33,10 @@
     },
     "pluginsConfig": {
         "donate": {
-            "alipay": "https://s2.loli.net/2023/07/09/GnrHoiu1pJzSL26.png",
+            "alipay": "https://liduos.com/wxqcode.png",
             "title": "",
-            "button": "联系我",
-            "alipayText": "请备注来意👏"
+            "button": "关注我",
+            "alipayText": "获得更多LLM应用开发最新内容"
         },
         "github-buttons": {
             "repo": "morsoli/llm-books",

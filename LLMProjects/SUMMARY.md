@@ -1,5 +1,6 @@
 # Summary
 * [前言](README.md)
+* [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
 * 大语言模型概述
     * [大语言模型概况](./01-llm/01-1.md)
     * [你好, ChatGPT](./01-llm/01-2.md)
@@ -13,14 +14,14 @@
     * [LangChain之Agents模块](./02-langchain/02-2-2.md)
     * [LangChain之Callback模块](./02-langchain/02-2-3.md)
     * [Embedding嵌入](./02-langchain/02-3.md)
-    * [动手实现知识问答机器人](./02-langchain/02-4.md)
+    * [动手实现文档问答机器人](./02-langchain/02-4.md)
 * LlamaIndex 概述
     * [LlamaIndex介绍](./03-llamaIndex/03-1.md)
     * [LlamaIndex索引](./03-llamaIndex/03-2.md)
-    * [动手实现知识问答系统](./03-llamaIndex/03-3.md)
+    * [动手实现企业知识库](./03-llamaIndex/03-3.md)
 * HuggingGPT 实现
     * [HuggingFace 介绍](./04-huggingface/04-1.md)
-    * [HuggingFace 模型分类](./04-huggingface/04-2.md)
+    * [transformers 库基础组件](./04-huggingface/04-2.md)
     * [多模态任务设计](./04-huggingface/04-3.md)
     * [动手实现 HuggingGPT](./04-huggingface/04-4.md)
 * 具有大型语言模型的生成式AI

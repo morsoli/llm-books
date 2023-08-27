@@ -1,5 +1,6 @@
 ## 一些资料汇总
-
+### 欢迎关注 [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
+跟踪LLM(大语言模型)最新动态，分享第一手LLM 实践经验，致力于打造个人LLM 应用开发全栈指南！
 ### LLM 开发课程
 1. 吴恩达《Building Systems with the ChatGPT API》
     - 课程地址：https://learn.deeplearning.ai/chatgpt-building-system
@@ -33,6 +34,9 @@
 
 8. Cohere的 《LLM University to learn about LLMs and NLP》
     - 课程地址：https://docs.cohere.com/docs/llmu
+
+9. DeepLearningAI 与 HuggingFace 共同推出了一门新课《如何使用 Gradio 快速构建生成式AI的应用》
+    - 课程地址：https://www.deeplearning.ai/short-courses/building-generative-ai-applications-with-gradio/
 
 
 9. Open AI 推出了新的教程，使用GPT-4和Whisper创建自动生成会议既要的工具，这个工具会提供转录会议音频，提供讨论摘要，提取关键点和行动项目，并执行情绪分析功能。https://platform.openai.com/docs/tutorials/meeting-minutes
