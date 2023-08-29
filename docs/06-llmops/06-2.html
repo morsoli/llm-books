@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>值得关注的公司 · LLM 应用开发实践笔记</title>
+        <title>Model 模型层 · LLM 应用开发实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -72,10 +72,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ref.html" />
+    <link rel="next" href="06-3.html" />
     
     
-    <link rel="prev" href="prompt.html" />
+    <link rel="prev" href="06-1.html" />
     
 
     <style>
@@ -478,7 +478,7 @@
                 <span>
             
                     
-                    具有大型语言模型的生成式AI
+                    LLMOps 专题
             
                 </span>
             
@@ -487,12 +487,51 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../05-generative-ai-with-llms/05-1.html">
+        <li class="chapter " data-level="1.7.1" data-path="06-1.html">
             
-                <a href="../05-generative-ai-with-llms/05-1.html">
+                <a href="06-1.html">
             
                     
-                    课程介绍
+                    LLMOps 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.2" data-path="06-2.html">
+            
+                <a href="06-2.html">
+            
+                    
+                    Model 模型层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="06-3.html">
+            
+                <a href="06-3.html">
+            
+                    
+                    Prompt 提示层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="06-4.html">
+            
+                <a href="06-4.html">
+            
+                    
+                    狭义LLMOps
             
                 </a>
             
@@ -510,6 +549,96 @@
                 <span>
             
                     
+                    Agent 专题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../07-agents/07-1.html">
+            
+                <a href="../07-agents/07-1.html">
+            
+                    
+                    Agent 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../07-agents/07-2.html">
+            
+                <a href="../07-agents/07-2.html">
+            
+                    
+                    Multi-Agent 框架是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../07-agents/07-3.html">
+            
+                <a href="../07-agents/07-3.html">
+            
+                    
+                    Agents 分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    具有大型语言模型的生成式AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../05-generative-ai-with-llms/05-1.html">
+            
+                <a href="../05-generative-ai-with-llms/05-1.html">
+            
+                    
+                    课程介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
                     参考资料
             
                 </span>
@@ -519,9 +648,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="a16z.html">
+        <li class="chapter " data-level="1.10.1" data-path="../ref/a16z.html">
             
-                <a href="a16z.html">
+                <a href="../ref/a16z.html">
             
                     
                     A16Z推荐的AI学习清单
@@ -532,9 +661,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="prompt.html">
+        <li class="chapter " data-level="1.10.2" data-path="../ref/prompt.html">
             
-                <a href="prompt.html">
+                <a href="../ref/prompt.html">
             
                     
                     Prompt专题
@@ -545,22 +674,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.3" data-path="company.html">
+        <li class="chapter " data-level="1.10.3" data-path="../ref/ref.html">
             
-                <a href="company.html">
-            
-                    
-                    值得关注的公司
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="ref.html">
-            
-                <a href="ref.html">
+                <a href="../ref/ref.html">
             
                     
                     一些课程资料汇总
@@ -606,7 +722,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >值得关注的公司</a>
+        <a href=".." >Model 模型层</a>
     </h1>
 </div>
 
@@ -621,60 +737,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;&#x516C;&#x53F8;">&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;&#x516C;&#x53F8;</h2>
-<h3 id="&#x6B22;&#x8FCE;&#x5173;&#x6CE8;-llm-&#x5E94;&#x7528;&#x5168;&#x6808;&#x5F00;&#x53D1;">&#x6B22;&#x8FCE;&#x5173;&#x6CE8; <a href="https://liduos.com/wxqcode.png" target="_blank">LLM &#x5E94;&#x7528;&#x5168;&#x6808;&#x5F00;&#x53D1;</a></h3>
-<p>&#x8DDF;&#x8E2A;LLM(&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;)&#x6700;&#x65B0;&#x52A8;&#x6001;&#xFF0C;&#x5206;&#x4EAB;&#x7B2C;&#x4E00;&#x624B;LLM &#x5B9E;&#x8DF5;&#x7ECF;&#x9A8C;&#xFF0C;&#x81F4;&#x529B;&#x4E8E;&#x6253;&#x9020;&#x4E2A;&#x4EBA;LLM &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x5168;&#x6808;&#x6307;&#x5357;&#xFF01;</p>
-<h3 id="ai-infra">AI infra</h3>
-<ol>
-<li><p><a href="https://tecton.ai" target="_blank">Tecton</a></p>
-<p> Tecton &#x662F;&#x4E00;&#x4E2A; feature store&#xFF08;&#x7279;&#x5F81;&#x5E73;&#x53F0;&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x7BA1;&#x7406;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x4F5C;&#x4E2D;&#x7684; feature&#xFF08;&#x7279;&#x5F81;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06; AI/ML &#x6A21;&#x578B;&#x7B80;&#x5355;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x56DE;&#x5F52;&#x65B9;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x7279;&#x5F81;&#x5C31;&#x662F;&#x81EA;&#x53D8;&#x91CF;&quot;x&quot;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8BAD;&#x7EC3;&#x548C;&#x63A8;&#x7406;&#x65F6;&#x90FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x5927;&#x91CF;&#x7279;&#x5F81;&#x3002;Feature store &#x76EE;&#x524D;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5B9E;&#x65F6;&#x63A8;&#x7406;&#x573A;&#x666F;&#xFF0C;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x662F;&#x6570;&#x636E;&#x79D1;&#x5B66;&#x5BB6;&#x548C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x7A0B;&#x5E08;&#x3002;&#xFF08;&#x5F00;&#x6E90;&#x66FF;&#x4EE3;<a href="https://github.com/feast-dev/feast" target="_blank">Feast</a></p>
-</li>
-<li><p><a href="https://abacus.ai/" target="_blank">Abacus.AI</a>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x81EA;&#x4E3B;&#x5E73;&#x53F0;&#xFF0C;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x5E76;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#x3002;</p>
-</li>
-</ol>
-<h3 id="llm">LLM</h3>
-<ol>
-<li><p><a href="https://www.anthropic.com/" target="_blank">Anthropic</a></p>
-<p> Anthropic&#x662F;&#x7531;OpenAI&#x7684;&#x524D;&#x6210;&#x5458;&#x521B;&#x7ACB;&#x7684;&#x4E13;&#x6CE8;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5B89;&#x5168;&#x548C;&#x7814;&#x7A76;&#x7684;&#x521D;&#x521B;&#x516C;&#x53F8;&#xFF0C;&#x5E76;&#x79C9;&#x627F;&#x8D1F;&#x8D23;&#x4EFB;&#x7684;AI&#x4F7F;&#x7528;&#x7406;&#x5FF5;&#xFF0C;Claude &#x804A;&#x5929;&#x673A;&#x5668;&#x4EBA;&#x80CC;&#x540E;&#x7684;&#x7814;&#x53D1;&#x516C;&#x53F8;&#x3002;</p>
-</li>
-<li><p><a href="https://inflection.ai/" target="_blank">Inflection AI</a></p>
-</li>
-</ol>
-<h3 id="&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;-startup">&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684; StartUp</h3>
-<p>&#x5728;&#x8FD9;&#x4E2A;&#x9886;&#x57DF;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x5E94;&#x8BE5;&#x6709;&#x4E24;&#x6B21;&#x4EA7;&#x54C1;&#x5E02;&#x573A;&#x9002;&#x5E94;&#x6027;&#xFF1A;1.&#x9996;&#x5148;&#x80FD;&#x591F;&#x5728;&#x9879;&#x76EE;&#x5468;&#x56F4;&#x521B;&#x9020;&#x4EF7;&#x503C;&#x548C;&#x793E;&#x533A;&#xFF1B;2.&#x5176;&#x6B21;&#x662F;&#x5728;&#x5C06;&#x4E1A;&#x52A1;&#x4E0E;&#x4E4B;&#x7ED3;&#x5408;&#x65F6;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x9760;&#x548C;&#x9002;&#x5E94;&#x6027;&#x5F3A;&#x7684;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x548C;&#x5DE5;&#x5177;&#x5C42;&#x5C06;&#x5E2E;&#x52A9;&#x66F4;&#x591A;&#x7528;&#x6237;&#x548C;&#x5E94;&#x7528;&#x91CA;&#x653E;LLM&#x7684;&#x6F5C;&#x529B;&#x548C;&#x4EF7;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x53EA;&#x5173;&#x6CE8;&#x548C;LLM&#x5E94;&#x7528;&#x6808;&#x5F00;&#x53D1;&#x76F8;&#x5173;&#x7684;&#x521D;&#x521B;&#x516C;&#x53F8;&#xFF0C;&#x6211;&#x628A;&#x5B83;&#x79F0;&#x4E3A;LLMOps&#xFF0C;&#x5927;&#x81F4;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x7C7B;&#x522B;&#xFF1A;</p>
+                                <h2 id="model-&#x6A21;&#x578B;&#x5C42;">Model &#x6A21;&#x578B;&#x5C42;</h2>
+<p>&#x5927;&#x6A21;&#x578B;&#x670D;&#x52A1;&#x5C42;&#x5206;&#x4E3A;&#x5177;&#x5907;&#x63D0;&#x4F9B;&#x5927;&#x6A21;&#x578B;&#x80FD;&#x529B;&#x7684; <strong>LLM-as-a-Service &#x670D;&#x52A1;</strong>&#xFF0C;&#x6BD4;&#x5982;OpenAI&#xFF1B;&#x4EE5;&#x53CA;&#x4E3A;&#x8BAD;&#x7EC3;&#x3001;&#x90E8;&#x7F72;&#x3001;&#x5FAE;&#x8C03;&#x5F00;&#x6E90;&#x5927;&#x6A21;&#x578B;&#x7B49;&#x73AF;&#x8282;&#x63D0;&#x4F9B;&#x4E13;&#x6709;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684; <strong>Custom LLM stack &#x670D;&#x52A1;</strong>&#xFF0C;&#x6BD4;&#x5982; Replicate&#x3002;</p>
+<h3 id="llm-&#x5373;&#x670D;&#x52A1;">LLM &#x5373;&#x670D;&#x52A1;</h3>
+<p>LLM &#x5373;&#x670D;&#x52A1;&#x662F;&#x6307;&#x4F9B;&#x5E94;&#x5546;&#x5728;&#x5176;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x4E0A;&#x5C06; LLM &#x4F5C;&#x4E3A; API &#x63D0;&#x4F9B;&#xFF0C;&#x8FD9;&#x4E3B;&#x8981;&#x662F;&#x95ED;&#x6E90;&#x6A21;&#x578B;&#x7684;&#x4EA4;&#x4ED8;&#x65B9;&#x5F0F;&#x3002;</p>
 <ul>
-<li>&#x63D0;&#x793A;&#x7BA1;&#x7406;&#x548C;&#x8BC4;&#x4F30;&#xFF08;&#x63D0;&#x793A;&#x5DE5;&#x7A0B;&#x3001;&#x5BA1;&#x6838;&#x3001;&#x8DDF;&#x8E2A;&#x3001;A/B&#x6D4B;&#x8BD5;&#x3001;&#x63D0;&#x793A;&#x94FE;&#x63A5;&#x3001;&#x8C03;&#x8BD5;&#x63D0;&#x793A;&#x3001;&#x8BC4;&#x4F30;&#x7B49;&#xFF09;&#xFF0C;&#x5305;&#x62EC;&#x8DE8;&#x591A;&#x4E2A;&#x57FA;&#x7840;&#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x5546;&#x8FDB;&#x884C;&#x63D0;&#x793A;&#x94FE;&#x63A5;&#xFF1B;</li>
-<li>&#x65E0;&#x4EE3;&#x7801;/&#x4F4E;&#x4EE3;&#x7801;&#x5FAE;&#x8C03;/&#x5D4C;&#x5165;&#x7BA1;&#x7406;&#xFF08;&#x5305;&#x62EC;&#x7528;&#x4E8E;&#x5728;&#x7279;&#x5B9A;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x91CD;&#x65B0;&#x8BAD;&#x7EC3;&#x901A;&#x7528;&#x6A21;&#x578B;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x6807;&#x8BB0;&#x3001;&#x6E05;&#x6D17;&#x7B49;&#xFF09;</li>
-<li>&#x4EE3;&#x7406;&#x96C6;&#x6210;/&#x57FA;&#x4E8E;&#x884C;&#x52A8;&#x7684;LLM&#x51B3;&#x7B56;&#xFF0C;&#x6267;&#x884C;&#x884C;&#x52A8;&#xFF0C;&#x76EE;&#x6807;&#x89C4;&#x5212;&#xFF0C;&#x4E0E;&#x5916;&#x90E8;&#x4E16;&#x754C;&#x63A5;&#x53E3;&#x7B49;&#xFF1B;</li>
-<li><p>&#x5206;&#x6790;/&#x53EF;&#x89C2;&#x5BDF;&#x6027;&#x2014;&#x2014;&#x6210;&#x672C;&#x3001;&#x5EF6;&#x8FDF;&#x3001;&#x901F;&#x7387;&#x9650;&#x5236;&#x7BA1;&#x7406;&#x3001;&#x53EF;&#x89E3;&#x91CA;&#x6027;&#x7B49;&#x3002;</p>
-</li>
-<li><p><a href="https://promptlayer.com/" target="_blank">PromptLayer</a></p>
-<p> &#x8F93;&#x5165;&#x4FA7; Prompt &#x7BA1;&#x7406;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x540E;&#x9762;&#x8865;&#x5145;&#x4E0A;LLM&#x8F93;&#x51FA;&#x4FA7;&#x7684;&#x8D28;&#x91CF;&#x76D1;&#x63A7;&#xFF0C;&#x4F18;&#x5316;&#x5EFA;&#x8BAE;&#x7B49;&#x7B49;&#xFF0C;LLM&#x6280;&#x672F;&#x6808;&#x7684;&#x8FD0;&#x7EF4;&#x76D1;&#x63A7;&#x5DE5;&#x5177;&#x3002;</p>
-</li>
-<li><p><a href="https://rebuff.ai/" target="_blank">Rebuff AI</a></p>
-<p> &#x65E8;&#x5728;&#x901A;&#x8FC7;&#x591A;&#x5C42;&#x9632;&#x5FA1;&#xFF0C;&#x4FDD;&#x62A4; AI &#x5E94;&#x7528;&#x514D;&#x53D7;&#x5373;&#x65F6;&#x6CE8;&#x5165;&#x653B;&#x51FB; &#x2014;&#x2014; &#x7B2C;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x5730;&#x7528; AI &#x505A;&#x6CE8;&#x5165;&#x653B;&#x51FB;&#x9632;&#x5FA1;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
-</li>
-<li><p><a href="https://arize.com" target="_blank">Arize AI</a></p>
-<p> &#x901A;&#x8FC7;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3001;&#x76D1;&#x63A7;&#x4EE5;&#x53CA;&#x6545;&#x969C;&#x6392;&#x67E5;&#xFF0C;&#x7528;&#x4E8E;&#x786E;&#x5B9A; LLM &#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x6539;&#x8FDB;&#x7684;&#x5730;&#x65B9;&#x7684;&#x5DE5;&#x5177;</p>
-</li>
-<li><p><a href="https://www.embedding.store/" target="_blank">embedding.store</a></p>
-<p> &#x5177;&#x6709;&#x516C;&#x5171;&#x3001;&#x79C1;&#x6709;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x6570;&#x636E;&#x7684;&#x6258;&#x7BA1;&#x5D4C;&#x5165;&#x5E02;&#x573A;</p>
-</li>
-<li><p><a href="https://whylabs.ai/" target="_blank">Whylab</a></p>
-<p> AI &#x53EF;&#x89C2;&#x5BDF;&#x6027;&#x5E73;&#x53F0;&#xFF0C;&#x6D88;&#x9664;&#x4E86;&#x6A21;&#x578B;&#x548C;&#x6570;&#x636E;&#x76D1;&#x63A7;&#x7684;&#x75DB;&#x82E6;&#xFF0C;&#x4F7F;&#x5BA2;&#x6237;&#x53EF;&#x4EE5;&#x82B1;&#x66F4;&#x5C11;&#x7684;&#x65F6;&#x95F4;&#x5728;&#x6551;&#x706B;&#x4E0A;&#xFF0C;&#x800C;&#x5C06;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x82B1;&#x5728;&#x6784;&#x5EFA;&#x6A21;&#x578B;&#x4E0A;&#x3002;</p>
-</li>
-<li><p><a href="https://portkey.ai/" target="_blank">Portkey</a></p>
-<p> &#x6A21;&#x578B;&#x7BA1;&#x7406;&#x548C;&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#xFF1A;&#x7BA1;&#x7406;&#x6A21;&#x578B;&#xFF08;&#x63D0;&#x793A;&#x3001;&#x53C2;&#x6570;&#x3001;&#x5F15;&#x64CE;&#x3001;&#x7248;&#x672C;&#xFF09;&#xFF0C;&#x67E5;&#x770B;&#x6A21;&#x578B;&#x548C;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x6D41;&#x91CF;&#x548C;&#x5EF6;&#x8FDF;&#xFF0C;&#x65E0;&#x9700;&#x505C;&#x673A;&#xFF0C;&#x65E0;&#x7F1D;&#x5347;&#x7EA7;&#x3002;&#x5B9E;&#x65F6;&#x67E5;&#x770B;&#x548C;&#x8C03;&#x8BD5;&#x8BF7;&#x6C42;&#xFF0C;&#x8DDF;&#x8E2A;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x7684;&#x6D41;&#x91CF;&#x548C;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x5F53;AI&#x63D0;&#x4F9B;&#x5546;&#x51FA;&#x73B0;&#x6545;&#x969C;&#x65F6;&#xFF0C;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x901A;&#x8FC7;&#x7F13;&#x5B58;&#x548C;&#x8FB9;&#x7F18;&#x8BA1;&#x7B97;&#x6765;&#x964D;&#x4F4E;&#x5EF6;&#x8FDF;&#x3002;</p>
-</li>
-<li><p><a href="https://www.vellum.ai/" target="_blank">Vellum</a></p>
-<p> &#x5C06;LLM&#x5F3A;&#x5927;&#x7279;&#x6027;&#x4E0E;&#x7528;&#x4E8E;&#x63D0;&#x793A;&#x5DE5;&#x7A0B;&#x3001;&#x8BED;&#x4E49;&#x641C;&#x7D22;&#x3001;&#x7248;&#x672C;&#x63A7;&#x5236;&#x3001;&#x5B9A;&#x91CF;&#x6D4B;&#x8BD5;&#x548C;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x7684;&#x5DE5;&#x5177;&#x7ED3;&#x5408;&#xFF0C;&#x4F7F;&#x5176;&#x6295;&#x5165;&#x751F;&#x4EA7;&#x3002;&#x4E0E;&#x6240;&#x6709;&#x4E3B;&#x8981;&#x7684;LLM&#x63D0;&#x4F9B;&#x5546;&#x517C;&#x5BB9;&#x3002;</p>
-</li>
-<li><p><a href="https://humanloop.com/" target="_blank">Humanloop</a></p>
-<p> &#x5E2E;&#x52A9;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;&#x5982;GPT-3&#xFF09;&#x4E4B;&#x4E0A;&#x6784;&#x5EFA;&#x9AD8;&#x6027;&#x80FD;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x5C1D;&#x8BD5;&#x65B0;&#x7684;&#x63D0;&#x793A;&#xFF0C;&#x6536;&#x96C6;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x548C;&#x7528;&#x6237;&#x53CD;&#x9988;&#xFF0C;&#x5E76;&#x5BF9;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x5FAE;&#x8C03;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x5E76;&#x4F18;&#x5316;&#x6210;&#x672C;&#x3002;</p>
-</li>
-<li><p><a href="https://www.helicone.ai/" target="_blank">Helicone</a></p>
-<p> Helicone&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x5E73;&#x53F0;&#xFF0C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x5230;OpenAI&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;UI&#x754C;&#x9762;&#x3001;&#x7F13;&#x5B58;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x901F;&#x7387;&#x9650;&#x5236;&#x548C;&#x91CD;&#x8BD5;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7528;&#x6237;&#x548C;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x8DDF;&#x8E2A;&#x6210;&#x672C;&#x548C;&#x5EF6;&#x8FDF;&#xFF0C;&#x5E76;&#x4E3A;&#x6BCF;&#x4E2A;&#x65E5;&#x5FD7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6E38;&#x4E50;&#x573A;&#xFF0C;&#x4EE5;&#x5728;UI&#x4E2D;&#x8FED;&#x4EE3;&#x63D0;&#x793A;&#x548C;&#x804A;&#x5929;&#x5BF9;&#x8BDD;&#x3002;&#x6B64;&#x5916;&#xFF0C;Helicone&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;Python&#x548C;Node.JS&#x652F;&#x6301;&#xFF0C;&#x4EE5;&#x53CA;&#x5F00;&#x53D1;&#x8005;&#x6587;&#x6863;&#x548C;&#x793E;&#x533A;&#x652F;&#x6301;&#x3002;</p>
-</li>
+<li><a href="https://www.anthropic.com/research" target="_blank">Anthropic</a>&#xFF1A;Anthropic&#x662F;&#x7531;OpenAI&#x7684;&#x524D;&#x6210;&#x5458;&#x521B;&#x7ACB;&#x7684;&#x4E13;&#x6CE8;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5B89;&#x5168;&#x548C;&#x7814;&#x7A76;&#x7684;&#x521D;&#x521B;&#x516C;&#x53F8;&#xFF0C;&#x5E76;&#x79C9;&#x627F;&#x8D1F;&#x8D23;&#x4EFB;&#x7684;AI&#x4F7F;&#x7528;&#x7406;&#x5FF5;&#xFF0C;Claude &#x804A;&#x5929;&#x673A;&#x5668;&#x4EBA;&#x80CC;&#x540E;&#x7684;&#x7814;&#x53D1;&#x516C;&#x53F8;&#x3002;</li>
+<li><a href="https://txt.cohere.com/" target="_blank">Cohere</a></li>
+<li><a href="https://openai.com/blog" target="_blank">OpenAI</a></li>
+<li><a href="https://inflection.ai/" target="_blank">Inflection AI</a>&#xFF1A;Pi &#x6240;&#x5728;&#x7684;&#x516C;&#x53F8;</li>
+</ul>
+<h3 id="&#x5B9A;&#x5236;-llm-&#x670D;&#x52A1;">&#x5B9A;&#x5236; LLM &#x670D;&#x52A1;</h3>
+<p>&#x5B9A;&#x5236; LLM &#x670D;&#x52A1;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x5E7F;&#x6CDB;&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#x522B;&#xFF0C;&#x7528;&#x4E8E;&#x5FAE;&#x8C03;&#x548C;&#x90E8;&#x7F72;&#x57FA;&#x4E8E;&#x5F00;&#x6E90;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x7684;&#x4E13;&#x6709;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<h4 id="deployment-&#x90E8;&#x7F72;&#x63A8;&#x7406;">Deployment &#x90E8;&#x7F72;&#x63A8;&#x7406;</h4>
+<ul>
+<li><a href="https://replicate.com/blog" target="_blank">Replicate</a>&#xFF1A;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;AI&#x6A21;&#x578B;&#x6258;&#x7BA1;&#x4E91;&#x5E73;&#x53F0;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x4EA7;&#x54C1;&#x7406;&#x5FF5;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x5F00;&#x6E90;AI&#x6A21;&#x578B;&#x90FD;&#x5E94;&#x8BE5;&#x80FD;&#x5728;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x627E;&#x5230;&#xFF0C;&#x5E76;&#x4E14;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x5E94;&#x8BE5;&#x80FD;&#x5728;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x4F5C;&#x3001;&#x6258;&#x7BA1;&#x8BBE;&#x7F6E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7ACB;&#x5373;&#x542F;&#x52A8;&#x5E76;&#x8FD0;&#x884C;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x3002;&#x5C06;&#x51E0;&#x4E2A;&#x6A21;&#x578B;&#x7EC4;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x89C4;&#x6A21;&#x6269;&#x5927;&#x65F6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x5FAE;&#x8C03;&#x5E76;&#x6258;&#x7BA1;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x578B;&#x3002;</li>
+<li><a href="https://www.mosaicml.com/blog" target="_blank">MosaicML</a>&#xFF1A;&#x4E00;&#x5BB6;AI&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x805A;&#x7126;&#x4E8E;&#x4F01;&#x4E1A;&#x7AEF;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x5176;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5E73;&#x53F0;&#xFF0C;&#x8BA9;&#x5404;&#x4E2A;&#x4F01;&#x4E1A;&#x90FD;&#x80FD;&#x591F;&#x5728;&#x5B89;&#x5168;&#x73AF;&#x5883;&#x4E2D;&#x8BAD;&#x7EC3;&#x548C;&#x90E8;&#x7F72;AI&#x6A21;&#x578B;&#xFF0C;&#x5E76;&#x4E14;&#x5E2E;&#x52A9;&#x4F01;&#x4E1A;&#x964D;&#x4F4E;AI&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x9500;&#x3002;MosaicML&#x7684;&#x4EA7;&#x54C1;&#x7EC4;&#x5408;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x5F00;&#x6E90;&#x7684;&#x3001;&#x5546;&#x4E1A;&#x6388;&#x6743;&#x7684;MPT Foundation&#x7CFB;&#x5217;&#x6A21;&#x578B;&#x548C;MosaicML &#x63A8;&#x7406;&#x548C;&#x8BAD;&#x7EC3;&#x670D;&#x52A1;&#xFF0C;&#x4E3A;&#x4F01;&#x4E1A;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="https://octoml.ai/blog/" target="_blank">OctoML</a></li>
+<li><a href="https://aws.amazon.com/cn/blogs/machine-learning/tag/amazon-sagemaker/" target="_blank">Amazon SageMaker</a>&#xFF1A;</li>
+</ul>
+<h4 id="experiment-tracking-&#x5B9E;&#x9A8C;&#x8FFD;&#x8E2A;">Experiment Tracking &#x5B9E;&#x9A8C;&#x8FFD;&#x8E2A;</h4>
+<ul>
+<li><a href="https://wandb.ai/fully-connected" target="_blank">Weights &amp; Biases</a>: &#x4E00;&#x5BB6;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6027;&#x80FD;&#x53EF;&#x89C6;&#x5316;&#x5DE5;&#x5177;&#x5F00;&#x53D1;&#x5546;&#xFF0C;&#x9762;&#x5411;&#x9762;&#x5411;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4ECE;&#x4E1A;&#x4EBA;&#x5458;&#x63D0;&#x4F9B;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6027;&#x80FD;&#x53EF;&#x89C6;&#x5316;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="https://neptune.ai/blog" target="_blank">neptune.ai</a>&#xFF1A;&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x4EBA;&#x5408;&#x4F5C;&#x7BA1;&#x7406;&#x5B9E;&#x9A8C;&#xFF0C;&#x8FFD;&#x8E2A;&#x56E2;&#x961F;&#x4E2D;&#x6BCF;&#x4E2A;&#x4EBA;&#x7684;&#x5B9E;&#x9A8C;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x3001;&#x8FC7;&#x6EE4;&#x3001;&#x5206;&#x7EC4;&#x3001;&#x6392;&#x5E8F;&#x548C;&#x6BD4;&#x8F83;&#x7B49;&#x529F;&#x80FD;</li>
+<li><a href="https://www.comet.com/site/resources/" target="_blank">comet</a>&#xFF1A;</li>
+</ul>
+<h4 id="orchestration-&#x8BAD;&#x7EC3;&#x7F16;&#x6392;">Orchestration &#x8BAD;&#x7EC3;&#x7F16;&#x6392;</h4>
+<ul>
+<li><a href="https://abacus.ai/" target="_blank">Abacus.AI</a>&#xFF1A;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x81EA;&#x4E3B;&#x5E73;&#x53F0;&#xFF0C;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x81EA;&#x5B9A;&#x4E49;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x5E76;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#x3002;</li>
+<li><a href="https://valohai.com/blog/" target="_blank">Valohai</a>&#xFF1A;&#x4E00;&#x5BB6;&#x82AC;&#x5170;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x53EF;&#x4E3A;&#x5927;&#x578B;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x516C;&#x53F8;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x8BAD;&#x7EC3;&#x548C;&#x90E8;&#x7F72;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF0C;&#x5E73;&#x53F0;&#x4F7F;&#x6570;&#x636E;&#x79D1;&#x5B66;&#x5BB6;&#x80FD;&#x591F;&#x5BF9;&#x5176;&#x6570;&#x636E;&#x5E94;&#x7528;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#xFF0C;&#x5FEB;&#x901F;&#x8FED;&#x4EE3;&#x5B9E;&#x9A8C;&#xFF0C;&#x901A;&#x8FC7;&#x5E76;&#x884C;&#x57F9;&#x8BAD;&#x8FDB;&#x884C;&#x8D85;&#x53C2;&#x6570;&#x4F18;&#x5316;&#xFF0C;&#x5E76;&#x5C06;&#x6A21;&#x578B;&#x53EF;&#x9760;&#x5730;&#x90E8;&#x7F72;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x3002;</li>
+<li><a href="https://aws.amazon.com/cn/blogs/machine-learning/tag/amazon-sagemaker/" target="_blank">Amazon SageMaker</a>&#xFF1A;</li>
+<li>MLflow</li>
+</ul>
+<h4 id="data-management-&#x6570;&#x636E;&#x7BA1;&#x7406;">Data Management &#x6570;&#x636E;&#x7BA1;&#x7406;</h4>
+<ul>
+<li><a href="https://www.activeloop.ai/resources/" target="_blank">activeloop</a>&#xFF1A;Deep Lake&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x6A21;&#x6001;&#x7684;&#x5411;&#x91CF;&#x5B58;&#x50A8;&#x5E93;&#xFF0C;&#x5B58;&#x50A8;&#x5D4C;&#x5165;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;&#x6587;&#x672C;&#x3001;json&#x3001;&#x56FE;&#x50CF;&#x3001;&#x97F3;&#x9891;&#x3001;&#x89C6;&#x9891;&#x7B49;&#x3002;&#x5B83;&#x4F1A;&#x5728;&#x672C;&#x5730;&#x3001;&#x60A8;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x6216;Activeloop storage&#x4E0A;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x3002; &#x5B83;&#x80FD;&#x6267;&#x884C;&#x5305;&#x62EC;&#x5D4C;&#x5165;&#x548C;&#x5B83;&#x4EEC;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x6DF7;&#x5408;&#x641C;&#x7D22;&#x3002;</li>
 </ul>
 
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
@@ -704,12 +801,12 @@
 
             
                 
-                <a href="prompt.html" class="navigation navigation-prev " aria-label="Previous page: Prompt专题">
+                <a href="06-1.html" class="navigation navigation-prev " aria-label="Previous page: LLMOps 介绍">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ref.html" class="navigation navigation-next " aria-label="Next page: 一些课程资料汇总">
+                <a href="06-3.html" class="navigation navigation-next " aria-label="Next page: Prompt 提示层">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -720,7 +817,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"值得关注的公司","level":"1.8.3","depth":2,"next":{"title":"一些课程资料汇总","level":"1.8.4","depth":2,"path":"ref/ref.md","ref":"./ref/ref.md","articles":[]},"previous":{"title":"Prompt专题","level":"1.8.2","depth":2,"path":"ref/prompt.md","ref":"./ref/prompt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus","statistics","hide-element"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"statistics":{"bd_url":"https://hm.baidu.com/hm.js","cnzz_url":"https://s95.cnzz.com/z_stat.php","google_url":"https://www.googletagmanager.com/gtag/js","google_id":"G-LK50VKN0CF"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://liduos.com/wxqcode.png","alipayText":"获得更多LLM应用开发最新内容","button":"关注我","title":"","wechat":"","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用开发实践笔记","language":"zh-hans","links":{"sidebar":{"作者：莫尔索":"https://liduos.com/about"}},"gitbook":"*","description":"基于大语言模型的应用开发实践记录"},"file":{"path":"ref/company.md","mtime":"2023-08-27T14:34:39.309Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-27T14:36:17.175Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model 模型层","level":"1.7.2","depth":2,"next":{"title":"Prompt 提示层","level":"1.7.3","depth":2,"path":"06-llmops/06-3.md","ref":"./06-llmops/06-3.md","articles":[]},"previous":{"title":"LLMOps 介绍","level":"1.7.1","depth":2,"path":"06-llmops/06-1.md","ref":"./06-llmops/06-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus","statistics","hide-element"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"statistics":{"bd_url":"https://hm.baidu.com/hm.js","cnzz_url":"https://s95.cnzz.com/z_stat.php","google_url":"https://www.googletagmanager.com/gtag/js","google_id":"G-LK50VKN0CF"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://liduos.com/wxqcode.png","alipayText":"获得更多LLM应用开发最新内容","button":"关注我","title":"","wechat":"","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用开发实践笔记","language":"zh-hans","links":{"sidebar":{"作者：莫尔索":"https://liduos.com/about"}},"gitbook":"*","description":"基于大语言模型的应用开发实践记录"},"file":{"path":"06-llmops/06-2.md","mtime":"2023-08-29T07:55:49.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-29T09:21:10.063Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

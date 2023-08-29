@@ -1,6 +1,6 @@
 ## 一些资料汇总
-### 欢迎关注 [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
-跟踪LLM(大语言模型)最新动态，分享第一手LLM 实践经验，致力于打造个人LLM 应用开发全栈指南！
+### [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
+
 ### LLM 开发课程
 1. 吴恩达《Building Systems with the ChatGPT API》
     - 课程地址：https://learn.deeplearning.ai/chatgpt-building-system

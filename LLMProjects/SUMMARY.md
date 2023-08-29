@@ -24,11 +24,20 @@
     * [transformers 库基础组件](./04-huggingface/04-2.md)
     * [多模态任务设计](./04-huggingface/04-3.md)
     * [动手实现 HuggingGPT](./04-huggingface/04-4.md)
-* 具有大型语言模型的生成式AI
-    * [课程介绍](./05-generative-ai-with-llms/05-1.md)
+* LLMOps 专题
+    * [LLMOps 介绍](./06-llmops/06-1.md)
+    * [Model 模型层](./06-llmops/06-2.md)
+    * [Prompt 提示层](./06-llmops/06-3.md)
+    * [狭义LLMOps](./06-llmops/06-4.md)
+* Agent 专题
+    * [Agent 介绍](./07-agents/07-1.md)
+    * [Multi-Agent 框架是什么](./07-agents/07-2.md)
+    * [Agents 分析](./07-agents/07-3.md)
+
+- 具有大型语言模型的生成式AI
+  * [课程介绍](./05-generative-ai-with-llms/05-1.md)
 
 * 参考资料
     * [A16Z推荐的AI学习清单](./ref/a16z.md)
     * [Prompt专题](./ref/prompt.md)
-    * [值得关注的公司](./ref/company.md)
     * [一些课程资料汇总](./ref/ref.md)

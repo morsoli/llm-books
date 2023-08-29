@@ -1,8 +1,8 @@
 ## Prompt专题
 
 **Prompt** 是指在训练或与大型语言模型（如GPT系列）进行交互时，提供给模型的输入文本。通过给定特定的prompt，可以引导模型生成特定主题或类型的文本。在自然语言处理（NLP）任务中，prompt充当了问题或输入的角色，而模型的输出是对这个问题的回答或完成的任务。
-### 欢迎关注 [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
-跟踪LLM(大语言模型)最新动态，分享第一手LLM 实践经验，致力于打造个人LLM 应用开发全栈指南！
+### [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
+
 
 ### 推荐的Prompt学习资料
 - [Prompt提示词课程](https://www.bilibili.com/video/BV1Bo4y1A7FU)：斯坦福吴恩达教授和 OpenAI 官方联合出品的ChatGPT Prompt提示词课程，质量很高的教学视频。

@@ -1,0 +1,842 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Agents 分析 · LLM 应用开发实践笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莫尔索">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="07-2.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"morsoli/llm-books","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://liduos.com/about" target="_blank" class="custom-link">作者：莫尔索</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="https://liduos.com/wxqcode.png">
+            
+                    
+                    LLM 应用全栈开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    大语言模型概述
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-llm/01-1.html">
+            
+                <a href="../01-llm/01-1.html">
+            
+                    
+                    大语言模型概况
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../01-llm/01-2.html">
+            
+                <a href="../01-llm/01-2.html">
+            
+                    
+                    你好, ChatGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../01-llm/01-3.html">
+            
+                <a href="../01-llm/01-3.html">
+            
+                    
+                    OpenAI 文档解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../01-llm/01-4.html">
+            
+                <a href="../01-llm/01-4.html">
+            
+                    
+                    动手实现聊天机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../01-llm/01-5.html">
+            
+                <a href="../01-llm/01-5.html">
+            
+                    
+                    LLM 安全专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    LangChain入门
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-langchain/02-1.html">
+            
+                <a href="../02-langchain/02-1.html">
+            
+                    
+                    LangChain介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../02-langchain/02-2.html">
+            
+                <a href="../02-langchain/02-2.html">
+            
+                    
+                    LangChain模块学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../02-langchain/02-2-1.html">
+            
+                <a href="../02-langchain/02-2-1.html">
+            
+                    
+                    LangChain之Chains模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../02-langchain/02-2-2.html">
+            
+                <a href="../02-langchain/02-2-2.html">
+            
+                    
+                    LangChain之Agents模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../02-langchain/02-2-3.html">
+            
+                <a href="../02-langchain/02-2-3.html">
+            
+                    
+                    LangChain之Callback模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../02-langchain/02-3.html">
+            
+                <a href="../02-langchain/02-3.html">
+            
+                    
+                    Embedding嵌入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../02-langchain/02-4.html">
+            
+                <a href="../02-langchain/02-4.html">
+            
+                    
+                    动手实现文档问答机器人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    LlamaIndex 概述
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-llamaIndex/03-1.html">
+            
+                <a href="../03-llamaIndex/03-1.html">
+            
+                    
+                    LlamaIndex介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../03-llamaIndex/03-2.html">
+            
+                <a href="../03-llamaIndex/03-2.html">
+            
+                    
+                    LlamaIndex索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../03-llamaIndex/03-3.html">
+            
+                <a href="../03-llamaIndex/03-3.html">
+            
+                    
+                    动手实现企业知识库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    HuggingGPT 实现
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-huggingface/04-1.html">
+            
+                <a href="../04-huggingface/04-1.html">
+            
+                    
+                    HuggingFace 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-huggingface/04-2.html">
+            
+                <a href="../04-huggingface/04-2.html">
+            
+                    
+                    transformers 库基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-huggingface/04-3.html">
+            
+                <a href="../04-huggingface/04-3.html">
+            
+                    
+                    多模态任务设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../04-huggingface/04-4.html">
+            
+                <a href="../04-huggingface/04-4.html">
+            
+                    
+                    动手实现 HuggingGPT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    LLMOps 专题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06-llmops/06-1.html">
+            
+                <a href="../06-llmops/06-1.html">
+            
+                    
+                    LLMOps 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06-llmops/06-2.html">
+            
+                <a href="../06-llmops/06-2.html">
+            
+                    
+                    Model 模型层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06-llmops/06-3.html">
+            
+                <a href="../06-llmops/06-3.html">
+            
+                    
+                    Prompt 提示层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06-llmops/06-4.html">
+            
+                <a href="../06-llmops/06-4.html">
+            
+                    
+                    狭义LLMOps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Agent 专题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="07-1.html">
+            
+                <a href="07-1.html">
+            
+                    
+                    Agent 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="07-2.html">
+            
+                <a href="07-2.html">
+            
+                    
+                    Multi-Agent 框架是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="07-3.html">
+            
+                <a href="07-3.html">
+            
+                    
+                    Agents 分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    具有大型语言模型的生成式AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../05-generative-ai-with-llms/05-1.html">
+            
+                <a href="../05-generative-ai-with-llms/05-1.html">
+            
+                    
+                    课程介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    参考资料
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../ref/a16z.html">
+            
+                <a href="../ref/a16z.html">
+            
+                    
+                    A16Z推荐的AI学习清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../ref/prompt.html">
+            
+                <a href="../ref/prompt.html">
+            
+                    
+                    Prompt专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../ref/ref.html">
+            
+                <a href="../ref/ref.html">
+            
+                    
+                    一些课程资料汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Agents 分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07-2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Multi-Agent 框架是什么">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Agents 分析","level":"1.8.3","depth":2,"next":{"title":"具有大型语言模型的生成式AI","level":"1.9","depth":1,"ref":"","articles":[{"title":"课程介绍","level":"1.9.1","depth":2,"path":"05-generative-ai-with-llms/05-1.md","ref":"./05-generative-ai-with-llms/05-1.md","articles":[]}]},"previous":{"title":"Multi-Agent 框架是什么","level":"1.8.2","depth":2,"path":"07-agents/07-2.md","ref":"./07-agents/07-2.md","articles":[]},"dir":"neutral"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus","statistics","hide-element"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"statistics":{"bd_url":"https://hm.baidu.com/hm.js","cnzz_url":"https://s95.cnzz.com/z_stat.php","google_url":"https://www.googletagmanager.com/gtag/js","google_id":"G-LK50VKN0CF"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://liduos.com/wxqcode.png","alipayText":"获得更多LLM应用开发最新内容","button":"关注我","title":"","wechat":"","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用开发实践笔记","language":"zh-hans","links":{"sidebar":{"作者：莫尔索":"https://liduos.com/about"}},"gitbook":"*","description":"基于大语言模型的应用开发实践记录"},"file":{"path":"07-agents/07-3.md","mtime":"2023-08-29T09:10:37.862Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-29T09:21:10.063Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-statistics/statistics.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
