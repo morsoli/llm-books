@@ -1,5 +1,5 @@
 ## 一些资料汇总
-### [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
+
 
 ### LLM 开发课程
 1. 吴恩达《Building Systems with the ChatGPT API》

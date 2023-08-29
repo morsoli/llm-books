@@ -31,10 +31,10 @@
     * [狭义LLMOps](./06-llmops/06-4.md)
 * Agent 专题
     * [Agent 介绍](./07-agents/07-1.md)
-    * [Multi-Agent 框架是什么](./07-agents/07-2.md)
-    * [Agents 分析](./07-agents/07-3.md)
+    * [Agent 项目跟踪](./07-agents/07-2.md)
+    * [Multi-Agent 系统](./07-agents/07-3.md)
 
-- 具有大型语言模型的生成式AI
+- 基于大型语言模型的生成式AI
   * [课程介绍](./05-generative-ai-with-llms/05-1.md)
 
 * 参考资料

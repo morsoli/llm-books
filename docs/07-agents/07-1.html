@@ -574,7 +574,7 @@
                 <a href="07-2.html">
             
                     
-                    Multi-Agent 框架是什么
+                    Agent 项目跟踪
             
                 </a>
             
@@ -587,7 +587,7 @@
                 <a href="07-3.html">
             
                     
-                    Agents 分析
+                    Multi-Agent 系统
             
                 </a>
             
@@ -605,7 +605,7 @@
                 <span>
             
                     
-                    具有大型语言模型的生成式AI
+                    基于大型语言模型的生成式AI
             
                 </span>
             
@@ -735,7 +735,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="agent-&#x4ECB;&#x7ECD;">Agent &#x4ECB;&#x7ECD;</h2>
+<p>Agent &#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x786E;&#x5207;&#x6765;&#x8BF4; Agent = &#x4EFB;&#x52A1;&#x89C4;&#x5212;+&#x8BB0;&#x5FC6;+&#x5DE5;&#x5177;&#x4F7F;&#x7528;+&#x6267;&#x884C;&#xFF0C;OpenAI&#x7684;Lilian Weng&#x5728; <a href="https://lilianweng.github.io/posts/2023-06-23-agent/" target="_blank">LLM Powered Autonomous Agents</a> &#x4E00;&#x6587;&#x4E2D;&#x5C06;AI&#x667A;&#x80FD;&#x4F53;&#x7684;&#x6846;&#x67B6;&#x8FDB;&#x884C;&#x4E86;&#x8BE6;&#x7EC6;&#x9610;&#x8FF0;&#x3002;</p>
+<p><img src="../images/agent-overview.png" alt="agent-overview"></p>
+<h3 id="&#x4EFB;&#x52A1;&#x89C4;&#x5212;">&#x4EFB;&#x52A1;&#x89C4;&#x5212;</h3>
+<ul>
+<li><p><strong>&#x4EFB;&#x52A1;&#x62C6;&#x5206;</strong>&#xFF1A;&#x590D;&#x6742;&#x4EFB;&#x52A1;&#x4E0D;&#x662F;&#x4E00;&#x6B21;&#x6027;&#x5C31;&#x80FD;&#x89E3;&#x51B3;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x62C6;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x5E76;&#x884C;&#x6216;&#x4E32;&#x884C;&#x7684;&#x5B50;&#x4EFB;&#x52A1;&#x6765;&#x8FDB;&#x884C;&#x6C42;&#x89E3;&#xFF0C;&#x4EFB;&#x52A1;&#x89C4;&#x5212;&#x7684;&#x76EE;&#x6807;&#x662F;&#x627E;&#x5230;&#x4E00;&#x6761;&#x6700;&#x4F18;&#x7684;&#x3001;&#x80FD;&#x591F;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x7684;&#x8DEF;&#x7EBF;</p>
+</li>
+<li><p><strong>&#x81EA;&#x6211;&#x53CD;&#x7701;</strong>&#xFF1A;&#x81EA;&#x6211;&#x53CD;&#x601D;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x9762;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x81EA;&#x4E3B;&#x4EE3;&#x7406;&#x901A;&#x8FC7;&#x5B8C;&#x5584;&#x8FC7;&#x53BB;&#x7684;&#x884C;&#x52A8;&#x51B3;&#x7B56;&#x548C;&#x7EA0;&#x6B63;&#x4EE5;&#x524D;&#x7684;&#x9519;&#x8BEF;&#x6765;&#x8FED;&#x4EE3;&#x6539;&#x8FDB;&#x3002;&#x5B83;&#x5728;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x5730;&#x4F1A;&#x51FA;&#x73B0;&#x8BD5;&#x9519;&#x7684;&#x73B0;&#x5B9E;&#x4EFB;&#x52A1;&#x4E2D;&#x53D1;&#x6325;&#x7740;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x3002;<strong>ReAct (</strong><a href="https://arxiv.org/abs/2210.03629" target="_blank">Yao et al. 2023</a><strong>)</strong>  &#x53D1;&#x73B0;&#x8BA9;Agents&#x6267;&#x884C;&#x4E0B;&#x4E00;&#x6B65;action&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x52A0;&#x4E0A;LLM&#x81EA;&#x5DF1;&#x7684;&#x601D;&#x8003;&#x8FC7;&#x7A0B;&#xFF0C;&#x5E76;&#x5C06;&#x601D;&#x8003;&#x8FC7;&#x7A0B;&#x3001;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x5177;&#x53CA;&#x53C2;&#x6570;&#x3001;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5230;prompt&#x4E2D;&#xFF0C;&#x5C31;&#x80FD;&#x4F7F;&#x5F97;&#x6A21;&#x578B;&#x5BF9;&#x5F53;&#x524D;&#x548C;&#x5148;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x5EA6;&#x6709;&#x66F4;&#x597D;&#x7684;&#x53CD;&#x601D;&#x80FD;&#x529B;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x5347;&#x6A21;&#x578B;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x80FD;&#x529B;&#x3002;</p>
+<pre><code class="lang-text">Thought: ... 
+Action: ... 
+Observation: ... 
+...(&#x91CD;&#x590D;&#x4EE5;&#x4E0A;&#x8FC7;&#x7A0B;&#xFF09;
+</code></pre>
+</li>
+<li><p><strong>&#x601D;&#x60F3;&#x94FE;</strong>&#xFF1A;&#x5DF2;&#x6210;&#x4E3A;&#x589E;&#x5F3A;&#x590D;&#x6742;&#x4EFB;&#x52A1;&#x6A21;&#x578B;&#x6027;&#x80FD;&#x7684;&#x6807;&#x51C6;&#x63D0;&#x793A;&#x6280;&#x672F;&#x3002;&#x8BE5;&#x6A21;&#x578B;&#x88AB;&#x6307;&#x793A;&#x201C;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x601D;&#x8003;&#x201D;&#xFF0C;&#x4EE5;&#x5229;&#x7528;&#x66F4;&#x591A;&#x7684;&#x6D4B;&#x8BD5;&#x65F6;&#x95F4;&#x8BA1;&#x7B97;&#x5C06;&#x56F0;&#x96BE;&#x4EFB;&#x52A1;&#x5206;&#x89E3;&#x4E3A;&#x66F4;&#x5C0F;&#x3001;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x6B65;&#x9AA4;&#x3002; CoT &#x5C06;&#x5927;&#x578B;&#x4EFB;&#x52A1;&#x8F6C;&#x5316;&#x4E3A;&#x591A;&#x4E2A;&#x53EF;&#x7BA1;&#x7406;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x9610;&#x660E;&#x6A21;&#x578B;&#x601D;&#x7EF4;&#x8FC7;&#x7A0B;&#x7684;&#x89E3;&#x91CA;&#x3002;</p>
+</li>
+<li><strong>&#x601D;&#x7EF4;&#x6811;</strong>&#xFF1A;&#x901A;&#x8FC7;&#x5728;&#x6BCF;&#x4E00;&#x6B65;&#x63A2;&#x7D22;&#x591A;&#x79CD;&#x63A8;&#x7406;&#x53EF;&#x80FD;&#x6027;&#x6765;&#x6269;&#x5C55; CoT&#x3002;&#x5B83;&#x9996;&#x5148;&#x5C06;&#x95EE;&#x9898;&#x5206;&#x89E3;&#x4E3A;&#x591A;&#x4E2A;&#x601D;&#x8003;&#x6B65;&#x9AA4;&#xFF0C;&#x5E76;&#x5728;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x751F;&#x6210;&#x591A;&#x4E2A;&#x601D;&#x8003;&#xFF0C;&#x4ECE;&#x800C;&#x521B;&#x5EFA;&#x6811;&#x7ED3;&#x6784;&#x3002;&#x641C;&#x7D22;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x662F; BFS&#xFF08;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF09;&#x6216; DFS&#xFF08;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x7531;&#x5206;&#x7C7B;&#x5668;&#xFF08;&#x901A;&#x8FC7;&#x63D0;&#x793A;&#xFF09;&#x6216;&#x591A;&#x6570;&#x6295;&#x7968;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3002;</li>
+</ul>
+<h3 id="&#x8BB0;&#x5FC6;">&#x8BB0;&#x5FC6;</h3>
+<ul>
+<li><p><strong>&#x611F;&#x77E5;&#x8BB0;&#x5FC6;</strong>&#xFF1A;&#x8FD9;&#x662F;&#x8BB0;&#x5FC6;&#x7684;&#x6700;&#x65E9;&#x9636;&#x6BB5;&#xFF0C;&#x63D0;&#x4F9B;&#x5728;&#x539F;&#x59CB;&#x523A;&#x6FC0;&#x7ED3;&#x675F;&#x540E;&#x4FDD;&#x7559;&#x611F;&#x89C9;&#x4FE1;&#x606F;&#xFF08;&#x89C6;&#x89C9;&#x3001;&#x542C;&#x89C9;&#x7B49;&#xFF09;&#x5370;&#x8C61;&#x7684;&#x80FD;&#x529B;&#x3002;&#x611F;&#x77E5;&#x8BB0;&#x5FC6;&#x901A;&#x5E38;&#x53EA;&#x80FD;&#x6301;&#x7EED;&#x51E0;&#x79D2;&#x949F;&#x3002;&#x5B50;&#x7C7B;&#x522B;&#x5305;&#x62EC;&#x56FE;&#x50CF;&#x8BB0;&#x5FC6;&#xFF08;&#x89C6;&#x89C9;&#xFF09;&#x3001;&#x56DE;&#x58F0;&#x8BB0;&#x5FC6;&#xFF08;&#x542C;&#x89C9;&#xFF09;&#x548C;&#x89E6;&#x89C9;&#x8BB0;&#x5FC6;&#xFF08;&#x89E6;&#x6478;&#xFF09;&#x3002;&#x611F;&#x77E5;&#x8BB0;&#x5FC6;&#x4F5C;&#x4E3A;&#x539F;&#x59CB;&#x8F93;&#x5165;&#x7684;&#x5B66;&#x4E60;&#x5D4C;&#x5165;&#x8868;&#x793A;&#xFF0C;&#x5305;&#x62EC;&#x6587;&#x672C;&#x3001;&#x56FE;&#x50CF;&#x6216;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;&#x3002;</p>
+</li>
+<li><p><strong>&#x77ED;&#x671F;&#x8BB0;&#x5FC6;</strong>&#xFF1A;&#x5B83;&#x5B58;&#x50A8;&#x6211;&#x4EEC;&#x5F53;&#x524D;&#x610F;&#x8BC6;&#x5230;&#x7684;&#x4EE5;&#x53CA;&#x6267;&#x884C;&#x5B66;&#x4E60;&#x548C;&#x63A8;&#x7406;&#x7B49;&#x590D;&#x6742;&#x8BA4;&#x77E5;&#x4EFB;&#x52A1;&#x6240;&#x9700;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x77ED;&#x671F;&#x8BB0;&#x5FC6;&#x88AB;&#x8BA4;&#x4E3A;&#x5177;&#x6709;&#x5927;&#x7EA6; 7 &#x4E2A;&#x9879;&#x76EE;&#x7684;&#x5BB9;&#x91CF;&#xFF08;Miller 1956&#xFF09;&#x5E76;&#x4E14;&#x6301;&#x7EED; 20-30 &#x79D2;&#x3002;&#x77ED;&#x671F;&#x8BB0;&#x5FC6;&#x4F5C;&#x4E3A;&#x60C5;&#x5883;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x662F;&#x77ED;&#x4E14;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x53D7;&#x5230; Transformer &#x6709;&#x9650;&#x4E0A;&#x4E0B;&#x6587;&#x7A97;&#x53E3;&#x957F;&#x5EA6;&#x7684;&#x9650;&#x5236;&#x3002;</p>
+</li>
+<li><p><strong>&#x957F;&#x671F;&#x8BB0;&#x5FC6;&#xFF08;LTM&#xFF09;</strong>&#xFF1A;&#x957F;&#x671F;&#x8BB0;&#x5FC6;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x76F8;&#x5F53;&#x957F;&#x7684;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#xFF0C;&#x4ECE;&#x51E0;&#x5929;&#x5230;&#x51E0;&#x5341;&#x5E74;&#x4E0D;&#x7B49;&#xFF0C;&#x5B58;&#x50A8;&#x5BB9;&#x91CF;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x65E0;&#x9650;&#x7684;&#x3002; LTM &#x6709;&#x4E24;&#x79CD;&#x4E9A;&#x578B;&#xFF1A;</p>
+<ol>
+<li>&#x5916;&#x663E;/&#x9648;&#x8FF0;&#x6027;&#x8BB0;&#x5FC6;&#xFF1A;&#x8FD9;&#x662F;&#x5BF9;&#x4E8B;&#x5B9E;&#x548C;&#x4E8B;&#x4EF6;&#x7684;&#x8BB0;&#x5FC6;&#xFF0C;&#x662F;&#x6307;&#x90A3;&#x4E9B;&#x53EF;&#x4EE5;&#x6709;&#x610F;&#x8BC6;&#x5730;&#x56DE;&#x5FC6;&#x8D77;&#x6765;&#x7684;&#x8BB0;&#x5FC6;&#xFF0C;&#x5305;&#x62EC;&#x60C5;&#x666F;&#x8BB0;&#x5FC6;&#xFF08;&#x4E8B;&#x4EF6;&#x548C;&#x7ECF;&#x5386;&#xFF09;&#x548C;&#x8BED;&#x4E49;&#x8BB0;&#x5FC6;&#xFF08;&#x4E8B;&#x5B9E;&#x548C;&#x6982;&#x5FF5;&#xFF09;&#x3002;</li>
+<li>&#x5185;&#x9690;/&#x7A0B;&#x5E8F;&#x6027;&#x8BB0;&#x5FC6;&#xFF1A;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BB0;&#x5FC6;&#x662F;&#x65E0;&#x610F;&#x8BC6;&#x7684;&#xFF0C;&#x6D89;&#x53CA;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x6280;&#x80FD;&#x548C;&#x4F8B;&#x7A0B;&#xFF0C;&#x4F8B;&#x5982;&#x9A91;&#x81EA;&#x884C;&#x8F66;&#x6216;&#x5728;&#x952E;&#x76D8;&#x4E0A;&#x6253;&#x5B57;&#x3002;</li>
+</ol>
+<p>&#x957F;&#x671F;&#x8BB0;&#x5FC6;&#x4F5C;&#x4E3A;&#x4EE3;&#x7406;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x7684;&#x5916;&#x90E8;&#x5411;&#x91CF;&#x5B58;&#x50A8;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x5FEB;&#x901F;&#x68C0;&#x7D22;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x5DE5;&#x5177;&#x4F7F;&#x7528;">&#x5DE5;&#x5177;&#x4F7F;&#x7528;</h3>
+<ul>
+<li>&#x4EE3;&#x7406;&#x5B66;&#x4E60;&#x8C03;&#x7528;&#x5916;&#x90E8; API &#x6765;&#x83B7;&#x53D6;&#x6A21;&#x578B;&#x6743;&#x91CD;&#x4E2D;&#x7F3A;&#x5931;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;&#xFF08;&#x901A;&#x5E38;&#x5728;&#x9884;&#x8BAD;&#x7EC3;&#x540E;&#x5F88;&#x96BE;&#x66F4;&#x6539;&#xFF09;&#xFF0C;&#x5305;&#x62EC;&#x5F53;&#x524D;&#x4FE1;&#x606F;&#x3001;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x80FD;&#x529B;&#x3001;&#x5BF9;&#x4E13;&#x6709;&#x4FE1;&#x606F;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x7B49;&#x3002;</li>
+<li>API-Bank (<a href="https://arxiv.org/abs/2304.08244" target="_blank">Li et al. 2023</a>)  &#x662F;&#x8BC4;&#x4F30;&#x5DE5;&#x5177;&#x589E;&#x5F3A;LLM&#x6027;&#x80FD;&#x7684;&#x57FA;&#x51C6;&#x3002;&#x5B83;&#x5305;&#x542B; 53 &#x4E2A;&#x5E38;&#x7528;&#x7684; API &#x5DE5;&#x5177;&#x3001;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5DE5;&#x5177;&#x589E;&#x5F3A;&#x7684; LLM &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x6D89;&#x53CA; 568 &#x4E2A; API &#x8C03;&#x7528;&#x7684; 264 &#x4E2A;&#x5E26;&#x6CE8;&#x91CA;&#x7684;&#x5BF9;&#x8BDD;&#x3002;API&#x7684;&#x9009;&#x62E9;&#x975E;&#x5E38;&#x591A;&#x6837;&#x5316;&#xFF0C;&#x5305;&#x62EC;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#xFF0C;&#x8BA1;&#x7B97;&#x5668;&#xFF0C;&#x65E5;&#x5386;&#x67E5;&#x8BE2;&#xFF0C;&#x667A;&#x80FD;&#x5BB6;&#x5C45;&#x63A7;&#x5236;&#xFF0C;&#x65E5;&#x7A0B;&#x5B89;&#x6392;&#x7BA1;&#x7406;&#xFF0C;&#x5065;&#x5EB7;&#x6570;&#x636E;&#x7BA1;&#x7406;&#xFF0C;&#x5E10;&#x6237;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7B49;&#x3002;&#x56E0;&#x4E3A;&#x6709;&#x5927;&#x91CF;&#x7684;API&#xFF0C;LLM&#x9996;&#x5148;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;API&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x627E;&#x5230;&#x5408;&#x9002;&#x7684;API&#x8C03;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x6E05;&#x534E;&#x53D1;&#x8868;&#x7684;<strong>ToolLLM</strong>&#xFF08;<a href="https://arxiv.org/pdf/2307.16789.pdf" target="_blank">Qin et al. 2023</a>&#xFF09;&#x4E2D;&#x5927;&#x6A21;&#x578B;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x7684;API&#x9AD8;&#x8FBE;16000&#x591A;&#x4E2A;&#x3002;</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/08/29/oGcNuQTZxfBwgaX.jpg" alt="img"></p>
+
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -764,7 +803,7 @@
             
                 
                 
-                <a href="07-2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Multi-Agent 框架是什么">
+                <a href="07-2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Agent 项目跟踪">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -775,7 +814,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Agent 介绍","level":"1.8.1","depth":2,"next":{"title":"Multi-Agent 框架是什么","level":"1.8.2","depth":2,"path":"07-agents/07-2.md","ref":"./07-agents/07-2.md","articles":[]},"previous":{"title":"Agent 专题","level":"1.8","depth":1,"ref":"","articles":[{"title":"Agent 介绍","level":"1.8.1","depth":2,"path":"07-agents/07-1.md","ref":"./07-agents/07-1.md","articles":[]},{"title":"Multi-Agent 框架是什么","level":"1.8.2","depth":2,"path":"07-agents/07-2.md","ref":"./07-agents/07-2.md","articles":[]},{"title":"Agents 分析","level":"1.8.3","depth":2,"path":"07-agents/07-3.md","ref":"./07-agents/07-3.md","articles":[]}]},"dir":"neutral"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus","statistics","hide-element"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"statistics":{"bd_url":"https://hm.baidu.com/hm.js","cnzz_url":"https://s95.cnzz.com/z_stat.php","google_url":"https://www.googletagmanager.com/gtag/js","google_id":"G-LK50VKN0CF"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://liduos.com/wxqcode.png","alipayText":"获得更多LLM应用开发最新内容","button":"关注我","title":"","wechat":"","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用开发实践笔记","language":"zh-hans","links":{"sidebar":{"作者：莫尔索":"https://liduos.com/about"}},"gitbook":"*","description":"基于大语言模型的应用开发实践记录"},"file":{"path":"07-agents/07-1.md","mtime":"2023-08-29T01:51:39.694Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-29T09:21:10.063Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Agent 介绍","level":"1.8.1","depth":2,"next":{"title":"Agent 项目跟踪","level":"1.8.2","depth":2,"path":"07-agents/07-2.md","ref":"./07-agents/07-2.md","articles":[]},"previous":{"title":"Agent 专题","level":"1.8","depth":1,"ref":"","articles":[{"title":"Agent 介绍","level":"1.8.1","depth":2,"path":"07-agents/07-1.md","ref":"./07-agents/07-1.md","articles":[]},{"title":"Agent 项目跟踪","level":"1.8.2","depth":2,"path":"07-agents/07-2.md","ref":"./07-agents/07-2.md","articles":[]},{"title":"Multi-Agent 系统","level":"1.8.3","depth":2,"path":"07-agents/07-3.md","ref":"./07-agents/07-3.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","donate","github-buttons@2.1.0","edit-link","splitter","expandable-chapters","back-to-top-button","code","popup","search-plus","-lunr","-search","splitter","-sharing","sharing-plus","statistics","hide-element"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"pluginsConfig":{"expandable-chapters":{}},"statistics":{"bd_url":"https://hm.baidu.com/hm.js","cnzz_url":"https://s95.cnzz.com/z_stat.php","google_url":"https://www.googletagmanager.com/gtag/js","google_id":"G-LK50VKN0CF"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://liduos.com/wxqcode.png","alipayText":"获得更多LLM应用开发最新内容","button":"关注我","title":"","wechat":"","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"morsoli/llm-books","types":["star"],"size":"small"},"sharing":{"twitter":true,"weibo":true},"edit-link":{"label":"编辑此页","base":"https://github.com/morsoli/llm-books/tree/main/LLMProjects"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"莫尔索","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"LLM 应用开发实践笔记","language":"zh-hans","links":{"sidebar":{"作者：莫尔索":"https://liduos.com/about"}},"gitbook":"*","description":"基于大语言模型的应用开发实践记录"},"file":{"path":"07-agents/07-1.md","mtime":"2023-08-29T14:21:47.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-29T14:24:28.585Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
