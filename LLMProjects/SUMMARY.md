@@ -6,7 +6,8 @@
     * [你好, ChatGPT](./01-llm/01-2.md)
     * [OpenAI 文档解读](./01-llm/01-3.md)
     * [动手实现聊天机器人](./01-llm/01-4.md)
-    * [LLM 安全专题](./01-llm/01-5.md)
+    * [基于 OpenAI API 搭建一个端到端问答系统](./01-llm/01-5.md)
+    * [LLM 安全专题](./01-llm/01-6.md)
 * LangChain入门
     * [LangChain介绍](./02-langchain/02-1.md)
 	* [LangChain模块学习](./02-langchain/02-2.md)

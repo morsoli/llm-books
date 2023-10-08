@@ -1,45 +1,28 @@
 ## 一些资料汇总
+### LLM 开发入门课程
 
+由吴恩达老师与 OpenAI 合作推出的大模型系列教程，从大模型时代开发者的基础技能出发，深入浅出地介绍了如何基于大模型 API、LangChain 架构快速开发结合大模型强大能力的应用。其中，《Prompt Engineering for Developers》教程面向入门 LLM 的开发者，深入浅出地介绍了对于开发者，如何构造 Prompt 并基于 OpenAI 提供的 API 实现包括总结、推断、转换等多种常用功能，是入门 LLM 开发的经典教程；《Building Systems with the ChatGPT API》教程面向想要基于 LLM 开发应用程序的开发者，简洁有效而又系统全面地介绍了如何基于 ChatGPT API 打造完整的对话系统；《LangChain for LLM Application Development》教程结合经典大模型开源框架 LangChain，介绍了如何基于 LangChain 框架开发具备实用功能、能力全面的应用程序，《LangChain Chat With Your Data》教程则在此基础上进一步介绍了如何使用 LangChain 架构结合个人私有数据开发个性化大模型应用；《Building Generative AI Applications with Gradio》、《Evaluating and Debugging Generative AI》教程分别介绍了两个实用工具 Gradio 与 W&B，指导开发者如何结合这两个工具来打造、评估生成式 AI 应用。
 
-### LLM 开发课程
-1. 吴恩达《Building Systems with the ChatGPT API》
-    - 课程地址：https://learn.deeplearning.ai/chatgpt-building-system
-    - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1417948
-    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Building%20Systems%20with%20the%20ChatGPT%20API
+1. 《ChatGPT Prompt Engineering for Developers》
+2. 《Building Systems with the ChatGPT API》
+3. 《LangChain for LLM Application Development》
+4. 《LangChain Chat with Your Data》
+5. 《Building Generative AI Applications with Gradio》
+6. 《Evaluating and Debugging Generative AI》
 
-2. Google 的《Generative AI learning path》
+### LLM 开发进阶课程
+1. Google 的《Generative AI learning path》
     - 课程地址：https://cloudskillsboost.google/journeys/118
-    Twitter🧵：https://twitter.com/dotey/status/1665812510832730120
+    - Twitter：https://twitter.com/dotey/status/1665812510832730120
     - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1468916
 
-3. 吴恩达的《基于LangChain的LLM开发》
-    - 课程地址：https://learn.deeplearning.ai/langchain/lesson/1/introduction
-    - B站播放列表：https://space.bilibili.com/589397373/channel/collectiondetail?sid=1445896
-    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Building%20Systems%20with%20the%20ChatGPT%20API
-
-4. Databricks 的《Large Language Models: Application through Production》
-    - 课程地址：https://edx.org/course/large-language-models-application-through-production
-    - 油管播放列表：https://www.youtube.com/playlist?list=PLTPXxbhUt-YWSR8wtILixhZLF9qB_1yZm
-    - 相关的Notebook和Slides： https://github.com/databricks-academy/large-language-models
-
-5. 吴恩达的《Langchain Chat with Your Data》
-    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/LangChain%20Chat%20with%20Your%20Data
-
-6. 吴恩达的《Prompt Engineering for Developers》
-    - 相关的Notebook和Slides：https://github.com/datawhalechina/prompt-engineering-for-developers/tree/main/content/Prompt%20Engineering%20for%20Developer
-
-7. DeepLearning的《Full Stack LLM Bootcamp》
+2. DeepLearning的《Full Stack LLM Bootcamp》
     - 课程地址：https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/prompt-engineering/
     - 相关的Notebook和Slides：https://zhuanlan.zhihu.com/p/629589593
 
-8. Cohere的 《LLM University to learn about LLMs and NLP》
-    - 课程地址：https://docs.cohere.com/docs/llmu
-
-9. DeepLearningAI 与 HuggingFace 共同推出了一门新课《如何使用 Gradio 快速构建生成式AI的应用》
-    - 课程地址：https://www.deeplearning.ai/short-courses/building-generative-ai-applications-with-gradio/
-
-
-9. Open AI 推出了新的教程，使用GPT-4和Whisper创建自动生成会议既要的工具，这个工具会提供转录会议音频，提供讨论摘要，提取关键点和行动项目，并执行情绪分析功能。https://platform.openai.com/docs/tutorials/meeting-minutes
+3. AWS 的《Generative AI with Large Language Models》
+    - 课程地址：https://www.bilibili.com/video/BV12s4y1r7jf/
+    - 相关的 Notebook：https://zhuanlan.zhihu.com/p/642560031
 
 ### 国内模型
 
