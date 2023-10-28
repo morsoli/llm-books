@@ -1,6 +1,5 @@
-> 欢迎 star🌟 ，关注《LLM 应用开发实践笔记》[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+> 欢迎 star🌟 ，关注《LLM 应用开发实践笔记》
 
-![LLM 应用全栈开发](https://liduos.com/wxqcode.png)
 ## 本地阅读
 ### 构建gitbook镜像(可选)
 下载本仓库后，执行`docker build . -t <image:tag>`构建自定义镜像，也可以直接使用我构建好的镜像`morso1/gitbook-server:3.2.3`
