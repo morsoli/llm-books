@@ -1,12 +1,19 @@
+本电子书开源，欢迎 star 🌟，关注《LLM 应用开发实践笔记》
+
+> **开放交流群** 最近有很多朋友，从网站专门过来加我微信，询问是否可以创建一个LLM应用开发交流群，现在已开放，有需要的朋友可以选择加入
+
+![](./images/group.png)
+
+
 ## 👋 Welcome
 
 
 ### 关于本电子书
 本电子书内容是我在学习开发基于大语言模型的应用过程中，总结出来的一些经验和方法以及接触到的一些资源，采用理论学习和代码实践相结合的形式。如果你也在学习，希望这份电子书能够帮到你。本电子书开源，欢迎 star 🌟
 
-* **理论学习**：理论学习部分由[Langchain](https://python.langchain.com/en/latest/index.html)、[LlamaIndex](https://github.com/jerryjliu/llama_index/blob/main/docs/index.rst)等开源工具文档、一些最佳实践的技术博客、论文阅读三部分组成。
+* **理论学习**：理论学习部分由[Langchain](https://python.langchain.com/en/latest/index.html)、[LlamaIndex](https://github.com/jerryjliu/llama_index/blob/main/docs/index.rst)、等开源工具文档、一些最佳实践的技术博客、论文阅读、各大模型厂商的官方文档等组成。
 
-* **代码实践**：在每个工具的理论学习结束后，辅以实践性代码帮助理解。最后会将各个模块整合起来实现一个信息处理系统。
+* **代码实践**：在每个工具的理论学习结束后，辅以实践性代码帮助理解，实践内容包括提示词编排、基于大模型的Agent构建、RAG系统的学习等。
 
 ### 如何阅读？
 很感谢你打开这份电子书，本电子书是一份个人学习笔记，在这个领域我也只是学生，建议你在阅读这份电子书的时候：

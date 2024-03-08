@@ -1,6 +1,6 @@
 # Summary
 * [前言](README.md)
-* [LLM 应用全栈开发](https://liduos.com/wxqcode.png)
+* [关注《莫尔索随笔》](https://liduos.com/wxqcode.png)
 * 大语言模型概述
     * [大语言模型概况](./01-llm/01-1.md)
     * [你好, ChatGPT](./01-llm/01-2.md)
@@ -34,6 +34,19 @@
     * [Agent 介绍](./07-agents/07-1.md)
     * [Agent 项目跟踪](./07-agents/07-2.md)
     * [Multi-Agent 系统](./07-agents/07-3.md)
+* RAG专题
+    * [数据索引环节](./08-rag/08-1.md)
+    * [检索环节](./08-rag/08-2.md)
+    * [生成环节](./08-rag/08-3.md)
+* LLM 应用评估与测试
+    * [如何评估一个大语言模型](./09-llm-evelation-test/09-1.md)
+    * [基于大模型的Agent进行测试评估](./09-llm-evelation-test/09-2.md)
+    * [RAG系统效果评估](./09-llm-evelation-test/09-3.md)
+* 国内模型厂商API解读
+    * [六家大模型能力比较](./10-china-llm/10-01.md)
+    * [MiniMax大模型开发](./10-china-llm/10-02.md)
+    * [智谱AI大模型开发](./10-china-llm/10-03.md)
+    * [MoonShot大模型开发](./10-china-llm/10-04.md)
 
 - 基于大型语言模型的生成式AI
   * [课程介绍](./05-generative-ai-with-llms/05-1.md)

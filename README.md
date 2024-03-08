@@ -1,4 +1,11 @@
-> 欢迎 star🌟 ，关注《LLM 应用开发实践笔记》
+> 欢迎 star🌟 ，持续关注《LLM 应用开发实践笔记》
+
+‼️‼️重要更新
+1. 新增**LLM 应用评估与测试**、**RAG专题**、**国内模型厂商API解读** 3个章节
+2. **开放交流群** 最近有很多朋友，从网站专门过来加我微信，询问是否可以创建一个LLM应用开发交流群，现在已开放，有需要的朋友可以选择加入
+
+![](./LLMProjects/images/group.png)
+
 
 ## 本地阅读
 ### 构建gitbook镜像(可选)
@@ -48,7 +55,19 @@ docker run --rm -v "$PWD/LLMProjects:/gitbook" -p 4000:4000 morso1/gitbook-serve
     * [Agent 介绍](https://aitutor.liduos.com/07-agents/07-1.html)
     * [Agent 项目跟踪](https://aitutor.liduos.com/07-agents/07-2.html)
     * [Multi-Agent 框架](https://aitutor.liduos.com/07-agents/07-3.html)
-
+* RAG专题
+    * [数据索引环节](https://aitutor.liduos.com/08-rag/08-1.html)
+    * [检索环节](https://aitutor.liduos.com/08-rag/08-2.html)
+    * [生成环节](https://aitutor.liduos.com/08-rag/08-3.html)
+* LLM 应用评估与测试
+    * [如何评估一个大语言模型](https://aitutor.liduos.com/09-llm-evelation-test/09-1.html)
+    * [基于大模型的Agent进行测试评估](https://aitutor.liduos.com/09-llm-evelation-test/09-2.html)
+    * [RAG系统效果评估](https://aitutor.liduos.com/09-llm-evelation-test/09-3.html)
+* 国内模型厂商API解读
+    * [六家大模型能力比较](https://aitutor.liduos.com/10-china-llm/10-01.html)
+    * [MiniMax大模型开发](https://aitutor.liduos.com/10-china-llm/10-02.html)
+    * [智谱AI大模型开发](https://aitutor.liduos.com/10-china-llm/10-03.html)
+    * [MoonShot大模型开发](https://aitutor.liduos.com/10-china-llm/10-04.html)
 - 基于大型语言模型的生成式AI
   * [课程介绍](https://aitutor.liduos.com/05-generative-ai-with-llms/05-1.html)
 
