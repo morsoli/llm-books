@@ -1,5 +1,9 @@
 > 欢迎 star🌟 ，持续关注《LLM 应用开发实践笔记》
 
+我的新书[《LangChain编程从入门到实践》](https://u.jd.com/V8pkqFY) 已经开售！推荐正在学习AI应用开发的朋友购买阅读！
+
+[![LangChain编程从入门到实践](./LLMProjects/images/langchain-book.jpg "LangChain编程从入门到实践")](https://u.jd.com/V8pkqFY)
+
 ‼️‼️重要更新
 1. 新增**LLM 应用评估与测试**、**RAG专题**、**国内模型厂商API解读** 3个章节
 2. **开放交流群** 最近有很多朋友，从网站专门过来加我微信，询问是否可以创建一个LLM应用开发交流群，现在已开放，有需要的朋友可以选择加入
