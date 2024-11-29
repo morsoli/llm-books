@@ -2,10 +2,6 @@
 > 我的新书[《LangChain编程从入门到实践》](https://u.jd.com/V8pkqFY) 已经开售！推荐正在学习AI应用开发的朋友购买阅读！
 [![LangChain编程从入门到实践](../../images/langchain-book.jpg "LangChain编程从入门到实践")](https://u.jd.com/V8pkqFY)
 
-> **开放交流群** 最近有很多朋友，从网站专门过来加我微信，询问是否可以创建一个LLM应用开发交流群，现在已开放，有需要的朋友可以选择加入
-
-![](./images/group.png)
-
 
 ## 👋 Welcome
 

@@ -5,10 +5,7 @@
 [![LangChain编程从入门到实践](./LLMProjects/images/langchain-book.jpg "LangChain编程从入门到实践")](https://u.jd.com/V8pkqFY)
 
 ‼️‼️重要更新
-1. 新增**LLM 应用评估与测试**、**RAG专题**、**国内模型厂商API解读** 3个章节
-2. **开放交流群** 最近有很多朋友，从网站专门过来加我微信，询问是否可以创建一个LLM应用开发交流群，现在已开放，有需要的朋友可以选择加入
-
-![](./LLMProjects/images/group.png)
+新增**LLM 应用评估与测试**、**RAG专题**、**国内模型厂商API解读** 3个章节
 
 
 ## 本地阅读

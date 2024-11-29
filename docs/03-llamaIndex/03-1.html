@@ -6,9 +6,14 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>LlamaIndex介绍 · LLM 应用开发实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
+        <meta name="description" content="深入解析大语言模型、LangChain、LlamaIndex、HuggingGPT、RAG 和国内模型商用API。涵盖LLMOps、Agent技术、多模态任务、生成式AI及模型评估，为开发者提供实践指导与技术洞见。">
+<meta name="keywords" content="大语言模型, LangChain, LlamaIndex, HuggingGPT, RAG技术, LLMOps, Agent框架, 生成式AI, 模型评估, 国内模型API, 数据索引, 检索环节, transformers库, Prompt提示层, 企业知识库">
         <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="莫尔索">
+        
+        
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2801705823892453"
+     crossorigin="anonymous"></script>
         
         
     
@@ -937,7 +942,7 @@
                                 
                                 <p>&#x672C;&#x7535;&#x5B50;&#x4E66;&#x5F00;&#x6E90;&#xFF0C;&#x6B22;&#x8FCE; star &#x1F31F;&#xFF0C;&#x5173;&#x6CE8;&#x300A;LLM &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x7B14;&#x8BB0;&#x300B;</p>
 <p>&#x6211;&#x7684;&#x65B0;&#x4E66;<a href="https://u.jd.com/V8pkqFY" target="_blank">&#x300A;LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;&#x300B;</a> &#x5DF2;&#x7ECF;&#x5F00;&#x552E;&#xFF01;&#x63A8;&#x8350;&#x6B63;&#x5728;&#x5B66;&#x4E60;AI&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;&#x670B;&#x53CB;&#x8D2D;&#x4E70;&#x9605;&#x8BFB;&#xFF01;
-<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> <img src="../images/group.png" alt=""></p>
+<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> </p>
 <h2 id="llamaindex&#x4ECB;&#x7ECD;">LlamaIndex&#x4ECB;&#x7ECD;</h2>
 <p>LlamaIndex(&#x4E5F;&#x79F0;&#x4E3A;GPT Index)&#x662F;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5B83;&#x5C06;&#x5916;&#x90E8;&#x6570;&#x636E;&#x8FDE;&#x63A5;&#x5230;&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;(Large Language Models, llm)&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5DE5;&#x5177;&#x6765;&#x7B80;&#x5316;&#x6D41;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;&#x53EF;&#x4EE5;&#x4E0E;&#x5404;&#x79CD;&#x73B0;&#x6709;&#x6570;&#x636E;&#x6E90;&#x548C;&#x683C;&#x5F0F;(&#x5982;api&#x3001;pdf&#x3001;&#x6587;&#x6863;&#x548C;SQL)&#x96C6;&#x6210;&#x7684;&#x6570;&#x636E;&#x8FDE;&#x63A5;&#x5668;&#x3002;&#x6B64;&#x5916;&#xFF0C;LlamaIndex&#x4E3A;&#x7ED3;&#x6784;&#x5316;&#x548C;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x7D22;&#x5F15;&#xFF0C;&#x53EF;&#x4EE5;&#x6BEB;&#x4E0D;&#x8D39;&#x529B;&#x5730;&#x4E0E;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x5305;&#x62EC;&#x5217;&#x8868;&#x7D22;&#x5F15;&#x3001;&#x77E2;&#x91CF;&#x5B58;&#x50A8;&#x7D22;&#x5F15;&#x3001;&#x6811;&#x7D22;&#x5F15;&#x548C;&#x5173;&#x952E;&#x5B57;&#x8868;&#x7D22;&#x5F15;&#x7684;&#x5206;&#x89E3;&#xFF0C;&#x4EE5;&#x53CA;&#x56FE;&#x7D22;&#x5F15;&#x3001;Pandas&#x7D22;&#x5F15;&#x3001;SQL&#x7D22;&#x5F15;&#x548C;&#x6587;&#x6863;&#x6458;&#x8981;&#x7D22;&#x5F15;&#x3002;</p>

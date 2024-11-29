@@ -6,9 +6,14 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>LLM 安全专题 · LLM 应用开发实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
+        <meta name="description" content="深入解析大语言模型、LangChain、LlamaIndex、HuggingGPT、RAG 和国内模型商用API。涵盖LLMOps、Agent技术、多模态任务、生成式AI及模型评估，为开发者提供实践指导与技术洞见。">
+<meta name="keywords" content="大语言模型, LangChain, LlamaIndex, HuggingGPT, RAG技术, LLMOps, Agent框架, 生成式AI, 模型评估, 国内模型API, 数据索引, 检索环节, transformers库, Prompt提示层, 企业知识库">
         <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="莫尔索">
+        
+        
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2801705823892453"
+     crossorigin="anonymous"></script>
         
         
     
@@ -937,7 +942,7 @@
                                 
                                 <p>&#x672C;&#x7535;&#x5B50;&#x4E66;&#x5F00;&#x6E90;&#xFF0C;&#x6B22;&#x8FCE; star &#x1F31F;&#xFF0C;&#x5173;&#x6CE8;&#x300A;LLM &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x7B14;&#x8BB0;&#x300B;</p>
 <p>&#x6211;&#x7684;&#x65B0;&#x4E66;<a href="https://u.jd.com/V8pkqFY" target="_blank">&#x300A;LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;&#x300B;</a> &#x5DF2;&#x7ECF;&#x5F00;&#x552E;&#xFF01;&#x63A8;&#x8350;&#x6B63;&#x5728;&#x5B66;&#x4E60;AI&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;&#x670B;&#x53CB;&#x8D2D;&#x4E70;&#x9605;&#x8BFB;&#xFF01;
-<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> <img src="../images/group.png" alt=""></p>
+<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> </p>
 <h2 id="llm-&#x5B89;&#x5168;&#x4E13;&#x9898;">LLM &#x5B89;&#x5168;&#x4E13;&#x9898;</h2>
 <p><strong>&#x63D0;&#x793A;&#x8BCD;</strong> &#x662F;&#x6307;&#x5728;&#x8BAD;&#x7EC3;&#x6216;&#x4E0E;&#x5927;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#xFF08;Claude&#xFF0C;ChatGPT&#x7B49;&#xFF09;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x65F6;&#xFF0C;&#x63D0;&#x4F9B;&#x7ED9;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x6587;&#x672C;&#x3002;&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x7279;&#x5B9A;&#x7684; &#x63D0;&#x793A;&#x8BCD;&#xFF0C;&#x53EF;&#x4EE5;&#x5F15;&#x5BFC;&#x6A21;&#x578B;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x4E3B;&#x9898;&#x6216;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x672C;&#x3002;&#x5728;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#xFF08;NLP&#xFF09;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x63D0;&#x793A;&#x8BCD;&#x5145;&#x5F53;&#x4E86;&#x95EE;&#x9898;&#x6216;&#x8F93;&#x5165;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x800C;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x5BF9;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x56DE;&#x7B54;&#x6216;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
 <p>&#x5173;&#x4E8E;&#x600E;&#x6837;&#x8BBE;&#x8BA1;&#x597D;&#x7684; Prompt&#xFF0C;&#x67E5;&#x770B;<a href="../ref/prompt.html">Prompt&#x4E13;&#x9898;</a>&#x7AE0;&#x8282;&#x5185;&#x5BB9;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x6211;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x8FC7;&#x591A;&#x9610;&#x8FF0;&#xFF0C;&#x4E2A;&#x4EBA;&#x6BD4;&#x8F83;&#x611F;&#x5174;&#x8DA3;&#x9488;&#x5BF9; Prompt&#x7684;&#x653B;&#x51FB;&#xFF0C;&#x968F;&#x7740;&#x5927;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x7684;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#xFF0C;&#x5B89;&#x5168;&#x5FC5;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x503C;&#x5F97;&#x5173;&#x6CE8;&#x7684;&#x9886;&#x57DF;&#x3002;</p>

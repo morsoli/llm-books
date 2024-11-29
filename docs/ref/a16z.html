@@ -6,9 +6,14 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <title>A16Z推荐的AI学习清单 · LLM 应用开发实践笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
+        <meta name="description" content="深入解析大语言模型、LangChain、LlamaIndex、HuggingGPT、RAG 和国内模型商用API。涵盖LLMOps、Agent技术、多模态任务、生成式AI及模型评估，为开发者提供实践指导与技术洞见。">
+<meta name="keywords" content="大语言模型, LangChain, LlamaIndex, HuggingGPT, RAG技术, LLMOps, Agent框架, 生成式AI, 模型评估, 国内模型API, 数据索引, 检索环节, transformers库, Prompt提示层, 企业知识库">
         <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="莫尔索">
+        
+        
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2801705823892453"
+     crossorigin="anonymous"></script>
         
         
     
@@ -937,7 +942,7 @@
                                 
                                 <p>&#x672C;&#x7535;&#x5B50;&#x4E66;&#x5F00;&#x6E90;&#xFF0C;&#x6B22;&#x8FCE; star &#x1F31F;&#xFF0C;&#x5173;&#x6CE8;&#x300A;LLM &#x5E94;&#x7528;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&#x7B14;&#x8BB0;&#x300B;</p>
 <p>&#x6211;&#x7684;&#x65B0;&#x4E66;<a href="https://u.jd.com/V8pkqFY" target="_blank">&#x300A;LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;&#x300B;</a> &#x5DF2;&#x7ECF;&#x5F00;&#x552E;&#xFF01;&#x63A8;&#x8350;&#x6B63;&#x5728;&#x5B66;&#x4E60;AI&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;&#x670B;&#x53CB;&#x8D2D;&#x4E70;&#x9605;&#x8BFB;&#xFF01;
-<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> <img src="../images/group.png" alt=""></p>
+<a href="https://u.jd.com/V8pkqFY" target="_blank"><img src="../../images/langchain-book.jpg" alt="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;" title="LangChain&#x7F16;&#x7A0B;&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x8DF5;"></a> </p>
 <h2 id="a16z&#x63A8;&#x8350;&#x7684;ai&#x5B66;&#x4E60;&#x6E05;&#x5355;">A16Z&#x63A8;&#x8350;&#x7684;AI&#x5B66;&#x4E60;&#x6E05;&#x5355;</h2>
 <p>&#x4E0B;&#x9762;A16Z&#x6574;&#x7406;&#x7684;&#x4E00;&#x4EFD;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x9886;&#x57DF;&#x7684;&#x5B66;&#x4E60;&#x6E05;&#x5355;&#xFF0C;&#x6DB5;&#x76D6;&#x5404;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x6BCF;&#x4E00;&#x7BC7;&#x90FD;&#x662F;&#x8BE5;&#x9886;&#x57DF;&#x7684;&#x7ECF;&#x5178;&#x4E4B;&#x4F5C;&#x3002;&#x4ECE;&#x4ECB;&#x7ECD;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3001;Transformer&#x548C;&#x5927;&#x6A21;&#x578B;&#x5F00;&#x59CB;&#xFF0C;&#x5305;&#x62EC;LLM&#x6784;&#x5EFA;&#x5B9E;&#x8DF5;&#x6307;&#x5357;&#x3001;&#x63D0;&#x793A;&#x5DE5;&#x7A0B;&#x548C;&#x5E02;&#x573A;&#x5206;&#x6790;&#xFF0C;&#x6700;&#x540E;&#x5217;&#x4E3E;&#x4E86;&#x5177;&#x6709;&#x91CC;&#x7A0B;&#x7891;&#x610F;&#x4E49;&#x7684;&#x7814;&#x7A76;&#x6210;&#x679C;&#x8BBA;&#x6587;&#x5217;&#x8868;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4EFD;&#x975E;&#x5E38;&#x4E0D;&#x9519;&#x7684;&#x7531;&#x6D45;&#x5165;&#x6DF1;&#x7684;&#x5B66;&#x4E60;&#x8DEF;&#x5F84;&#xFF0C;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x5B66;&#x4E60;&#x8D44;&#x6E90;&#xFF0C;&#x4ECE;&#x521D;&#x5B66;&#x8005;&#x5230;&#x4E13;&#x4E1A;&#x4EBA;&#x58EB;&#x90FD;&#x53EF;&#x4EE5;&#x4ECE;&#x4E2D;&#x53D7;&#x76CA;&#xFF0C;&#x5E0C;&#x671B;&#x5BF9;&#x5927;&#x5BB6;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;</p>
 <hr>
